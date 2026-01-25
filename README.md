@@ -68,7 +68,7 @@ Then open http://localhost:8000
 │   │   └── manual-additions.json # Community submissions
 │   ├── utils/
 │   │   └── rate-limiter.js     # API rate limiting
-│   └── tests/                  # Data collection unit tests (81 tests)
+│   └── tests/                  # Data collection unit tests (111 tests)
 └── README.md
 ```
 
@@ -96,7 +96,7 @@ The primary data source requires a Google Places API key:
 export GOOGLE_PLACES_API_KEY=your_key_here
 ```
 
-**Cost:** Free tier includes 5,000 Text Search requests/month. Our collection uses ~130 requests, so quarterly updates cost $0.
+**Cost:** Free tier includes 5,000 Text Search requests/month. Our collection uses ~220 requests, so quarterly updates cost $0.
 
 ### Commands
 
@@ -106,13 +106,13 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | `npm run collect:google` | Run Google Places collection standalone |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
-| `npm test` | Run all unit tests (131 tests) |
+| `npm test` | Run all unit tests (161 tests) |
 | `npm run test:frontend` | Run frontend tests only (50 tests) |
-| `npm run test:scripts` | Run data collection tests only (81 tests) |
+| `npm run test:scripts` | Run data collection tests only (111 tests) |
 
 ### Data Sources
 
-1. **Google Places API** (Primary) - Searches for "skate shop" across 130 US metro areas using the Text Search API. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 5,000 requests/month (we use ~130).
+1. **Google Places API** (Primary) - Searches for "skate shop" across 220+ US metro areas using the Text Search API. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 5,000 requests/month (we use ~220).
 
 2. **Chain Stores** - Loads curated data from `scripts/data/chain-stores.json` (currently empty, to be expanded with Zumiez, Vans, etc.).
 

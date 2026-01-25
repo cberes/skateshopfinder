@@ -131,7 +131,7 @@ scripts/
 
 **Current Status (2026-01-25):**
 - ✅ Google Places API integration complete (`scripts/sources/google-places.js`)
-- 130 US metro areas covered, ~130 API requests per collection (within free tier)
+- 220+ US metro areas covered, ~220 API requests per collection (within free tier)
 - OSM data deprecated due to quality issues
 - **Next step:** Run collection with Google Places API key to generate new dataset
 - Chain store data (600+ Zumiez locations) to be added after initial Google Places collection
@@ -162,7 +162,7 @@ scripts/
 - **Data collection:** Node.js scripts with npm commands:
   - `npm run collect` - Fetch and process shop data from all sources
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
-  - `npm test` - Run unit tests (81 tests covering all processors)
+  - `npm test` - Run unit tests (161 tests covering all processors)
 - **Dependencies:** `node-fetch` (API calls), `node-geocoder` (coordinate validation)
 - **Version control:** Git + GitHub
 - **Deployment:** Automated via GitHub Actions (optional)
@@ -291,8 +291,8 @@ scripts/
 ### Phase 2: Data & Forms (Week 3)
 - [x] **Replace OSM with Google Places API** (completed 2026-01-25)
   - ✅ Implemented `scripts/sources/google-places.js`
-  - ✅ Text Search for "skate shop" across 130 US metro areas
-  - ✅ Stays within free tier (~130 requests vs 5,000/month limit)
+  - ✅ Text Search for "skate shop" across 220+ US metro areas
+  - ✅ Stays within free tier (~220 requests vs 5,000/month limit)
   - ✅ Updated `collect-shops.js` to use Google Places as primary source
   - [ ] Run initial collection with API key to generate new dataset
 - [ ] Expand skateshop database coverage
@@ -442,8 +442,8 @@ Optional fields (website, phone) can be added later if missing initially.
 
 1. ~~**Implement Google Places API collection**~~ ✅ Complete
    - Created `scripts/sources/google-places.js` with Text Search integration
-   - Covers 130 US metro areas with "skate shop" queries
-   - Stays within free tier (~130 requests vs 5,000/month limit)
+   - Covers 220+ US metro areas with "skate shop" queries
+   - Stays within free tier (~220 requests vs 5,000/month limit)
    - Requires: `GOOGLE_PLACES_API_KEY` environment variable
 2. **Run initial Google Places collection** - Set up API key and generate new dataset
 3. **Expand chain store data** - Add Zumiez (~600 locations), Vans stores, Tactics locations to `scripts/data/chain-stores.json`

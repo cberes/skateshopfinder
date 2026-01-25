@@ -157,6 +157,110 @@ const US_METRO_AREAS = [
   { name: 'Wilmington NC', lat: 34.2257, lng: -77.9447 },
   { name: 'Myrtle Beach', lat: 33.6891, lng: -78.8867 },
   { name: 'Charleston WV', lat: 38.3498, lng: -81.6326 },
+
+  // Additional cities for coverage gaps (151-220)
+  // Mountain West
+  { name: 'Missoula', lat: 46.8721, lng: -113.9940 },
+  { name: 'Billings', lat: 45.7833, lng: -108.5007 },
+  { name: 'Great Falls', lat: 47.5053, lng: -111.3008 },
+  { name: 'Bozeman', lat: 45.6770, lng: -111.0429 },
+  { name: 'Casper', lat: 42.8666, lng: -106.3131 },
+  { name: 'Cheyenne', lat: 41.1400, lng: -104.8202 },
+  { name: 'Laramie', lat: 41.3114, lng: -105.5911 },
+  { name: 'Pocatello', lat: 42.8713, lng: -112.4455 },
+  { name: 'Twin Falls', lat: 42.5558, lng: -114.4701 },
+  { name: 'Idaho Falls', lat: 43.4917, lng: -112.0339 },
+  { name: 'Flagstaff', lat: 35.1983, lng: -111.6513 },
+  { name: 'Prescott', lat: 34.5400, lng: -112.4685 },
+  { name: 'Sierra Vista', lat: 31.5455, lng: -110.2773 },
+  { name: 'Durango', lat: 37.2753, lng: -107.8801 },
+  { name: 'Grand Junction', lat: 39.0639, lng: -108.5506 },
+  { name: 'Pueblo', lat: 38.2544, lng: -104.6091 },
+  { name: 'Santa Fe', lat: 35.6870, lng: -105.9378 },
+  { name: 'Las Cruces', lat: 32.3199, lng: -106.7637 },
+  { name: 'Roswell', lat: 33.3943, lng: -104.5230 },
+  { name: 'St. George UT', lat: 37.0965, lng: -113.5684 },
+  { name: 'Logan UT', lat: 41.7370, lng: -111.8338 },
+
+  // Pacific Northwest / Northern California
+  { name: 'Bellingham', lat: 48.7519, lng: -122.4787 },
+  { name: 'Olympia', lat: 47.0379, lng: -122.9007 },
+  { name: 'Yakima', lat: 46.6021, lng: -120.5059 },
+  { name: 'Tri-Cities WA', lat: 46.2396, lng: -119.2247 },
+  { name: 'Medford', lat: 42.3265, lng: -122.8756 },
+  { name: 'Salem', lat: 44.9429, lng: -123.0351 },
+  { name: 'Redding', lat: 40.5865, lng: -122.3917 },
+  { name: 'Chico', lat: 39.7285, lng: -121.8375 },
+  { name: 'Eureka', lat: 40.8021, lng: -124.1637 },
+  { name: 'Visalia', lat: 36.3302, lng: -119.2921 },
+  { name: 'Monterey', lat: 36.6002, lng: -121.8947 },
+  { name: 'San Luis Obispo', lat: 35.2828, lng: -120.6596 },
+
+  // Midwest / Great Plains
+  { name: 'Fargo', lat: 46.8772, lng: -96.7898 },
+  { name: 'Sioux Falls', lat: 43.5446, lng: -96.7311 },
+  { name: 'Rapid City', lat: 44.0805, lng: -103.2310 },
+  { name: 'Bismarck', lat: 46.8083, lng: -100.7837 },
+  { name: 'Lincoln', lat: 40.8258, lng: -96.6852 },
+  { name: 'Topeka', lat: 39.0489, lng: -95.6780 },
+  { name: 'Springfield MO', lat: 37.2090, lng: -93.2923 },
+  { name: 'Columbia MO', lat: 38.9517, lng: -92.3341 },
+  { name: 'Cedar Rapids', lat: 41.9779, lng: -91.6656 },
+  { name: 'Quad Cities', lat: 41.5236, lng: -90.5776 },
+  { name: 'Peoria', lat: 40.6936, lng: -89.5890 },
+  { name: 'Champaign', lat: 40.1164, lng: -88.2434 },
+  { name: 'Bloomington IN', lat: 39.1653, lng: -86.5264 },
+  { name: 'South Bend', lat: 41.6764, lng: -86.2520 },
+  { name: 'Green Bay', lat: 44.5133, lng: -88.0133 },
+  { name: 'Duluth', lat: 46.7867, lng: -92.1005 },
+  { name: 'Rochester MN', lat: 44.0121, lng: -92.4802 },
+  { name: 'La Crosse', lat: 43.8014, lng: -91.2396 },
+
+  // South / Southeast
+  { name: 'Shreveport', lat: 32.5252, lng: -93.7502 },
+  { name: 'Lafayette LA', lat: 30.2241, lng: -92.0198 },
+  { name: 'Lake Charles', lat: 30.2266, lng: -93.2174 },
+  { name: 'Biloxi', lat: 30.3960, lng: -88.8853 },
+  { name: 'Tallahassee', lat: 30.4383, lng: -84.2807 },
+  { name: 'Gainesville FL', lat: 29.6516, lng: -82.3248 },
+  { name: 'Ocala', lat: 29.1872, lng: -82.1401 },
+  { name: 'Panama City', lat: 30.1588, lng: -85.6602 },
+  { name: 'Dothan', lat: 31.2232, lng: -85.3905 },
+  { name: 'Columbus GA', lat: 32.4610, lng: -84.9877 },
+  { name: 'Macon', lat: 32.8407, lng: -83.6324 },
+  { name: 'Athens GA', lat: 33.9519, lng: -83.3576 },
+  { name: 'Florence SC', lat: 34.1954, lng: -79.7626 },
+  { name: 'Fayetteville NC', lat: 35.0527, lng: -78.8784 },
+  { name: 'Greenville NC', lat: 35.6127, lng: -77.3664 },
+  { name: 'Roanoke', lat: 37.2710, lng: -79.9414 },
+  { name: 'Lynchburg', lat: 37.4138, lng: -79.1422 },
+  { name: 'Charlottesville', lat: 38.0293, lng: -78.4767 },
+  { name: 'Johnson City TN', lat: 36.3134, lng: -82.3535 },
+
+  // Texas
+  { name: 'Lubbock', lat: 33.5779, lng: -101.8552 },
+  { name: 'Amarillo', lat: 35.2220, lng: -101.8313 },
+  { name: 'Midland', lat: 31.9973, lng: -102.0779 },
+  { name: 'Abilene', lat: 32.4487, lng: -99.7331 },
+  { name: 'Waco', lat: 31.5493, lng: -97.1467 },
+  { name: 'Tyler', lat: 32.3513, lng: -95.3011 },
+  { name: 'Beaumont', lat: 30.0802, lng: -94.1266 },
+  { name: 'College Station', lat: 30.6280, lng: -96.3344 },
+  { name: 'Laredo', lat: 27.5306, lng: -99.4803 },
+  { name: 'Brownsville', lat: 25.9017, lng: -97.4975 },
+
+  // Northeast / New England
+  { name: 'Manchester NH', lat: 42.9956, lng: -71.4548 },
+  { name: 'Concord NH', lat: 43.2081, lng: -71.5376 },
+  { name: 'Bangor', lat: 44.8016, lng: -68.7712 },
+  { name: 'Lewiston ME', lat: 44.1004, lng: -70.2148 },
+  { name: 'Ithaca', lat: 42.4440, lng: -76.5019 },
+  { name: 'Binghamton', lat: 42.0987, lng: -75.9180 },
+  { name: 'Utica', lat: 43.1009, lng: -75.2327 },
+  { name: 'Plattsburgh', lat: 44.6995, lng: -73.4529 },
+  { name: 'State College', lat: 40.7934, lng: -77.8600 },
+  { name: 'Erie', lat: 42.1292, lng: -80.0851 },
+  { name: 'Wheeling', lat: 40.0640, lng: -80.7209 },
 ];
 
 /**
@@ -175,7 +279,7 @@ async function searchMetroArea(metro) {
           latitude: metro.lat,
           longitude: metro.lng,
         },
-        radius: 80467.2, // 50 miles in meters
+        radius: 50000, // ~31 miles (API max is 50,000 meters)
       },
     },
     // Only search in USA
@@ -293,6 +397,9 @@ function checkApiKey() {
  * @param {boolean} options.dryRun - If true, just show what would be searched
  * @returns {Promise<Array>} Array of shop objects
  */
+// Export for testing
+export { transformPlace, US_METRO_AREAS };
+
 export async function fetchFromGooglePlaces(options = {}) {
   const { dryRun = false } = options;
 
@@ -359,7 +466,7 @@ async function main() {
   }
 }
 
-// Allow standalone execution
-if (process.argv[1]?.includes('google-places')) {
+// Allow standalone execution (but not when running tests)
+if (process.argv[1]?.endsWith('google-places.js')) {
   main().catch(console.error);
 }
