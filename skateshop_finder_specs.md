@@ -294,7 +294,7 @@ scripts/
   - ✅ Text Search for "skate shop" across 220+ US metro areas
   - ✅ Stays within free tier (~220 requests vs 5,000/month limit)
   - ✅ Updated `collect-shops.js` to use Google Places as primary source
-  - [ ] Run initial collection with API key to generate new dataset
+  - ✅ Run initial collection with API key to generate new dataset
 - [ ] Expand skateshop database coverage
   - Add Zumiez store locator data (~600 locations)
   - Add other chains: Vans, Tactics physical locations

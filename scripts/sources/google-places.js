@@ -263,16 +263,24 @@ const US_METRO_AREAS = [
   { name: 'Wheeling', lat: 40.0640, lng: -80.7209 },
 ];
 
+// Search queries to find skateboard shops
+// Multiple queries help catch different types of businesses
+const SEARCH_QUERIES = [
+  'skate shop',      // Traditional skate shops
+  'skateboard shop', // More specific, catches skateparks with shops
+];
+
 /**
  * Search for skateshops in a specific metro area
  * @param {Object} metro - Metro area with name, lat, lng
+ * @param {string} query - Search query to use
  * @returns {Promise<Array>} Array of place results
  */
-async function searchMetroArea(metro) {
+async function searchMetroArea(metro, query) {
   await rateLimiter.wait();
 
   const requestBody = {
-    textQuery: 'skate shop',
+    textQuery: query,
     locationBias: {
       circle: {
         center: {
@@ -340,24 +348,85 @@ function transformPlace(place) {
   }
 
   const name = place.displayName?.text || 'Unknown';
+  const types = place.types || [];
 
-  // Skip places that are clearly not skateshops
+  // Allowlist logic for skateboard-related businesses
+  // - skateboard_shop: always include (it's a shop)
+  // - skateboard_park + store type: include (park with attached shop, like Food Court)
+  // - skateboard_park alone: exclude (just a public skatepark, no retail)
+  const hasSkateboardShop = types.includes('skateboard_shop');
+  const hasSkateboardPark = types.includes('skateboard_park');
+  const storeTypes = ['store', 'sporting_goods_store', 'retail'];
+  const hasStoreType = storeTypes.some(type => types.includes(type));
+
+  const isDefinitelySkateboard = hasSkateboardShop || (hasSkateboardPark && hasStoreType);
+
+  // Skip places that are clearly not skateshops (unless they have skateboard types)
   const lowerName = name.toLowerCase();
   const skipPatterns = [
+    // Fingerboards / toy skateboards
     'fingerboard',
     'finger board',
     'tech deck',
     'mini skate',
+    // Ice skating / hockey (common false positives for "skate shop")
     'ice skate',
     'ice rink',
-    'roller skate',
-    'roller rink',
     'skating rink',
     'figure skating',
+    'figure skater',
+    'hockey',
+    'pure hockey',
+    'great skate',
+    "skater's edge",
+    'skaters edge',
+    'ice arena',
+    'ice center',
+    'ice centre',
+    'skate sharpening',
+    'blade sharpening',
+    'skate anytime',
+    'synthetic ice',
+    'artificial ice',
+    // Roller skating (different from skateboarding)
+    'roller skate',
+    'roller rink',
+    'rollerskate',
+    'roller derby',
+    'roller disco',
+    // General sporting goods (don't sell skateboard components)
+    'sport authority',
+    'sports authority',
+    'dick\'s sporting',
+    'dicks sporting',
+    'big 5 sporting',
+    'academy sports',
+    // Hockey/ice skating retailers (no skateboard keyword in name)
+    'front row sport',
   ];
 
-  if (skipPatterns.some(pattern => lowerName.includes(pattern))) {
-    return null;
+  // Only apply filters if this isn't definitively a skateboard business
+  if (!isDefinitelySkateboard) {
+    // Exclude skateparks without a store (public parks, no retail)
+    if (hasSkateboardPark && !hasStoreType) {
+      return null;
+    }
+
+    if (skipPatterns.some(pattern => lowerName.includes(pattern))) {
+      return null;
+    }
+
+    // Skip based on Google Places types that indicate non-skateshops
+    const excludedTypes = [
+      'ice_skating_rink',
+      'skating_rink',
+      'stadium',
+      'arena',
+    ];
+
+    if (excludedTypes.some(type => types.includes(type))) {
+      return null;
+    }
   }
 
   return {
@@ -398,14 +467,17 @@ function checkApiKey() {
  * @returns {Promise<Array>} Array of shop objects
  */
 // Export for testing
-export { transformPlace, US_METRO_AREAS };
+export { transformPlace, US_METRO_AREAS, SEARCH_QUERIES };
 
 export async function fetchFromGooglePlaces(options = {}) {
   const { dryRun = false } = options;
 
+  const totalRequests = US_METRO_AREAS.length * SEARCH_QUERIES.length;
+
   if (dryRun) {
-    console.log(`\nDry run: would search ${US_METRO_AREAS.length} metro areas`);
-    console.log('Estimated API requests:', US_METRO_AREAS.length);
+    console.log(`\nDry run: would search ${US_METRO_AREAS.length} metro areas with ${SEARCH_QUERIES.length} queries each`);
+    console.log('Queries:', SEARCH_QUERIES.join(', '));
+    console.log('Estimated API requests:', totalRequests);
     console.log('Estimated cost: $0 (within free tier of 5,000/month)');
     return [];
   }
@@ -414,29 +486,32 @@ export async function fetchFromGooglePlaces(options = {}) {
     return [];
   }
 
-  console.log(`\nSearching ${US_METRO_AREAS.length} US metro areas...`);
-  console.log('This will use approximately', US_METRO_AREAS.length, 'API requests\n');
+  console.log(`\nSearching ${US_METRO_AREAS.length} US metro areas with ${SEARCH_QUERIES.length} queries each...`);
+  console.log('Queries:', SEARCH_QUERIES.join(', '));
+  console.log('This will use approximately', totalRequests, 'API requests\n');
 
   const allShops = [];
   const seenPlaceIds = new Set();
   let searchCount = 0;
 
   for (const metro of US_METRO_AREAS) {
-    searchCount++;
-    process.stdout.write(`\r  [${searchCount}/${US_METRO_AREAS.length}] Searching ${metro.name}...          `);
+    for (const query of SEARCH_QUERIES) {
+      searchCount++;
+      process.stdout.write(`\r  [${searchCount}/${totalRequests}] Searching ${metro.name} ("${query}")...          `);
 
-    const places = await searchMetroArea(metro);
+      const places = await searchMetroArea(metro, query);
 
-    for (const place of places) {
-      // Skip duplicates (same shop might appear in multiple metro searches)
-      if (seenPlaceIds.has(place.id)) {
-        continue;
-      }
-      seenPlaceIds.add(place.id);
+      for (const place of places) {
+        // Skip duplicates (same shop might appear in multiple metro/query searches)
+        if (seenPlaceIds.has(place.id)) {
+          continue;
+        }
+        seenPlaceIds.add(place.id);
 
-      const shop = transformPlace(place);
-      if (shop) {
-        allShops.push(shop);
+        const shop = transformPlace(place);
+        if (shop) {
+          allShops.push(shop);
+        }
       }
     }
   }

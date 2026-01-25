@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { transformPlace, US_METRO_AREAS } from '../sources/google-places.js';
+import { transformPlace, US_METRO_AREAS, SEARCH_QUERIES } from '../sources/google-places.js';
 
 describe('transformPlace', () => {
   describe('valid places', () => {
@@ -271,6 +271,287 @@ describe('transformPlace', () => {
         assert.notStrictEqual(result, null, `Should not skip: ${name}`);
       }
     });
+
+    // Hockey / ice skating stores (common false positives)
+    it('should skip hockey stores', () => {
+      const place = {
+        id: 'hockey1',
+        displayName: { text: 'Pure Hockey' },
+        location: { latitude: 42.8864, longitude: -78.8784 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip hockey supply stores', () => {
+      const place = {
+        id: 'hockey2',
+        displayName: { text: 'Great Skate Hockey Supply Co.' },
+        location: { latitude: 42.8864, longitude: -78.8784 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip figure skater stores', () => {
+      const place = {
+        id: 'fig2',
+        displayName: { text: "The Skater's Edge" },
+        location: { latitude: 42.8864, longitude: -78.8784 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip skate sharpening services', () => {
+      const place = {
+        id: 'sharp1',
+        displayName: { text: 'Pro Skate Sharpening' },
+        location: { latitude: 42.8864, longitude: -78.8784 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip synthetic ice sellers', () => {
+      const place = {
+        id: 'synth1',
+        displayName: { text: 'Skate Anytime' },
+        location: { latitude: 42.8864, longitude: -78.8784 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip roller derby shops', () => {
+      const place = {
+        id: 'derby1',
+        displayName: { text: 'Roller Derby Supplies' },
+        location: { latitude: 34.0, longitude: -118.0 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip big box sporting goods stores', () => {
+      const stores = [
+        "Dick's Sporting Goods",
+        'Big 5 Sporting Goods',
+        'Academy Sports',
+      ];
+
+      for (const name of stores) {
+        const place = {
+          id: `bigbox-${name}`,
+          displayName: { text: name },
+          location: { latitude: 34.0, longitude: -118.0 },
+        };
+        const result = transformPlace(place);
+        assert.strictEqual(result, null, `Should skip: ${name}`);
+      }
+    });
+
+    it('should skip ice arenas and centers', () => {
+      const venues = [
+        'Buffalo Ice Arena',
+        'Community Ice Center',
+        'Northtown Ice Centre',
+      ];
+
+      for (const name of venues) {
+        const place = {
+          id: `venue-${name}`,
+          displayName: { text: name },
+          location: { latitude: 42.8864, longitude: -78.8784 },
+        };
+        const result = transformPlace(place);
+        assert.strictEqual(result, null, `Should skip: ${name}`);
+      }
+    });
+
+    it('should skip Front Row Sports (hockey retailer)', () => {
+      const place = {
+        id: 'front-row',
+        displayName: { text: 'Front Row Sports' },
+        location: { latitude: 42.8287865, longitude: -78.7544297 },
+        types: ['sporting_goods_store', 'store', 'point_of_interest', 'establishment'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip Front Row Sport (singular)', () => {
+      const place = {
+        id: 'front-row-2',
+        displayName: { text: 'Front Row Sport' },
+        location: { latitude: 42.994415, longitude: -78.7826529 },
+        types: ['sporting_goods_store', 'store', 'point_of_interest', 'establishment'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+  });
+
+  describe('skateboard type allowlist', () => {
+    it('should include skateboard_park with store type (park with attached shop)', () => {
+      const place = {
+        id: 'food-court',
+        displayName: { text: 'Food Court Skatepark' },
+        location: { latitude: 42.7160, longitude: -78.8297 },
+        types: ['skateboard_park', 'sporting_goods_store', 'store', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.notStrictEqual(result, null);
+      assert.strictEqual(result.name, 'Food Court Skatepark');
+    });
+
+    it('should include skateboard_park with store type even if name matches skip pattern', () => {
+      // Hypothetical edge case: a skateboard park with "rink" in the name but has a store
+      const place = {
+        id: 'skate-rink-park',
+        displayName: { text: 'Skate Rink and Park' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['skateboard_park', 'store', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.notStrictEqual(result, null);
+    });
+
+    it('should exclude skateboard_park without store type (public park only)', () => {
+      const place = {
+        id: 'lasalle',
+        displayName: { text: 'LaSalle Skate Park' },
+        location: { latitude: 42.7500, longitude: -78.8300 },
+        types: ['skateboard_park', 'park', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should exclude skateboard_park with only sports_complex type', () => {
+      const place = {
+        id: 'public-park',
+        displayName: { text: 'City Skatepark' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['skateboard_park', 'sports_complex', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should include skateboard_shop type regardless of other filters', () => {
+      const place = {
+        id: 'sk8-shop',
+        displayName: { text: 'Generic Sports Store' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['skateboard_shop', 'sporting_goods_store'],
+      };
+      const result = transformPlace(place);
+      assert.notStrictEqual(result, null);
+    });
+
+    it('should include skateboard_shop even without store type', () => {
+      const place = {
+        id: 'sk8-shop-only',
+        displayName: { text: 'Board Shop' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['skateboard_shop', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.notStrictEqual(result, null);
+    });
+
+    it('should still filter non-skateboard sporting goods stores', () => {
+      const place = {
+        id: 'dicks1',
+        displayName: { text: "Dick's Sporting Goods" },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['sporting_goods_store', 'store', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+  });
+
+  describe('type-based filtering', () => {
+    it('should skip places typed as ice_skating_rink', () => {
+      const place = {
+        id: 'rink-type1',
+        displayName: { text: 'Some Generic Name' },
+        location: { latitude: 42.8864, longitude: -78.8784 },
+        types: ['ice_skating_rink', 'point_of_interest'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip places typed as skating_rink', () => {
+      const place = {
+        id: 'rink-type2',
+        displayName: { text: 'Fun Times' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['skating_rink', 'establishment'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip places typed as stadium', () => {
+      const place = {
+        id: 'stadium1',
+        displayName: { text: 'Sports Arena' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['stadium', 'establishment'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should skip places typed as arena', () => {
+      const place = {
+        id: 'arena1',
+        displayName: { text: 'Community Center' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['arena', 'establishment'],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result, null);
+    });
+
+    it('should not skip places with generic types like store', () => {
+      const place = {
+        id: 'store1',
+        displayName: { text: 'Local Skate Shop' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        types: ['store', 'point_of_interest', 'establishment'],
+      };
+      const result = transformPlace(place);
+      assert.notStrictEqual(result, null);
+    });
+
+    it('should handle places with no types array', () => {
+      const place = {
+        id: 'no-types',
+        displayName: { text: 'Skate World' },
+        location: { latitude: 34.0, longitude: -118.0 },
+      };
+      const result = transformPlace(place);
+      assert.notStrictEqual(result, null);
+    });
+  });
+});
+
+describe('SEARCH_QUERIES', () => {
+  it('should include multiple search queries for better coverage', () => {
+    assert.ok(SEARCH_QUERIES.length >= 2, 'Should have at least 2 search queries');
+  });
+
+  it('should include skate shop query', () => {
+    assert.ok(SEARCH_QUERIES.includes('skate shop'), 'Should include "skate shop"');
+  });
+
+  it('should include skateboard shop query', () => {
+    assert.ok(SEARCH_QUERIES.includes('skateboard shop'), 'Should include "skateboard shop"');
   });
 });
 
