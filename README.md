@@ -45,9 +45,12 @@ Then open http://localhost:8000
 
 ```
 ├── index.html          # Main HTML page
-├── app.js              # Application logic (geolocation, distance calc, search)
+├── app.js              # Application logic (geolocation, search, display)
+├── app.utils.js        # Pure utility functions (distance calc, filtering, HTML generation)
 ├── styles.css          # Styling
 ├── shops.json          # Skateshop database
+├── tests/
+│   └── app.utils.test.js       # Frontend unit tests (50 tests)
 ├── scripts/
 │   ├── collect-shops.js        # Main data collection script
 │   ├── validate-data.js        # Data quality validation
@@ -65,7 +68,7 @@ Then open http://localhost:8000
 │   │   └── manual-additions.json # Community submissions
 │   ├── utils/
 │   │   └── rate-limiter.js     # API rate limiting
-│   └── tests/                  # Unit tests
+│   └── tests/                  # Data collection unit tests (81 tests)
 └── README.md
 ```
 
@@ -103,7 +106,9 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | `npm run collect:google` | Run Google Places collection standalone |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
-| `npm test` | Run unit tests (81 tests) |
+| `npm test` | Run all unit tests (131 tests) |
+| `npm run test:frontend` | Run frontend tests only (50 tests) |
+| `npm run test:scripts` | Run data collection tests only (81 tests) |
 
 ### Data Sources
 

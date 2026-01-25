@@ -8,7 +8,9 @@
     "collect:google": "node scripts/sources/google-places.js",
     "collect:google:dry-run": "node scripts/sources/google-places.js --dry-run",
     "validate": "node scripts/validate-data.js",
-    "test": "node --test scripts/tests/*.test.js"
+    "test": "node --test scripts/tests/*.test.js tests/*.test.js",
+    "test:frontend": "node --test tests/*.test.js",
+    "test:scripts": "node --test scripts/tests/*.test.js"
   },
   "dependencies": {
     "node-fetch": "^3.3.0",

@@ -3,16 +3,17 @@
  * Main application JavaScript
  */
 
+import {
+    CONFIG,
+    calculateDistance,
+    escapeHtml,
+    createShopCardHTML,
+    filterAndSortShops,
+    generateResultsSummary
+} from './app.utils.js';
+
 (function() {
     'use strict';
-
-    // Configuration
-    const CONFIG = {
-        MAX_RESULTS: 20,
-        MAX_DISTANCE_MILES: 100,
-        EARTH_RADIUS_MILES: 3959,
-        DATA_FILE: 'shops.json'
-    };
 
     // DOM Elements
     const elements = {
@@ -177,38 +178,15 @@
             return;
         }
 
-        // Calculate distance to each shop
-        const shopsWithDistance = shopsData.shops.map(shop => ({
-            ...shop,
-            distance: calculateDistance(lat, lng, shop.lat, shop.lng)
-        }));
-
-        // Filter by max distance and sort by distance
-        const nearbyShops = shopsWithDistance
-            .filter(shop => shop.distance <= CONFIG.MAX_DISTANCE_MILES)
-            .sort((a, b) => a.distance - b.distance)
-            .slice(0, CONFIG.MAX_RESULTS);
+        const nearbyShops = filterAndSortShops(
+            shopsData.shops,
+            lat,
+            lng,
+            CONFIG.MAX_DISTANCE_MILES,
+            CONFIG.MAX_RESULTS
+        );
 
         displayResults(nearbyShops);
-    }
-
-    /**
-     * Calculate distance between two points using Haversine formula
-     * @returns Distance in miles
-     */
-    function calculateDistance(lat1, lng1, lat2, lng2) {
-        const toRad = (deg) => deg * (Math.PI / 180);
-
-        const dLat = toRad(lat2 - lat1);
-        const dLng = toRad(lng2 - lng1);
-
-        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                  Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-                  Math.sin(dLng / 2) * Math.sin(dLng / 2);
-
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-        return CONFIG.EARTH_RADIUS_MILES * c;
     }
 
     /**
@@ -225,9 +203,7 @@
         }
 
         // Update summary
-        const furthest = shops[shops.length - 1].distance.toFixed(1);
-        elements.resultsSummary.textContent =
-            `Showing ${shops.length} shop${shops.length !== 1 ? 's' : ''} within ${furthest} miles`;
+        elements.resultsSummary.textContent = generateResultsSummary(shops);
 
         // Create shop cards
         shops.forEach(shop => {
@@ -239,45 +215,6 @@
 
         elements.resultsSection.hidden = false;
         elements.resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    /**
-     * Create HTML for a shop card
-     */
-    function createShopCardHTML(shop) {
-        const websiteLink = shop.website
-            ? `<a href="${escapeHtml(shop.website)}" class="shop-link" target="_blank" rel="noopener noreferrer">Visit Website</a>`
-            : '';
-
-        const phoneDisplay = shop.phone
-            ? `<span class="shop-phone">${escapeHtml(shop.phone)}</span>`
-            : '';
-
-        const independentBadge = shop.isIndependent
-            ? '<span class="badge-independent">Independent</span>'
-            : '';
-
-        return `
-            <div class="shop-header">
-                <h3 class="shop-name">${escapeHtml(shop.name)}</h3>
-                <span class="shop-distance">${shop.distance.toFixed(1)} mi</span>
-            </div>
-            <p class="shop-address">${escapeHtml(shop.address)}</p>
-            <div class="shop-details">
-                ${independentBadge}
-                ${websiteLink}
-                ${phoneDisplay}
-            </div>
-        `;
-    }
-
-    /**
-     * Escape HTML to prevent XSS
-     */
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
     }
 
     /**
