@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find skateboard shops near you in the USA. Search by address or use your location to discover local and chain skateshops.">
+    <title>Find Skate Shops - USA Skateshop Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Find Skate Shops</h1>
+        <p class="tagline">Discover skateboard shops near you</p>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <form id="search-form" class="search-form">
+                <div class="input-group">
+                    <label for="address-input" class="visually-hidden">Enter your address</label>
+                    <input
+                        type="text"
+                        id="address-input"
+                        name="address"
+                        placeholder="Enter your address (city, state or ZIP)"
+                        autocomplete="street-address"
+                    >
+                    <button type="submit" id="search-btn">Search</button>
+                </div>
+                <div class="location-option">
+                    <span class="divider">or</span>
+                    <button type="button" id="geolocation-btn" class="geolocation-btn">
+                        <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                            <path fill="currentColor" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                        </svg>
+                        Use my location
+                    </button>
+                </div>
+            </form>
+
+            <div id="error-message" class="error-message" role="alert" hidden></div>
+            <div id="loading-indicator" class="loading-indicator" hidden>
+                <span class="spinner"></span>
+                <span>Finding nearby shops...</span>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section" hidden>
+            <div class="results-header">
+                <h2>Nearby Skateshops</h2>
+                <p id="results-summary" class="results-summary"></p>
+            </div>
+            <ul id="results-list" class="results-list"></ul>
+        </section>
+
+        <section id="no-results" class="no-results" hidden>
+            <h2>No Shops Found</h2>
+            <p>We couldn't find any skateshops within 100 miles of your location.</p>
+            <p>Know a shop we're missing? <a href="#suggest-form">Suggest a shop</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data last updated: <span id="last-updated">--</span></p>
+        <nav class="footer-links">
+            <a href="#suggest-form">Suggest a Shop</a>
+            <a href="#report-closed">Report Closed Shop</a>
+        </nav>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

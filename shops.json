@@ -1,0 +1,26 @@
+{
+  "shops": [
+    {
+      "id": 1,
+      "name": "Example Skate Shop",
+      "address": "123 Main St, Los Angeles, CA 90001",
+      "lat": 34.0522,
+      "lng": -118.2437,
+      "website": "https://example.com",
+      "phone": "(555) 123-4567",
+      "isIndependent": true
+    },
+    {
+      "id": 2,
+      "name": "Zumiez - Sample Location",
+      "address": "456 Oak Ave, Los Angeles, CA 90002",
+      "lat": 34.0612,
+      "lng": -118.2547,
+      "website": "https://zumiez.com",
+      "phone": "(555) 234-5678",
+      "isIndependent": false
+    }
+  ],
+  "lastUpdated": "2026-01-24",
+  "version": "1.0"
+}
