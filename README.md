@@ -1,6 +1,8 @@
 # Skateshop Finder
 
-A free, static website that helps users find nearby skateboard shops in the United States.
+A free, static website that helps users find nearby skateboard shops.
+
+Limited to shops within the United States for now.
 
 ## Running Locally
 
@@ -102,6 +104,7 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 
 | Command | Description |
 |---------|-------------|
+| `npm run build` | Builds the website for deployment |
 | `npm run collect` | Fetch shops from all sources and generate `shops.json` |
 | `npm run collect:google` | Run Google Places collection standalone |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |

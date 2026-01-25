@@ -286,7 +286,7 @@ scripts/
 - [x] Compile initial shop database (basic data only)
   - 191 shops from OpenStreetMap (188 independent, 3 chains)
   - 81% with addresses, 61% with websites, 52% with phone numbers
-- [ ] Deploy to GitHub Pages
+- [x] Deploy to GitHub Pages
 
 ### Phase 2: Data & Forms (Week 3)
 - [x] **Replace OSM with Google Places API** (completed 2026-01-25)
