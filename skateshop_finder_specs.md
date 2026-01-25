@@ -197,11 +197,11 @@ scripts/
 - [x] Handle edge cases (empty results, invalid coordinates)
 
 #### User Feedback Forms
-- [ ] "Suggest a shop" feature
+- [x] "Suggest a shop" feature
   - Form fields: shop name, address, website (optional), phone (optional), independent vs chain
   - Submitter email for follow-up (optional)
   - Form submission via Formspree or Google Forms
-- [ ] "Report a closed shop" feature
+- [x] "Report a closed shop" feature
   - Dropdown/search to select shop from database
   - Optional comment field
   - Submitter email (optional)
@@ -299,9 +299,9 @@ scripts/
   - Add Zumiez store locator data (~600 locations)
   - Add other chains: Vans, Tactics physical locations
   - Populate `scripts/data/chain-stores.json`
-- [ ] Add "Suggest a shop" form
-- [ ] Add "Report closed shop" form
-- [ ] Implement form submission
+- [x] Add "Suggest a shop" form
+- [x] Add "Report closed shop" form
+- [x] Implement form submission
 
 ### Phase 3: Polish (Week 4)
 - [x] Responsive design refinement (implemented in initial build)
@@ -448,4 +448,8 @@ Optional fields (website, phone) can be added later if missing initially.
 2. **Run initial Google Places collection** - Set up API key and generate new dataset
 3. **Expand chain store data** - Add Zumiez (~600 locations), Vans stores, Tactics locations to `scripts/data/chain-stores.json`
 4. **Deploy to GitHub Pages** - Set up hosting and domain
-5. **Add user feedback forms** - "Suggest a shop" and "Report closed shop" features
+5. ~~**Add user feedback forms**~~ ✅ Complete
+   - "Suggest a shop" modal with name, address, website, phone, shop type, email fields
+   - "Report closed shop" modal with searchable shop selector, comments, email fields
+   - Forms configured for Formspree (requires form ID setup)
+   - 26 new tests added for form utility functions

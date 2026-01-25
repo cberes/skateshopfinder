@@ -56,18 +56,121 @@
         <section id="no-results" class="no-results" hidden>
             <h2>No Shops Found</h2>
             <p>We couldn't find any skateshops within 100 miles of your location.</p>
-            <p>Know a shop we're missing? <a href="#suggest-form">Suggest a shop</a></p>
+            <p>Know a shop we're missing? <button type="button" class="link-btn" data-modal="suggest-modal">Suggest a shop</button></p>
         </section>
     </main>
 
     <footer>
         <p>Data last updated: <span id="last-updated">--</span></p>
         <nav class="footer-links">
-            <a href="#suggest-form">Suggest a Shop</a>
-            <a href="#report-closed">Report Closed Shop</a>
+            <button type="button" class="footer-link-btn" data-modal="suggest-modal">Suggest a Shop</button>
+            <button type="button" class="footer-link-btn" data-modal="report-modal">Report Closed Shop</button>
             <a href="https://github.com/cberes/findskateshops">Github</a>
         </nav>
     </footer>
+
+    <!-- Suggest a Shop Modal -->
+    <div id="suggest-modal" class="modal" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Suggest a Shop</h2>
+                <button type="button" class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <form id="suggest-form" class="feedback-form" action="https://formspree.io/f/xnjdnogo" method="POST">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="suggest-name">Shop Name <span class="required">*</span></label>
+                    <input type="text" id="suggest-name" name="shop_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggest-address">Address <span class="required">*</span></label>
+                    <input type="text" id="suggest-address" name="address" placeholder="Street, City, State ZIP" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggest-website">Website</label>
+                    <input type="url" id="suggest-website" name="website" placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="suggest-phone">Phone</label>
+                    <input type="tel" id="suggest-phone" name="phone" placeholder="(555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label>Shop Type <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="shop_type" value="independent" required checked>
+                            <span>Independent</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="shop_type" value="chain">
+                            <span>Chain Store</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggest-email">Your Email (optional)</label>
+                    <input type="email" id="suggest-email" name="email" placeholder="For follow-up questions">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary modal-cancel">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </div>
+            </form>
+            <div id="suggest-success" class="form-success" hidden>
+                <p>Thank you for your suggestion! We'll review it soon.</p>
+                <button type="button" class="btn-primary modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Closed Shop Modal -->
+    <div id="report-modal" class="modal" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Report a Closed Shop</h2>
+                <button type="button" class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <form id="report-form" class="feedback-form" action="https://formspree.io/f/xdagkpwb" method="POST">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="report-shop">Select Shop <span class="required">*</span></label>
+                    <input type="text" id="report-shop-search" class="shop-search" placeholder="Type to search shops...">
+                    <select id="report-shop" name="shop" required>
+                        <option value="">-- Select a shop --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="report-comment">Additional Comments</label>
+                    <textarea id="report-comment" name="comment" rows="3" placeholder="Any details about the closure (optional)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="report-email">Your Email (optional)</label>
+                    <input type="email" id="report-email" name="email" placeholder="For follow-up questions">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary modal-cancel">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Report</button>
+                </div>
+            </form>
+            <div id="report-success" class="form-success" hidden>
+                <p>Thank you for your report! We'll verify this information.</p>
+                <button type="button" class="btn-primary modal-close">Close</button>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="app.js"></script>
 </body>

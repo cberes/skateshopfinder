@@ -9,7 +9,9 @@ import {
     escapeHtml,
     createShopCardHTML,
     filterAndSortShops,
-    generateResultsSummary
+    generateResultsSummary,
+    filterShopsBySearchTerm,
+    formatShopForSelect
 } from './app.utils.js';
 
 (function() {
@@ -27,7 +29,16 @@ import {
         resultsSummary: document.getElementById('results-summary'),
         resultsList: document.getElementById('results-list'),
         noResults: document.getElementById('no-results'),
-        lastUpdated: document.getElementById('last-updated')
+        lastUpdated: document.getElementById('last-updated'),
+        // Modal elements
+        suggestModal: document.getElementById('suggest-modal'),
+        reportModal: document.getElementById('report-modal'),
+        suggestForm: document.getElementById('suggest-form'),
+        reportForm: document.getElementById('report-form'),
+        suggestSuccess: document.getElementById('suggest-success'),
+        reportSuccess: document.getElementById('report-success'),
+        reportShopSelect: document.getElementById('report-shop'),
+        reportShopSearch: document.getElementById('report-shop-search')
     };
 
     // Application State
@@ -68,6 +79,200 @@ import {
     function setupEventListeners() {
         elements.searchForm.addEventListener('submit', handleSearch);
         elements.geolocationBtn.addEventListener('click', handleGeolocation);
+
+        // Modal triggers
+        document.querySelectorAll('[data-modal]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.getAttribute('data-modal');
+                openModal(document.getElementById(modalId));
+            });
+        });
+
+        // Modal close buttons and backdrop
+        document.querySelectorAll('.modal-close, .modal-cancel').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const modal = e.target.closest('.modal');
+                closeModal(modal);
+            });
+        });
+
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+            backdrop.addEventListener('click', (e) => {
+                const modal = e.target.closest('.modal');
+                closeModal(modal);
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModal = document.querySelector('.modal:not([hidden])');
+                if (openModal) {
+                    closeModal(openModal);
+                }
+            }
+        });
+
+        // Form submissions
+        elements.suggestForm.addEventListener('submit', handleSuggestSubmit);
+        elements.reportForm.addEventListener('submit', handleReportSubmit);
+
+        // Shop search filter for report form
+        elements.reportShopSearch.addEventListener('input', handleShopSearch);
+    }
+
+    /**
+     * Open a modal dialog
+     */
+    function openModal(modal) {
+        if (!modal) return;
+
+        // If opening report modal, populate shops dropdown
+        if (modal === elements.reportModal) {
+            populateShopDropdown();
+        }
+
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+
+        // Focus first input
+        const firstInput = modal.querySelector('input:not([type="hidden"]), select, textarea');
+        if (firstInput) {
+            firstInput.focus();
+        }
+    }
+
+    /**
+     * Close a modal dialog
+     */
+    function closeModal(modal) {
+        if (!modal) return;
+
+        modal.hidden = true;
+        document.body.style.overflow = '';
+
+        // Reset form and success state
+        const form = modal.querySelector('form');
+        const success = modal.querySelector('.form-success');
+        if (form) {
+            form.reset();
+            form.hidden = false;
+        }
+        if (success) {
+            success.hidden = true;
+        }
+
+        // Clear shop search
+        if (modal === elements.reportModal) {
+            elements.reportShopSearch.value = '';
+        }
+    }
+
+    /**
+     * Populate the shop dropdown for report form
+     */
+    function populateShopDropdown(filter = '') {
+        if (!shopsData || !shopsData.shops) return;
+
+        const select = elements.reportShopSelect;
+        const shops = filter
+            ? filterShopsBySearchTerm(shopsData.shops, filter)
+            : shopsData.shops;
+
+        // Clear existing options except the placeholder
+        select.innerHTML = '<option value="">-- Select a shop --</option>';
+
+        // Sort shops alphabetically and add to dropdown
+        const sortedShops = [...shops].sort((a, b) =>
+            (a.name || '').localeCompare(b.name || '')
+        );
+
+        sortedShops.forEach(shop => {
+            const option = document.createElement('option');
+            option.value = formatShopForSelect(shop);
+            option.textContent = formatShopForSelect(shop);
+            select.appendChild(option);
+        });
+    }
+
+    /**
+     * Handle shop search input
+     */
+    function handleShopSearch(e) {
+        const searchTerm = e.target.value.trim();
+        populateShopDropdown(searchTerm);
+    }
+
+    /**
+     * Handle suggest form submission
+     */
+    async function handleSuggestSubmit(e) {
+        e.preventDefault();
+
+        const form = elements.suggestForm;
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.hidden = true;
+                elements.suggestSuccess.hidden = false;
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Suggest form error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit';
+        }
+    }
+
+    /**
+     * Handle report form submission
+     */
+    async function handleReportSubmit(e) {
+        e.preventDefault();
+
+        const form = elements.reportForm;
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.hidden = true;
+                elements.reportSuccess.hidden = false;
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Report form error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Report';
+        }
     }
 
     /**

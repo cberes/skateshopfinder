@@ -52,7 +52,7 @@ Then open http://localhost:8000
 ├── styles.css          # Styling
 ├── shops.json          # Skateshop database
 ├── tests/
-│   └── app.utils.test.js       # Frontend unit tests (50 tests)
+│   └── app.utils.test.js       # Frontend unit tests (76 tests)
 ├── scripts/
 │   ├── collect-shops.js        # Main data collection script
 │   ├── validate-data.js        # Data quality validation
@@ -109,9 +109,9 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | `npm run collect:google` | Run Google Places collection standalone |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
-| `npm test` | Run all unit tests (161 tests) |
-| `npm run test:frontend` | Run frontend tests only (50 tests) |
-| `npm run test:scripts` | Run data collection tests only (111 tests) |
+| `npm test` | Run all unit tests (213 tests) |
+| `npm run test:frontend` | Run frontend tests only (76 tests) |
+| `npm run test:scripts` | Run data collection tests only (137 tests) |
 
 ### Data Sources
 
@@ -152,6 +152,32 @@ To add shops that aren't in OpenStreetMap:
 ```
 
 2. Run `npm run collect` to regenerate `shops.json`
+
+## User Feedback
+
+The site includes two forms for user feedback:
+
+### Suggest a Shop
+
+Users can suggest shops that are missing from the database. The form collects:
+- Shop name (required)
+- Address (required)
+- Website (optional)
+- Phone (optional)
+- Shop type: Independent or Chain (required)
+- Submitter email (optional, for follow-up)
+
+### Report a Closed Shop
+
+Users can report shops that have closed. The form includes:
+- Shop selector with search functionality
+- Comments field (optional)
+- Submitter email (optional, for follow-up)
+
+### Form Backend Setup
+
+Forms are configured to use [Formspree](https://formspree.io/) for submission handling.
+Formspree free tier includes 50 submissions per month, which should be sufficient for community feedback.
 
 ## License
 

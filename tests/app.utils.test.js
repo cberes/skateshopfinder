@@ -7,7 +7,10 @@ import {
     createShopCardHTML,
     filterAndSortShops,
     generateResultsSummary,
-    isValidCoordinates
+    isValidCoordinates,
+    filterShopsBySearchTerm,
+    formatShopForSelect,
+    extractCityState
 } from '../app.utils.js';
 
 describe('CONFIG', () => {
@@ -399,5 +402,165 @@ describe('isValidCoordinates', () => {
     it('should return false for undefined values', () => {
         assert.strictEqual(isValidCoordinates(undefined, 0), false);
         assert.strictEqual(isValidCoordinates(0, undefined), false);
+    });
+});
+
+describe('filterShopsBySearchTerm', () => {
+    const mockShops = [
+        { id: 1, name: 'Local Skate Shop', address: '123 Main St, Los Angeles, CA 90001' },
+        { id: 2, name: 'Boardroom', address: '456 Oak Ave, San Francisco, CA 94102' },
+        { id: 3, name: 'Zumiez Mall Store', address: '789 Mall Blvd, Seattle, WA 98101' },
+        { id: 4, name: 'Skate Warehouse', address: '321 Elm St, Portland, OR 97201' },
+    ];
+
+    it('should return all shops when search term is empty', () => {
+        const result = filterShopsBySearchTerm(mockShops, '');
+        assert.strictEqual(result.length, 4);
+    });
+
+    it('should filter by shop name (case insensitive)', () => {
+        const result = filterShopsBySearchTerm(mockShops, 'zumiez');
+        assert.strictEqual(result.length, 1);
+        assert.strictEqual(result[0].name, 'Zumiez Mall Store');
+    });
+
+    it('should filter by city name', () => {
+        const result = filterShopsBySearchTerm(mockShops, 'seattle');
+        assert.strictEqual(result.length, 1);
+        assert.strictEqual(result[0].name, 'Zumiez Mall Store');
+    });
+
+    it('should filter by state', () => {
+        const result = filterShopsBySearchTerm(mockShops, 'CA');
+        assert.strictEqual(result.length, 2);
+    });
+
+    it('should filter by partial match in name', () => {
+        const result = filterShopsBySearchTerm(mockShops, 'skate');
+        assert.strictEqual(result.length, 2);
+        assert.ok(result.some(s => s.name === 'Local Skate Shop'));
+        assert.ok(result.some(s => s.name === 'Skate Warehouse'));
+    });
+
+    it('should return empty array when no matches', () => {
+        const result = filterShopsBySearchTerm(mockShops, 'nonexistent');
+        assert.strictEqual(result.length, 0);
+    });
+
+    it('should handle null shops array', () => {
+        const result = filterShopsBySearchTerm(null, 'test');
+        assert.deepStrictEqual(result, []);
+    });
+
+    it('should handle undefined shops array', () => {
+        const result = filterShopsBySearchTerm(undefined, 'test');
+        assert.deepStrictEqual(result, []);
+    });
+
+    it('should return original array when search term is null', () => {
+        const result = filterShopsBySearchTerm(mockShops, null);
+        assert.strictEqual(result.length, 4);
+    });
+
+    it('should handle shops with missing name or address', () => {
+        const shopsWithMissing = [
+            { id: 1, name: 'Shop One' },
+            { id: 2, address: '123 Test St' },
+            { id: 3 },
+        ];
+        const result = filterShopsBySearchTerm(shopsWithMissing, 'test');
+        assert.strictEqual(result.length, 1);
+        assert.strictEqual(result[0].id, 2);
+    });
+
+    it('should trim whitespace from search term', () => {
+        const result = filterShopsBySearchTerm(mockShops, '  zumiez  ');
+        assert.strictEqual(result.length, 1);
+    });
+});
+
+describe('extractCityState', () => {
+    it('should extract city and state from full address', () => {
+        const result = extractCityState('123 Main St, Los Angeles, CA 90001');
+        assert.strictEqual(result, 'Los Angeles, CA');
+    });
+
+    it('should handle address without ZIP code', () => {
+        const result = extractCityState('123 Main St, Portland, OR');
+        assert.strictEqual(result, 'Portland, OR');
+    });
+
+    it('should return empty string for empty address', () => {
+        const result = extractCityState('');
+        assert.strictEqual(result, '');
+    });
+
+    it('should return empty string for null', () => {
+        const result = extractCityState(null);
+        assert.strictEqual(result, '');
+    });
+
+    it('should return empty string for undefined', () => {
+        const result = extractCityState(undefined);
+        assert.strictEqual(result, '');
+    });
+
+    it('should handle address with only city', () => {
+        const result = extractCityState('Los Angeles');
+        assert.strictEqual(result, '');
+    });
+
+    it('should handle multi-part city names', () => {
+        const result = extractCityState('456 Oak Ave, San Francisco, CA 94102');
+        assert.strictEqual(result, 'San Francisco, CA');
+    });
+
+    it('should handle address with suite number', () => {
+        const result = extractCityState('123 Main St Suite 100, Denver, CO 80202');
+        assert.strictEqual(result, 'Denver, CO');
+    });
+});
+
+describe('formatShopForSelect', () => {
+    it('should format shop with name and full address', () => {
+        const shop = {
+            name: 'Local Skate Shop',
+            address: '123 Main St, Los Angeles, CA 90001'
+        };
+        const result = formatShopForSelect(shop);
+        assert.strictEqual(result, 'Local Skate Shop - Los Angeles, CA');
+    });
+
+    it('should return just name when address is missing', () => {
+        const shop = { name: 'Local Skate Shop' };
+        const result = formatShopForSelect(shop);
+        assert.strictEqual(result, 'Local Skate Shop');
+    });
+
+    it('should return just name when address has no city/state', () => {
+        const shop = { name: 'Local Skate Shop', address: '123 Main St' };
+        const result = formatShopForSelect(shop);
+        assert.strictEqual(result, 'Local Skate Shop');
+    });
+
+    it('should return "Unknown Shop" when name is missing', () => {
+        const shop = { address: '123 Main St, LA, CA 90001' };
+        const result = formatShopForSelect(shop);
+        assert.strictEqual(result, 'Unknown Shop - LA, CA');
+    });
+
+    it('should return empty string for null shop', () => {
+        const result = formatShopForSelect(null);
+        assert.strictEqual(result, '');
+    });
+
+    it('should return empty string for undefined shop', () => {
+        const result = formatShopForSelect(undefined);
+        assert.strictEqual(result, '');
+    });
+
+    it('should handle empty shop object', () => {
+        const result = formatShopForSelect({});
+        assert.strictEqual(result, 'Unknown Shop');
     });
 });

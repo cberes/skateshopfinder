@@ -156,3 +156,74 @@ export function isValidCoordinates(lat, lng) {
         lng <= 180
     );
 }
+
+/**
+ * Filter shops by search term (matches name or address)
+ * @param {Array} shops - Array of shop objects
+ * @param {string} searchTerm - Search term to filter by
+ * @returns {Array} Filtered array of shops
+ */
+export function filterShopsBySearchTerm(shops, searchTerm) {
+    if (!Array.isArray(shops) || !searchTerm) {
+        return shops || [];
+    }
+
+    const term = searchTerm.toLowerCase().trim();
+    if (!term) {
+        return shops;
+    }
+
+    return shops.filter(shop => {
+        const name = (shop.name || '').toLowerCase();
+        const address = (shop.address || '').toLowerCase();
+        return name.includes(term) || address.includes(term);
+    });
+}
+
+/**
+ * Format shop data for select dropdown display
+ * @param {Object} shop - Shop object with name and address
+ * @returns {string} Formatted string for display
+ */
+export function formatShopForSelect(shop) {
+    if (!shop) return '';
+
+    const name = shop.name || 'Unknown Shop';
+    const address = shop.address || '';
+
+    // Extract city and state from address for brevity
+    const cityState = extractCityState(address);
+
+    if (cityState) {
+        return `${name} - ${cityState}`;
+    }
+    return name;
+}
+
+/**
+ * Extract city and state from a full address
+ * @param {string} address - Full address string
+ * @returns {string} City, State portion or empty string
+ */
+export function extractCityState(address) {
+    if (!address) return '';
+
+    // Try to match "City, ST ZIP" or "City, ST" pattern
+    // e.g., "123 Main St, Los Angeles, CA 90210" -> "Los Angeles, CA"
+    const parts = address.split(',').map(p => p.trim());
+
+    if (parts.length >= 2) {
+        // Get second-to-last and last parts (usually city and state+zip)
+        const cityPart = parts[parts.length - 2];
+        const stateZipPart = parts[parts.length - 1];
+
+        // Extract just the state (first 2 characters after trimming, if it looks like a state)
+        const stateMatch = stateZipPart.match(/^([A-Z]{2})/);
+        if (stateMatch) {
+            return `${cityPart}, ${stateMatch[1]}`;
+        }
+        return `${cityPart}, ${stateZipPart}`;
+    }
+
+    return '';
+}
