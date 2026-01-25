@@ -1,0 +1,15 @@
+{
+  "name": "findskateshops",
+  "version": "1.0.0",
+  "description": "Find local skateshops near you",
+  "type": "module",
+  "scripts": {
+    "collect": "node scripts/collect-shops.js",
+    "validate": "node scripts/validate-data.js",
+    "test": "node --test scripts/tests/*.test.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "node-geocoder": "^4.2.0"
+  }
+}

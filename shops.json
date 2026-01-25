@@ -1,26 +1,1757 @@
 {
   "shops": [
     {
-      "id": 1,
-      "name": "Example Skate Shop",
-      "address": "123 Main St, Los Angeles, CA 90001",
-      "lat": 34.0522,
-      "lng": -118.2437,
-      "website": "https://example.com",
-      "phone": "(555) 123-4567",
+      "id": 169,
+      "name": "2nd Level Board Shop",
+      "address": "155 East Front Street, Traverse City, MI, 49684",
+      "lat": 44.764204,
+      "lng": -85.621394,
+      "isIndependent": true,
+      "website": "https://2ndlevelgoods.com",
+      "phone": "(231) 313-1232"
+    },
+    {
+      "id": 31,
+      "name": "303 Boards",
+      "address": "1338 East Colfax Avenue, Denver, CO, 80218",
+      "lat": 39.73989,
+      "lng": -104.969999,
+      "isIndependent": true,
+      "website": "https://303boards.com",
+      "phone": "(303) 860-1303"
+    },
+    {
+      "id": 32,
+      "name": "303 Boards",
+      "address": "1138 13th Street, Boulder, CO, 80302",
+      "lat": 40.008152,
+      "lng": -105.276061,
+      "isIndependent": true,
+      "website": "https://303boards.com",
+      "phone": "(720) 667-3695"
+    },
+    {
+      "id": 87,
+      "name": "35th North",
+      "address": "1100 East Pike Street, Seattle, WA, 98122",
+      "lat": 47.614238,
+      "lng": -122.31797,
+      "isIndependent": true,
+      "website": "https://35thnorth.com",
+      "phone": "(206) 320-1252"
+    },
+    {
+      "id": 149,
+      "name": "608 Skate Shop",
+      "address": null,
+      "lat": 43.079818,
+      "lng": -89.368974,
       "isIndependent": true
     },
     {
+      "id": 153,
+      "name": "6Skates",
+      "address": "1936 Danforth Avenue",
+      "lat": 43.685153,
+      "lng": -79.316054,
+      "isIndependent": true,
+      "website": "https://www.6skates.com"
+    },
+    {
+      "id": 127,
+      "name": "88 Skate Supply",
+      "address": null,
+      "lat": 33.938727,
+      "lng": -117.959381,
+      "isIndependent": true
+    },
+    {
+      "id": 38,
+      "name": "Adrift",
+      "address": "116 Spadina Avenue",
+      "lat": 43.647096,
+      "lng": -79.395975,
+      "isIndependent": true
+    },
+    {
+      "id": 80,
+      "name": "AfterHours",
+      "address": "251 Snelling Avenue South",
+      "lat": 44.933884,
+      "lng": -93.167272,
+      "isIndependent": true,
+      "website": "https://www.afterhoursskateshop.com",
+      "phone": "(651) 340-8535"
+    },
+    {
+      "id": 156,
+      "name": "Aloha Skate Shop",
+      "address": "15 East Main Street, Fernley, NV, 89408",
+      "lat": 39.607486,
+      "lng": -119.250852,
+      "isIndependent": true
+    },
+    {
+      "id": 5,
+      "name": "AntiSocial",
+      "address": "2337 Main Street, Vancouver",
+      "lat": 49.264086,
+      "lng": -123.101189,
+      "isIndependent": true,
+      "website": "https://www.antisocialshopworldwide.com",
+      "phone": "(604) 708-5678"
+    },
+    {
+      "id": 7,
+      "name": "Atlas Skateboard Store",
+      "address": "209 2nd Avenue, San Mateo, CA, 94401",
+      "lat": 37.56606,
+      "lng": -122.323876,
+      "isIndependent": true,
+      "website": "https://atlasskateboarding.com",
+      "phone": "(650) 401-7110"
+    },
+    {
+      "id": 93,
+      "name": "Basement Sk8 Shop",
+      "address": "27 Glen Road, West Lebanon, NH, 03784",
+      "lat": 43.634354,
+      "lng": -72.314572,
+      "isIndependent": true
+    },
+    {
+      "id": 72,
+      "name": "Beacon Hill Skate Shop",
+      "address": "135 Charles Street South, Boston, MA, 02116",
+      "lat": 42.348954,
+      "lng": -71.06672,
+      "isIndependent": true,
+      "website": "https://ckinchla.wixsite.com/beaconhillskate",
+      "phone": "(617) 482-7400"
+    },
+    {
+      "id": 182,
+      "name": "Birling",
+      "address": "562 Somerset Street West",
+      "lat": 45.412704,
+      "lng": -75.702354,
+      "isIndependent": true,
+      "website": "https://birlingtheottawa.com",
+      "phone": "(613) 695-4782"
+    },
+    {
+      "id": 176,
+      "name": "Black Market Skateboards & Records",
+      "address": "8114 Aurora Avenue North, Seattle, 98103",
+      "lat": 47.688153,
+      "lng": -122.344146,
+      "isIndependent": true,
+      "website": "https://www.blackmarketskates.com"
+    },
+    {
+      "id": 33,
+      "name": "Black Sheep",
+      "address": "830 Lamar Avenue, Charlotte, NC, 28204",
+      "lat": 35.220573,
+      "lng": -80.816985,
+      "isIndependent": true,
+      "website": "https://blacksheepskateshop.com",
+      "phone": "(704) 333-1423"
+    },
+    {
+      "id": 178,
+      "name": "Blazer Skate & Mx",
+      "address": "1212 Laurens Road, Greenville, SC, 29607",
+      "lat": 34.845874,
+      "lng": -82.368005,
+      "isIndependent": true
+    },
+    {
+      "id": 96,
+      "name": "Boarder Labs & Cal Streets",
+      "address": "1754 West 4th Avenue",
+      "lat": 49.267839,
+      "lng": -123.144501,
+      "isIndependent": true,
+      "website": "https://www.longboarderlabs.com",
+      "phone": "(778) 383-1199"
+    },
+    {
+      "id": 163,
+      "name": "Boarders",
+      "address": "400 South Baldwin Avenue, Arcadia, CA, 91007",
+      "lat": 34.135001,
+      "lng": -118.050563,
+      "isIndependent": true,
+      "website": "https://boardersla.com",
+      "phone": "(626) 254-0855"
+    },
+    {
+      "id": 73,
+      "name": "Boutique Outlaw",
+      "address": null,
+      "lat": 45.360898,
+      "lng": -73.734083,
+      "isIndependent": true
+    },
+    {
+      "id": 44,
+      "name": "Brooklyn Projects",
+      "address": "7427 Melrose Avenue, Los Angeles, CA, 90046",
+      "lat": 34.08384,
+      "lng": -118.351957,
+      "isIndependent": true,
+      "website": "https://www.brooklynprojects.com",
+      "phone": "(323) 658-3030"
+    },
+    {
+      "id": 81,
+      "name": "Brotherhood Board Shop",
+      "address": "1422 Mendocino Avenue, Santa Rosa, CA, 95401",
+      "lat": 38.453808,
+      "lng": -122.717278,
+      "isIndependent": true,
+      "website": "https://www.brotherhoodboard.com",
+      "phone": "(707) 546-0660"
+    },
+    {
+      "id": 121,
+      "name": "Burning Spider Stoke Company",
+      "address": null,
+      "lat": 39.057044,
+      "lng": -94.604045,
+      "isIndependent": true,
+      "website": "https://www.burningspiderstokecompany.com"
+    },
+    {
       "id": 2,
-      "name": "Zumiez - Sample Location",
-      "address": "456 Oak Ave, Los Angeles, CA 90002",
-      "lat": 34.0612,
-      "lng": -118.2547,
-      "website": "https://zumiez.com",
-      "phone": "(555) 234-5678",
+      "name": "Cal Skate Skateboards",
+      "address": "210 Northwest 6th Avenue, Portland, 97209",
+      "lat": 45.524789,
+      "lng": -122.676298,
+      "isIndependent": true
+    },
+    {
+      "id": 36,
+      "name": "Cal's Pharmacy",
+      "address": "1400 East Burnside Street, Portland, OR, 97214",
+      "lat": 45.522739,
+      "lng": -122.65141,
+      "isIndependent": true,
+      "website": "https://calspharmacy.com",
+      "phone": "(503) 233-1237"
+    },
+    {
+      "id": 104,
+      "name": "Cassette Skateshop",
+      "address": "3935 St. Elmo Avenue, Chattanooga, TN, 37409",
+      "lat": 35.009234,
+      "lng": -85.32827,
+      "isIndependent": true
+    },
+    {
+      "id": 56,
+      "name": "CCS",
+      "address": "5909 Northeast 80th Avenue, Portland, OR, 97218",
+      "lat": 45.565635,
+      "lng": -122.581067,
+      "isIndependent": false,
+      "website": "https://shop.ccs.com/portland-store",
+      "phone": "(971) 229-0871"
+    },
+    {
+      "id": 171,
+      "name": "Ceremony Skate Shop",
+      "address": "1235 Monterey Street",
+      "lat": 35.283687,
+      "lng": -120.657782,
+      "isIndependent": true,
+      "website": "https://www.ceremonyskateshop.com",
+      "phone": "(805) 439-0366"
+    },
+    {
+      "id": 158,
+      "name": "Continuum Skateshop",
+      "address": "49 Spring Street, Charleston, SC, 29403",
+      "lat": 32.792187,
+      "lng": -79.94293,
+      "isIndependent": true,
+      "website": "https://www.continuumsc.com",
+      "phone": "(843) 577-2758"
+    },
+    {
+      "id": 140,
+      "name": "Coureur Goods",
+      "address": "30 Daniel Street, Portsmouth, NH, 03801",
+      "lat": 43.077321,
+      "lng": -70.756908,
+      "isIndependent": true,
+      "website": "https://coureurgoods.com",
+      "phone": "(603) 427-8659"
+    },
+    {
+      "id": 16,
+      "name": "Cowtown",
+      "address": "5024 North Central Avenue, Phoenix, AZ",
+      "lat": 33.509796,
+      "lng": -112.074069,
+      "isIndependent": true
+    },
+    {
+      "id": 24,
+      "name": "Cowtown",
+      "address": "215 West University Drive, Tempe, AZ, 85281",
+      "lat": 33.421575,
+      "lng": -111.942572,
+      "isIndependent": true,
+      "website": "https://www.cowtownskateboards.com"
+    },
+    {
+      "id": 25,
+      "name": "Cowtown",
+      "address": "13000 West Indian School Road, Litchfield Park, AZ, 85340",
+      "lat": 33.494845,
+      "lng": -112.339152,
+      "isIndependent": true,
+      "website": "https://www.cowtownskateboards.com"
+    },
+    {
+      "id": 185,
+      "name": "Cowtown",
+      "address": "5708 West Union Hills Drive, Glendale, AZ, 85308",
+      "lat": 33.655019,
+      "lng": -112.183329,
+      "isIndependent": true
+    },
+    {
+      "id": 157,
+      "name": "Crib to Crib Skateboarding Co.",
+      "address": "402 1/2 North Main Street, Bloomington, IL",
+      "lat": 40.481397,
+      "lng": -88.99389,
+      "isIndependent": true,
+      "website": "https://cribtocrib.com"
+    },
+    {
+      "id": 11,
+      "name": "Day One Skateshop",
+      "address": "1138D Post Road, Fairfield, CT, 06824",
+      "lat": 41.144549,
+      "lng": -73.253684,
+      "isIndependent": true
+    },
+    {
+      "id": 23,
+      "name": "Dime SkateShop",
+      "address": "3632 Boulevard Saint-Laurent, Montréal, H2X 2V4",
+      "lat": 45.514073,
+      "lng": -73.573305,
+      "isIndependent": true,
+      "website": "https://dimemtl.com/pages/montreal-store",
+      "phone": "(514) 504-9909"
+    },
+    {
+      "id": 118,
+      "name": "Dirty Skate Co.",
+      "address": "223F North Water Street, 44240",
+      "lat": 41.155289,
+      "lng": -81.357862,
+      "isIndependent": true,
+      "website": "https://dirtyskateco.com"
+    },
+    {
+      "id": 89,
+      "name": "District Skates",
+      "address": null,
+      "lat": 34.02157,
+      "lng": -118.402568,
+      "isIndependent": true
+    },
+    {
+      "id": 77,
+      "name": "Eastern Boarder",
+      "address": "7 Jackson Street, Worcester, MA, 01610",
+      "lat": 42.256744,
+      "lng": -71.808677,
+      "isIndependent": true,
+      "website": "https://www.easternboarder.com",
+      "phone": "(508) 852-3668"
+    },
+    {
+      "id": 172,
+      "name": "Eastern Boarder",
+      "address": "228 Daniel Webster Highway, Nashua, NH, 03060",
+      "lat": 42.711917,
+      "lng": -71.441148,
+      "isIndependent": true,
+      "website": "https://www.easternboarder.com",
+      "phone": "(603) 888-0722"
+    },
+    {
+      "id": 162,
+      "name": "El Camino Skate Shop",
+      "address": "310 Water Street, Eau Claire, WI",
+      "lat": 44.802334,
+      "lng": -91.50614,
+      "isIndependent": true
+    },
+    {
+      "id": 151,
+      "name": "Elements Boardshop",
+      "address": "313 Broadway, Wisconsin Dells, WI, 53965",
+      "lat": 43.627794,
+      "lng": -89.773082,
+      "isIndependent": true,
+      "phone": "(608) 254-1104"
+    },
+    {
+      "id": 136,
+      "name": "Empire",
+      "address": "2905 Boulevard de Portland, Sherbrooke, J1L 2Y7",
+      "lat": 45.718542,
+      "lng": -73.623251,
+      "isIndependent": true,
+      "website": "https://thinkempire.com",
+      "phone": "(819) 481-1860"
+    },
+    {
+      "id": 99,
+      "name": "Empire Boards & Bikes",
+      "address": "82 Webster Street, North Tonawanda, NY, 14120",
+      "lat": 43.024091,
+      "lng": -78.877506,
+      "isIndependent": true
+    },
+    {
+      "id": 85,
+      "name": "Empire Trois-Rivières",
+      "address": "505 Rue Barkoff, Trois-Rivières, G8T 2A5",
+      "lat": 46.374963,
+      "lng": -72.552779,
+      "isIndependent": true,
+      "website": "https://thinkempire.com",
+      "phone": "(819) 373-0444"
+    },
+    {
+      "id": 35,
+      "name": "Escapist",
+      "address": "880F Northwest Blue Parkway, Lee's Summit, MO, 64086",
+      "lat": 38.930685,
+      "lng": -94.403143,
+      "isIndependent": true,
+      "website": "https://www.escapistskateboarding.com",
+      "phone": "(816) 554-2504"
+    },
+    {
+      "id": 37,
+      "name": "Escapist",
+      "address": "405 Southwest Boulevard, Kansas City, MO, 64108",
+      "lat": 39.087192,
+      "lng": -94.589571,
+      "isIndependent": true,
+      "website": "https://www.escapistskateboarding.com",
+      "phone": "(816) 842-2504"
+    },
+    {
+      "id": 100,
+      "name": "Everyday Skate Shop",
+      "address": null,
+      "lat": 37.788052,
+      "lng": -122.403734,
+      "isIndependent": true
+    },
+    {
+      "id": 165,
+      "name": "Faith Skate Supply",
+      "address": null,
+      "lat": 33.526893,
+      "lng": -86.766452,
+      "isIndependent": true,
+      "website": "https://faith-skate-supply.myshopify.com"
+    },
+    {
+      "id": 112,
+      "name": "Flatspot Longboard Shop",
+      "address": "112 East Pender Street",
+      "lat": 49.280313,
+      "lng": -123.101877,
+      "isIndependent": true,
+      "website": "https://www.flatspotlongboards.com"
+    },
+    {
+      "id": 152,
+      "name": "Focus Boardshop",
+      "address": "2358 East Springs Drive, Madison, WI, 53704",
+      "lat": 43.129599,
+      "lng": -89.295065,
+      "isIndependent": true,
+      "website": "https://www.focusmadison.com",
+      "phone": "(608) 242-8403"
+    },
+    {
+      "id": 141,
+      "name": "Foreverfly Skate and Apparel",
+      "address": null,
+      "lat": 36.91116,
+      "lng": -121.757709,
+      "isIndependent": true
+    },
+    {
+      "id": 107,
+      "name": "Freedom Skate Shop",
+      "address": "532 State Street, Madison, WI",
+      "lat": 43.07497,
+      "lng": -89.394312,
+      "isIndependent": true
+    },
+    {
+      "id": 59,
+      "name": "FTC",
+      "address": "1632 Haight Street, San Francisco, CA, 94117",
+      "lat": 37.769833,
+      "lng": -122.449196,
+      "isIndependent": true,
+      "website": "https://ftcsf.com",
+      "phone": "(415) 626-0663"
+    },
+    {
+      "id": 51,
+      "name": "Fucking Awesome",
+      "address": "6556 Hollywood Boulevard, Los Angeles, CA, 90028",
+      "lat": 34.101433,
+      "lng": -118.332974,
+      "isIndependent": true,
+      "website": "https://faworldentertainment.com/en-eu/pages/location-hollywood",
+      "phone": "(323) 498-5190"
+    },
+    {
+      "id": 102,
+      "name": "Geez Skate Shop",
+      "address": "749 Southeast Pioneer Way",
+      "lat": 48.291624,
+      "lng": -122.643092,
+      "isIndependent": true
+    },
+    {
+      "id": 115,
+      "name": "Geometric",
+      "address": "2700 North O'Connor Road, Irving, TX, 75062",
+      "lat": 32.842801,
+      "lng": -96.950273,
+      "isIndependent": true,
+      "website": "https://www.geometricskateshop.com",
+      "phone": "(972) 600-9044"
+    },
+    {
+      "id": 116,
+      "name": "Geometric",
+      "address": "320 West Rankin Road, Houston, TX, 77090",
+      "lat": 29.966379,
+      "lng": -95.42389,
+      "isIndependent": true,
+      "website": "https://www.geometricskateshop.com",
+      "phone": "(346) 335-3141"
+    },
+    {
+      "id": 97,
+      "name": "Get Gnarly",
+      "address": "11 Somerset Street, Ocean City, 21842",
+      "lat": 38.329028,
+      "lng": -75.086701,
+      "isIndependent": true,
+      "website": "https://www.getgnarly.com",
+      "phone": "(443) 366-2068"
+    },
+    {
+      "id": 8,
+      "name": "Get Your Bearings Skate Shop",
+      "address": "1533 Northeast 145th Street, Seattle, WA, 98155",
+      "lat": 47.732384,
+      "lng": -122.311182,
+      "isIndependent": true,
+      "website": "https://getyourbearingsskate.com",
+      "phone": "(206) 257-5484"
+    },
+    {
+      "id": 67,
+      "name": "Green Chile Skateboards",
+      "address": "2000 Central Avenue Southeast, Albuquerque, NM, 87106",
+      "lat": 35.080842,
+      "lng": -106.624266,
+      "isIndependent": true
+    },
+    {
+      "id": 145,
+      "name": "Greenbee Longboards and Skateboards",
+      "address": null,
+      "lat": 41.177429,
+      "lng": -76.393032,
+      "isIndependent": true,
+      "phone": "(570) 317-1266"
+    },
+    {
+      "id": 183,
+      "name": "Grind Junction",
+      "address": "1002 Pitkin Avenue, Grand Junction, CO, 81501",
+      "lat": 39.064728,
+      "lng": -108.555742,
+      "isIndependent": true,
+      "website": "https://www.grindjunction.shop",
+      "phone": "(970) 778-4520"
+    },
+    {
+      "id": 155,
+      "name": "Hammer Skateboard",
+      "address": "2225 Basement Queen Street East",
+      "lat": 43.670741,
+      "lng": -79.295699,
+      "isIndependent": true,
+      "website": "https://www.hammertoronto.com",
+      "phone": "(416) 698-0005"
+    },
+    {
+      "id": 177,
+      "name": "Haven Skate Shop",
+      "address": "114 Vassar Drive Southeast, Albuquerque, NM, 87106",
+      "lat": 35.079811,
+      "lng": -106.614243,
+      "isIndependent": true,
+      "website": "https://www.havenskateshop.com",
+      "phone": "(505) 232-6697"
+    },
+    {
+      "id": 26,
+      "name": "Havoc Skateshop",
+      "address": "35 Auriga Drive",
+      "lat": 45.331001,
+      "lng": -75.704359,
+      "isIndependent": true
+    },
+    {
+      "id": 129,
+      "name": "HeritageSKTBDS",
+      "address": null,
+      "lat": 33.186048,
+      "lng": -117.37157,
+      "isIndependent": true
+    },
+    {
+      "id": 55,
+      "name": "Homegrown",
+      "address": "104 East State Street, Ithaca, NY, 14850",
+      "lat": 42.439652,
+      "lng": -76.498712,
+      "isIndependent": true,
+      "website": "https://www.homegrownskateshop.com",
+      "phone": "(607) 273-0430"
+    },
+    {
+      "id": 62,
+      "name": "Humidity",
+      "address": "515 Dumaine Street, New Orleans, LA, 70116",
+      "lat": 29.958618,
+      "lng": -90.061657,
+      "isIndependent": true,
+      "website": "https://www.humiditynola.com",
+      "phone": "(504) 529-6822"
+    },
+    {
+      "id": 142,
+      "name": "Initiate",
+      "address": "2882 Trades West Road",
+      "lat": 35.660626,
+      "lng": -105.99234,
+      "isIndependent": true
+    },
+    {
+      "id": 18,
+      "name": "Jokers Skate Shop",
+      "address": "9606 Hamilton Avenue, Huntington Beach, CA, 92646",
+      "lat": 33.65028,
+      "lng": -117.960299,
+      "isIndependent": true,
+      "website": "https://www.jokersskateshop.com",
+      "phone": "(714) 962-8429"
+    },
+    {
+      "id": 28,
+      "name": "KCDC",
+      "address": "85 North 3rd Street, Brooklyn, NY, 11249",
+      "lat": 40.717215,
+      "lng": -73.962538,
+      "isIndependent": true,
+      "phone": "(718) 387-9006"
+    },
+    {
+      "id": 170,
+      "name": "Kingston Bladz",
+      "address": null,
+      "lat": 44.266542,
+      "lng": -76.57473,
+      "isIndependent": true
+    },
+    {
+      "id": 161,
+      "name": "Krudco Skate Shop",
+      "address": "60 Mount Hope Avenue, Rochester, NY, 14620",
+      "lat": 43.147813,
+      "lng": -77.607169,
+      "isIndependent": true,
+      "website": "https://www.krudco.com",
+      "phone": "(585) 325-4790"
+    },
+    {
+      "id": 47,
+      "name": "L. A. Skate Co.",
+      "address": "5401 Santa Monica Boulevard, Los Angeles, CA, 90029",
+      "lat": 34.090953,
+      "lng": -118.307253,
+      "isIndependent": true,
+      "phone": "(323) 467-5283"
+    },
+    {
+      "id": 9,
+      "name": "Labor Skateboard Shop",
+      "address": "46 Canal Street, 10002",
+      "lat": 40.714709,
+      "lng": -73.991687,
+      "isIndependent": true,
+      "website": "https://laborskateshop.com",
+      "phone": "(646) 351-6792"
+    },
+    {
+      "id": 181,
+      "name": "LB Skate",
+      "address": null,
+      "lat": 33.775152,
+      "lng": -118.154815,
+      "isIndependent": true
+    },
+    {
+      "id": 117,
+      "name": "Legendary Boardshop",
+      "address": "8236 Firestone Boulevard, CA",
+      "lat": 33.940241,
+      "lng": -118.134033,
+      "isIndependent": true
+    },
+    {
+      "id": 52,
+      "name": "Legends Boardshop",
+      "address": "6725 Greenleaf Avenue, Whittier, CA, 90601",
+      "lat": 33.980097,
+      "lng": -118.037528,
+      "isIndependent": true,
+      "website": "https://legendsboardshop.bigcartel.com",
+      "phone": "(562) 696-1482"
+    },
+    {
+      "id": 159,
+      "name": "Lighthouse Skate Shop",
+      "address": "907 State Street, Santa Barbara, CA",
+      "lat": 34.420657,
+      "lng": -119.701035,
+      "isIndependent": true,
+      "website": "https://lighthousesb.com",
+      "phone": "(805) 770-3042"
+    },
+    {
+      "id": 6,
+      "name": "Lip Trix",
+      "address": null,
+      "lat": 37.110063,
+      "lng": -113.573014,
+      "isIndependent": true
+    },
+    {
+      "id": 90,
+      "name": "Location Skateshop",
+      "address": "296 4th Street",
+      "lat": 47.565888,
+      "lng": -122.626541,
+      "isIndependent": true,
+      "website": "https://www.locationskateshop.com",
+      "phone": "(564) 202-3558"
+    },
+    {
+      "id": 138,
+      "name": "Longboard Living",
+      "address": "202 Augusta Avenue, Toronto, M5T 2L6",
+      "lat": 43.654473,
+      "lng": -79.402151,
+      "isIndependent": true,
+      "website": "https://www.longboardliving.com"
+    },
+    {
+      "id": 46,
+      "name": "Lotties",
+      "address": "4472 West Adams Boulevard, Los Angeles, CA, 90016",
+      "lat": 34.032412,
+      "lng": -118.337521,
+      "isIndependent": true,
+      "website": "http://www.lottiesskateshop.com",
+      "phone": "(323) 641-7375"
+    },
+    {
+      "id": 86,
+      "name": "Low Key Skate Shop",
+      "address": "679 Geary Street, San Francisco, CA",
+      "lat": 37.786476,
+      "lng": -122.414434,
+      "isIndependent": true,
+      "website": "https://www.lowkeysanfrancisco.com",
+      "phone": "(415) 795-1401"
+    },
+    {
+      "id": 131,
+      "name": "Lurking Class Skate Shop",
+      "address": "213 West Main Street, Salisbury, MD, 21801",
+      "lat": 38.365444,
+      "lng": -75.602169,
+      "isIndependent": true
+    },
+    {
+      "id": 20,
+      "name": "Magneto Sports",
+      "address": null,
+      "lat": 33.129066,
+      "lng": -117.260267,
+      "isIndependent": true
+    },
+    {
+      "id": 122,
+      "name": "Marriage",
+      "address": null,
+      "lat": 34.076852,
+      "lng": -118.257962,
+      "isIndependent": true
+    },
+    {
+      "id": 103,
+      "name": "Maven",
+      "address": "128 Church Street, Burlington, VT, 05401",
+      "lat": 44.476742,
+      "lng": -73.212392,
+      "isIndependent": true,
+      "website": "https://www.mavenskateshop.com",
+      "phone": "(802) 497-3444"
+    },
+    {
+      "id": 135,
+      "name": "McGill's Skate Shop",
+      "address": null,
+      "lat": 33.049885,
+      "lng": -117.289321,
+      "isIndependent": true
+    },
+    {
+      "id": 108,
+      "name": "Milk",
+      "address": "252 Southwest Madison Avenue, Corvallis, OR, 97333",
+      "lat": 44.56313,
+      "lng": -123.261101,
+      "isIndependent": true,
+      "website": "https://milkskateboardstore.com"
+    },
+    {
+      "id": 50,
+      "name": "Mission",
+      "address": "3045 24th Street, San Francisco, CA, 94110",
+      "lat": 37.752498,
+      "lng": -122.412826,
+      "isIndependent": true,
+      "website": "http://missionsk8boards.com",
+      "phone": "(415) 647-7888"
+    },
+    {
+      "id": 166,
+      "name": "N.B. Skate Shop",
+      "address": "961 North Elliot Knox Boulevard, New Braunfels, TX, 78130",
+      "lat": 29.69919,
+      "lng": -98.098458,
+      "isIndependent": true,
+      "website": "http://nbskateshop.com",
+      "phone": "(609) 665-0334"
+    },
+    {
+      "id": 147,
+      "name": "Necessary Skate Company",
+      "address": "3441 Bannerman Road, Tallahassee, FL, 32312",
+      "lat": 30.562271,
+      "lng": -84.220466,
+      "isIndependent": true,
+      "website": "https://www.necsk8co.com",
+      "phone": "(850) 738-7773"
+    },
+    {
+      "id": 109,
+      "name": "Neighbors Skate Shop",
+      "address": "4344 Degnan Boulevard, Los Angeles, CA",
+      "lat": 34.004722,
+      "lng": -118.33128,
+      "isIndependent": true,
+      "website": "https://www.neighborsskateshop.com"
+    },
+    {
+      "id": 64,
+      "name": "NJ Skateshop",
+      "address": "383 Monmouth Street, Jersey City, NJ, 07302",
+      "lat": 40.722652,
+      "lng": -74.049364,
+      "isIndependent": true,
+      "website": "https://njskateshop.com",
+      "phone": "(201) 792-2397"
+    },
+    {
+      "id": 65,
+      "name": "NJ Two",
+      "address": "160 Easton Avenue, New Brunswick, NJ, 08901",
+      "lat": 40.499712,
+      "lng": -74.453972,
+      "isIndependent": true,
+      "website": "https://njskateshop.com",
+      "phone": "(732) 565-1300"
+    },
+    {
+      "id": 137,
+      "name": "No-Comply Skate Shop",
+      "address": "824 West 12th Street, Austin, TX, 78701",
+      "lat": 30.276479,
+      "lng": -97.74945,
+      "isIndependent": true,
+      "website": "https://nocomplyatx.com",
+      "phone": "(512) 804-0472"
+    },
+    {
+      "id": 91,
+      "name": "Nocturnal Skate Shop",
+      "address": "612 South 5th Street, Philadelphia, PA, 19147",
+      "lat": 39.941476,
+      "lng": -75.150962,
+      "isIndependent": true,
+      "website": "https://www.nocturnalphilly.com",
+      "phone": "(215) 922-3177"
+    },
+    {
+      "id": 164,
+      "name": "Noping",
+      "address": null,
+      "lat": 47.045197,
+      "lng": -122.898931,
+      "isIndependent": true
+    },
+    {
+      "id": 34,
+      "name": "North Country Skateshop",
+      "address": "214 4th Street Northwest, Bemidji, MN, 56601",
+      "lat": 47.471453,
+      "lng": -94.882063,
+      "isIndependent": true,
+      "phone": "(218) 444-9004"
+    },
+    {
+      "id": 125,
+      "name": "Northside Board Shop",
+      "address": null,
+      "lat": 44.455853,
+      "lng": -93.160031,
+      "isIndependent": true
+    },
+    {
+      "id": 79,
+      "name": "​One Love Skate Shop",
+      "address": "4845 Imperial Street",
+      "lat": 49.222074,
+      "lng": -122.995432,
+      "isIndependent": true,
+      "website": "https://www.oneloveskateboardshop.com",
+      "phone": "(778) 786-1140"
+    },
+    {
+      "id": 43,
+      "name": "Overload",
+      "address": "3827 30th Street, San Diego, CA, 92104",
+      "lat": 32.747956,
+      "lng": -117.129914,
+      "isIndependent": true,
+      "website": "https://shopoverload.com"
+    },
+    {
+      "id": 40,
+      "name": "Pacific Drive",
+      "address": "756 Thomas Avenue, San Diego, 92109",
+      "lat": 32.793693,
+      "lng": -117.255144,
+      "isIndependent": true,
+      "website": "http://pacificdrive.com",
+      "phone": "(858) 270-3361"
+    },
+    {
+      "id": 126,
+      "name": "Palm Isle skateshop",
+      "address": "450 Avenue victoria",
+      "lat": 45.502016,
+      "lng": -73.512412,
+      "isIndependent": true
+    },
+    {
+      "id": 146,
+      "name": "Pawnshop Skate Shop",
+      "address": null,
+      "lat": 34.061181,
+      "lng": -117.749747,
+      "isIndependent": true
+    },
+    {
+      "id": 130,
+      "name": "Petersbilt",
+      "address": null,
+      "lat": 33.185756,
+      "lng": -117.371291,
+      "isIndependent": true
+    },
+    {
+      "id": 15,
+      "name": "Pharmacy Boardshop",
+      "address": "661 West Lancaster Boulevard, Lancaster, CA, 93534",
+      "lat": 34.698022,
+      "lng": -118.141531,
+      "isIndependent": true,
+      "website": "https://pharmacyboardshop.com",
+      "phone": "(661) 945-1700"
+    },
+    {
+      "id": 63,
+      "name": "Pharmacy Boardshop",
+      "address": "1520 North Cahuenga Boulevard, Hollywood, CA, 90028",
+      "lat": 34.098725,
+      "lng": -118.329398,
+      "isIndependent": true,
+      "website": "https://pharmacyboardshop.com"
+    },
+    {
+      "id": 187,
+      "name": "Phase II Skateshop",
+      "address": "7346 West State Street, Wauwatosa, WI, 53213",
+      "lat": 43.048976,
+      "lng": -88.004635,
+      "isIndependent": true,
+      "website": "https://www.phasetwoskateboarding.com",
+      "phone": "(414) 272-3707"
+    },
+    {
+      "id": 74,
+      "name": "Phaze One",
+      "address": "641 McDonnell Drive, Tallahassee, FL",
+      "lat": 30.432509,
+      "lng": -84.29223,
+      "isIndependent": true
+    },
+    {
+      "id": 106,
+      "name": "Pilllar Forum",
+      "address": "2300 Central Avenue Northeast, Minneapolis, MN, 55418",
+      "lat": 45.011013,
+      "lng": -93.247724,
+      "isIndependent": true
+    },
+    {
+      "id": 53,
+      "name": "PLA Skateboarding",
+      "address": "330 East Bidwell Street, Folsom, CA, 95630",
+      "lat": 38.674203,
+      "lng": -121.167235,
+      "isIndependent": true,
+      "website": "https://www.plaskateboarding.com",
+      "phone": "(916) 608-4300"
+    },
+    {
+      "id": 54,
+      "name": "PLA Skateboarding",
+      "address": "1006 J Street, Sacramento, CA, 95814",
+      "lat": 38.580101,
+      "lng": -121.493205,
+      "isIndependent": true,
+      "website": "https://www.plaskateboarding.com",
+      "phone": "(916) 508-9537"
+    },
+    {
+      "id": 13,
+      "name": "Plank Eye Board Shop",
+      "address": "Sheridan Avenue",
+      "lat": 40.494788,
+      "lng": -80.055116,
+      "isIndependent": true,
+      "website": "https://plankeyeboardshop.com"
+    },
+    {
+      "id": 92,
+      "name": "Planks Skate Shop",
+      "address": "3820 West 10th Street, Greeley, CO, 80634-9998",
+      "lat": 40.421272,
+      "lng": -104.743293,
+      "isIndependent": true,
+      "website": "https://www.planksskateboards.com",
+      "phone": "(970) 617-5478"
+    },
+    {
+      "id": 189,
+      "name": "Plus Skateshop",
+      "address": "186 Miracle Strip Parkway Southeast, Fort Walton Beach, FL, 32548",
+      "lat": 30.403433,
+      "lng": -86.605622,
+      "isIndependent": true,
+      "website": "https://plusskateshop.com",
+      "phone": "(850) 244-6525"
+    },
+    {
+      "id": 128,
+      "name": "Pops",
+      "address": "2826 Rucker Avenue, Everett, WA",
+      "lat": 47.979705,
+      "lng": -122.211741,
+      "isIndependent": true
+    },
+    {
+      "id": 17,
+      "name": "Premier",
+      "address": "10 Weston Street Southeast, Grand Rapids, MI, 49503",
+      "lat": 42.961864,
+      "lng": -85.667416,
+      "isIndependent": true,
+      "website": "https://thepremierstore.com",
+      "phone": "(616) 742-2660"
+    },
+    {
+      "id": 188,
+      "name": "Primal Skate Shop",
+      "address": null,
+      "lat": 32.418462,
+      "lng": -99.780132,
+      "isIndependent": true
+    },
+    {
+      "id": 119,
+      "name": "Primary Skateboards",
+      "address": "60 Commercial Street",
+      "lat": 49.164577,
+      "lng": -123.936457,
+      "isIndependent": true,
+      "website": "https://primaryskateboards.ca",
+      "phone": "(778) 441-3207"
+    },
+    {
+      "id": 175,
+      "name": "PROM Skate Supply",
+      "address": "1730 West Colorado Avenue, Colorado Springs, 80904",
+      "lat": 38.841136,
+      "lng": -104.852251,
+      "isIndependent": true
+    },
+    {
+      "id": 184,
+      "name": "Proof Lab",
+      "address": "1541 Fourth Street, San Rafael, CA, 94901",
+      "lat": 37.973685,
+      "lng": -122.535208,
+      "isIndependent": true
+    },
+    {
+      "id": 78,
+      "name": "Prosper Skate Shop",
+      "address": "2620 South Central Park Avenue, Chicago, IL, 60623",
+      "lat": 41.843723,
+      "lng": -87.714944,
+      "isIndependent": true,
+      "website": "https://prosperskateshop.com",
+      "phone": "(773) 277-0950"
+    },
+    {
+      "id": 174,
+      "name": "Rampage Skate Shop",
+      "address": "1625 Railroad Avenue, Bridgeport, CT, 06605",
+      "lat": 41.167235,
+      "lng": -73.215626,
+      "isIndependent": true,
+      "website": "http://www.skateparkramps.com"
+    },
+    {
+      "id": 133,
+      "name": "Rapid Skateboarding",
+      "address": "1784 East Los Angeles Avenue, Simi Valley, CA, 93065",
+      "lat": 34.271344,
+      "lng": -118.763657,
+      "isIndependent": true,
+      "website": "https://rapidskateboarding.com",
+      "phone": "(805) 368-7849"
+    },
+    {
+      "id": 12,
+      "name": "REPLAY Board Shop",
+      "address": null,
+      "lat": 49.046955,
+      "lng": -122.287901,
+      "isIndependent": true,
+      "website": "https://www.replayboardshop.ca",
+      "phone": "(604) 859-5867"
+    },
+    {
+      "id": 58,
+      "name": "Rhythm Skate Shop",
+      "address": null,
+      "lat": 33.816728,
+      "lng": -116.52386,
+      "isIndependent": true
+    },
+    {
+      "id": 173,
+      "name": "Ridin' High",
+      "address": "6 Park Street, Burlington, VT",
+      "lat": 44.480405,
+      "lng": -73.21887,
+      "isIndependent": true
+    },
+    {
+      "id": 39,
+      "name": "Rip City Skates",
+      "address": "2709 Santa Monica Boulevard, Santa Monica, CA, 90404",
+      "lat": 34.0344,
+      "lng": -118.473261,
+      "isIndependent": true,
+      "website": "http://www.ripcity.net",
+      "phone": "(310) 828-0388"
+    },
+    {
+      "id": 69,
+      "name": "Roller Derby Skate Shop",
+      "address": "23830 Highway 99, Edmonds, 98026",
+      "lat": 47.782686,
+      "lng": -122.344582,
+      "isIndependent": true,
+      "website": "https://rollerderbyskateshop.com"
+    },
+    {
+      "id": 42,
+      "name": "Route 44 Skateboard Shop",
+      "address": "4744 El Cajon Boulevard, San Diego, CA, 92115",
+      "lat": 32.7562,
+      "lng": -117.092421,
+      "isIndependent": true
+    },
+    {
+      "id": 60,
+      "name": "Rukus",
+      "address": "311 Jefferson Street, Lafayette, LA, 70501",
+      "lat": 30.226787,
+      "lng": -92.016924,
+      "isIndependent": true,
+      "website": "https://shop.rukus103.com",
+      "phone": "(337) 984-6561"
+    },
+    {
+      "id": 160,
+      "name": "Sal's Skate & Apperal Shop",
+      "address": null,
+      "lat": 43.63686,
+      "lng": -70.251653,
+      "isIndependent": true
+    },
+    {
+      "id": 168,
+      "name": "Salad Days Skateboard",
+      "address": "1264 Fremont Boulevard, Monterey, CA, 93955",
+      "lat": 36.603975,
+      "lng": -121.847853,
+      "isIndependent": true,
+      "website": "https://saladsk8.square.site",
+      "phone": "(831) 531-8256"
+    },
+    {
+      "id": 82,
+      "name": "Scotties",
+      "address": "319 Brock Street South, Whitby",
+      "lat": 43.877076,
+      "lng": -78.940371,
+      "isIndependent": true,
+      "website": "https://scottiesshop.com",
+      "phone": "(905) 493-7543"
+    },
+    {
+      "id": 98,
+      "name": "Seasons Skate Shop",
+      "address": "211 Lark Street",
+      "lat": 42.655788,
+      "lng": -73.764451,
+      "isIndependent": true
+    },
+    {
+      "id": 113,
+      "name": "Select Skate Shop",
+      "address": "1641 Westheimer Road, Houston, TX, 77006",
+      "lat": 29.742672,
+      "lng": -95.401137,
+      "isIndependent": true
+    },
+    {
+      "id": 14,
+      "name": "SF Skate Club",
+      "address": "635 Divisadero Street",
+      "lat": 37.775465,
+      "lng": -122.438102,
+      "isIndependent": true
+    },
+    {
+      "id": 110,
+      "name": "Shaboardz",
+      "address": "2065 Old Dollarton Road, North Vancouver, V7H 1A6",
+      "lat": 49.305963,
+      "lng": -123.018377,
+      "isIndependent": true,
+      "website": "http://www.shaboardz.ca",
+      "phone": "(604) 250-9039"
+    },
+    {
+      "id": 114,
+      "name": "Shockwaves Skateboards",
+      "address": "111 1/2 West North Street, Normal, IL, 61761",
+      "lat": 40.509377,
+      "lng": -88.985098,
+      "isIndependent": true,
+      "website": "https://mothermurphys.wixsite.com/shockwaves",
+      "phone": "(309) 452-6712"
+    },
+    {
+      "id": 179,
+      "name": "Shrunken Head Skateboards",
+      "address": "531 Southeast Morrison Street, Portland, OR, 97214",
+      "lat": 45.517404,
+      "lng": -122.659984,
+      "isIndependent": true,
+      "website": "https://www.shrunkenheadskateboards.com"
+    },
+    {
+      "id": 154,
+      "name": "Sifu",
+      "address": null,
+      "lat": 36.75254,
+      "lng": -119.800576,
+      "isIndependent": true
+    },
+    {
+      "id": 76,
+      "name": "Sikk Stuff",
+      "address": "10383 West Fairview Avenue, Boise, ID, 83704",
+      "lat": 43.61836,
+      "lng": -116.310954,
+      "isIndependent": true,
+      "phone": "(208) 283-0001"
+    },
+    {
+      "id": 94,
+      "name": "Skate One",
+      "address": "6860 Cortona Drive, Goleta, CA, 93117-3021",
+      "lat": 34.432206,
+      "lng": -119.86829,
+      "isIndependent": true,
+      "website": "https://www.skateone.com"
+    },
+    {
+      "id": 1,
+      "name": "Skate Works",
+      "address": null,
+      "lat": 36.972327,
+      "lng": -122.025815,
+      "isIndependent": true
+    },
+    {
+      "id": 61,
+      "name": "Skate Yogi",
+      "address": "140 Empire Boulevard, 11225",
+      "lat": 40.663233,
+      "lng": -73.957712,
+      "isIndependent": true,
+      "website": "https://www.skateyogi.com",
+      "phone": "(718) 484-9777"
+    },
+    {
+      "id": 120,
+      "name": "Skater Brothers",
+      "address": null,
+      "lat": 33.524547,
+      "lng": -117.161723,
+      "isIndependent": true
+    },
+    {
+      "id": 186,
+      "name": "Skatology Board Shop",
+      "address": "139 Thomas Street, Bel Air, MD, 21014",
+      "lat": 39.534273,
+      "lng": -76.350583,
+      "isIndependent": true,
+      "website": "https://www.skatologyboardshop.com",
+      "phone": "(410) 838-7884"
+    },
+    {
+      "id": 148,
+      "name": "Skull Skates",
+      "address": "3734 West 10th Avenue",
+      "lat": 49.263327,
+      "lng": -123.186632,
+      "isIndependent": true
+    },
+    {
+      "id": 180,
+      "name": "Slabz Skate Shop",
+      "address": null,
+      "lat": 37.720925,
+      "lng": -89.215953,
+      "isIndependent": true
+    },
+    {
+      "id": 41,
+      "name": "Slappy's Garage",
+      "address": "6585 Osler Street, San Diego, CA, 92111",
+      "lat": 32.791979,
+      "lng": -117.175827,
+      "isIndependent": true,
+      "website": "https://slappys.online",
+      "phone": "(619) 723-6094"
+    },
+    {
+      "id": 150,
+      "name": "Small Skateshop",
+      "address": "510 Lafayette Avenue, Rockford, IL, 61107",
+      "lat": 42.270338,
+      "lng": -89.084564,
+      "isIndependent": true,
+      "website": "https://smallskate.com"
+    },
+    {
+      "id": 49,
+      "name": "SoCal Skateshop",
+      "address": "24002 Via Fabricante, Mission Viejo, CA, 92691",
+      "lat": 33.614714,
+      "lng": -117.680953,
+      "isIndependent": true,
+      "website": "https://socalskateshop.com"
+    },
+    {
+      "id": 57,
+      "name": "Society",
+      "address": "625 Laurel Street, San Carlos, CA, 94070",
+      "lat": 37.506175,
+      "lng": -122.260427,
+      "isIndependent": true,
+      "website": "https://societyskateshop.com",
+      "phone": "(650) 596-8182"
+    },
+    {
+      "id": 190,
+      "name": "Solace Skateshop",
+      "address": "1633 Nowland Avenue, Indianapolis, IN, 46201",
+      "lat": 39.784644,
+      "lng": -86.130221,
+      "isIndependent": true
+    },
+    {
+      "id": 83,
+      "name": "Souldiers Skate Shop",
+      "address": null,
+      "lat": 44.751724,
+      "lng": -79.886694,
+      "isIndependent": true
+    },
+    {
+      "id": 95,
+      "name": "South Bay Skates",
+      "address": null,
+      "lat": 33.879478,
+      "lng": -118.334904,
+      "isIndependent": true
+    },
+    {
+      "id": 105,
+      "name": "Spirit Skate Shop",
+      "address": null,
+      "lat": 48.198926,
+      "lng": -114.312057,
+      "isIndependent": true,
+      "website": "http://www.spiritkalispell.com",
+      "phone": "(406) 755-5689"
+    },
+    {
+      "id": 22,
+      "name": "Station de réparations de planches à roulettes",
+      "address": null,
+      "lat": 45.645268,
+      "lng": -73.846312,
+      "isIndependent": true
+    },
+    {
+      "id": 139,
+      "name": "Steve's Board and Apparel Shop",
+      "address": "12240 2nd Avenue, Richmond, V7E 3L8",
+      "lat": 49.12433,
+      "lng": -123.184037,
+      "isIndependent": true,
+      "website": "http://www.stevesboardshop.com",
+      "phone": "(604) 274-7952"
+    },
+    {
+      "id": 134,
+      "name": "StrangeHouse SkateShop",
+      "address": "117 West Main Street, Louisa, VA, 23093",
+      "lat": 38.024923,
+      "lng": -78.003109,
+      "isIndependent": true
+    },
+    {
+      "id": 4,
+      "name": "Stratosphere Skateboards",
+      "address": "466 Moreland Avenue Northeast, Atlanta, GA, 30307",
+      "lat": 33.766947,
+      "lng": -84.34939,
+      "isIndependent": true,
+      "website": "https://www.stratosphereskateboards.com",
+      "phone": "(404) 521-3510"
+    },
+    {
+      "id": 19,
+      "name": "Supreme",
+      "address": "190 Bowery, 10012",
+      "lat": 40.721123,
+      "lng": -73.99396,
+      "isIndependent": true,
+      "website": "https://www.supremenewyork.com",
+      "phone": "(212) 966-7799"
+    },
+    {
+      "id": 29,
+      "name": "Tactics",
+      "address": "901 Northwest Davis Street, Portland, OR, 97209",
+      "lat": 45.524551,
+      "lng": -122.680341,
+      "isIndependent": false,
+      "website": "https://www.tactics.com"
+    },
+    {
+      "id": 111,
+      "name": "The Cuckoo’s Nest",
+      "address": "1326 10th Avenue, Columbus, GA, 31901",
+      "lat": 32.471665,
+      "lng": -84.979528,
+      "isIndependent": true,
+      "website": "http://www.locknkeyclub.com",
+      "phone": "(706) 596-5240"
+    },
+    {
+      "id": 88,
+      "name": "The Flipside Boardshop",
+      "address": "14 West Stimson Avenue",
+      "lat": 39.332594,
+      "lng": -82.094695,
+      "isIndependent": true,
+      "website": "https://www.flipside-ohio.com",
+      "phone": "(740) 593-7433"
+    },
+    {
+      "id": 191,
+      "name": "The Gnarly Varulfr",
+      "address": "439 East Sheridan Street, Ely, MN, 55731",
+      "lat": 47.90332,
+      "lng": -91.859873,
+      "isIndependent": true,
+      "website": "https://www.varulfr.com"
+    },
+    {
+      "id": 71,
+      "name": "The Grind Shop",
+      "address": null,
+      "lat": 33.283237,
+      "lng": -111.644227,
+      "isIndependent": true
+    },
+    {
+      "id": 27,
+      "name": "The Point Skate Shop",
+      "address": "1645 Fountain Ct., Fairview, TX, 75069",
+      "lat": 33.132685,
+      "lng": -96.650251,
+      "isIndependent": true,
+      "website": "https://www.thepointskateshop.com",
+      "phone": "(972) 363-0129"
+    },
+    {
+      "id": 167,
+      "name": "The Slums Skateshop",
+      "address": "3424 Southwest Military Drive, San Antonio, TX, 78211",
+      "lat": 29.357599,
+      "lng": -98.555506,
+      "isIndependent": true,
+      "phone": "(726) 248-8413"
+    },
+    {
+      "id": 21,
+      "name": "Top of The World",
+      "address": "581 Bank Street",
+      "lat": 45.407959,
+      "lng": -75.691031,
+      "isIndependent": true,
+      "website": "https://topoftheworld.com",
+      "phone": "(613) 237-4797"
+    },
+    {
+      "id": 132,
+      "name": "Transport",
+      "address": null,
+      "lat": 34.134406,
+      "lng": -118.215282,
+      "isIndependent": true
+    },
+    {
+      "id": 45,
+      "name": "Unified Skate Supply",
+      "address": "8849 Canoga Avenue, Los Angeles, CA, 91304",
+      "lat": 34.231753,
+      "lng": -118.597903,
+      "isIndependent": true,
+      "website": "http://unifiedskatesupply.com"
+    },
+    {
+      "id": 123,
+      "name": "Unknown Board Shop",
+      "address": "302 West Champion Street, Bellingham, WA, 98225",
+      "lat": 48.751983,
+      "lng": -122.479894,
+      "isIndependent": true,
+      "website": "https://unknownboardshop.com",
+      "phone": "(360) 306-8780"
+    },
+    {
+      "id": 101,
+      "name": "Unknown Skateshop",
+      "address": "944 Bay Street, Port Orchard, WA, 98366",
+      "lat": 39.6893,
+      "lng": -84.133179,
+      "isIndependent": true,
+      "website": "https://www.unityskateshop.com",
+      "phone": "(360) 550-8365"
+    },
+    {
+      "id": 124,
+      "name": "Upper West Skates",
+      "address": "2768 Broadway, New York, NY, 10025",
+      "lat": 40.801664,
+      "lng": -73.967564,
+      "isIndependent": true,
+      "website": "https://www.upperwestskates.com",
+      "phone": "(917) 563-3760"
+    },
+    {
+      "id": 10,
+      "name": "Uprise",
+      "address": "1820 North Milwaukee Avenue, Chicago, IL, 60647",
+      "lat": 44.568445,
+      "lng": -123.268908,
+      "isIndependent": true,
+      "website": "https://www.upriseskateboards.com",
+      "phone": "(773) 342-7763"
+    },
+    {
+      "id": 66,
+      "name": "Venice Skateboard Stuff",
+      "address": null,
+      "lat": 33.986694,
+      "lng": -118.47332,
+      "isIndependent": true
+    },
+    {
+      "id": 144,
+      "name": "Versed Skateboard Shop",
+      "address": "10567 College Avenue, Carmel, IN, 46280",
+      "lat": 39.941359,
+      "lng": -86.145724,
+      "isIndependent": true,
+      "website": "https://www.versedboardshop.com",
+      "phone": "(317) 843-9980"
+    },
+    {
+      "id": 68,
+      "name": "Vu Skate Shop",
+      "address": "7118 Harford Road, Baltimore, MD, 21234",
+      "lat": 39.367884,
+      "lng": -76.548288,
+      "isIndependent": true,
+      "website": "https://vuskateboardshop.com",
+      "phone": "(410) 254-2552"
+    },
+    {
+      "id": 84,
+      "name": "Vu Skateboard Shop",
+      "address": "3608 Falls Road, Baltimore, MD, 21211",
+      "lat": 39.331065,
+      "lng": -76.635101,
+      "isIndependent": true
+    },
+    {
+      "id": 48,
+      "name": "Warning Skate Shop",
+      "address": "8228 Central Avenue, Los Angeles, CA, 90001",
+      "lat": 33.963952,
+      "lng": -118.256203,
+      "isIndependent": true,
+      "phone": "(323) 588-7638"
+    },
+    {
+      "id": 70,
+      "name": "Weirdo Skateboards",
+      "address": "2718 Kelly Street, Hayward, CA, 94541",
+      "lat": 37.684506,
+      "lng": -122.056776,
+      "isIndependent": true,
+      "website": "http://weirdoskateboards.com",
+      "phone": "(510) 581-8782"
+    },
+    {
+      "id": 30,
+      "name": "West Side Skates",
+      "address": "14047 Madison Avenue",
+      "lat": 41.476971,
+      "lng": -81.791448,
+      "isIndependent": true
+    },
+    {
+      "id": 75,
+      "name": "Westside Skateshop",
+      "address": "39332 US Highway 19 North, Tarpon Springs, FL, 34689",
+      "lat": 28.129337,
+      "lng": -82.741251,
+      "isIndependent": true
+    },
+    {
+      "id": 3,
+      "name": "World Conspiracy",
+      "address": null,
+      "lat": 34.74027,
+      "lng": -86.592172,
+      "isIndependent": true
+    },
+    {
+      "id": 143,
+      "name": "Zumiez",
+      "address": null,
+      "lat": 39.474172,
+      "lng": -119.782747,
       "isIndependent": false
     }
   ],
-  "lastUpdated": "2026-01-24",
-  "version": "1.0"
+  "lastUpdated": "2026-01-25",
+  "version": "1.0",
+  "stats": {
+    "total": 191,
+    "independent": 188,
+    "chain": 3,
+    "withWebsite": 116,
+    "withPhone": 100
+  }
 }

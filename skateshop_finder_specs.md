@@ -35,7 +35,8 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 ### Data Storage
 - Single JSON file containing all US skateshop data
 - Served as static asset with the website
-- Estimated size: 100-500KB for several thousand shops
+- Current size: ~46KB (191 shops from OSM)
+- Estimated size after chain data: 200-400KB (1,000-1,500 shops)
 
 ### Hosting
 - **Primary option:** GitHub Pages (free)
@@ -54,25 +55,32 @@ Static website with pre-compiled skateshop database, updated quarterly through m
       "address": "123 Main St, City, State ZIP",
       "lat": 34.0522,
       "lng": -118.2437,
+      "isIndependent": true,
       "website": "https://example.com",
-      "phone": "555-1234",
-      "isIndependent": true
+      "phone": "(555) 123-4567"
     }
   ],
-  "lastUpdated": "2026-01-24",
-  "version": "1.0"
+  "lastUpdated": "2026-01-25",
+  "version": "1.0",
+  "stats": {
+    "total": 191,
+    "independent": 188,
+    "chain": 3,
+    "withWebsite": 116,
+    "withPhone": 100
+  }
 }
 ```
 
 ### Field Definitions
-- **id**: Unique identifier (integer)
+- **id**: Unique identifier (integer, sequential)
 - **name**: Shop name (string, required)
-- **address**: Full street address including city, state, ZIP (string, required)
-- **lat**: Latitude (float, required)
-- **lng**: Longitude (float, required)
-- **website**: Shop website URL (string, optional)
-- **phone**: Contact phone number (string, optional)
+- **address**: Full street address including city, state, ZIP (string, optional - 81% coverage)
+- **lat**: Latitude (float, required, 6 decimal places)
+- **lng**: Longitude (float, required, 6 decimal places)
 - **isIndependent**: Boolean flag - true for independent shops, false for chains (boolean, required)
+- **website**: Shop website URL with https:// prefix (string, optional - 61% coverage)
+- **phone**: Contact phone number in (XXX) XXX-XXXX format (string, optional - 52% coverage)
 
 ## Data Collection Strategy
 
@@ -80,17 +88,44 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 
 **Data Sources:**
 1. Overpass API query of OpenStreetMap for shops tagged as skateboard/sporting goods
-2. Web scraping of skate brand store locators (Zumiez, Tactics, Vans, etc.)
-3. Online skateshop directories
-4. Manual verification and cleanup
-5. Community submissions
+2. Chain store data file (curated Zumiez/Vans/Tactics locations) - *to be expanded*
+3. Manual additions file for community submissions
+
+**Implemented Scripts** (`scripts/` directory):
+```
+scripts/
+├── collect-shops.js          # Main orchestration (npm run collect)
+├── validate-data.js          # Data quality checks (npm run validate)
+├── sources/
+│   ├── overpass.js           # OSM Overpass API integration
+│   └── chains.js             # Chain/manual data loader
+├── processors/
+│   ├── deduplicator.js       # Remove duplicates (~11m threshold)
+│   ├── geocoder.js           # Validate/fill coordinates
+│   ├── normalizer.js         # Clean and format data
+│   └── classifier.js         # Independent vs chain detection
+├── data/
+│   ├── chain-stores.json     # Curated chain locations (empty, future use)
+│   └── manual-additions.json # Community submissions (empty, future use)
+├── utils/
+│   └── rate-limiter.js       # API rate limiting
+└── tests/
+    └── *.test.js             # 81 unit tests (npm test)
+```
+
+**Current Status (2026-01-25):**
+- 191 unique shops from OpenStreetMap
+- 188 independent, 3 chain stores (Zumiez, Tactics, CCS)
+- 81% with addresses, 61% with websites, 52% with phone numbers
+- Chain store data (600+ Zumiez locations) to be added in follow-up
 
 **Process:**
-1. Run automated collection script
-2. Deduplicate entries
-3. Verify coordinates match addresses
-4. Manual review of results
-5. Generate final JSON file
+1. Run `npm run collect` - fetches from all sources
+2. Automatic deduplication (coordinate + name matching)
+3. Automatic classification (independent vs chain)
+4. Automatic normalization (phone format, URLs, coordinates)
+5. Run `npm run validate` - verify data quality
+6. Manual review of results
 
 ### Data Maintenance
 - **Update frequency:** Quarterly (every 3-4 months)
@@ -107,7 +142,11 @@ Static website with pre-compiled skateshop database, updated quarterly through m
   - Simple CSS framework (optional)
 
 ### Development Tools
-- **Data collection:** Node.js script
+- **Data collection:** Node.js scripts with npm commands:
+  - `npm run collect` - Fetch and process shop data from all sources
+  - `npm run validate` - Check data quality (required fields, coordinates, formats)
+  - `npm test` - Run unit tests (81 tests covering all processors)
+- **Dependencies:** `node-fetch` (API calls), `node-geocoder` (coordinate validation)
 - **Version control:** Git + GitHub
 - **Deployment:** Automated via GitHub Actions (optional)
 
@@ -227,14 +266,19 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 - [x] Implement location input and geolocation
 - [x] Build distance calculation logic
 - [x] Create results display
-- [ ] Compile initial shop database (basic data only)
+- [x] Compile initial shop database (basic data only)
+  - 191 shops from OpenStreetMap (188 independent, 3 chains)
+  - 81% with addresses, 61% with websites, 52% with phone numbers
 - [ ] Deploy to GitHub Pages
 
 ### Phase 2: Data & Forms (Week 3)
-- Expand skateshop database coverage
-- Add "Suggest a shop" form
-- Add "Report closed shop" form
-- Implement form submission
+- [ ] Expand skateshop database coverage
+  - Add Zumiez store locator data (~600 locations)
+  - Add other chains: Vans, Tactics physical locations
+  - Populate `scripts/data/chain-stores.json`
+- [ ] Add "Suggest a shop" form
+- [ ] Add "Report closed shop" form
+- [ ] Implement form submission
 
 ### Phase 3: Polish (Week 4)
 - [x] Responsive design refinement (implemented in initial build)
@@ -370,3 +414,9 @@ Optional fields (website, phone) can be added later if missing initially.
 - What should the independent shop badge look like? (text style: "INDEPENDENT", "LOCAL", "INDIE"? Or icon-based?)
 - What color scheme for the badge? (to match overall site design)
 - During data collection, how will we verify which chain stores sell components vs. completes only?
+
+## Follow-up Tasks
+
+1. **Expand chain store data** - Add Zumiez (~600 locations), Vans stores, Tactics locations to `scripts/data/chain-stores.json`
+2. **Deploy to GitHub Pages** - Set up hosting and domain
+3. **Add user feedback forms** - "Suggest a shop" and "Report closed shop" features
