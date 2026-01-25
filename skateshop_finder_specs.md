@@ -87,9 +87,24 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 ### Initial Database Compilation
 
 **Data Sources:**
-1. Overpass API query of OpenStreetMap for shops tagged as skateboard/sporting goods
-2. Chain store data file (curated Zumiez/Vans/Tactics locations) - *to be expanded*
-3. Manual additions file for community submissions
+1. ~~Overpass API query of OpenStreetMap~~ - *deprecated due to poor data quality (see below)*
+2. **Google Places API** (Text Search) - primary source for shop discovery
+3. Chain store data file (curated Zumiez/Vans/Tactics locations) - *to be expanded*
+4. Manual additions file for community submissions
+
+**Why Not OpenStreetMap:**
+Testing revealed significant issues with OSM data:
+- Closed/moved shops still in database (stale data)
+- Many shops missing entirely (e.g., established local shops not present)
+- Inconsistent tagging (skateshops tagged as `shop=clothes` instead of `shop=skate`)
+- Includes non-USA shops, shops without complete addresses
+- False positives (fingerboard shops, general sporting goods)
+
+**Google Places API Strategy:**
+- Use Text Search API to find "skate shop" across US metro areas
+- Free tier: 5,000 requests/month (sufficient for nationwide coverage)
+- Estimated requests per collection: ~1,500 (well within free tier)
+- Cost: **$0** if staying under 5,000 requests/month
 
 **Implemented Scripts** (`scripts/` directory):
 ```
@@ -97,7 +112,8 @@ scripts/
 ├── collect-shops.js          # Main orchestration (npm run collect)
 ├── validate-data.js          # Data quality checks (npm run validate)
 ├── sources/
-│   ├── overpass.js           # OSM Overpass API integration
+│   ├── google-places.js      # Google Places API integration (primary)
+│   ├── overpass.js           # OSM Overpass API (deprecated, poor quality)
 │   └── chains.js             # Chain/manual data loader
 ├── processors/
 │   ├── deduplicator.js       # Remove duplicates (~11m threshold)
@@ -114,10 +130,11 @@ scripts/
 ```
 
 **Current Status (2026-01-25):**
-- 191 unique shops from OpenStreetMap
-- 188 independent, 3 chain stores (Zumiez, Tactics, CCS)
-- 81% with addresses, 61% with websites, 52% with phone numbers
-- Chain store data (600+ Zumiez locations) to be added in follow-up
+- ✅ Google Places API integration complete (`scripts/sources/google-places.js`)
+- 130 US metro areas covered, ~130 API requests per collection (within free tier)
+- OSM data deprecated due to quality issues
+- **Next step:** Run collection with Google Places API key to generate new dataset
+- Chain store data (600+ Zumiez locations) to be added after initial Google Places collection
 
 **Process:**
 1. Run `npm run collect` - fetches from all sources
@@ -272,6 +289,12 @@ scripts/
 - [ ] Deploy to GitHub Pages
 
 ### Phase 2: Data & Forms (Week 3)
+- [x] **Replace OSM with Google Places API** (completed 2026-01-25)
+  - ✅ Implemented `scripts/sources/google-places.js`
+  - ✅ Text Search for "skate shop" across 130 US metro areas
+  - ✅ Stays within free tier (~130 requests vs 5,000/month limit)
+  - ✅ Updated `collect-shops.js` to use Google Places as primary source
+  - [ ] Run initial collection with API key to generate new dataset
 - [ ] Expand skateshop database coverage
   - Add Zumiez store locator data (~600 locations)
   - Add other chains: Vans, Tactics physical locations
@@ -417,6 +440,12 @@ Optional fields (website, phone) can be added later if missing initially.
 
 ## Follow-up Tasks
 
-1. **Expand chain store data** - Add Zumiez (~600 locations), Vans stores, Tactics locations to `scripts/data/chain-stores.json`
-2. **Deploy to GitHub Pages** - Set up hosting and domain
-3. **Add user feedback forms** - "Suggest a shop" and "Report closed shop" features
+1. ~~**Implement Google Places API collection**~~ ✅ Complete
+   - Created `scripts/sources/google-places.js` with Text Search integration
+   - Covers 130 US metro areas with "skate shop" queries
+   - Stays within free tier (~130 requests vs 5,000/month limit)
+   - Requires: `GOOGLE_PLACES_API_KEY` environment variable
+2. **Run initial Google Places collection** - Set up API key and generate new dataset
+3. **Expand chain store data** - Add Zumiez (~600 locations), Vans stores, Tactics locations to `scripts/data/chain-stores.json`
+4. **Deploy to GitHub Pages** - Set up hosting and domain
+5. **Add user feedback forms** - "Suggest a shop" and "Report closed shop" features

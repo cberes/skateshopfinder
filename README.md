@@ -52,7 +52,8 @@ Then open http://localhost:8000
 │   ├── collect-shops.js        # Main data collection script
 │   ├── validate-data.js        # Data quality validation
 │   ├── sources/
-│   │   ├── overpass.js         # OpenStreetMap API integration
+│   │   ├── google-places.js    # Google Places API integration (primary)
+│   │   ├── overpass.js         # OpenStreetMap API (deprecated)
 │   │   └── chains.js           # Chain store data loader
 │   ├── processors/
 │   │   ├── deduplicator.js     # Remove duplicate entries
@@ -78,21 +79,41 @@ The `scripts/` directory contains Node.js tools for collecting and processing sk
 npm install
 ```
 
+### Google Places API Key
+
+The primary data source requires a Google Places API key:
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a project (or select existing)
+3. Enable "Places API (New)" under APIs & Services
+4. Create an API key under Credentials
+5. Set the environment variable:
+
+```bash
+export GOOGLE_PLACES_API_KEY=your_key_here
+```
+
+**Cost:** Free tier includes 5,000 Text Search requests/month. Our collection uses ~130 requests, so quarterly updates cost $0.
+
 ### Commands
 
 | Command | Description |
 |---------|-------------|
 | `npm run collect` | Fetch shops from all sources and generate `shops.json` |
+| `npm run collect:google` | Run Google Places collection standalone |
+| `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
 | `npm test` | Run unit tests (81 tests) |
 
 ### Data Sources
 
-1. **OpenStreetMap** (Primary) - Queries the Overpass API for shops tagged as `shop=skate` or `shop=sports` with skateboard tags within the USA bounding box.
+1. **Google Places API** (Primary) - Searches for "skate shop" across 130 US metro areas using the Text Search API. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 5,000 requests/month (we use ~130).
 
 2. **Chain Stores** - Loads curated data from `scripts/data/chain-stores.json` (currently empty, to be expanded with Zumiez, Vans, etc.).
 
 3. **Manual Additions** - Community-submitted shops from `scripts/data/manual-additions.json`.
+
+4. ~~**OpenStreetMap**~~ (Deprecated) - Previously used the Overpass API, but data quality was poor (stale listings, missing shops, inconsistent tagging).
 
 ### Processing Pipeline
 

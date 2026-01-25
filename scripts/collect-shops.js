@@ -9,8 +9,13 @@ import { writeFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
+import { fetchFromGooglePlaces } from './sources/google-places.js';
 import { fetchFromOverpass } from './sources/overpass.js';
 import { loadChainStores, loadManualAdditions } from './sources/chains.js';
+
+// Configuration: which sources to use
+const USE_GOOGLE_PLACES = true;  // Primary source (recommended)
+const USE_OSM = false;           // Deprecated: poor data quality
 import { deduplicateShops } from './processors/deduplicator.js';
 import { classifyShops, detectPotentialChains } from './processors/classifier.js';
 import { normalizeShops, prepareForOutput } from './processors/normalizer.js';
@@ -27,29 +32,68 @@ const OUTPUT_PATH = join(__dirname, '..', 'shops.json');
 async function collectFromAllSources() {
   console.log('\n=== Collecting from all sources ===\n');
 
-  // Fetch from all sources in parallel
-  const [osmShops, chainShops, manualShops] = await Promise.all([
-    fetchFromOverpass().catch((err) => {
-      console.error('OSM fetch failed:', err.message);
-      return [];
-    }),
-    loadChainStores().catch((err) => {
-      console.error('Chain stores load failed:', err.message);
-      return [];
-    }),
-    loadManualAdditions().catch((err) => {
-      console.error('Manual additions load failed:', err.message);
-      return [];
-    }),
-  ]);
+  const results = {
+    googlePlaces: [],
+    osm: [],
+    chains: [],
+    manual: [],
+  };
+
+  // Build list of fetch promises based on configuration
+  const fetchPromises = [];
+
+  if (USE_GOOGLE_PLACES) {
+    fetchPromises.push(
+      fetchFromGooglePlaces().then(shops => { results.googlePlaces = shops; })
+        .catch((err) => {
+          console.error('Google Places fetch failed:', err.message);
+        })
+    );
+  }
+
+  if (USE_OSM) {
+    fetchPromises.push(
+      fetchFromOverpass().then(shops => { results.osm = shops; })
+        .catch((err) => {
+          console.error('OSM fetch failed:', err.message);
+        })
+    );
+  }
+
+  // Always load chain stores and manual additions
+  fetchPromises.push(
+    loadChainStores().then(shops => { results.chains = shops; })
+      .catch((err) => {
+        console.error('Chain stores load failed:', err.message);
+      })
+  );
+
+  fetchPromises.push(
+    loadManualAdditions().then(shops => { results.manual = shops; })
+      .catch((err) => {
+        console.error('Manual additions load failed:', err.message);
+      })
+  );
+
+  await Promise.all(fetchPromises);
 
   console.log(`\nSource totals:`);
-  console.log(`  - OSM: ${osmShops.length} shops`);
-  console.log(`  - Chains: ${chainShops.length} shops`);
-  console.log(`  - Manual: ${manualShops.length} shops`);
+  if (USE_GOOGLE_PLACES) {
+    console.log(`  - Google Places: ${results.googlePlaces.length} shops`);
+  }
+  if (USE_OSM) {
+    console.log(`  - OSM: ${results.osm.length} shops (deprecated)`);
+  }
+  console.log(`  - Chains: ${results.chains.length} shops`);
+  console.log(`  - Manual: ${results.manual.length} shops`);
 
-  // Combine all sources
-  return [...osmShops, ...chainShops, ...manualShops];
+  // Combine all sources (Google Places first as primary)
+  return [
+    ...results.googlePlaces,
+    ...results.osm,
+    ...results.chains,
+    ...results.manual,
+  ];
 }
 
 /**

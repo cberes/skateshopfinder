@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "collect": "node scripts/collect-shops.js",
+    "collect:google": "node scripts/sources/google-places.js",
+    "collect:google:dry-run": "node scripts/sources/google-places.js --dry-run",
     "validate": "node scripts/validate-data.js",
     "test": "node --test scripts/tests/*.test.js"
   },
