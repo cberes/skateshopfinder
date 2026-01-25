@@ -196,6 +196,10 @@ main {
     color: var(--color-text-light);
 }
 
+.loading-indicator[hidden] {
+    display: none;
+}
+
 .spinner {
     width: 20px;
     height: 20px;
