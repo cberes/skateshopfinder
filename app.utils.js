@@ -227,3 +227,83 @@ export function extractCityState(address) {
 
     return '';
 }
+
+/**
+ * Create HTML for a map popup
+ * @param {Object} shop - Shop object with name, address, distance, website, phone, isIndependent, lat, lng
+ * @returns {string} HTML string for the map popup
+ */
+export function createMapPopupHTML(shop) {
+    const distanceDisplay = typeof shop.distance === 'number'
+        ? shop.distance.toFixed(1)
+        : '?';
+
+    const independentBadge = shop.isIndependent
+        ? '<span class="popup-badge-independent">Independent</span>'
+        : '';
+
+    const websiteLink = shop.website
+        ? `<a href="${escapeHtml(shop.website)}" class="popup-link" target="_blank" rel="noopener noreferrer">Website</a>`
+        : '';
+
+    const phoneLink = shop.phone
+        ? `<a href="tel:${escapeHtml(shop.phone.replace(/[^0-9+]/g, ''))}" class="popup-link">${escapeHtml(shop.phone)}</a>`
+        : '';
+
+    // Build Google Maps directions URL
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(shop.address || `${shop.lat},${shop.lng}`)}`;
+
+    return `
+        <div class="map-popup">
+            <div class="popup-header">
+                <strong class="popup-name">${escapeHtml(shop.name)}</strong>
+                <span class="popup-distance">${distanceDisplay} mi</span>
+            </div>
+            <p class="popup-address">${escapeHtml(shop.address)}</p>
+            <div class="popup-details">
+                ${independentBadge}
+                ${websiteLink}
+                ${phoneLink}
+            </div>
+            <a href="${escapeHtml(directionsUrl)}" class="popup-directions" target="_blank" rel="noopener noreferrer">Get Directions</a>
+        </div>
+    `;
+}
+
+/**
+ * Calculate bounding box for a set of shops
+ * @param {Array} shops - Array of shop objects with lat/lng
+ * @returns {Object|null} Bounding box { north, south, east, west } or null if no valid shops
+ */
+export function getMapBounds(shops) {
+    if (!Array.isArray(shops) || shops.length === 0) {
+        return null;
+    }
+
+    // Filter to shops with valid coordinates
+    const validShops = shops.filter(shop =>
+        shop &&
+        typeof shop.lat === 'number' &&
+        typeof shop.lng === 'number' &&
+        !isNaN(shop.lat) &&
+        !isNaN(shop.lng)
+    );
+
+    if (validShops.length === 0) {
+        return null;
+    }
+
+    let north = validShops[0].lat;
+    let south = validShops[0].lat;
+    let east = validShops[0].lng;
+    let west = validShops[0].lng;
+
+    for (const shop of validShops) {
+        if (shop.lat > north) north = shop.lat;
+        if (shop.lat < south) south = shop.lat;
+        if (shop.lng > east) east = shop.lng;
+        if (shop.lng < west) west = shop.lng;
+    }
+
+    return { north, south, east, west };
+}

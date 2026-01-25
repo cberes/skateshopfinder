@@ -4,6 +4,22 @@ A free, static website that helps users find nearby skateboard shops.
 
 Limited to shops within the United States for now.
 
+## Features
+
+### Search Options
+- **Address Search**: Enter a city, state, or ZIP code to find nearby shops
+- **Geolocation**: Use your current location to find shops near you
+
+### View Modes
+- **List View** (default): Shows shops as cards with name, address, distance, and contact info
+- **Map View**: Interactive map powered by Leaflet.js and OpenStreetMap
+
+### Map Features
+- **Pink markers**: Chain store locations (Zumiez, Vans, etc.)
+- **Green markers**: Independent skate shops
+- **Blue marker**: Your current location
+- Click any marker to see shop details and get directions via Google Maps
+
 ## Running Locally
 
 The site requires a local HTTP server because:
@@ -52,7 +68,7 @@ Then open http://localhost:8000
 ├── styles.css          # Styling
 ├── shops.json          # Skateshop database
 ├── tests/
-│   └── app.utils.test.js       # Frontend unit tests (76 tests)
+│   └── app.utils.test.js       # Frontend unit tests (91 tests)
 ├── scripts/
 │   ├── collect-shops.js        # Main data collection script
 │   ├── validate-data.js        # Data quality validation
@@ -109,8 +125,8 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | `npm run collect:google` | Run Google Places collection standalone |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
-| `npm test` | Run all unit tests (213 tests) |
-| `npm run test:frontend` | Run frontend tests only (76 tests) |
+| `npm test` | Run all unit tests (228 tests) |
+| `npm run test:frontend` | Run frontend tests only (91 tests) |
 | `npm run test:scripts` | Run data collection tests only (137 tests) |
 
 ### Data Sources

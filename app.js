@@ -11,7 +11,9 @@ import {
     filterAndSortShops,
     generateResultsSummary,
     filterShopsBySearchTerm,
-    formatShopForSelect
+    formatShopForSelect,
+    createMapPopupHTML,
+    getMapBounds
 } from './app.utils.js';
 
 (function() {
@@ -38,11 +40,21 @@ import {
         suggestSuccess: document.getElementById('suggest-success'),
         reportSuccess: document.getElementById('report-success'),
         reportShopSelect: document.getElementById('report-shop'),
-        reportShopSearch: document.getElementById('report-shop-search')
+        reportShopSearch: document.getElementById('report-shop-search'),
+        // Map view elements
+        listViewBtn: document.getElementById('list-view-btn'),
+        mapViewBtn: document.getElementById('map-view-btn'),
+        resultsMap: document.getElementById('results-map')
     };
 
     // Application State
     let shopsData = null;
+    let map = null;
+    let markersLayer = null;
+    let currentView = 'list';
+    let currentShops = [];
+    let lastUserLat = null;
+    let lastUserLng = null;
 
     /**
      * Initialize the application
@@ -119,6 +131,10 @@ import {
 
         // Shop search filter for report form
         elements.reportShopSearch.addEventListener('input', handleShopSearch);
+
+        // View toggle buttons
+        elements.listViewBtn.addEventListener('click', () => switchView('list'));
+        elements.mapViewBtn.addEventListener('click', () => switchView('map'));
     }
 
     /**
@@ -383,6 +399,10 @@ import {
             return;
         }
 
+        // Store user coordinates for map centering
+        lastUserLat = lat;
+        lastUserLng = lng;
+
         const nearbyShops = filterAndSortShops(
             shopsData.shops,
             lat,
@@ -391,6 +411,7 @@ import {
             CONFIG.MAX_RESULTS
         );
 
+        currentShops = nearbyShops;
         displayResults(nearbyShops);
     }
 
@@ -417,6 +438,9 @@ import {
             li.innerHTML = createShopCardHTML(shop);
             elements.resultsList.appendChild(li);
         });
+
+        // Update map markers
+        updateMapMarkers(shops, lastUserLat, lastUserLng);
 
         elements.resultsSection.hidden = false;
         elements.resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -453,6 +477,122 @@ import {
         elements.loadingIndicator.hidden = true;
         elements.searchBtn.disabled = false;
         elements.geolocationBtn.disabled = false;
+    }
+
+    /**
+     * Initialize the Leaflet map
+     */
+    function initMap() {
+        if (map) return; // Already initialized
+
+        map = L.map(elements.resultsMap, {
+            zoomControl: true,
+            scrollWheelZoom: true
+        });
+
+        // Use OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Create a layer group for markers
+        markersLayer = L.layerGroup().addTo(map);
+    }
+
+    /**
+     * Update map markers with shop locations
+     */
+    function updateMapMarkers(shops, userLat, userLng) {
+        // Initialize map if needed
+        if (!map) {
+            initMap();
+        }
+
+        // Clear existing markers
+        markersLayer.clearLayers();
+
+        // Add user location marker
+        if (userLat && userLng) {
+            const userIcon = L.divIcon({
+                className: 'user-marker',
+                iconSize: [24, 24],
+                iconAnchor: [12, 12]
+            });
+
+            L.marker([userLat, userLng], { icon: userIcon })
+                .addTo(markersLayer)
+                .bindPopup('<div class="map-popup"><strong>Your Location</strong></div>');
+        }
+
+        // Add shop markers
+        shops.forEach(shop => {
+            if (typeof shop.lat !== 'number' || typeof shop.lng !== 'number') return;
+
+            const markerClass = shop.isIndependent
+                ? 'shop-marker shop-marker-independent'
+                : 'shop-marker';
+
+            const shopIcon = L.divIcon({
+                className: markerClass,
+                iconSize: [28, 28],
+                iconAnchor: [14, 14]
+            });
+
+            L.marker([shop.lat, shop.lng], { icon: shopIcon })
+                .addTo(markersLayer)
+                .bindPopup(createMapPopupHTML(shop));
+        });
+
+        // Fit bounds to show all markers
+        const bounds = getMapBounds(shops);
+        if (bounds && userLat && userLng) {
+            // Include user location in bounds
+            const allBounds = L.latLngBounds([
+                [Math.min(bounds.south, userLat), Math.min(bounds.west, userLng)],
+                [Math.max(bounds.north, userLat), Math.max(bounds.east, userLng)]
+            ]);
+            map.fitBounds(allBounds, { padding: [50, 50], maxZoom: 13 });
+        } else if (bounds) {
+            map.fitBounds([
+                [bounds.south, bounds.west],
+                [bounds.north, bounds.east]
+            ], { padding: [50, 50], maxZoom: 13 });
+        } else if (userLat && userLng) {
+            map.setView([userLat, userLng], 12);
+        }
+    }
+
+    /**
+     * Switch between list and map views
+     */
+    function switchView(view) {
+        if (view === currentView) return;
+
+        currentView = view;
+
+        if (view === 'list') {
+            elements.listViewBtn.classList.add('active');
+            elements.listViewBtn.setAttribute('aria-selected', 'true');
+            elements.mapViewBtn.classList.remove('active');
+            elements.mapViewBtn.setAttribute('aria-selected', 'false');
+            elements.resultsList.hidden = false;
+            elements.resultsMap.hidden = true;
+        } else {
+            elements.mapViewBtn.classList.add('active');
+            elements.mapViewBtn.setAttribute('aria-selected', 'true');
+            elements.listViewBtn.classList.remove('active');
+            elements.listViewBtn.setAttribute('aria-selected', 'false');
+            elements.resultsList.hidden = true;
+            elements.resultsMap.hidden = false;
+
+            // Fix map display issues when switching to visible
+            if (map) {
+                setTimeout(() => {
+                    map.invalidateSize();
+                }, 100);
+            }
+        }
     }
 
     // Initialize when DOM is ready

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Find skateboard shops near you. Search by address or use your location to discover local and chain skateshops. USA only.">
     <title>Find Skate Shops</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,7 +52,12 @@
                 <h2>Nearby Skateshops</h2>
                 <p id="results-summary" class="results-summary"></p>
             </div>
-            <ul id="results-list" class="results-list"></ul>
+            <div class="view-toggle" role="tablist" aria-label="View options">
+                <button type="button" id="list-view-btn" class="view-toggle-btn active" role="tab" aria-selected="true" aria-controls="results-list">List</button>
+                <button type="button" id="map-view-btn" class="view-toggle-btn" role="tab" aria-selected="false" aria-controls="results-map">Map</button>
+            </div>
+            <ul id="results-list" class="results-list" role="tabpanel"></ul>
+            <div id="results-map" class="results-map" role="tabpanel" hidden></div>
         </section>
 
         <section id="no-results" class="no-results" hidden>
@@ -172,6 +179,8 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script type="module" src="app.js"></script>
 </body>
 </html>

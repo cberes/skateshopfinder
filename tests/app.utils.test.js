@@ -10,7 +10,9 @@ import {
     isValidCoordinates,
     filterShopsBySearchTerm,
     formatShopForSelect,
-    extractCityState
+    extractCityState,
+    createMapPopupHTML,
+    getMapBounds
 } from '../app.utils.js';
 
 describe('CONFIG', () => {
@@ -562,5 +564,200 @@ describe('formatShopForSelect', () => {
     it('should handle empty shop object', () => {
         const result = formatShopForSelect({});
         assert.strictEqual(result, 'Unknown Shop');
+    });
+});
+
+describe('createMapPopupHTML', () => {
+    it('should create popup with basic shop info', () => {
+        const shop = {
+            name: 'Local Skate Shop',
+            address: '123 Main St, City, CA 90210',
+            distance: 5.5,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: true
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(html.includes('Local Skate Shop'), 'Should include shop name');
+        assert.ok(html.includes('123 Main St, City, CA 90210'), 'Should include address');
+        assert.ok(html.includes('5.5 mi'), 'Should include distance');
+        assert.ok(html.includes('popup-badge-independent'), 'Should include independent badge');
+    });
+
+    it('should include website link when provided', () => {
+        const shop = {
+            name: 'Shop',
+            address: '123 Main',
+            distance: 1.0,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false,
+            website: 'https://example.com'
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(html.includes('href="https://example.com"'), 'Should include website link');
+        assert.ok(html.includes('target="_blank"'), 'Should open in new tab');
+    });
+
+    it('should include phone link when provided', () => {
+        const shop = {
+            name: 'Shop',
+            address: '123 Main',
+            distance: 1.0,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false,
+            phone: '(555) 123-4567'
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(html.includes('(555) 123-4567'), 'Should include phone display');
+        assert.ok(html.includes('href="tel:5551234567"'), 'Should include tel link with digits only');
+    });
+
+    it('should not include independent badge for chain stores', () => {
+        const shop = {
+            name: 'Zumiez',
+            address: '123 Mall Ave',
+            distance: 2.0,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(!html.includes('popup-badge-independent'), 'Should not include independent badge');
+    });
+
+    it('should escape HTML in shop name to prevent XSS', () => {
+        const shop = {
+            name: '<script>alert("xss")</script>',
+            address: '123 Main',
+            distance: 1.0,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(!html.includes('<script>'), 'Should escape script tags');
+        assert.ok(html.includes('&lt;script&gt;'), 'Should contain escaped version');
+    });
+
+    it('should include directions link to Google Maps', () => {
+        const shop = {
+            name: 'Shop',
+            address: '123 Main St, City, CA',
+            distance: 1.0,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(html.includes('google.com/maps/dir'), 'Should include Google Maps directions');
+        assert.ok(html.includes('Get Directions'), 'Should include directions text');
+        assert.ok(html.includes('popup-directions'), 'Should have directions class');
+    });
+
+    it('should handle missing distance gracefully', () => {
+        const shop = {
+            name: 'Shop',
+            address: '123 Main',
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(html.includes('? mi'), 'Should show ? for unknown distance');
+    });
+
+    it('should encode address in directions URL', () => {
+        const shop = {
+            name: 'Shop',
+            address: '123 Main St, Los Angeles, CA',
+            distance: 1.0,
+            lat: 34.0522,
+            lng: -118.2437,
+            isIndependent: false
+        };
+        const html = createMapPopupHTML(shop);
+
+        assert.ok(html.includes(encodeURIComponent('123 Main St, Los Angeles, CA')), 'Should encode address in URL');
+    });
+});
+
+describe('getMapBounds', () => {
+    it('should return null for empty array', () => {
+        const result = getMapBounds([]);
+        assert.strictEqual(result, null);
+    });
+
+    it('should return null for null input', () => {
+        const result = getMapBounds(null);
+        assert.strictEqual(result, null);
+    });
+
+    it('should return null for undefined input', () => {
+        const result = getMapBounds(undefined);
+        assert.strictEqual(result, null);
+    });
+
+    it('should return bounds for single shop', () => {
+        const shops = [{ lat: 34.0522, lng: -118.2437 }];
+        const result = getMapBounds(shops);
+
+        assert.deepStrictEqual(result, {
+            north: 34.0522,
+            south: 34.0522,
+            east: -118.2437,
+            west: -118.2437
+        });
+    });
+
+    it('should return correct bounds for multiple shops', () => {
+        const shops = [
+            { lat: 34.0522, lng: -118.2437 },   // LA
+            { lat: 37.7749, lng: -122.4194 },   // SF
+            { lat: 32.7157, lng: -117.1611 },   // San Diego
+        ];
+        const result = getMapBounds(shops);
+
+        assert.strictEqual(result.north, 37.7749, 'North should be SF latitude');
+        assert.strictEqual(result.south, 32.7157, 'South should be SD latitude');
+        assert.strictEqual(result.east, -117.1611, 'East should be SD longitude');
+        assert.strictEqual(result.west, -122.4194, 'West should be SF longitude');
+    });
+
+    it('should filter out shops with invalid coordinates', () => {
+        const shops = [
+            { lat: 34.0522, lng: -118.2437 },   // Valid
+            { lat: NaN, lng: -118.2437 },       // Invalid lat
+            { lat: 37.7749, lng: null },        // Invalid lng
+            { lat: undefined, lng: -122.4194 }, // Invalid lat
+            { name: 'No coords' },              // Missing coords
+        ];
+        const result = getMapBounds(shops);
+
+        assert.deepStrictEqual(result, {
+            north: 34.0522,
+            south: 34.0522,
+            east: -118.2437,
+            west: -118.2437
+        });
+    });
+
+    it('should return null when all shops have invalid coordinates', () => {
+        const shops = [
+            { lat: NaN, lng: -118.2437 },
+            { lat: 'invalid', lng: -118.2437 },
+            { name: 'No coords' },
+        ];
+        const result = getMapBounds(shops);
+
+        assert.strictEqual(result, null);
     });
 });

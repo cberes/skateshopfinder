@@ -126,7 +126,7 @@ scripts/
 ├── utils/
 │   └── rate-limiter.js       # API rate limiting
 └── tests/
-    └── *.test.js             # 81 unit tests (npm test)
+    └── *.test.js             # 137 unit tests (npm run test:scripts)
 ```
 
 **Current Status (2026-01-25):**
@@ -154,15 +154,13 @@ scripts/
 ### Frontend
 - **Core:** HTML5, CSS3, Vanilla JavaScript
 - **Distance calculation:** Haversine formula implementation (no external dependencies)
-- **Optional enhancements:**
-  - Leaflet.js for interactive map display
-  - Simple CSS framework (optional)
+- **Map display:** Leaflet.js 1.9.4 with OpenStreetMap tiles (CDN-hosted, no API key required)
 
 ### Development Tools
 - **Data collection:** Node.js scripts with npm commands:
   - `npm run collect` - Fetch and process shop data from all sources
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
-  - `npm test` - Run unit tests (161 tests covering all processors)
+  - `npm test` - Run unit tests (228 tests covering all processors and frontend utilities)
 - **Dependencies:** `node-fetch` (API calls), `node-geocoder` (coordinate validation)
 - **Version control:** Git + GitHub
 - **Deployment:** Automated via GitHub Actions (optional)
@@ -210,10 +208,10 @@ scripts/
 ### Nice to Have Features (Phase 2)
 
 #### Enhanced Display
-- [ ] Interactive map view showing shop locations
-- [ ] Toggle between list and map view
+- [x] Interactive map view showing shop locations
+- [x] Toggle between list and map view
 - [ ] Filter toggle: "Show independent shops only"
-- [ ] "Get directions" link (opens Google/Apple Maps with destination)
+- [x] "Get directions" link (opens Google/Apple Maps with destination)
 
 #### User Experience
 - [ ] Recent searches (stored in localStorage)
@@ -310,7 +308,12 @@ scripts/
 - [ ] User testing and feedback
 
 ### Phase 4: Enhancements (Future)
-- Interactive map view
+- [x] Interactive map view (completed 2026-01-25)
+  - Leaflet.js with OpenStreetMap tiles
+  - Toggle between list and map views
+  - Custom markers: pink for chains, green for independent, blue for user location
+  - Popup with shop details and "Get Directions" link to Google Maps
+  - Auto-fits bounds with maxZoom limit for comfortable viewing
 - Additional data fields (hours, photos)
 - Advanced filtering options
 - Analytics integration
@@ -453,3 +456,11 @@ Optional fields (website, phone) can be added later if missing initially.
    - "Report closed shop" modal with searchable shop selector, comments, email fields
    - Forms configured for Formspree (requires form ID setup)
    - 26 new tests added for form utility functions
+6. ~~**Add interactive map view**~~ ✅ Complete (2026-01-25)
+   - Leaflet.js 1.9.4 with OpenStreetMap tiles (CDN, no API key)
+   - List/Map toggle buttons with ARIA accessibility
+   - Custom markers: pink (chains), green (independent), blue (user location)
+   - Popup with shop details and "Get Directions" to Google Maps
+   - Auto-fit bounds with maxZoom: 13 to prevent over-zooming
+   - 15 new tests for `createMapPopupHTML()` and `getMapBounds()` utilities
+   - Responsive design (300-500px height based on viewport)
