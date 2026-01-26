@@ -1,7 +1,84 @@
 /**
  * Classification processor
  * Determines if a shop is independent or part of a chain
+ * Also provides confidence scoring for shop classification
  */
+
+// Store types that indicate a retail location
+export const STORE_TYPES = ['store', 'sporting_goods_store', 'retail'];
+
+// Patterns that suggest a skateboard-related shop
+export const SKATE_NAME_PATTERNS = [
+  /skate/i,
+  /sk8/i,
+  /board/i,
+  /deck/i,
+  /shred/i,
+  /thrash/i,
+];
+
+// Patterns that indicate non-skateboard businesses to skip
+export const SKIP_PATTERNS = [
+  'fingerboard', 'finger board', 'tech deck', 'mini skate',
+  'ice skate', 'ice rink', 'skating rink', 'figure skating', 'figure skater',
+  'hockey', 'pure hockey', 'great skate', "skater's edge", 'skaters edge',
+  'ice arena', 'ice center', 'ice centre', 'skate sharpening', 'blade sharpening',
+  'skate anytime', 'synthetic ice', 'artificial ice',
+  'roller skate', 'roller rink', 'rollerskate', 'roller derby', 'roller disco',
+  'sport authority', 'sports authority', 'dick\'s sporting', 'dicks sporting',
+  'big 5 sporting', 'academy sports', 'front row sport',
+];
+
+// Google Places types to exclude
+export const EXCLUDED_TYPES = ['ice_skating_rink', 'skating_rink', 'stadium', 'arena'];
+
+/**
+ * Calculate confidence level for a shop being a skateboard shop
+ * @param {Object} shop - Shop object with name and types
+ * @returns {Object} Confidence result with level and reason
+ */
+export function calculateConfidence(shop) {
+  const types = shop.types || [];
+  const name = (shop.name || '').toLowerCase();
+
+  // Check for explicit skateboard shop type
+  if (types.includes('skateboard_shop')) {
+    return { level: 'high', reason: 'Has skateboard_shop type' };
+  }
+
+  // Check for skate park with store
+  const hasStoreType = STORE_TYPES.some(t => types.includes(t));
+  if (types.includes('skateboard_park') && hasStoreType) {
+    return { level: 'very_high', reason: 'Skate park with store' };
+  }
+
+  // Check for store with skate-related name
+  if (hasStoreType && SKATE_NAME_PATTERNS.some(p => p.test(name))) {
+    // But exclude if it matches skip patterns
+    if (SKIP_PATTERNS.some(p => name.includes(p))) {
+      return { level: 'exclude', reason: 'Name matches skip pattern' };
+    }
+    return { level: 'good', reason: 'Store with skate-related name' };
+  }
+
+  // Check for excluded types
+  if (EXCLUDED_TYPES.some(t => types.includes(t))) {
+    return { level: 'exclude', reason: 'Has excluded type' };
+  }
+
+  // Check for skip patterns in name
+  if (SKIP_PATTERNS.some(p => name.includes(p))) {
+    return { level: 'exclude', reason: 'Name matches skip pattern' };
+  }
+
+  // Has store type but uncertain
+  if (hasStoreType) {
+    return { level: 'review', reason: 'Store type but no clear skateboard indicator' };
+  }
+
+  // No store type at all - exclude
+  return { level: 'exclude', reason: 'No store type' };
+}
 
 // Known chain store patterns
 const CHAIN_PATTERNS = [

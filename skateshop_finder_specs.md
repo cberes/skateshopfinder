@@ -446,8 +446,10 @@ Optional fields (website, phone) can be added later if missing initially.
    - Covers 220+ US metro areas with "skate shop" queries
    - Stays within free tier (~220 requests vs 5,000/month limit)
    - Requires: `GOOGLE_PLACES_API_KEY` environment variable
-2. **Run initial Google Places collection** - Set up API key and generate new dataset
-3. **Deploy to GitHub Pages** - Set up hosting and domain
+2. ~~**Run initial Google Places collection**~~ ✅ Complete
+   - Set up API key and generate new dataset
+3. ~~**Deploy to GitHub Pages**~~ ✅ Complete
+   - Set up hosting and domain
 4. ~~**Add user feedback forms**~~ ✅ Complete
    - "Suggest a shop" modal with name, address, website, phone, shop type, email fields
    - "Report closed shop" modal with searchable shop selector, comments, email fields

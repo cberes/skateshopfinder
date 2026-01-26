@@ -8,6 +8,7 @@
     "collect": "node scripts/collect-shops.js",
     "collect:google": "node scripts/sources/google-places.js",
     "collect:google:dry-run": "node scripts/sources/google-places.js --dry-run",
+    "review": "node scripts/review-shops.js",
     "validate": "node scripts/validate-data.js",
     "test": "node --test scripts/tests/*.test.js tests/*.test.js",
     "test:frontend": "node --test tests/*.test.js",

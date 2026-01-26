@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { classifyShop, classifyShops, detectPotentialChains } from '../processors/classifier.js';
+import { classifyShop, classifyShops, detectPotentialChains, calculateConfidence } from '../processors/classifier.js';
 
 describe('classifyShop', () => {
   it('should classify unknown shop as independent', () => {
@@ -120,5 +120,133 @@ describe('detectPotentialChains', () => {
     const result = detectPotentialChains(shops);
     assert.strictEqual(result[0].name, 'big chain');
     assert.strictEqual(result[0].locationCount, 3);
+  });
+});
+
+describe('calculateConfidence', () => {
+  it('returns high for skateboard_shop type', () => {
+    const shop = { name: 'Test Shop', types: ['skateboard_shop', 'store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'high',
+      reason: 'Has skateboard_shop type'
+    });
+  });
+
+  it('returns very_high for skate_park + store', () => {
+    const shop = { name: 'Park Shop', types: ['skateboard_park', 'store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'very_high',
+      reason: 'Skate park with store'
+    });
+  });
+
+  it('returns good for store with skate name', () => {
+    const shop = { name: "Bob's Skate Shop", types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'good',
+      reason: 'Store with skate-related name'
+    });
+  });
+
+  it('returns good for store with sk8 in name', () => {
+    const shop = { name: 'Sk8 Heaven', types: ['sporting_goods_store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'good',
+      reason: 'Store with skate-related name'
+    });
+  });
+
+  it('returns good for store with board in name', () => {
+    const shop = { name: 'Board Warehouse', types: ['retail'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'good',
+      reason: 'Store with skate-related name'
+    });
+  });
+
+  it('returns review for store without skate indicators', () => {
+    const shop = { name: "Bob's Sports", types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'review',
+      reason: 'Store type but no clear skateboard indicator'
+    });
+  });
+
+  it('returns exclude for ice skating in name', () => {
+    const shop = { name: 'Ice Skate Shop', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'Name matches skip pattern'
+    });
+  });
+
+  it('returns exclude for roller skating in name', () => {
+    const shop = { name: 'Roller Skate World', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'Name matches skip pattern'
+    });
+  });
+
+  it('returns exclude for fingerboard shop', () => {
+    const shop = { name: 'Fingerboard Pro Shop', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'Name matches skip pattern'
+    });
+  });
+
+  it('returns exclude for no store type', () => {
+    const shop = { name: 'Skate Park', types: ['skateboard_park'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'No store type'
+    });
+  });
+
+  it('returns exclude for excluded types', () => {
+    const shop = { name: 'Fun Skating', types: ['ice_skating_rink'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'Has excluded type'
+    });
+  });
+
+  it('returns exclude for stadium type', () => {
+    const shop = { name: 'Sports Arena', types: ['stadium', 'store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'Has excluded type'
+    });
+  });
+
+  it('handles missing types gracefully', () => {
+    const shop = { name: 'Random Shop' };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'exclude',
+      reason: 'No store type'
+    });
+  });
+
+  it('handles missing name gracefully', () => {
+    const shop = { types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'review',
+      reason: 'Store type but no clear skateboard indicator'
+    });
   });
 });

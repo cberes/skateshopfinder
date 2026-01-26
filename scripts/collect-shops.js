@@ -5,7 +5,7 @@
  * Orchestrates data collection from multiple sources and processing
  */
 
-import { writeFile } from 'fs/promises';
+import { writeFile, readFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -17,13 +17,42 @@ import { loadManualAdditions } from './sources/manual.js';
 const USE_GOOGLE_PLACES = true;  // Primary source (recommended)
 const USE_OSM = false;           // Deprecated: poor data quality
 import { deduplicateShops } from './processors/deduplicator.js';
-import { classifyShops, detectPotentialChains } from './processors/classifier.js';
+import { classifyShops, detectPotentialChains, calculateConfidence } from './processors/classifier.js';
 import { normalizeShops, prepareForOutput } from './processors/normalizer.js';
 import { validateAllCoordinates, isWithinUSA } from './processors/geocoder.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const OUTPUT_PATH = join(__dirname, '..', 'shops.json');
+const REMOVED_PATH = join(__dirname, 'data', 'removed-shops.json');
+const APPROVED_PATH = join(__dirname, 'data', 'approved-shops.json');
+const PENDING_PATH = join(__dirname, 'data', 'pending-review.json');
+
+/**
+ * Load decision files (removed and approved shop IDs)
+ * @returns {Object} Sets of removed and approved place IDs
+ */
+async function loadDecisionFiles() {
+  let removed = [];
+  let approved = [];
+
+  try {
+    removed = JSON.parse(await readFile(REMOVED_PATH, 'utf8'));
+  } catch {
+    // File doesn't exist or is invalid, use empty array
+  }
+
+  try {
+    approved = JSON.parse(await readFile(APPROVED_PATH, 'utf8'));
+  } catch {
+    // File doesn't exist or is invalid, use empty array
+  }
+
+  return {
+    removedIds: new Set(removed),
+    approvedIds: new Set(approved),
+  };
+}
 
 /**
  * Collect shops from all sources
@@ -142,6 +171,78 @@ function assignNumericIds(shops) {
 }
 
 /**
+ * Apply confidence-based filtering to shops
+ * @param {Array} shops - Processed shop array
+ * @param {Object} decisions - Object with removedIds and approvedIds Sets
+ * @returns {Object} Object with included shops and pending review shops
+ */
+function applyConfidenceFilter(shops, decisions) {
+  const { removedIds, approvedIds } = decisions;
+
+  const included = [];
+  const pendingReview = [];
+  let excludedCount = 0;
+  let removedCount = 0;
+
+  for (const shop of shops) {
+    const placeId = shop.googlePlaceId;
+
+    // Skip shops that were previously removed
+    if (placeId && removedIds.has(placeId)) {
+      removedCount++;
+      continue;
+    }
+
+    // Auto-include shops that were previously approved
+    if (placeId && approvedIds.has(placeId)) {
+      included.push(shop);
+      continue;
+    }
+
+    // Calculate confidence for remaining shops
+    const confidence = calculateConfidence(shop);
+
+    switch (confidence.level) {
+      case 'high':
+      case 'very_high':
+      case 'good':
+        included.push(shop);
+        break;
+      case 'review':
+        pendingReview.push({
+          ...shop,
+          confidenceReason: confidence.reason,
+        });
+        break;
+      case 'exclude':
+      default:
+        excludedCount++;
+        break;
+    }
+  }
+
+  console.log(`\nConfidence filtering results:`);
+  console.log(`  - Included: ${included.length} shops`);
+  console.log(`  - Pending review: ${pendingReview.length} shops`);
+  console.log(`  - Excluded: ${excludedCount} shops`);
+  console.log(`  - Previously removed: ${removedCount} shops`);
+
+  return { included, pendingReview };
+}
+
+/**
+ * Write pending review shops to file
+ * @param {Array} shops - Shops pending review
+ */
+async function writePendingReview(shops) {
+  await writeFile(PENDING_PATH, JSON.stringify(shops, null, 2) + '\n');
+  if (shops.length > 0) {
+    console.log(`\nWritten ${shops.length} shops to pending review.`);
+    console.log(`Run "npm run review" to manually review them.`);
+  }
+}
+
+/**
  * Write shops to output file
  * @param {Array} shops - Processed shop array
  */
@@ -190,6 +291,10 @@ async function main() {
   console.log('=================================');
 
   try {
+    // Load decision files (removed/approved shop IDs)
+    const decisions = await loadDecisionFiles();
+    console.log(`\nLoaded ${decisions.removedIds.size} removed, ${decisions.approvedIds.size} approved shop IDs`);
+
     // Collect from all sources
     const rawShops = await collectFromAllSources();
 
@@ -206,8 +311,17 @@ async function main() {
       process.exit(1);
     }
 
-    // Write output
-    await writeOutput(processedShops);
+    // Apply confidence-based filtering
+    const { included, pendingReview } = applyConfidenceFilter(processedShops, decisions);
+
+    if (included.length === 0) {
+      console.error('\nNo shops passed confidence filter!');
+      process.exit(1);
+    }
+
+    // Write outputs
+    await writeOutput(included);
+    await writePendingReview(pendingReview);
 
     console.log('\n=================================');
     console.log('  Collection complete!');
