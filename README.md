@@ -1,6 +1,6 @@
 # Skateshop Finder
 
-A free, static website that helps users find nearby skateboard shops.
+A free, static [website](https://skateindex.com) that helps users find nearby skateboard shops.
 
 Limited to shops within the United States for now.
 
