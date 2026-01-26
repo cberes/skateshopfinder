@@ -133,7 +133,6 @@ scripts/
 - ✅ Google Places API integration complete (`scripts/sources/google-places.js`)
 - 220+ US metro areas covered, ~220 API requests per collection (within free tier)
 - OSM data deprecated due to quality issues
-- **Next step:** Run collection with Google Places API key to generate new dataset
 - Chain store data (600+ Zumiez locations) to be added after initial Google Places collection
 
 **Process:**
@@ -160,7 +159,7 @@ scripts/
 - **Data collection:** Node.js scripts with npm commands:
   - `npm run collect` - Fetch and process shop data from all sources
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
-  - `npm test` - Run unit tests (228 tests covering all processors and frontend utilities)
+  - `npm test` - Run unit tests (269 tests covering all processors, frontend utilities, and analytics)
 - **Dependencies:** `node-fetch` (API calls), `node-geocoder` (coordinate validation)
 - **Version control:** Git + GitHub
 - **Deployment:** Automated via GitHub Actions (optional)
@@ -314,9 +313,13 @@ scripts/
   - Custom markers: pink for chains, green for independent, blue for user location
   - Popup with shop details and "Get Directions" link to Google Maps
   - Auto-fits bounds with maxZoom limit for comfortable viewing
+- [x] Analytics integration (completed 2026-01-25)
+  - Google Analytics 4 with privacy-focused settings
+  - Tracks: searches, geolocation, shop clicks, view changes, form submissions
+  - Privacy policy page with clear data handling disclosure
+  - Graceful degradation when blocked by ad blockers
 - Additional data fields (hours, photos)
 - Advanced filtering options
-- Analytics integration
 
 ## Success Metrics
 
@@ -464,3 +467,11 @@ Optional fields (website, phone) can be added later if missing initially.
    - Auto-fit bounds with maxZoom: 13 to prevent over-zooming
    - 15 new tests for `createMapPopupHTML()` and `getMapBounds()` utilities
    - Responsive design (300-500px height based on viewport)
+7. ~~**Add analytics tracking**~~ ✅ Complete (2026-01-25)
+   - Google Analytics 4 abstraction layer (`analytics.js`)
+   - Privacy-focused: IP anonymization, no PII tracking, ad features disabled
+   - Events tracked: search, geolocation, view_results, view_change, shop_click, form_open, form_submit, error
+   - Privacy policy page (`privacy.html`) with clear data handling disclosure
+   - Graceful degradation when GA4 blocked by ad blockers
+   - 41 new tests for analytics utilities
+   - README updated with analytics setup instructions

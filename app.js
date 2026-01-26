@@ -16,6 +16,18 @@ import {
     getMapBounds
 } from './app.utils.js';
 
+import {
+    initAnalytics,
+    trackSearch,
+    trackGeolocation,
+    trackShopClick,
+    trackViewChange,
+    trackFormSubmission,
+    trackFormOpen,
+    trackError,
+    trackViewResults
+} from './analytics.js';
+
 (function() {
     'use strict';
 
@@ -60,11 +72,14 @@ import {
      * Initialize the application
      */
     async function init() {
+        initAnalytics('G-6RRXJT4DE3');
+
         try {
             await loadShopsData();
             setupEventListeners();
         } catch (error) {
             showError('Failed to load shop data. Please refresh the page.');
+            trackError('init_failed', error.message);
             console.error('Initialization error:', error);
         }
     }
@@ -135,6 +150,37 @@ import {
         // View toggle buttons
         elements.listViewBtn.addEventListener('click', () => switchView('list'));
         elements.mapViewBtn.addEventListener('click', () => switchView('map'));
+
+        // Shop click tracking via event delegation
+        elements.resultsList.addEventListener('click', handleShopLinkClick);
+    }
+
+    /**
+     * Handle shop link clicks for analytics tracking
+     */
+    function handleShopLinkClick(event) {
+        const link = event.target.closest('a');
+        if (!link) return;
+
+        const shopCard = link.closest('.shop-card');
+        if (!shopCard) return;
+
+        const shopName = shopCard.dataset.shopName || 'Unknown';
+        const isIndependent = shopCard.dataset.isIndependent === 'true';
+
+        // Determine action type based on link href
+        const href = link.href || '';
+        let action = 'unknown';
+
+        if (href.includes('google.com/maps') || href.includes('directions')) {
+            action = 'directions';
+        } else if (href.startsWith('tel:')) {
+            action = 'phone';
+        } else if (href.startsWith('http')) {
+            action = 'website';
+        }
+
+        trackShopClick(shopName, isIndependent, action);
     }
 
     /**
@@ -146,6 +192,9 @@ import {
         // If opening report modal, populate shops dropdown
         if (modal === elements.reportModal) {
             populateShopDropdown();
+            trackFormOpen('report');
+        } else if (modal === elements.suggestModal) {
+            trackFormOpen('suggest');
         }
 
         modal.hidden = false;
@@ -243,11 +292,13 @@ import {
             if (response.ok) {
                 form.hidden = true;
                 elements.suggestSuccess.hidden = false;
+                trackFormSubmission('suggest');
             } else {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
             console.error('Suggest form error:', error);
+            trackError('form_submit_failed', 'suggest');
             alert('There was an error submitting the form. Please try again.');
         } finally {
             submitBtn.disabled = false;
@@ -279,11 +330,13 @@ import {
             if (response.ok) {
                 form.hidden = true;
                 elements.reportSuccess.hidden = false;
+                trackFormSubmission('report');
             } else {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
             console.error('Report form error:', error);
+            trackError('form_submit_failed', 'report');
             alert('There was an error submitting the form. Please try again.');
         } finally {
             submitBtn.disabled = false;
@@ -309,10 +362,11 @@ import {
         try {
             const coordinates = await geocodeAddress(address);
             if (coordinates) {
-                findNearbyShops(coordinates.lat, coordinates.lng);
+                findNearbyShops(coordinates.lat, coordinates.lng, 'address');
             }
         } catch (error) {
             showError('Could not find that location. Please try a different address.');
+            trackError('geocoding_failed', 'address');
             console.error('Geocoding error:', error);
         } finally {
             hideLoading();
@@ -325,6 +379,7 @@ import {
     function handleGeolocation() {
         if (!navigator.geolocation) {
             showError('Geolocation is not supported by your browser.');
+            trackGeolocation(false, 'not_supported');
             return;
         }
 
@@ -334,22 +389,28 @@ import {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 hideLoading();
-                findNearbyShops(position.coords.latitude, position.coords.longitude);
+                trackGeolocation(true);
+                findNearbyShops(position.coords.latitude, position.coords.longitude, 'geolocation');
             },
             (error) => {
                 hideLoading();
                 let message = 'Could not get your location.';
+                let errorType = 'unknown';
                 switch (error.code) {
                     case error.PERMISSION_DENIED:
                         message = 'Location access denied. Please enable location permissions or enter an address.';
+                        errorType = 'permission_denied';
                         break;
                     case error.POSITION_UNAVAILABLE:
                         message = 'Location information unavailable. Please try entering an address.';
+                        errorType = 'position_unavailable';
                         break;
                     case error.TIMEOUT:
                         message = 'Location request timed out. Please try again.';
+                        errorType = 'timeout';
                         break;
                 }
+                trackGeolocation(false, errorType);
                 showError(message);
             },
             {
@@ -392,10 +453,14 @@ import {
 
     /**
      * Find shops near the given coordinates
+     * @param {number} lat - Latitude
+     * @param {number} lng - Longitude
+     * @param {string} searchMethod - Search method ('address' or 'geolocation')
      */
-    function findNearbyShops(lat, lng) {
+    function findNearbyShops(lat, lng, searchMethod = 'address') {
         if (!shopsData || !shopsData.shops) {
             showError('Shop data not available. Please refresh the page.');
+            trackError('data_unavailable', searchMethod);
             return;
         }
 
@@ -412,29 +477,40 @@ import {
         );
 
         currentShops = nearbyShops;
-        displayResults(nearbyShops);
+        displayResults(nearbyShops, searchMethod);
     }
 
     /**
      * Display search results
+     * @param {Array} shops - Array of shop objects
+     * @param {string} searchMethod - Search method ('address' or 'geolocation')
      */
-    function displayResults(shops) {
+    function displayResults(shops, searchMethod = 'address') {
         elements.noResults.hidden = true;
         elements.resultsSection.hidden = true;
         elements.resultsList.innerHTML = '';
+
+        // Track the search event
+        trackSearch(searchMethod, shops.length);
 
         if (shops.length === 0) {
             elements.noResults.hidden = false;
             return;
         }
 
+        // Track view results with nearest distance
+        const nearestDistance = shops.length > 0 ? shops[0].distance : null;
+        trackViewResults(shops.length, nearestDistance);
+
         // Update summary
         elements.resultsSummary.textContent = generateResultsSummary(shops);
 
-        // Create shop cards
+        // Create shop cards with data attributes for tracking
         shops.forEach(shop => {
             const li = document.createElement('li');
             li.className = 'shop-card';
+            li.dataset.shopName = shop.name || '';
+            li.dataset.isIndependent = shop.isIndependent ? 'true' : 'false';
             li.innerHTML = createShopCardHTML(shop);
             elements.resultsList.appendChild(li);
         });
@@ -570,6 +646,7 @@ import {
         if (view === currentView) return;
 
         currentView = view;
+        trackViewChange(view);
 
         if (view === 'list') {
             elements.listViewBtn.classList.add('active');

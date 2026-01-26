@@ -65,10 +65,13 @@ Then open http://localhost:8000
 ├── index.html          # Main HTML page
 ├── app.js              # Application logic (geolocation, search, display)
 ├── app.utils.js        # Pure utility functions (distance calc, filtering, HTML generation)
+├── analytics.js        # Google Analytics 4 abstraction layer
+├── privacy.html        # Privacy policy page
 ├── styles.css          # Styling
 ├── shops.json          # Skateshop database
 ├── tests/
-│   └── app.utils.test.js       # Frontend unit tests (91 tests)
+│   ├── app.utils.test.js       # Frontend unit tests (91 tests)
+│   └── analytics.test.js       # Analytics unit tests
 ├── scripts/
 │   ├── collect-shops.js        # Main data collection script
 │   ├── validate-data.js        # Data quality validation
@@ -194,6 +197,34 @@ Users can report shops that have closed. The form includes:
 
 Forms are configured to use [Formspree](https://formspree.io/) for submission handling.
 Formspree free tier includes 50 submissions per month, which should be sufficient for community feedback.
+
+## Analytics
+
+The site uses Google Analytics 4 (GA4) for privacy-focused usage tracking.
+
+### Events Tracked
+
+| Event | Trigger | Parameters |
+|-------|---------|------------|
+| `search` | User searches for shops | `method`, `result_count`, `has_results` |
+| `geolocation` | Successful geolocation | `success: true` |
+| `geolocation_error` | Geolocation fails | `error_type` |
+| `view_results` | Results displayed | `result_count`, `nearest_distance` |
+| `view_change` | List/map toggle | `view` |
+| `shop_click` | Click shop link | `shop_name`, `is_independent`, `action` |
+| `form_open` | Modal opened | `form_type` |
+| `form_submit` | Form submitted | `form_type` |
+| `error` | Error occurs | `error_type`, `error_message` |
+
+### Privacy Features
+
+- No personally identifiable information (PII) is tracked
+- IP anonymization is enabled
+- Search queries and addresses are never sent to analytics
+- Geolocation data stays in the browser
+- All tracking gracefully degrades if blocked by ad blockers
+
+See [privacy.html](privacy.html) for the full privacy policy.
 
 ## License
 
