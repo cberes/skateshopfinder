@@ -124,6 +124,24 @@ describe('detectPotentialChains', () => {
 });
 
 describe('calculateConfidence', () => {
+  it('returns high for known chain by name', () => {
+    const shop = { name: 'Zumiez', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'high',
+      reason: 'Known chain: Zumiez'
+    });
+  });
+
+  it('returns high for known chain by website', () => {
+    const shop = { name: 'Some Store', website: 'https://www.zumiez.com/store', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'high',
+      reason: 'Known chain: zumiez'
+    });
+  });
+
   it('returns high for skateboard_shop type', () => {
     const shop = { name: 'Test Shop', types: ['skateboard_shop', 'store'] };
     const result = calculateConfidence(shop);
@@ -166,6 +184,24 @@ describe('calculateConfidence', () => {
     assert.deepStrictEqual(result, {
       level: 'good',
       reason: 'Store with skate-related name'
+    });
+  });
+
+  it('returns good for store with skate-related website', () => {
+    const shop = { name: 'Rec Shop', website: 'https://recskate.com', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'good',
+      reason: 'Store with skate-related website'
+    });
+  });
+
+  it('returns good for store with skateshop in website', () => {
+    const shop = { name: 'Uprise', website: 'https://upriseskateshop.com', types: ['store'] };
+    const result = calculateConfidence(shop);
+    assert.deepStrictEqual(result, {
+      level: 'good',
+      reason: 'Store with skate-related website'
     });
   });
 

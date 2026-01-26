@@ -150,6 +150,9 @@ export function normalizeShop(shop) {
     website: normalizeWebsite(shop.website),
     phone: normalizePhone(shop.phone),
     isIndependent: shop.isIndependent,
+    // Preserve for confidence filtering (stripped in prepareForOutput)
+    types: shop.types,
+    googlePlaceId: shop.googlePlaceId,
     // Preserve metadata for debugging but don't include in final output
     _source: shop.source,
     _osmId: shop.osmId,
