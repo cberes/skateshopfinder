@@ -110,6 +110,7 @@ Testing revealed significant issues with OSM data:
 ```
 scripts/
 ├── collect-shops.js          # Main orchestration (npm run collect)
+├── review-shops.js           # Interactive CLI for manual review (npm run review)
 ├── validate-data.js          # Data quality checks (npm run validate)
 ├── sources/
 │   ├── google-places.js      # Google Places API integration (primary)
@@ -119,13 +120,16 @@ scripts/
 │   ├── deduplicator.js       # Remove duplicates (~11m threshold)
 │   ├── geocoder.js           # Validate/fill coordinates
 │   ├── normalizer.js         # Clean and format data
-│   └── classifier.js         # Independent vs chain detection
+│   └── classifier.js         # Confidence scoring & chain detection
 ├── data/
-│   └── manual-additions.json # Community submissions
+│   ├── manual-additions.json # Community submissions
+│   ├── approved-shops.json   # Manually approved Google Place IDs
+│   ├── removed-shops.json    # Manually rejected Google Place IDs
+│   └── pending-review.json   # Shops awaiting manual review
 ├── utils/
 │   └── rate-limiter.js       # API rate limiting
 └── tests/
-    └── *.test.js             # 137 unit tests (npm run test:scripts)
+    └── *.test.js             # Unit tests (npm run test:scripts)
 ```
 
 **Current Status (2026-01-25):**
@@ -139,12 +143,29 @@ scripts/
 2. Automatic deduplication (coordinate + name matching)
 3. Automatic classification (independent vs chain)
 4. Automatic normalization (phone format, URLs, coordinates)
-5. Run `npm run validate` - verify data quality
-6. Manual review of results
+5. Confidence-based filtering:
+   - **High confidence** (chains, skateboard_shop type) → auto-include in `shops.json`
+   - **Good confidence** (store + skate name/website) → auto-include in `shops.json`
+   - **Review needed** (store type, no indicators) → written to `pending-review.json`
+   - **Exclude** (ice skate, hockey, no store type) → dropped
+6. Run `npm run review` - interactive CLI to approve/deny uncertain shops
+7. Run `npm run validate` - verify data quality
+
+**Confidence Scoring:**
+Shops are scored based on Google Places types, name patterns, and website domains:
+- Known chains (Zumiez, Tactics, Vans, etc.) get high confidence
+- Skate-related patterns in name or website: `skate`, `sk8`, `board`, `deck`, `shred`, `thrash`
+- Skip patterns exclude non-skateboard shops: `ice skate`, `roller skate`, `hockey`, `fingerboard`, etc.
+- Manual decisions are persisted in `approved-shops.json` and `removed-shops.json`
 
 ### Data Maintenance
 - **Update frequency:** Quarterly (every 3-4 months)
-- **Update process:** Re-run collection script, merge with community submissions
+- **Update process:**
+  1. Re-run `npm run collect` to fetch latest data
+  2. Run `npm run review` to process any new uncertain shops
+  3. Run `npm run validate` to verify data quality
+  4. Commit changes and deploy
+- **Decision persistence:** Manual approvals/rejections are saved and respected in future runs
 - **Version control:** Track changes in git repository
 
 ## Technical Stack
@@ -157,8 +178,9 @@ scripts/
 ### Development Tools
 - **Data collection:** Node.js scripts with npm commands:
   - `npm run collect` - Fetch and process shop data from all sources
+  - `npm run review` - Interactive CLI to approve/deny uncertain shops
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
-  - `npm test` - Run unit tests (269 tests covering all processors, frontend utilities, and analytics)
+  - `npm test` - Run unit tests covering all processors, frontend utilities, and analytics
 - **Dependencies:** `node-fetch` (API calls), `node-geocoder` (coordinate validation)
 - **Version control:** Git + GitHub
 - **Deployment:** Automated via GitHub Actions (optional)
@@ -340,13 +362,14 @@ scripts/
 ## Maintenance Plan
 
 ### Quarterly Updates
-1. Review "suggest a shop" submissions
-2. Review "report closed shop" submissions
-3. Re-run automated data collection script
-4. Merge and deduplicate data
-5. Verify sample of changes
-6. Update JSON file and deploy
-7. Update "lastUpdated" timestamp
+1. Review "suggest a shop" submissions from forms
+2. Review "report closed shop" submissions from forms
+3. Re-run data collection: `npm run collect`
+4. Review uncertain shops: `npm run review`
+5. Validate data quality: `npm run validate`
+6. Verify sample of changes
+7. Commit changes and deploy
+8. Update "lastUpdated" timestamp
 
 ### Monitoring
 - Monitor form submissions weekly

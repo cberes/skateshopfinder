@@ -74,6 +74,7 @@ Then open http://localhost:8000
 │   └── analytics.test.js       # Analytics unit tests
 ├── scripts/
 │   ├── collect-shops.js        # Main data collection script
+│   ├── review-shops.js         # Interactive CLI for manual review
 │   ├── validate-data.js        # Data quality validation
 │   ├── sources/
 │   │   ├── google-places.js    # Google Places API integration (primary)
@@ -81,14 +82,17 @@ Then open http://localhost:8000
 │   │   └── manual.js           # Manual additions loader
 │   ├── processors/
 │   │   ├── deduplicator.js     # Remove duplicate entries
-│   │   ├── classifier.js       # Independent vs chain detection
+│   │   ├── classifier.js       # Confidence scoring & chain detection
 │   │   ├── normalizer.js       # Data formatting
 │   │   └── geocoder.js         # Coordinate validation
 │   ├── data/
-│   │   └── manual-additions.json # Community submissions
+│   │   ├── manual-additions.json  # Community submissions
+│   │   ├── approved-shops.json    # Manually approved shop IDs
+│   │   ├── removed-shops.json     # Manually rejected shop IDs
+│   │   └── pending-review.json    # Shops awaiting manual review
 │   ├── utils/
 │   │   └── rate-limiter.js     # API rate limiting
-│   └── tests/                  # Data collection unit tests (111 tests)
+│   └── tests/                  # Data collection unit tests
 └── README.md
 ```
 
@@ -124,12 +128,13 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 |---------|-------------|
 | `npm run build` | Builds the website for deployment |
 | `npm run collect` | Fetch shops from all sources and generate `shops.json` |
+| `npm run review` | Interactive CLI to approve/deny pending shops |
 | `npm run collect:google` | Run Google Places collection standalone |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
-| `npm test` | Run all unit tests (228 tests) |
-| `npm run test:frontend` | Run frontend tests only (91 tests) |
-| `npm run test:scripts` | Run data collection tests only (137 tests) |
+| `npm test` | Run all unit tests |
+| `npm run test:frontend` | Run frontend tests only |
+| `npm run test:scripts` | Run data collection tests only |
 
 ### Data Sources
 
@@ -146,7 +151,38 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 3. **Validate** - Filter to USA bounds, check coordinate validity
 4. **Classify** - Detect chain stores (Zumiez, Vans, Tactics, CCS, Tilly's, PacSun)
 5. **Normalize** - Clean names, format phones as `(XXX) XXX-XXXX`, prefix URLs with `https://`
-6. **Output** - Write sorted results to `shops.json`
+6. **Confidence Filter** - Score shops and route to appropriate output (see below)
+7. **Output** - Write high-confidence shops to `shops.json`, uncertain shops to `pending-review.json`
+
+### Confidence-Based Filtering
+
+Shops are scored based on how likely they are to be legitimate skateboard shops:
+
+| Confidence | Criteria | Action |
+|------------|----------|--------|
+| **Highest** | Known chain (Zumiez, etc.) or `skateboard_shop` type | Auto-include |
+| **Very High** | Skate park with store type | Auto-include |
+| **Good** | Store type + skate-related name or website | Auto-include |
+| **Review** | Store type but no clear skateboard indicator | Pending review |
+| **Exclude** | Matches skip patterns (ice skate, hockey, etc.) or no store type | Dropped |
+
+Skate-related patterns checked in name and website: `skate`, `sk8`, `board`, `deck`, `shred`, `thrash`
+
+### Manual Review Workflow
+
+After running `npm run collect`, uncertain shops are written to `pending-review.json`. Use the interactive review CLI:
+
+```bash
+npm run review
+```
+
+For each shop, you can:
+- **(A)pprove** - Add to `shops.json` and `approved-shops.json`
+- **(D)eny** - Add to `removed-shops.json` (won't appear again)
+- **(S)kip** - Leave in pending review for later
+- **(Q)uit** - Save progress and exit
+
+Previously approved/removed shops are remembered across collection runs.
 
 ### Adding Shops Manually
 
