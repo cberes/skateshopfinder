@@ -11,7 +11,7 @@ import { dirname, join } from 'path';
 
 import { fetchFromGooglePlaces } from './sources/google-places.js';
 import { fetchFromOverpass } from './sources/overpass.js';
-import { loadChainStores, loadManualAdditions } from './sources/chains.js';
+import { loadManualAdditions } from './sources/manual.js';
 
 // Configuration: which sources to use
 const USE_GOOGLE_PLACES = true;  // Primary source (recommended)
@@ -35,7 +35,6 @@ async function collectFromAllSources() {
   const results = {
     googlePlaces: [],
     osm: [],
-    chains: [],
     manual: [],
   };
 
@@ -60,14 +59,7 @@ async function collectFromAllSources() {
     );
   }
 
-  // Always load chain stores and manual additions
-  fetchPromises.push(
-    loadChainStores().then(shops => { results.chains = shops; })
-      .catch((err) => {
-        console.error('Chain stores load failed:', err.message);
-      })
-  );
-
+  // Load manual additions (community-submitted shops)
   fetchPromises.push(
     loadManualAdditions().then(shops => { results.manual = shops; })
       .catch((err) => {
@@ -84,14 +76,12 @@ async function collectFromAllSources() {
   if (USE_OSM) {
     console.log(`  - OSM: ${results.osm.length} shops (deprecated)`);
   }
-  console.log(`  - Chains: ${results.chains.length} shops`);
   console.log(`  - Manual: ${results.manual.length} shops`);
 
   // Combine all sources (Google Places first as primary)
   return [
     ...results.googlePlaces,
     ...results.osm,
-    ...results.chains,
     ...results.manual,
   ];
 }

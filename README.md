@@ -78,14 +78,13 @@ Then open http://localhost:8000
 │   ├── sources/
 │   │   ├── google-places.js    # Google Places API integration (primary)
 │   │   ├── overpass.js         # OpenStreetMap API (deprecated)
-│   │   └── chains.js           # Chain store data loader
+│   │   └── manual.js           # Manual additions loader
 │   ├── processors/
 │   │   ├── deduplicator.js     # Remove duplicate entries
 │   │   ├── classifier.js       # Independent vs chain detection
 │   │   ├── normalizer.js       # Data formatting
 │   │   └── geocoder.js         # Coordinate validation
 │   ├── data/
-│   │   ├── chain-stores.json   # Curated chain locations
 │   │   └── manual-additions.json # Community submissions
 │   ├── utils/
 │   │   └── rate-limiter.js     # API rate limiting
@@ -134,11 +133,9 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 
 ### Data Sources
 
-1. **Google Places API** (Primary) - Searches for "skate shop" across 220+ US metro areas using the Text Search API. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 5,000 requests/month (we use ~220).
+1. **Google Places API** (Primary) - Searches for "skate shop" across 220+ US metro areas using the Text Search API. Returns both independent and chain stores. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 5,000 requests/month (we use ~220).
 
-2. **Chain Stores** - Loads curated data from `scripts/data/chain-stores.json` (currently empty, to be expanded with Zumiez, Vans, etc.).
-
-3. **Manual Additions** - Community-submitted shops from `scripts/data/manual-additions.json`.
+2. **Manual Additions** - Community-submitted shops from `scripts/data/manual-additions.json`.
 
 4. ~~**OpenStreetMap**~~ (Deprecated) - Previously used the Overpass API, but data quality was poor (stale listings, missing shops, inconsistent tagging).
 

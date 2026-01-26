@@ -36,7 +36,7 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 - Single JSON file containing all US skateshop data
 - Served as static asset with the website
 - Current size: ~46KB (191 shops from OSM)
-- Estimated size after chain data: 200-400KB (1,000-1,500 shops)
+- Estimated final size: 100-300KB depending on coverage
 
 ### Hosting
 - **Primary option:** GitHub Pages (free)
@@ -88,8 +88,8 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 
 **Data Sources:**
 1. ~~Overpass API query of OpenStreetMap~~ - *deprecated due to poor data quality (see below)*
-2. **Google Places API** (Text Search) - primary source for shop discovery
-3. Chain store data file (curated Zumiez/Vans/Tactics locations) - *to be expanded*
+2. **Google Places API** (Text Search) - primary source for shop discovery (includes both independent and chain stores)
+3. ~~Chain store data file~~ - *deprecated; Google Places returns chain locations with better accuracy*
 4. Manual additions file for community submissions
 
 **Why Not OpenStreetMap:**
@@ -114,15 +114,14 @@ scripts/
 ├── sources/
 │   ├── google-places.js      # Google Places API integration (primary)
 │   ├── overpass.js           # OSM Overpass API (deprecated, poor quality)
-│   └── chains.js             # Chain/manual data loader
+│   └── manual.js             # Manual additions loader
 ├── processors/
 │   ├── deduplicator.js       # Remove duplicates (~11m threshold)
 │   ├── geocoder.js           # Validate/fill coordinates
 │   ├── normalizer.js         # Clean and format data
 │   └── classifier.js         # Independent vs chain detection
 ├── data/
-│   ├── chain-stores.json     # Curated chain locations (empty, future use)
-│   └── manual-additions.json # Community submissions (empty, future use)
+│   └── manual-additions.json # Community submissions
 ├── utils/
 │   └── rate-limiter.js       # API rate limiting
 └── tests/
@@ -133,7 +132,7 @@ scripts/
 - ✅ Google Places API integration complete (`scripts/sources/google-places.js`)
 - 220+ US metro areas covered, ~220 API requests per collection (within free tier)
 - OSM data deprecated due to quality issues
-- Chain store data (600+ Zumiez locations) to be added after initial Google Places collection
+- Google Places returns both independent and chain stores with good accuracy
 
 **Process:**
 1. Run `npm run collect` - fetches from all sources
@@ -292,10 +291,7 @@ scripts/
   - ✅ Stays within free tier (~220 requests vs 5,000/month limit)
   - ✅ Updated `collect-shops.js` to use Google Places as primary source
   - ✅ Run initial collection with API key to generate new dataset
-- [ ] Expand skateshop database coverage
-  - Add Zumiez store locator data (~600 locations)
-  - Add other chains: Vans, Tactics physical locations
-  - Populate `scripts/data/chain-stores.json`
+  - ✅ Returns both independent and chain stores with good accuracy
 - [x] Add "Suggest a shop" form
 - [x] Add "Report closed shop" form
 - [x] Implement form submission
@@ -442,7 +438,6 @@ Optional fields (website, phone) can be added later if missing initially.
 
 - What should the independent shop badge look like? (text style: "INDEPENDENT", "LOCAL", "INDIE"? Or icon-based?)
 - What color scheme for the badge? (to match overall site design)
-- During data collection, how will we verify which chain stores sell components vs. completes only?
 
 ## Follow-up Tasks
 
@@ -452,14 +447,13 @@ Optional fields (website, phone) can be added later if missing initially.
    - Stays within free tier (~220 requests vs 5,000/month limit)
    - Requires: `GOOGLE_PLACES_API_KEY` environment variable
 2. **Run initial Google Places collection** - Set up API key and generate new dataset
-3. **Expand chain store data** - Add Zumiez (~600 locations), Vans stores, Tactics locations to `scripts/data/chain-stores.json`
-4. **Deploy to GitHub Pages** - Set up hosting and domain
-5. ~~**Add user feedback forms**~~ ✅ Complete
+3. **Deploy to GitHub Pages** - Set up hosting and domain
+4. ~~**Add user feedback forms**~~ ✅ Complete
    - "Suggest a shop" modal with name, address, website, phone, shop type, email fields
    - "Report closed shop" modal with searchable shop selector, comments, email fields
    - Forms configured for Formspree (requires form ID setup)
    - 26 new tests added for form utility functions
-6. ~~**Add interactive map view**~~ ✅ Complete (2026-01-25)
+5. ~~**Add interactive map view**~~ ✅ Complete (2026-01-25)
    - Leaflet.js 1.9.4 with OpenStreetMap tiles (CDN, no API key)
    - List/Map toggle buttons with ARIA accessibility
    - Custom markers: pink (chains), green (independent), blue (user location)
@@ -467,7 +461,7 @@ Optional fields (website, phone) can be added later if missing initially.
    - Auto-fit bounds with maxZoom: 13 to prevent over-zooming
    - 15 new tests for `createMapPopupHTML()` and `getMapBounds()` utilities
    - Responsive design (300-500px height based on viewport)
-7. ~~**Add analytics tracking**~~ ✅ Complete (2026-01-25)
+6. ~~**Add analytics tracking**~~ ✅ Complete (2026-01-25)
    - Google Analytics 4 abstraction layer (`analytics.js`)
    - Privacy-focused: IP anonymization, no PII tracking, ad features disabled
    - Events tracked: search, geolocation, view_results, view_change, shop_click, form_open, form_submit, error
