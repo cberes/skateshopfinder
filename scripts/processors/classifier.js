@@ -33,7 +33,7 @@ export const SKIP_PATTERNS = [
 ];
 
 // Google Places types to exclude
-export const EXCLUDED_TYPES = ['ice_skating_rink', 'skating_rink', 'stadium', 'arena'];
+export const EXCLUDED_TYPES = ['ice_skating_rink', 'skating_rink', 'stadium', 'arena', 'department_store'];
 
 // Known chain store patterns
 const CHAIN_PATTERNS = [

@@ -840,27 +840,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJFYvKb4MC2YgRSzmLY47zjis",
-    "name": "Surf World",
-    "address": "4411 N Federal Hwy, Fort Lauderdale, FL 33308",
-    "lat": 26.182767,
-    "lng": -80.119723,
-    "website": "http://www.surfworld.us",
-    "phone": "(954) 545-7873",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "clothing_store",
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJFYvKb4MC2YgRSzmLY47zjis",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJt2o5sfCv9YgRLUCgKed5zGE",
     "name": "RollerFit LLC",
     "address": "1874 Piedmont Ave. NE Suite 441-D, Atlanta, GA 30324",
@@ -2763,28 +2742,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJc6VzUliLOIgRK8lLvbIaoqI",
-    "name": "Sierra",
-    "address": "3696 Easton Market, Columbus, OH 43219",
-    "lat": 40.051249,
-    "lng": -82.924865,
-    "website": "https://www.sierra.com",
-    "phone": "(614) 476-6116",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "clothing_store",
-      "home_goods_store",
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJc6VzUliLOIgRK8lLvbIaoqI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJN8rsmt2TOIgR20e57B40L20",
     "name": "Play it Again Sports Hilliard",
     "address": "4720 Cemetery Rd., Hilliard, OH 43026",
@@ -3489,27 +3446,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJESsN_aZJ5IgRGQGNbaEf3Ro",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJsXkw80dJ5IgRPBDHTrV_lCE",
-    "name": "Aqua East Surf Shop",
-    "address": "696 Atlantic Blvd., Neptune Beach, FL 32266",
-    "lat": 30.324012,
-    "lng": -81.406501,
-    "website": "http://aquaeast.com",
-    "phone": "(904) 246-2550",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJsXkw80dJ5IgRPBDHTrV_lCE",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -4537,28 +4473,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJzxImHK2tGYgRRsp91AZTW4w",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJlbYS9hRNGIgR5quqEEb7u94",
-    "name": "Sierra",
-    "address": "3631 28th St. SE, Grand Rapids, MI 49512",
-    "lat": 42.915486,
-    "lng": -85.578116,
-    "website": "https://www.sierra.com",
-    "phone": "(616) 940-4532",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "home_goods_store",
-      "sporting_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJlbYS9hRNGIgR5quqEEb7u94",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -6120,28 +6034,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJncPh3JFIE4cRSkljAPYcT5k",
-    "name": "Sierra",
-    "address": "5916 Barnes Rd., Colorado Springs, CO 80922",
-    "lat": 38.896747,
-    "lng": -104.718294,
-    "website": "https://www.sierra.com",
-    "phone": "(719) 597-5974",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "sporting_goods_store",
-      "home_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJncPh3JFIE4cRSkljAPYcT5k",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJBa_tjQIXFYcRjANnc_l0lXU",
     "name": "Ramps and Alleys",
     "address": "645 E Rainbow Blvd., Salida, CO 81201",
@@ -6744,28 +6636,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ59EvhIuvB4gRW-_0IhfYZrI",
-    "name": "Sierra",
-    "address": "676 S Whitney Way, Madison, WI 53711",
-    "lat": 43.05077,
-    "lng": -89.475746,
-    "website": "https://www.sierra.com",
-    "phone": "(608) 278-1990",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "clothing_store",
-      "home_goods_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ59EvhIuvB4gRW-_0IhfYZrI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJrTry8YhUBogRMygwRcX_UZs",
     "name": "Suter's Gold Medal Sports",
     "address": "605 N Sherman Ave., Madison, WI 53704",
@@ -7274,28 +7144,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJBSqA4GggnlQRMRyMCHzzCr0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJRwS3CgDfYVMRyG1cdlTkGWo",
-    "name": "Sierra",
-    "address": "13814 E Indiana Ave., Spokane Valley, WA 99216",
-    "lat": 47.674684,
-    "lng": -117.216964,
-    "website": "https://www.sierra.com",
-    "phone": "(509) 215-5875",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "sporting_goods_store",
-      "home_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJRwS3CgDfYVMRyG1cdlTkGWo",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -9059,28 +8907,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJIUtXBb17ykwRGuRuGVlJ3n0",
-    "name": "Sierra",
-    "address": "555 Shelburne Rd., Burlington, VT 05401",
-    "lat": 44.449412,
-    "lng": -73.210491,
-    "website": "https://www.sierra.com",
-    "phone": "(802) 540-8311",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "clothing_store",
-      "home_goods_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJIUtXBb17ykwRGuRuGVlJ3n0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJA27jbheftUwR6U1NOzzX13k",
     "name": "Waterbury Sports VT",
     "address": "46 S Main St. #1, Waterbury, VT 05676",
@@ -9531,28 +9357,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJK0BPlZJlaYcRZDJdMrcidRA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJLRbNEXdLaYcR1rGH_k8e0vU",
-    "name": "Sierra",
-    "address": "3500 S College Ave., Fort Collins, CO 80525",
-    "lat": 40.538998,
-    "lng": -105.075801,
-    "website": "https://www.sierra.com",
-    "phone": "(970) 266-8440",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "home_goods_store",
-      "sporting_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJLRbNEXdLaYcR1rGH_k8e0vU",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -10337,28 +10141,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJJ1s9W6s8b4cRcEP0fdWhVcg",
-    "name": "Sierra",
-    "address": "5025 Campstool Rd., Cheyenne, WY 82007",
-    "lat": 41.126438,
-    "lng": -104.748753,
-    "website": "https://www.sierra.com",
-    "phone": "(307) 635-9215",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "sporting_goods_store",
-      "home_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJ1s9W6s8b4cRcEP0fdWhVcg",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJpwbx5N06b4cRfcH4QQ54n08",
     "name": "Rock On Wheels",
     "address": "900 E Lincolnway, Cheyenne, WY 82001",
@@ -10888,32 +10670,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJW36wCVVu4oYR54QmK-bylOQ",
-    "name": "Target",
-    "address": "2725 N Main St., Roswell, NM 88201",
-    "lat": 33.427574,
-    "lng": -104.521288,
-    "website": "https://www.target.com/sl/roswell/832",
-    "phone": "(575) 623-0445",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "shoe_store",
-      "child_care_agency",
-      "electronics_store",
-      "furniture_store",
-      "home_improvement_store",
-      "home_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJW36wCVVu4oYR54QmK-bylOQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJkxMk8vKu44YRyFZwvhO592w",
     "name": "Hibbett",
     "address": "1505 W Main St., Artesia, NM 88210",
@@ -10949,36 +10705,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJVTPTQEpu4oYRX-YzlWXWZ_g",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJJ2eQKQ524oYRbOvZ160NFLs",
-    "name": "Walmart Supercenter",
-    "address": "4500 N Main St. A, Roswell, NM 88201",
-    "lat": 33.449989,
-    "lng": -104.52655,
-    "website": "https://www.walmart.com/store/611-roswell-nm/?veh=seo_loc",
-    "phone": "(575) 623-2062",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "grocery_store",
-      "bakery",
-      "electronics_store",
-      "sporting_goods_store",
-      "food_store",
-      "furniture_store",
-      "home_improvement_store",
-      "home_goods_store",
-      "clothing_store",
-      "hardware_store",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJ2eQKQ524oYRbOvZ160NFLs",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -11281,28 +11007,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJK7t4v2f_v1QRKvC-89vsnbE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ0257WkX_v1QRTYRakIC3iCI",
-    "name": "Sierra",
-    "address": "831 Lancaster Dr. NE, Salem, OR 97301",
-    "lat": 44.941608,
-    "lng": -122.988188,
-    "website": "https://www.sierra.com",
-    "phone": "(503) 365-7105",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "home_goods_store",
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ0257WkX_v1QRTYRakIC3iCI",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -12342,30 +12046,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ0aeSIqHwAogRvLPwOq_7gKE",
-    "name": "Fleet Farm",
-    "address": "213 N Taylor St., Howard, WI 54303",
-    "lat": 44.536748,
-    "lng": -88.073662,
-    "website": "https://www.fleetfarm.com/visit-stores/green-bay-west-wi",
-    "phone": "(920) 494-8975",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "auto_parts_store",
-      "clothing_store",
-      "car_repair",
-      "sporting_goods_store",
-      "point_of_interest",
-      "food",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ0aeSIqHwAogRvLPwOq_7gKE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJ57bXaD-tr1IRul5I8c8Mlvc",
     "name": "Play It Again Sports of Duluth",
     "address": "1256 W Arrowhead Rd., Duluth, MN 55811",
@@ -12527,60 +12207,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ70qI7Ihf94cRPVTfpjF4w-M",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJuxyLtH5Y94cR8pbaZh7AFko",
-    "name": "Fleet Farm",
-    "address": "4891 Maine Ave. SE, Rochester, MN 55904",
-    "lat": 43.950356,
-    "lng": -92.464449,
-    "website": "https://www.fleetfarm.com/visit-stores/rochester-mn",
-    "phone": "(507) 281-1130",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "auto_parts_store",
-      "car_repair",
-      "sporting_goods_store",
-      "clothing_store",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJuxyLtH5Y94cR8pbaZh7AFko",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJz63MfQfi-YcRmJfPdgtA-QE",
-    "name": "Walmart Supercenter",
-    "address": "25 25th St. SE, Rochester, MN 55904",
-    "lat": 43.986658,
-    "lng": -92.460181,
-    "website": "https://www.walmart.com/store/2812-rochester-mn/?veh=seo_loc",
-    "phone": "(507) 292-0909",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "electronics_store",
-      "hardware_store",
-      "grocery_store",
-      "bakery",
-      "furniture_store",
-      "home_improvement_store",
-      "home_goods_store",
-      "sporting_goods_store",
-      "clothing_store",
-      "food_store",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJz63MfQfi-YcRmJfPdgtA-QE",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -12792,32 +12418,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJffudTOMWnIgRxuz9WZvgmDM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJbyzN6UoMnIgRmW9n6Aze1sE",
-    "name": "Target",
-    "address": "3867 Promenade Pkwy, D'Iberville, MS 39540",
-    "lat": 30.455215,
-    "lng": -88.899559,
-    "website": "https://www.target.com/sl/d&apos;iberville/2485",
-    "phone": "(228) 233-3301",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "electronics_store",
-      "furniture_store",
-      "home_improvement_store",
-      "shoe_store",
-      "home_goods_store",
-      "clothing_store",
-      "child_care_agency",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJbyzN6UoMnIgRmW9n6Aze1sE",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -13139,28 +12739,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJUy8RQ6Fsq4kRrgqtEVT9Ifw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ91X_LpJKqYkRl2iTMGxllV0",
-    "name": "Bert's Surf Shop",
-    "address": "210 E New Bern Rd., Kinston, NC 28504",
-    "lat": 35.244076,
-    "lng": -77.581444,
-    "website": "https://www.bertsurfshop.com",
-    "phone": "(252) 527-0845",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "shoe_store",
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ91X_LpJKqYkRl2iTMGxllV0",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -13688,28 +13266,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJgU3XhY1P4okRGo12b8XtqsQ",
-    "name": "Sierra",
-    "address": "75 S River Rd., Bedford, NH 03110",
-    "lat": 42.957311,
-    "lng": -71.476251,
-    "website": "https://www.sierra.com",
-    "phone": "(603) 222-3962",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "home_goods_store",
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJgU3XhY1P4okRGo12b8XtqsQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJufO_rYNq4okRmhvjm5_WSr0",
     "name": "S&W Sports",
     "address": "296 S Main St., Concord, NH 03301",
@@ -14209,32 +13765,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ9_vnI5qozokRO2Vt7vhd6ws",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJvzcnOaaAMogRmRvzzj2d4Lw",
-    "name": "Target",
-    "address": "6700 Peach St., Erie, PA 16509",
-    "lat": 42.054905,
-    "lng": -80.094986,
-    "website": "https://www.target.com/sl/erie/1287",
-    "phone": "(814) 860-8511",
-    "isIndependent": true,
-    "types": [
-      "department_store",
-      "child_care_agency",
-      "shoe_store",
-      "electronics_store",
-      "furniture_store",
-      "home_improvement_store",
-      "clothing_store",
-      "home_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJvzcnOaaAMogRmRvzzj2d4Lw",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },

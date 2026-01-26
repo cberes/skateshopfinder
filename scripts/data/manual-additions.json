@@ -1,1 +1,63 @@
-[]
+[
+  {
+    "id": "google-ChIJsXkw80dJ5IgRPBDHTrV_lCE",
+    "name": "Aqua East Surf Shop",
+    "address": "696 Atlantic Blvd., Neptune Beach, FL 32266",
+    "lat": 30.324012,
+    "lng": -81.406501,
+    "website": "http://aquaeast.com",
+    "phone": "(904) 246-2550",
+    "isIndependent": true,
+    "types": [
+      "department_store",
+      "clothing_store",
+      "sporting_goods_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "googlePlaceId": "ChIJsXkw80dJ5IgRPBDHTrV_lCE",
+    "_source": "google-places"
+  },
+  {
+    "id": "google-ChIJ91X_LpJKqYkRl2iTMGxllV0",
+    "name": "Bert's Surf Shop",
+    "address": "210 E New Bern Rd., Kinston, NC 28504",
+    "lat": 35.244076,
+    "lng": -77.581444,
+    "website": "https://www.bertsurfshop.com",
+    "phone": "(252) 527-0845",
+    "isIndependent": true,
+    "types": [
+      "department_store",
+      "shoe_store",
+      "clothing_store",
+      "sporting_goods_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "googlePlaceId": "ChIJ91X_LpJKqYkRl2iTMGxllV0",
+    "_source": "google-places"
+  },
+  {
+    "id": "google-ChIJFYvKb4MC2YgRSzmLY47zjis",
+    "name": "Surf World",
+    "address": "4411 N Federal Hwy, Fort Lauderdale, FL 33308",
+    "lat": 26.182767,
+    "lng": -80.119723,
+    "website": "http://www.surfworld.us",
+    "phone": "(954) 545-7873",
+    "isIndependent": true,
+    "types": [
+      "department_store",
+      "clothing_store",
+      "sporting_goods_store",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "googlePlaceId": "ChIJFYvKb4MC2YgRSzmLY47zjis",
+    "_source": "google-places"
+  }
+]
