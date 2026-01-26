@@ -299,6 +299,9 @@ scripts/
 ### Phase 3: Polish (Week 4)
 - [x] Responsive design refinement (implemented in initial build)
 - [x] Error handling improvements (implemented in initial build)
+- [ ] Enforce code style
+- [ ] Check if 2 Google Places API queries per location is necessary (does one query find everything that the other query finds and more?)
+- [ ] Dark mode
 - [ ] Performance optimization
 - [ ] User testing and feedback
 
@@ -433,41 +436,3 @@ Optional fields (website, phone) can be added later if missing initially.
 - Test on major browsers and devices
 - Provide graceful degradation
 - Clear error messages for unsupported features
-
-## Open Questions
-
-- What should the independent shop badge look like? (text style: "INDEPENDENT", "LOCAL", "INDIE"? Or icon-based?)
-- What color scheme for the badge? (to match overall site design)
-
-## Follow-up Tasks
-
-1. ~~**Implement Google Places API collection**~~ ✅ Complete
-   - Created `scripts/sources/google-places.js` with Text Search integration
-   - Covers 220+ US metro areas with "skate shop" queries
-   - Stays within free tier (~220 requests vs 5,000/month limit)
-   - Requires: `GOOGLE_PLACES_API_KEY` environment variable
-2. ~~**Run initial Google Places collection**~~ ✅ Complete
-   - Set up API key and generate new dataset
-3. ~~**Deploy to GitHub Pages**~~ ✅ Complete
-   - Set up hosting and domain
-4. ~~**Add user feedback forms**~~ ✅ Complete
-   - "Suggest a shop" modal with name, address, website, phone, shop type, email fields
-   - "Report closed shop" modal with searchable shop selector, comments, email fields
-   - Forms configured for Formspree (requires form ID setup)
-   - 26 new tests added for form utility functions
-5. ~~**Add interactive map view**~~ ✅ Complete (2026-01-25)
-   - Leaflet.js 1.9.4 with OpenStreetMap tiles (CDN, no API key)
-   - List/Map toggle buttons with ARIA accessibility
-   - Custom markers: pink (chains), green (independent), blue (user location)
-   - Popup with shop details and "Get Directions" to Google Maps
-   - Auto-fit bounds with maxZoom: 13 to prevent over-zooming
-   - 15 new tests for `createMapPopupHTML()` and `getMapBounds()` utilities
-   - Responsive design (300-500px height based on viewport)
-6. ~~**Add analytics tracking**~~ ✅ Complete (2026-01-25)
-   - Google Analytics 4 abstraction layer (`analytics.js`)
-   - Privacy-focused: IP anonymization, no PII tracking, ad features disabled
-   - Events tracked: search, geolocation, view_results, view_change, shop_click, form_open, form_submit, error
-   - Privacy policy page (`privacy.html`) with clear data handling disclosure
-   - Graceful degradation when GA4 blocked by ad blockers
-   - 41 new tests for analytics utilities
-   - README updated with analytics setup instructions
