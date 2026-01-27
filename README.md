@@ -73,7 +73,8 @@ Then open http://localhost:8000
 │   ├── app.utils.test.js       # Frontend unit tests (91 tests)
 │   └── analytics.test.js       # Analytics unit tests
 ├── scripts/
-│   ├── collect-shops.js        # Main data collection script
+│   ├── fetch-shops.js          # Fetch raw data from Google Places API
+│   ├── collect-shops.js        # Process raw data and generate shops.json
 │   ├── review-shops.js         # Interactive CLI for manual review
 │   ├── validate-data.js        # Data quality validation
 │   ├── sources/
@@ -86,6 +87,7 @@ Then open http://localhost:8000
 │   │   ├── normalizer.js       # Data formatting
 │   │   └── geocoder.js         # Coordinate validation
 │   ├── data/
+│   │   ├── google-places-raw.json # Cached raw API responses (gitignored)
 │   │   ├── manual-additions.json  # Community submissions
 │   │   ├── approved-shops.json    # Manually approved shop IDs
 │   │   ├── removed-shops.json     # Manually rejected shop IDs
@@ -127,9 +129,11 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | Command | Description |
 |---------|-------------|
 | `npm run build` | Builds the website for deployment |
-| `npm run collect` | Fetch shops from all sources and generate `shops.json` |
+| `npm run fetch` | Fetch raw data from Google Places API (saves to intermediate file) |
+| `npm run fetch:dry-run` | Preview Google Places search (no API calls) |
+| `npm run collect` | Process cached raw data and generate `shops.json` |
 | `npm run review` | Interactive CLI to approve/deny pending shops |
-| `npm run collect:google` | Run Google Places collection standalone |
+| `npm run collect:google` | Run Google Places collection standalone (legacy) |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
 | `npm run validate` | Check data quality (required fields, coordinates, formats) |
 | `npm test` | Run all unit tests |
@@ -148,13 +152,24 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 
 ### Processing Pipeline
 
-1. **Collect** - Fetch data from all sources in parallel
-2. **Deduplicate** - Remove duplicates by coordinates (~11m threshold) or name+city
-3. **Validate** - Filter to USA bounds, check coordinate validity
-4. **Classify** - Detect chain stores (Zumiez, Vans, Tactics, CCS, Tilly's, PacSun)
-5. **Normalize** - Clean names, format phones as `(XXX) XXX-XXXX`, prefix URLs with `https://`
-6. **Confidence Filter** - Score shops and route to appropriate output (see below)
-7. **Output** - Write high-confidence shops to `shops.json`, uncertain shops to `pending-review.json`
+The pipeline is split into two phases to separate API calls from data processing:
+
+**Phase 1: Fetch (`npm run fetch`)**
+- Calls Google Places API for all 220+ US metro areas
+- Saves raw API responses to `scripts/data/google-places-raw.json`
+- Uses ~220-660 API requests (within free tier)
+
+**Phase 2: Collect (`npm run collect`)**
+1. **Load** - Read cached raw data from intermediate file
+2. **Transform** - Convert raw API responses to shop objects
+3. **Deduplicate** - Remove duplicates by coordinates (~11m threshold) or name+city
+4. **Validate** - Filter to USA bounds, check coordinate validity
+5. **Classify** - Detect chain stores (Zumiez, Vans, Tactics, CCS, Tilly's, PacSun)
+6. **Normalize** - Clean names, format phones as `(XXX) XXX-XXXX`, prefix URLs with `https://`
+7. **Confidence Filter** - Score shops and route to appropriate output (see below)
+8. **Output** - Write high-confidence shops to `shops.json`, uncertain shops to `pending-review.json`
+
+This split allows re-running processing without burning API quota (useful when fixing bugs in transformation logic).
 
 ### Confidence-Based Filtering
 

@@ -5,11 +5,12 @@
  * Orchestrates data collection from multiple sources and processing
  */
 
+import { existsSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { fetchFromGooglePlaces } from './sources/google-places.js';
+import { transformGooglePlacesData } from './sources/google-places.js';
 import { loadManualAdditions } from './sources/manual.js';
 import { fetchFromOverpass } from './sources/overpass.js';
 
@@ -32,6 +33,7 @@ const OUTPUT_PATH = join(__dirname, '..', 'shops.json');
 const REMOVED_PATH = join(__dirname, 'data', 'removed-shops.json');
 const APPROVED_PATH = join(__dirname, 'data', 'approved-shops.json');
 const PENDING_PATH = join(__dirname, 'data', 'pending-review.json');
+const RAW_DATA_PATH = join(__dirname, 'data', 'google-places-raw.json');
 
 /**
  * Load decision files (removed and approved shop IDs)
@@ -60,6 +62,24 @@ async function loadDecisionFiles() {
 }
 
 /**
+ * Load raw Google Places data from intermediate file
+ * @returns {Promise<Object|null>} Raw data object or null if not found
+ */
+async function loadRawGooglePlacesData() {
+  if (!existsSync(RAW_DATA_PATH)) {
+    return null;
+  }
+
+  try {
+    const content = await readFile(RAW_DATA_PATH, 'utf8');
+    return JSON.parse(content);
+  } catch (err) {
+    console.error('Failed to parse raw data file:', err.message);
+    return null;
+  }
+}
+
+/**
  * Collect shops from all sources
  * @returns {Promise<Array>} Combined shop array
  */
@@ -76,15 +96,26 @@ async function collectFromAllSources() {
   const fetchPromises = [];
 
   if (USE_GOOGLE_PLACES) {
-    fetchPromises.push(
-      fetchFromGooglePlaces()
-        .then((shops) => {
-          results.googlePlaces = shops;
-        })
-        .catch((err) => {
-          console.error('Google Places fetch failed:', err.message);
-        })
-    );
+    // Check for cached raw data first
+    const rawData = await loadRawGooglePlacesData();
+
+    if (rawData) {
+      console.log(`Found cached raw data from ${rawData.fetchedAt}`);
+      console.log(`  - ${rawData.stats.totalMetros} metros, ${rawData.stats.totalPlaces} places`);
+
+      try {
+        results.googlePlaces = transformGooglePlacesData(rawData);
+      } catch (err) {
+        console.error('Google Places transform failed:', err.message);
+      }
+    } else {
+      console.error('\nNo cached raw data found at:', RAW_DATA_PATH);
+      console.error('\nPlease run "npm run fetch" first to fetch data from Google Places API.');
+      console.error(
+        'This separates API calls from processing, allowing re-runs without burning quota.\n'
+      );
+      process.exit(1);
+    }
   }
 
   if (USE_OSM) {

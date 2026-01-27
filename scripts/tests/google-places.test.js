@@ -1,6 +1,12 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
-import { SEARCH_QUERIES, transformPlace, US_METRO_AREAS } from '../sources/google-places.js';
+import {
+  fetchRawFromGooglePlaces,
+  SEARCH_QUERIES,
+  transformGooglePlacesData,
+  transformPlace,
+  US_METRO_AREAS,
+} from '../sources/google-places.js';
 
 describe('transformPlace', () => {
   describe('valid places', () => {
@@ -603,5 +609,168 @@ describe('US_METRO_AREAS', () => {
     const names = US_METRO_AREAS.map((m) => m.name);
     const uniqueNames = new Set(names);
     assert.strictEqual(names.length, uniqueNames.size, 'Found duplicate metro names');
+  });
+});
+
+describe('fetchRawFromGooglePlaces', () => {
+  it('should return empty results in dry run mode', async () => {
+    const result = await fetchRawFromGooglePlaces({ dryRun: true });
+
+    assert.deepStrictEqual(result.metros, []);
+    assert.strictEqual(result.totalPlaces, 0);
+    assert.strictEqual(result.requestCount, 0);
+  });
+
+  it('should return object with required fields in dry run mode', async () => {
+    const result = await fetchRawFromGooglePlaces({ dryRun: true });
+
+    assert.ok('metros' in result, 'Should have metros field');
+    assert.ok('totalPlaces' in result, 'Should have totalPlaces field');
+    assert.ok('requestCount' in result, 'Should have requestCount field');
+  });
+});
+
+describe('transformGooglePlacesData', () => {
+  it('should transform raw data to shop objects', () => {
+    const rawData = {
+      metros: [
+        {
+          name: 'Test Metro',
+          center: { lat: 34.0522, lng: -118.2437 },
+          places: [
+            {
+              id: 'test-place-1',
+              displayName: { text: 'Test Skate Shop' },
+              formattedAddress: '123 Main St, Los Angeles, CA 90001',
+              location: { latitude: 34.0522, longitude: -118.2437 },
+              websiteUri: 'https://testskate.com',
+              types: ['store', 'point_of_interest'],
+              businessStatus: 'OPERATIONAL',
+            },
+          ],
+        },
+      ],
+    };
+
+    const shops = transformGooglePlacesData(rawData);
+
+    assert.strictEqual(shops.length, 1);
+    assert.strictEqual(shops[0].name, 'Test Skate Shop');
+    assert.strictEqual(shops[0].id, 'google-test-place-1');
+    assert.strictEqual(shops[0].source, 'google-places');
+  });
+
+  it('should deduplicate places across metros', () => {
+    const rawData = {
+      metros: [
+        {
+          name: 'Metro 1',
+          center: { lat: 34.0522, lng: -118.2437 },
+          places: [
+            {
+              id: 'duplicate-id',
+              displayName: { text: 'Duplicate Shop' },
+              location: { latitude: 34.0522, longitude: -118.2437 },
+            },
+          ],
+        },
+        {
+          name: 'Metro 2',
+          center: { lat: 34.1, lng: -118.3 },
+          places: [
+            {
+              id: 'duplicate-id', // Same ID as Metro 1
+              displayName: { text: 'Duplicate Shop' },
+              location: { latitude: 34.0522, longitude: -118.2437 },
+            },
+            {
+              id: 'unique-id',
+              displayName: { text: 'Unique Shop' },
+              location: { latitude: 34.1, longitude: -118.3 },
+            },
+          ],
+        },
+      ],
+    };
+
+    const shops = transformGooglePlacesData(rawData);
+
+    assert.strictEqual(shops.length, 2, 'Should deduplicate by place ID');
+    const ids = shops.map((s) => s.googlePlaceId);
+    assert.ok(ids.includes('duplicate-id'));
+    assert.ok(ids.includes('unique-id'));
+  });
+
+  it('should filter out invalid places from raw data', () => {
+    const rawData = {
+      metros: [
+        {
+          name: 'Test Metro',
+          center: { lat: 34.0522, lng: -118.2437 },
+          places: [
+            {
+              id: 'valid-place',
+              displayName: { text: 'Valid Shop' },
+              location: { latitude: 34.0522, longitude: -118.2437 },
+            },
+            {
+              id: 'closed-place',
+              displayName: { text: 'Closed Shop' },
+              location: { latitude: 34.0522, longitude: -118.2437 },
+              businessStatus: 'CLOSED_PERMANENTLY',
+            },
+            {
+              id: 'ice-rink',
+              displayName: { text: 'Ice Skating Rink' },
+              location: { latitude: 34.0522, longitude: -118.2437 },
+            },
+          ],
+        },
+      ],
+    };
+
+    const shops = transformGooglePlacesData(rawData);
+
+    assert.strictEqual(shops.length, 1);
+    assert.strictEqual(shops[0].name, 'Valid Shop');
+  });
+
+  it('should handle empty metros array', () => {
+    const rawData = { metros: [] };
+
+    const shops = transformGooglePlacesData(rawData);
+
+    assert.deepStrictEqual(shops, []);
+  });
+
+  it('should handle metros with empty places array', () => {
+    const rawData = {
+      metros: [
+        {
+          name: 'Empty Metro',
+          center: { lat: 34.0522, lng: -118.2437 },
+          places: [],
+        },
+      ],
+    };
+
+    const shops = transformGooglePlacesData(rawData);
+
+    assert.deepStrictEqual(shops, []);
+  });
+
+  it('should return empty array for null input', () => {
+    const shops = transformGooglePlacesData(null);
+    assert.deepStrictEqual(shops, []);
+  });
+
+  it('should return empty array for undefined input', () => {
+    const shops = transformGooglePlacesData(undefined);
+    assert.deepStrictEqual(shops, []);
+  });
+
+  it('should return empty array for input without metros', () => {
+    const shops = transformGooglePlacesData({});
+    assert.deepStrictEqual(shops, []);
   });
 });

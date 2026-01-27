@@ -110,7 +110,8 @@ Testing revealed significant issues with OSM data:
 **Implemented Scripts** (`scripts/` directory):
 ```
 scripts/
-├── collect-shops.js          # Main orchestration (npm run collect)
+├── fetch-shops.js            # Fetch raw API data (npm run fetch)
+├── collect-shops.js          # Process cached data (npm run collect)
 ├── review-shops.js           # Interactive CLI for manual review (npm run review)
 ├── validate-data.js          # Data quality checks (npm run validate)
 ├── sources/
@@ -123,6 +124,7 @@ scripts/
 │   ├── normalizer.js         # Clean and format data
 │   └── classifier.js         # Confidence scoring & chain detection
 ├── data/
+│   ├── google-places-raw.json # Cached raw API responses (gitignored)
 │   ├── manual-additions.json # Community submissions
 │   ├── approved-shops.json   # Manually approved Google Place IDs
 │   ├── removed-shops.json    # Manually rejected Google Place IDs
@@ -142,17 +144,26 @@ scripts/
 - Google Places returns both independent and chain stores with good accuracy
 
 **Process:**
-1. Run `npm run collect` - fetches from all sources
-2. Automatic deduplication (coordinate + name matching)
-3. Automatic classification (independent vs chain)
-4. Automatic normalization (phone format, URLs, coordinates)
-5. Confidence-based filtering:
-   - **High confidence** (chains, skateboard_shop type) → auto-include in `shops.json`
-   - **Good confidence** (store + skate name/website) → auto-include in `shops.json`
-   - **Review needed** (store type, no indicators) → written to `pending-review.json`
-   - **Exclude** (ice skate, hockey, no store type) → dropped
-6. Run `npm run review` - interactive CLI to approve/deny uncertain shops
-7. Run `npm run validate` - verify data quality
+
+The pipeline is split into two phases to separate API calls from data processing:
+
+**Phase 1: Fetch raw data**
+1. Run `npm run fetch` - calls Google Places API, saves raw responses to `scripts/data/google-places-raw.json`
+
+**Phase 2: Process and transform**
+2. Run `npm run collect` - reads cached raw data, transforms and processes:
+   - Automatic deduplication (coordinate + name matching)
+   - Automatic classification (independent vs chain)
+   - Automatic normalization (phone format, URLs, coordinates)
+   - Confidence-based filtering:
+     - **High confidence** (chains, skateboard_shop type) → auto-include in `shops.json`
+     - **Good confidence** (store + skate name/website) → auto-include in `shops.json`
+     - **Review needed** (store type, no indicators) → written to `pending-review.json`
+     - **Exclude** (ice skate, hockey, no store type) → dropped
+3. Run `npm run review` - interactive CLI to approve/deny uncertain shops
+4. Run `npm run validate` - verify data quality
+
+This split allows re-running processing without burning API quota (useful when fixing bugs in transformation logic).
 
 **Confidence Scoring:**
 Shops are scored based on Google Places types, name patterns, and website domains:
@@ -180,7 +191,8 @@ Shops are scored based on Google Places types, name patterns, and website domain
 
 ### Development Tools
 - **Data collection:** Node.js scripts with npm commands:
-  - `npm run collect` - Fetch and process shop data from all sources
+  - `npm run fetch` - Fetch raw data from Google Places API (saves to intermediate file)
+  - `npm run collect` - Process cached raw data and generate `shops.json`
   - `npm run review` - Interactive CLI to approve/deny uncertain shops
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
   - `npm test` - Run unit tests covering all processors, frontend utilities, and analytics
@@ -379,12 +391,18 @@ Shops are scored based on Google Places types, name patterns, and website domain
 ### Quarterly Updates
 1. Review "suggest a shop" submissions from forms
 2. Review "report closed shop" submissions from forms
-3. Re-run data collection: `npm run collect`
-4. Review uncertain shops: `npm run review`
-5. Validate data quality: `npm run validate`
-6. Verify sample of changes
-7. Commit changes and deploy
-8. Update "lastUpdated" timestamp
+3. Fetch fresh data from API: `npm run fetch`
+4. Process and transform data: `npm run collect`
+5. Review uncertain shops: `npm run review`
+6. Validate data quality: `npm run validate`
+7. Verify sample of changes
+8. Commit changes and deploy
+9. Update "lastUpdated" timestamp
+
+**If processing bug found (no API quota needed):**
+1. Fix the bug in processing code
+2. Re-run `npm run collect` (uses cached raw data)
+3. Validate and deploy
 
 ### Monitoring
 - Monitor form submissions weekly

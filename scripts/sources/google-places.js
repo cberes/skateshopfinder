@@ -472,16 +472,17 @@ function checkApiKey() {
   return true;
 }
 
-/**
- * Fetch skateshops from Google Places API
- * @param {Object} options - Options
- * @param {boolean} options.dryRun - If true, just show what would be searched
- * @returns {Promise<Array>} Array of shop objects
- */
 // Export for testing
 export { transformPlace, US_METRO_AREAS, SEARCH_QUERIES };
 
-export async function fetchFromGooglePlaces(options = {}) {
+/**
+ * Fetch raw data from Google Places API (no transformation)
+ * Returns raw API responses for intermediate storage
+ * @param {Object} options - Options
+ * @param {boolean} options.dryRun - If true, just show what would be searched
+ * @returns {Promise<Object>} Raw results with metros array and stats
+ */
+export async function fetchRawFromGooglePlaces(options = {}) {
   const { dryRun = false } = options;
 
   // Estimate: 1 query per metro, 1-3 pages each (pagination)
@@ -493,21 +494,21 @@ export async function fetchFromGooglePlaces(options = {}) {
     console.log('Query:', SEARCH_QUERIES[0]);
     console.log(`Estimated API requests: ${minRequests}-${maxRequests} (1-3 pages per metro)`);
     console.log('Estimated cost: $0 (within free tier of 1,000/month)');
-    return [];
+    return { metros: [], totalPlaces: 0, requestCount: 0 };
   }
 
   if (!checkApiKey()) {
-    return [];
+    return { metros: [], totalPlaces: 0, requestCount: 0 };
   }
 
   console.log(`\nSearching ${US_METRO_AREAS.length} US metro areas with pagination...`);
   console.log('Query:', SEARCH_QUERIES[0]);
   console.log(`Estimated API requests: ${minRequests}-${maxRequests} (1-3 pages per metro)\n`);
 
-  const allShops = [];
-  const seenPlaceIds = new Set();
+  const metros = [];
   let metroCount = 0;
   let totalApiCalls = 0;
+  let totalPlaces = 0;
 
   for (const metro of US_METRO_AREAS) {
     metroCount++;
@@ -517,8 +518,38 @@ export async function fetchFromGooglePlaces(options = {}) {
 
     const { places, apiCalls } = await searchMetroArea(metro, SEARCH_QUERIES[0]);
     totalApiCalls += apiCalls;
+    totalPlaces += places.length;
 
-    for (const place of places) {
+    metros.push({
+      name: metro.name,
+      center: { lat: metro.lat, lng: metro.lng },
+      places: places, // Raw places from API
+    });
+  }
+
+  console.log(`\n\nFetched ${totalPlaces} places from ${metroCount} metros`);
+  console.log(`Used ${totalApiCalls} API requests (free tier: 1,000/month)`);
+
+  return { metros, totalPlaces, requestCount: totalApiCalls };
+}
+
+/**
+ * Transform raw Google Places data into shop objects
+ * @param {Object} rawData - Raw data from fetchRawFromGooglePlaces or loaded from file
+ * @returns {Array} Array of shop objects
+ */
+export function transformGooglePlacesData(rawData) {
+  if (!rawData || !rawData.metros) {
+    return [];
+  }
+
+  console.log(`\nTransforming raw data from ${rawData.metros.length} metros...`);
+
+  const allShops = [];
+  const seenPlaceIds = new Set();
+
+  for (const metro of rawData.metros) {
+    for (const place of metro.places) {
       // Skip duplicates (same shop might appear in multiple metro searches)
       if (seenPlaceIds.has(place.id)) {
         continue;
@@ -532,11 +563,7 @@ export async function fetchFromGooglePlaces(options = {}) {
     }
   }
 
-  console.log(`\n\nFound ${allShops.length} unique skateshops`);
-  console.log(
-    `Used ${totalApiCalls} API requests across ${metroCount} metros (free tier: 1,000/month)`
-  );
-
+  console.log(`Transformed ${allShops.length} unique skateshops from cached data`);
   return allShops;
 }
 
@@ -549,9 +576,11 @@ async function main() {
 
   console.log('=== Google Places API Collection ===');
 
-  const shops = await fetchFromGooglePlaces({ dryRun });
+  const rawData = await fetchRawFromGooglePlaces({ dryRun });
 
-  if (!dryRun && shops.length > 0) {
+  if (!dryRun && rawData.metros.length > 0) {
+    const shops = transformGooglePlacesData(rawData);
+
     console.log('\nSample results:');
     shops.slice(0, 5).forEach((shop) => {
       console.log(`  - ${shop.name} (${shop.address})`);
