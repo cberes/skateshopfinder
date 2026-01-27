@@ -103,9 +103,9 @@ Testing revealed significant issues with OSM data:
 **Google Places API Strategy:**
 - Use Text Search API to find "skateboard shop" across US metro areas
 - Single specific query with pagination (up to 60 results per metro area)
-- Free tier: 5,000 requests/month (sufficient for nationwide coverage)
+- Free tier: 1,000 requests/month (Places API Text Search Enterprise tier)
 - Estimated requests per collection: ~220-660 (well within free tier)
-- Cost: **$0** if staying under 5,000 requests/month
+- Cost: **$0** if staying under 1,000 requests/month
 
 **Implemented Scripts** (`scripts/` directory):
 ```
@@ -136,7 +136,7 @@ scripts/
 **Current Status (2026-01-27):**
 - ✅ Google Places API integration complete (`scripts/sources/google-places.js`)
 - 220+ US metro areas covered with pagination (up to 60 results per metro)
-- ~220-660 API requests per collection (within free tier of 5,000/month)
+- ~220-660 API requests per collection (within free tier of 1,000/month)
 - Single "skateboard shop" query reduces false positives from ice/roller skating
 - OSM data deprecated due to quality issues
 - Google Places returns both independent and chain stores with good accuracy
@@ -319,7 +319,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 - [x] **Replace OSM with Google Places API** (completed 2026-01-25)
   - ✅ Implemented `scripts/sources/google-places.js`
   - ✅ Text Search for "skateboard shop" across 220+ US metro areas with pagination
-  - ✅ Stays within free tier (~220-660 requests vs 5,000/month limit)
+  - ✅ Stays within free tier (~220-660 requests vs 1,000/month limit)
   - ✅ Updated `collect-shops.js` to use Google Places as primary source
   - ✅ Run initial collection with API key to generate new dataset
   - ✅ Returns both independent and chain stores with good accuracy

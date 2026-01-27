@@ -120,7 +120,7 @@ The primary data source requires a Google Places API key:
 export GOOGLE_PLACES_API_KEY=your_key_here
 ```
 
-**Cost:** Free tier includes 5,000 Text Search requests/month. Our collection uses ~220-660 requests (with pagination), so quarterly updates cost $0.
+**Cost:** Free tier includes 1,000 Text Search requests/month. Our collection uses ~220-660 requests (with pagination), so quarterly updates cost $0.
 
 ### Commands
 
@@ -140,7 +140,7 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 
 ### Data Sources
 
-1. **Google Places API** (Primary) - Searches for "skateboard shop" across 220+ US metro areas using the Text Search API with pagination (up to 60 results per metro). Returns both independent and chain stores. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 5,000 requests/month (we use ~220-660).
+1. **Google Places API** (Primary) - Searches for "skateboard shop" across 220+ US metro areas using the Text Search API with pagination (up to 60 results per metro). Returns both independent and chain stores. Requires `GOOGLE_PLACES_API_KEY` environment variable. Free tier: 1,000 requests/month (we use ~220-660).
 
 2. **Manual Additions** - Community-submitted shops from `scripts/data/manual-additions.json`.
 

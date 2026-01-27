@@ -4,7 +4,7 @@
  *
  * Requires GOOGLE_PLACES_API_KEY environment variable
  *
- * Pricing: $32 per 1,000 requests (5,000 free/month)
+ * Pricing: $32 per 1,000 requests (1,000 free/month)
  * Strategy: Search "skate shop" in major US metro areas
  */
 
@@ -492,7 +492,7 @@ export async function fetchFromGooglePlaces(options = {}) {
     console.log(`\nDry run: would search ${US_METRO_AREAS.length} metro areas with pagination`);
     console.log('Query:', SEARCH_QUERIES[0]);
     console.log(`Estimated API requests: ${minRequests}-${maxRequests} (1-3 pages per metro)`);
-    console.log('Estimated cost: $0 (within free tier of 5,000/month)');
+    console.log('Estimated cost: $0 (within free tier of 1,000/month)');
     return [];
   }
 
@@ -534,7 +534,7 @@ export async function fetchFromGooglePlaces(options = {}) {
 
   console.log(`\n\nFound ${allShops.length} unique skateshops`);
   console.log(
-    `Used ${totalApiCalls} API requests across ${metroCount} metros (free tier: 5,000/month)`
+    `Used ${totalApiCalls} API requests across ${metroCount} metros (free tier: 1,000/month)`
   );
 
   return allShops;
