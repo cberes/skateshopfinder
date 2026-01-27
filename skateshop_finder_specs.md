@@ -101,9 +101,10 @@ Testing revealed significant issues with OSM data:
 - False positives (fingerboard shops, general sporting goods)
 
 **Google Places API Strategy:**
-- Use Text Search API to find "skate shop" across US metro areas
+- Use Text Search API to find "skateboard shop" across US metro areas
+- Single specific query with pagination (up to 60 results per metro area)
 - Free tier: 5,000 requests/month (sufficient for nationwide coverage)
-- Estimated requests per collection: ~1,500 (well within free tier)
+- Estimated requests per collection: ~220-660 (well within free tier)
 - Cost: **$0** if staying under 5,000 requests/month
 
 **Implemented Scripts** (`scripts/` directory):
@@ -132,9 +133,11 @@ scripts/
     └── *.test.js             # Unit tests (npm run test:scripts)
 ```
 
-**Current Status (2026-01-25):**
+**Current Status (2026-01-27):**
 - ✅ Google Places API integration complete (`scripts/sources/google-places.js`)
-- 220+ US metro areas covered, ~220 API requests per collection (within free tier)
+- 220+ US metro areas covered with pagination (up to 60 results per metro)
+- ~220-660 API requests per collection (within free tier of 5,000/month)
+- Single "skateboard shop" query reduces false positives from ice/roller skating
 - OSM data deprecated due to quality issues
 - Google Places returns both independent and chain stores with good accuracy
 
@@ -181,6 +184,12 @@ Shops are scored based on Google Places types, name patterns, and website domain
   - `npm run review` - Interactive CLI to approve/deny uncertain shops
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
   - `npm test` - Run unit tests covering all processors, frontend utilities, and analytics
+- **Code quality:**
+  - `npm run lint` - Run all linters (JS, CSS, HTML)
+  - `npm run format` - Auto-format JavaScript and CSS
+  - **Biome** - JavaScript linting and formatting
+  - **Stylelint** - CSS linting
+  - **HTMLHint** - HTML linting
 - **Dependencies:** `node-fetch` (API calls), `node-geocoder` (coordinate validation)
 - **Version control:** Git + GitHub
 - **Deployment:** Automated via GitHub Actions (optional)
@@ -309,8 +318,8 @@ Shops are scored based on Google Places types, name patterns, and website domain
 ### Phase 2: Data & Forms (Week 3)
 - [x] **Replace OSM with Google Places API** (completed 2026-01-25)
   - ✅ Implemented `scripts/sources/google-places.js`
-  - ✅ Text Search for "skate shop" across 220+ US metro areas
-  - ✅ Stays within free tier (~220 requests vs 5,000/month limit)
+  - ✅ Text Search for "skateboard shop" across 220+ US metro areas with pagination
+  - ✅ Stays within free tier (~220-660 requests vs 5,000/month limit)
   - ✅ Updated `collect-shops.js` to use Google Places as primary source
   - ✅ Run initial collection with API key to generate new dataset
   - ✅ Returns both independent and chain stores with good accuracy
@@ -321,8 +330,14 @@ Shops are scored based on Google Places types, name patterns, and website domain
 ### Phase 3: Polish (Week 4)
 - [x] Responsive design refinement (implemented in initial build)
 - [x] Error handling improvements (implemented in initial build)
-- [ ] Enforce code style
-- [ ] Check if 2 Google Places API queries per location is necessary (does one query find everything that the other query finds and more?)
+- [x] Enforce code style (completed 2026-01-27)
+  - Biome for JavaScript linting and formatting
+  - Stylelint for CSS linting
+  - HTMLHint for HTML linting
+- [x] Optimize Google Places API queries (completed 2026-01-27)
+  - Changed from 2 queries ("skate shop", "skateboard shop") to single "skateboard shop" query
+  - Added pagination (up to 3 pages / 60 results per metro) for better coverage
+  - Reduces false positives from ice skating and roller skating shops
 - [ ] Dark mode
 - [ ] Performance optimization
 - [ ] User testing and feedback
