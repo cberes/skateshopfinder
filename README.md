@@ -135,6 +135,8 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | `npm test` | Run all unit tests |
 | `npm run test:frontend` | Run frontend tests only |
 | `npm run test:scripts` | Run data collection tests only |
+| `npm run lint` | Run all linters (JS, CSS, HTML) |
+| `npm run format` | Auto-format JavaScript and CSS |
 
 ### Data Sources
 

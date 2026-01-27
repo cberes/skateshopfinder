@@ -1,6 +1,11 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { classifyShop, classifyShops, detectPotentialChains, calculateConfidence } from '../processors/classifier.js';
+import { describe, it } from 'node:test';
+import {
+  calculateConfidence,
+  classifyShop,
+  classifyShops,
+  detectPotentialChains,
+} from '../processors/classifier.js';
 
 describe('classifyShop', () => {
   it('should classify unknown shop as independent', () => {
@@ -129,7 +134,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'high',
-      reason: 'Known chain: Zumiez'
+      reason: 'Known chain: Zumiez',
     });
   });
 
@@ -138,7 +143,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'high',
-      reason: 'Known chain: zumiez'
+      reason: 'Known chain: zumiez',
     });
   });
 
@@ -147,7 +152,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'high',
-      reason: 'Has skateboard_shop type'
+      reason: 'Has skateboard_shop type',
     });
   });
 
@@ -156,7 +161,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'very_high',
-      reason: 'Skate park with store'
+      reason: 'Skate park with store',
     });
   });
 
@@ -165,7 +170,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'good',
-      reason: 'Store with skate-related name'
+      reason: 'Store with skate-related name',
     });
   });
 
@@ -174,7 +179,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'good',
-      reason: 'Store with skate-related name'
+      reason: 'Store with skate-related name',
     });
   });
 
@@ -183,7 +188,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'good',
-      reason: 'Store with skate-related name'
+      reason: 'Store with skate-related name',
     });
   });
 
@@ -192,7 +197,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'good',
-      reason: 'Store with skate-related website'
+      reason: 'Store with skate-related website',
     });
   });
 
@@ -201,7 +206,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'good',
-      reason: 'Store with skate-related website'
+      reason: 'Store with skate-related website',
     });
   });
 
@@ -210,7 +215,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'review',
-      reason: 'Store type but no clear skateboard indicator'
+      reason: 'Store type but no clear skateboard indicator',
     });
   });
 
@@ -219,7 +224,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'Name matches skip pattern'
+      reason: 'Name matches skip pattern',
     });
   });
 
@@ -228,7 +233,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'Name matches skip pattern'
+      reason: 'Name matches skip pattern',
     });
   });
 
@@ -237,7 +242,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'Name matches skip pattern'
+      reason: 'Name matches skip pattern',
     });
   });
 
@@ -246,7 +251,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'No store type'
+      reason: 'No store type',
     });
   });
 
@@ -255,7 +260,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'Has excluded type'
+      reason: 'Has excluded type',
     });
   });
 
@@ -264,7 +269,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'Has excluded type'
+      reason: 'Has excluded type',
     });
   });
 
@@ -273,7 +278,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'exclude',
-      reason: 'No store type'
+      reason: 'No store type',
     });
   });
 
@@ -282,7 +287,7 @@ describe('calculateConfidence', () => {
     const result = calculateConfidence(shop);
     assert.deepStrictEqual(result, {
       level: 'review',
-      reason: 'Store type but no clear skateboard indicator'
+      reason: 'Store type but no clear skateboard indicator',
     });
   });
 });

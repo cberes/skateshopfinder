@@ -5,10 +5,10 @@
  * Allows manual approval or denial of uncertain shop entries
  */
 
-import { readFileSync, writeFileSync } from 'fs';
-import { createInterface } from 'readline';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { createInterface } from 'node:readline';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,7 +33,7 @@ function loadJson(path) {
  * Save JSON file with pretty formatting
  */
 function saveJson(path, data) {
-  writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+  writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`);
 }
 
 /**
@@ -52,7 +52,7 @@ function loadShopsFile() {
  * Display shop information for review
  */
 function displayShop(shop, index, total) {
-  console.log('\n' + '='.repeat(60));
+  console.log(`\n${'='.repeat(60)}`);
   console.log(`Shop ${index + 1} of ${total}`);
   console.log('='.repeat(60));
   console.log(`Name:    ${shop.name || 'N/A'}`);
@@ -96,7 +96,7 @@ function addToShops(shop, shopsData) {
   };
 
   // Remove null values
-  Object.keys(newShop).forEach(key => {
+  Object.keys(newShop).forEach((key) => {
     if (newShop[key] === null || newShop[key] === undefined) {
       delete newShop[key];
     }
@@ -104,8 +104,8 @@ function addToShops(shop, shopsData) {
 
   shopsData.shops.push(newShop);
   shopsData.stats.total = shopsData.shops.length;
-  shopsData.stats.independent = shopsData.shops.filter(s => s.isIndependent).length;
-  shopsData.stats.chain = shopsData.shops.filter(s => !s.isIndependent).length;
+  shopsData.stats.independent = shopsData.shops.filter((s) => s.isIndependent).length;
+  shopsData.stats.chain = shopsData.shops.filter((s) => !s.isIndependent).length;
 
   return shopsData;
 }
@@ -119,7 +119,7 @@ async function main() {
   console.log('=================================\n');
 
   // Load all data files
-  let pending = loadJson(PENDING_PATH);
+  const pending = loadJson(PENDING_PATH);
   const approved = loadJson(APPROVED_PATH);
   const removed = loadJson(REMOVED_PATH);
   let shopsData = loadShopsFile();

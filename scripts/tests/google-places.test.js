@@ -1,6 +1,6 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { transformPlace, US_METRO_AREAS, SEARCH_QUERIES } from '../sources/google-places.js';
+import { describe, it } from 'node:test';
+import { SEARCH_QUERIES, transformPlace, US_METRO_AREAS } from '../sources/google-places.js';
 
 describe('transformPlace', () => {
   describe('valid places', () => {
@@ -33,14 +33,14 @@ describe('transformPlace', () => {
       const place = {
         id: 'xyz789',
         displayName: { text: 'Basic Shop' },
-        location: { latitude: 40.7128, longitude: -74.0060 },
+        location: { latitude: 40.7128, longitude: -74.006 },
       };
       const result = transformPlace(place);
 
       assert.strictEqual(result.id, 'google-xyz789');
       assert.strictEqual(result.name, 'Basic Shop');
       assert.strictEqual(result.lat, 40.7128);
-      assert.strictEqual(result.lng, -74.0060);
+      assert.strictEqual(result.lng, -74.006);
       assert.strictEqual(result.address, null);
       assert.strictEqual(result.website, null);
       assert.strictEqual(result.phone, null);
@@ -334,11 +334,7 @@ describe('transformPlace', () => {
     });
 
     it('should skip big box sporting goods stores', () => {
-      const stores = [
-        "Dick's Sporting Goods",
-        'Big 5 Sporting Goods',
-        'Academy Sports',
-      ];
+      const stores = ["Dick's Sporting Goods", 'Big 5 Sporting Goods', 'Academy Sports'];
 
       for (const name of stores) {
         const place = {
@@ -352,11 +348,7 @@ describe('transformPlace', () => {
     });
 
     it('should skip ice arenas and centers', () => {
-      const venues = [
-        'Buffalo Ice Arena',
-        'Community Ice Center',
-        'Northtown Ice Centre',
-      ];
+      const venues = ['Buffalo Ice Arena', 'Community Ice Center', 'Northtown Ice Centre'];
 
       for (const name of venues) {
         const place = {
@@ -397,7 +389,7 @@ describe('transformPlace', () => {
       const place = {
         id: 'food-court',
         displayName: { text: 'Food Court Skatepark' },
-        location: { latitude: 42.7160, longitude: -78.8297 },
+        location: { latitude: 42.716, longitude: -78.8297 },
         types: ['skateboard_park', 'sporting_goods_store', 'store', 'point_of_interest'],
       };
       const result = transformPlace(place);
@@ -421,7 +413,7 @@ describe('transformPlace', () => {
       const place = {
         id: 'lasalle',
         displayName: { text: 'LaSalle Skate Park' },
-        location: { latitude: 42.7500, longitude: -78.8300 },
+        location: { latitude: 42.75, longitude: -78.83 },
         types: ['skateboard_park', 'park', 'point_of_interest'],
       };
       const result = transformPlace(place);
@@ -557,7 +549,10 @@ describe('SEARCH_QUERIES', () => {
 
 describe('US_METRO_AREAS', () => {
   it('should have at least 200 metro areas for good coverage', () => {
-    assert.ok(US_METRO_AREAS.length >= 200, `Expected at least 200 metros, got ${US_METRO_AREAS.length}`);
+    assert.ok(
+      US_METRO_AREAS.length >= 200,
+      `Expected at least 200 metros, got ${US_METRO_AREAS.length}`
+    );
   });
 
   it('should have all required fields for each metro', () => {
@@ -570,19 +565,25 @@ describe('US_METRO_AREAS', () => {
 
   it('should have valid US latitude bounds (18-72, includes Hawaii/Alaska)', () => {
     for (const metro of US_METRO_AREAS) {
-      assert.ok(metro.lat >= 18 && metro.lat <= 72, `Metro ${metro.name} lat ${metro.lat} outside US bounds`);
+      assert.ok(
+        metro.lat >= 18 && metro.lat <= 72,
+        `Metro ${metro.name} lat ${metro.lat} outside US bounds`
+      );
     }
   });
 
   it('should have valid US longitude bounds (-180 to -65)', () => {
     for (const metro of US_METRO_AREAS) {
-      assert.ok(metro.lng >= -180 && metro.lng <= -65, `Metro ${metro.name} lng ${metro.lng} outside US bounds`);
+      assert.ok(
+        metro.lng >= -180 && metro.lng <= -65,
+        `Metro ${metro.name} lng ${metro.lng} outside US bounds`
+      );
     }
   });
 
   it('should include major cities', () => {
     const majorCities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
-    const metroNames = US_METRO_AREAS.map(m => m.name);
+    const metroNames = US_METRO_AREAS.map((m) => m.name);
 
     for (const city of majorCities) {
       assert.ok(metroNames.includes(city), `Missing major city: ${city}`);
@@ -591,7 +592,7 @@ describe('US_METRO_AREAS', () => {
 
   it('should include coverage gap cities', () => {
     const gapCities = ['Missoula', 'Fargo', 'Billings', 'Lubbock', 'Bangor'];
-    const metroNames = US_METRO_AREAS.map(m => m.name);
+    const metroNames = US_METRO_AREAS.map((m) => m.name);
 
     for (const city of gapCities) {
       assert.ok(metroNames.includes(city), `Missing coverage gap city: ${city}`);
@@ -599,7 +600,7 @@ describe('US_METRO_AREAS', () => {
   });
 
   it('should have no duplicate metro names', () => {
-    const names = US_METRO_AREAS.map(m => m.name);
+    const names = US_METRO_AREAS.map((m) => m.name);
     const uniqueNames = new Set(names);
     assert.strictEqual(names.length, uniqueNames.size, 'Found duplicate metro names');
   });

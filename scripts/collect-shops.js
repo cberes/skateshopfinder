@@ -5,21 +5,26 @@
  * Orchestrates data collection from multiple sources and processing
  */
 
-import { writeFile, readFile } from 'fs/promises';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { readFile, writeFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { fetchFromGooglePlaces } from './sources/google-places.js';
-import { fetchFromOverpass } from './sources/overpass.js';
 import { loadManualAdditions } from './sources/manual.js';
+import { fetchFromOverpass } from './sources/overpass.js';
 
 // Configuration: which sources to use
-const USE_GOOGLE_PLACES = true;  // Primary source (recommended)
-const USE_OSM = false;           // Deprecated: poor data quality
+const USE_GOOGLE_PLACES = true; // Primary source (recommended)
+const USE_OSM = false; // Deprecated: poor data quality
+
+import {
+  calculateConfidence,
+  classifyShops,
+  detectPotentialChains,
+} from './processors/classifier.js';
 import { deduplicateShops } from './processors/deduplicator.js';
-import { classifyShops, detectPotentialChains, calculateConfidence } from './processors/classifier.js';
+import { isWithinUSA, validateAllCoordinates } from './processors/geocoder.js';
 import { normalizeShops, prepareForOutput } from './processors/normalizer.js';
-import { validateAllCoordinates, isWithinUSA } from './processors/geocoder.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -72,7 +77,10 @@ async function collectFromAllSources() {
 
   if (USE_GOOGLE_PLACES) {
     fetchPromises.push(
-      fetchFromGooglePlaces().then(shops => { results.googlePlaces = shops; })
+      fetchFromGooglePlaces()
+        .then((shops) => {
+          results.googlePlaces = shops;
+        })
         .catch((err) => {
           console.error('Google Places fetch failed:', err.message);
         })
@@ -81,7 +89,10 @@ async function collectFromAllSources() {
 
   if (USE_OSM) {
     fetchPromises.push(
-      fetchFromOverpass().then(shops => { results.osm = shops; })
+      fetchFromOverpass()
+        .then((shops) => {
+          results.osm = shops;
+        })
         .catch((err) => {
           console.error('OSM fetch failed:', err.message);
         })
@@ -90,7 +101,10 @@ async function collectFromAllSources() {
 
   // Load manual additions (community-submitted shops)
   fetchPromises.push(
-    loadManualAdditions().then(shops => { results.manual = shops; })
+    loadManualAdditions()
+      .then((shops) => {
+        results.manual = shops;
+      })
       .catch((err) => {
         console.error('Manual additions load failed:', err.message);
       })
@@ -108,11 +122,7 @@ async function collectFromAllSources() {
   console.log(`  - Manual: ${results.manual.length} shops`);
 
   // Combine all sources (Google Places first as primary)
-  return [
-    ...results.googlePlaces,
-    ...results.osm,
-    ...results.manual,
-  ];
+  return [...results.googlePlaces, ...results.osm, ...results.manual];
 }
 
 /**
@@ -214,7 +224,6 @@ function applyConfidenceFilter(shops, decisions) {
           confidenceReason: confidence.reason,
         });
         break;
-      case 'exclude':
       default:
         excludedCount++;
         break;
@@ -235,7 +244,7 @@ function applyConfidenceFilter(shops, decisions) {
  * @param {Array} shops - Shops pending review
  */
 async function writePendingReview(shops) {
-  await writeFile(PENDING_PATH, JSON.stringify(shops, null, 2) + '\n');
+  await writeFile(PENDING_PATH, `${JSON.stringify(shops, null, 2)}\n`);
   if (shops.length > 0) {
     console.log(`\nWritten ${shops.length} shops to pending review.`);
     console.log(`Run "npm run review" to manually review them.`);
@@ -271,7 +280,7 @@ async function writeOutput(shops) {
     },
   };
 
-  await writeFile(OUTPUT_PATH, JSON.stringify(data, null, 2) + '\n');
+  await writeFile(OUTPUT_PATH, `${JSON.stringify(data, null, 2)}\n`);
 
   console.log(`Written ${output.length} shops to ${OUTPUT_PATH}`);
   console.log(`\nStats:`);
@@ -293,7 +302,9 @@ async function main() {
   try {
     // Load decision files (removed/approved shop IDs)
     const decisions = await loadDecisionFiles();
-    console.log(`\nLoaded ${decisions.removedIds.size} removed, ${decisions.approvedIds.size} approved shop IDs`);
+    console.log(
+      `\nLoaded ${decisions.removedIds.size} removed, ${decisions.approvedIds.size} approved shop IDs`
+    );
 
     // Collect from all sources
     const rawShops = await collectFromAllSources();

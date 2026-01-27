@@ -12,10 +12,21 @@
     "validate": "node scripts/validate-data.js",
     "test": "node --test scripts/tests/*.test.js tests/*.test.js",
     "test:frontend": "node --test tests/*.test.js",
-    "test:scripts": "node --test scripts/tests/*.test.js"
+    "test:scripts": "node --test scripts/tests/*.test.js",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "biome check .",
+    "lint:css": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "lint:html": "htmlhint \"*.html\"",
+    "format": "biome format --write . && stylelint \"**/*.css\" --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "node-fetch": "^3.3.0",
     "node-geocoder": "^4.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
+    "htmlhint": "^1.8.0",
+    "stylelint": "^17.0.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }

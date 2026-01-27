@@ -8,32 +8,79 @@
 export const STORE_TYPES = ['store', 'sporting_goods_store', 'retail'];
 
 // Patterns that suggest a skateboard-related shop
-export const SKATE_NAME_PATTERNS = [
-  /skate/i,
-  /sk8/i,
-  /board/i,
-  /deck/i,
-  /shred/i,
-  /thrash/i,
-];
+export const SKATE_NAME_PATTERNS = [/skate/i, /sk8/i, /board/i, /deck/i, /shred/i, /thrash/i];
 
 // Patterns that indicate non-skateboard businesses to skip
 export const SKIP_PATTERNS = [
-  'fingerboard', 'finger board', 'tech deck', 'mini skate', 'miniskate',
-  'ice skate', 'iceskate', 'ice rink', 'icerink', 'skating rink', 'skatingrink',
-  'figure skating', 'figureskating', 'figure skater', 'figureskater',
-  'hockey', 'pure hockey', 'purehockey', 'great skate', 'greatskate',
-  "skater's edge", 'skaters edge', 'skatersedge',
-  'ice arena', 'icearena', 'ice center', 'icecenter', 'ice centre', 'icecentre',
-  'skate sharpening', 'skatesharpening', 'blade sharpening', 'bladesharpening',
-  'skate anytime', 'skateanytime', 'synthetic ice', 'syntheticice', 'artificial ice', 'artificialice',
-  'roller skate', 'rollerskate', 'roller rink', 'rollerrink', 'roller derby', 'rollerderby', 'roller disco', 'rollerdisco',
-  'sport authority', 'sports authority', 'sportsauthority', 'dick\'s sporting', 'dicks sporting', 'dickssporting',
-  'big 5 sporting', 'big5sporting', 'academy sports', 'academysports', 'front row sport', 'frontrowsport',
+  'fingerboard',
+  'finger board',
+  'tech deck',
+  'mini skate',
+  'miniskate',
+  'ice skate',
+  'iceskate',
+  'ice rink',
+  'icerink',
+  'skating rink',
+  'skatingrink',
+  'figure skating',
+  'figureskating',
+  'figure skater',
+  'figureskater',
+  'hockey',
+  'pure hockey',
+  'purehockey',
+  'great skate',
+  'greatskate',
+  "skater's edge",
+  'skaters edge',
+  'skatersedge',
+  'ice arena',
+  'icearena',
+  'ice center',
+  'icecenter',
+  'ice centre',
+  'icecentre',
+  'skate sharpening',
+  'skatesharpening',
+  'blade sharpening',
+  'bladesharpening',
+  'skate anytime',
+  'skateanytime',
+  'synthetic ice',
+  'syntheticice',
+  'artificial ice',
+  'artificialice',
+  'roller skate',
+  'rollerskate',
+  'roller rink',
+  'rollerrink',
+  'roller derby',
+  'rollerderby',
+  'roller disco',
+  'rollerdisco',
+  'sport authority',
+  'sports authority',
+  'sportsauthority',
+  "dick's sporting",
+  'dicks sporting',
+  'dickssporting',
+  'big 5 sporting',
+  'big5sporting',
+  'academy sports',
+  'academysports',
+  'front row sport',
+  'frontrowsport',
 ];
 
 // Google Places types to exclude
-export const EXCLUDED_TYPES = ['ice_skating_rink', 'skating_rink', 'stadium', 'arena', 'department_store'];
+export const EXCLUDED_TYPES = [
+  'ice_skating_rink',
+  'skating_rink',
+  'stadium',
+  'arena',
+  'department_store',
+];
 
 // Known chain store patterns
 const CHAIN_PATTERNS = [
@@ -81,7 +128,7 @@ function matchKnownChain(shop) {
       const url = new URL(shop.website);
       const hostname = url.hostname.replace(/^www\./, '').toLowerCase();
       for (const chainDomain of CHAIN_WEBSITES) {
-        if (hostname === chainDomain || hostname.endsWith('.' + chainDomain)) {
+        if (hostname === chainDomain || hostname.endsWith(`.${chainDomain}`)) {
           return { chainName: chainDomain.split('.')[0], matchedBy: 'website' };
         }
       }
@@ -114,16 +161,16 @@ export function calculateConfidence(shop) {
   }
 
   // Check for skate park with store
-  const hasStoreType = STORE_TYPES.some(t => types.includes(t));
+  const hasStoreType = STORE_TYPES.some((t) => types.includes(t));
   if (types.includes('skateboard_park') && hasStoreType) {
     return { level: 'very_high', reason: 'Skate park with store' };
   }
 
   // Check for skate-related name
-  const hasSkateNamePattern = SKATE_NAME_PATTERNS.some(p => p.test(name));
+  const hasSkateNamePattern = SKATE_NAME_PATTERNS.some((p) => p.test(name));
   if (hasStoreType && hasSkateNamePattern) {
     // But exclude if it matches skip patterns
-    if (SKIP_PATTERNS.some(p => name.includes(p))) {
+    if (SKIP_PATTERNS.some((p) => name.includes(p))) {
       return { level: 'exclude', reason: 'Name matches skip pattern' };
     }
     return { level: 'good', reason: 'Store with skate-related name' };
@@ -134,9 +181,9 @@ export function calculateConfidence(shop) {
     try {
       const url = new URL(shop.website);
       const hostname = url.hostname.replace(/^www\./, '').toLowerCase();
-      if (SKATE_NAME_PATTERNS.some(p => p.test(hostname))) {
+      if (SKATE_NAME_PATTERNS.some((p) => p.test(hostname))) {
         // But exclude if hostname matches skip patterns
-        if (SKIP_PATTERNS.some(p => hostname.includes(p))) {
+        if (SKIP_PATTERNS.some((p) => hostname.includes(p))) {
           return { level: 'exclude', reason: 'Website matches skip pattern' };
         }
         return { level: 'good', reason: 'Store with skate-related website' };
@@ -147,12 +194,12 @@ export function calculateConfidence(shop) {
   }
 
   // Check for excluded types
-  if (EXCLUDED_TYPES.some(t => types.includes(t))) {
+  if (EXCLUDED_TYPES.some((t) => types.includes(t))) {
     return { level: 'exclude', reason: 'Has excluded type' };
   }
 
   // Check for skip patterns in name
-  if (SKIP_PATTERNS.some(p => name.includes(p))) {
+  if (SKIP_PATTERNS.some((p) => name.includes(p))) {
     return { level: 'exclude', reason: 'Name matches skip pattern' };
   }
 
@@ -195,7 +242,7 @@ function matchChainByWebsite(website) {
     const hostname = url.hostname.replace(/^www\./, '').toLowerCase();
 
     for (const chainDomain of CHAIN_WEBSITES) {
-      if (hostname === chainDomain || hostname.endsWith('.' + chainDomain)) {
+      if (hostname === chainDomain || hostname.endsWith(`.${chainDomain}`)) {
         return {
           chainName: chainDomain.split('.')[0],
           matchedBy: 'website',
@@ -264,7 +311,9 @@ export function classifyShops(shops) {
   const independentCount = classified.filter((s) => s.isIndependent).length;
   const chainCount = classified.filter((s) => !s.isIndependent).length;
 
-  console.log(`Classification complete: ${independentCount} independent, ${chainCount} chain stores`);
+  console.log(
+    `Classification complete: ${independentCount} independent, ${chainCount} chain stores`
+  );
 
   return classified;
 }

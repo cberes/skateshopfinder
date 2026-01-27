@@ -1,5 +1,5 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { normalizeShop, normalizeShops, prepareForOutput } from '../processors/normalizer.js';
 
 describe('normalizeShop', () => {
@@ -81,7 +81,13 @@ describe('normalizeShop', () => {
     });
 
     it('should preserve existing https://', () => {
-      const shop = { id: '1', name: 'Shop', lat: 34.0, lng: -118.0, website: 'https://example.com' };
+      const shop = {
+        id: '1',
+        name: 'Shop',
+        lat: 34.0,
+        lng: -118.0,
+        website: 'https://example.com',
+      };
       const result = normalizeShop(shop);
       assert.strictEqual(result.website, 'https://example.com');
     });
@@ -111,7 +117,13 @@ describe('normalizeShop', () => {
     });
 
     it('should remove trailing slash from root path', () => {
-      const shop = { id: '1', name: 'Shop', lat: 34.0, lng: -118.0, website: 'https://example.com/' };
+      const shop = {
+        id: '1',
+        name: 'Shop',
+        lat: 34.0,
+        lng: -118.0,
+        website: 'https://example.com/',
+      };
       const result = normalizeShop(shop);
       assert.strictEqual(result.website, 'https://example.com');
     });

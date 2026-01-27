@@ -11,7 +11,7 @@ const COORDINATE_THRESHOLD = 0.0001;
  * Uses simple Euclidean distance (sufficient for small distances)
  */
 function coordinateDistance(lat1, lng1, lat2, lng2) {
-  return Math.sqrt(Math.pow(lat1 - lat2, 2) + Math.pow(lng1 - lng2, 2));
+  return Math.sqrt((lat1 - lat2) ** 2 + (lng1 - lng2) ** 2);
 }
 
 /**
@@ -26,10 +26,7 @@ function normalizeForComparison(str) {
     .replace(/[''`]/g, "'")
     .replace(/[^\w\s']/g, ' ')
     .replace(/\s+/g, ' ')
-    .replace(
-      /\b(skate\s*shop|skateshop|skate\s*store|shop|store|inc|llc|ltd|co)\b/gi,
-      ''
-    )
+    .replace(/\b(skate\s*shop|skateshop|skate\s*store|shop|store|inc|llc|ltd|co)\b/gi, '')
     .trim();
 }
 

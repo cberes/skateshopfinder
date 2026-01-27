@@ -1,6 +1,6 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { RateLimiter, withRateLimit, processWithRateLimit } from '../utils/rate-limiter.js';
+import { describe, it } from 'node:test';
+import { processWithRateLimit, RateLimiter, withRateLimit } from '../utils/rate-limiter.js';
 
 describe('RateLimiter', () => {
   it('should create a rate limiter with default rate', () => {

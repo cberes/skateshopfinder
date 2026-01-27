@@ -1,5 +1,5 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { deduplicateShops } from '../processors/deduplicator.js';
 
 describe('deduplicateShops', () => {
@@ -46,8 +46,20 @@ describe('deduplicateShops', () => {
 
   it('should merge shops with same normalized name and city', () => {
     const shops = [
-      { id: '1', name: 'Cool Skate Shop', lat: 34.0, lng: -118.0, address: '123 Main, Los Angeles, CA' },
-      { id: '2', name: 'Cool Skate Shop', lat: 34.1, lng: -118.1, address: '456 Oak, Los Angeles, CA' },
+      {
+        id: '1',
+        name: 'Cool Skate Shop',
+        lat: 34.0,
+        lng: -118.0,
+        address: '123 Main, Los Angeles, CA',
+      },
+      {
+        id: '2',
+        name: 'Cool Skate Shop',
+        lat: 34.1,
+        lng: -118.1,
+        address: '456 Oak, Los Angeles, CA',
+      },
     ];
     const result = deduplicateShops(shops);
     assert.strictEqual(result.length, 1);
@@ -55,8 +67,20 @@ describe('deduplicateShops', () => {
 
   it('should not merge shops with same name but different cities', () => {
     const shops = [
-      { id: '1', name: 'Cool Skate Shop', lat: 34.0, lng: -118.0, address: '123 Main, Los Angeles, CA' },
-      { id: '2', name: 'Cool Skate Shop', lat: 37.0, lng: -122.0, address: '456 Oak, San Francisco, CA' },
+      {
+        id: '1',
+        name: 'Cool Skate Shop',
+        lat: 34.0,
+        lng: -118.0,
+        address: '123 Main, Los Angeles, CA',
+      },
+      {
+        id: '2',
+        name: 'Cool Skate Shop',
+        lat: 37.0,
+        lng: -122.0,
+        address: '456 Oak, San Francisco, CA',
+      },
     ];
     const result = deduplicateShops(shops);
     assert.strictEqual(result.length, 2);
@@ -65,7 +89,14 @@ describe('deduplicateShops', () => {
   it('should prefer chain/manual source over osm when merging', () => {
     const shops = [
       { id: 'osm-1', name: 'Shop OSM', lat: 34.0, lng: -118.0, source: 'osm', website: null },
-      { id: 'chain-1', name: 'Shop Chain', lat: 34.0, lng: -118.0, source: 'chain', website: 'https://example.com' },
+      {
+        id: 'chain-1',
+        name: 'Shop Chain',
+        lat: 34.0,
+        lng: -118.0,
+        source: 'chain',
+        website: 'https://example.com',
+      },
     ];
     const result = deduplicateShops(shops);
     assert.strictEqual(result.length, 1);
@@ -76,7 +107,14 @@ describe('deduplicateShops', () => {
   it('should merge data from both records', () => {
     const shops = [
       { id: '1', name: 'Shop A', lat: 34.0, lng: -118.0, source: 'osm', phone: '555-1234' },
-      { id: '2', name: 'Shop A', lat: 34.0, lng: -118.0, source: 'chain', website: 'https://example.com' },
+      {
+        id: '2',
+        name: 'Shop A',
+        lat: 34.0,
+        lng: -118.0,
+        source: 'chain',
+        website: 'https://example.com',
+      },
     ];
     const result = deduplicateShops(shops);
     assert.strictEqual(result.length, 1);

@@ -1,5 +1,5 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { loadManualAdditions } from '../sources/manual.js';
 
 describe('Manual additions module', () => {
@@ -19,7 +19,10 @@ describe('Manual additions module', () => {
           assert.ok(typeof shop.lat === 'number', 'Shop should have numeric lat');
           assert.ok(typeof shop.lng === 'number', 'Shop should have numeric lng');
           assert.strictEqual(shop.source, 'manual', 'Shop source should be "manual"');
-          assert.ok(typeof shop.isIndependent === 'boolean', 'Shop should have boolean isIndependent');
+          assert.ok(
+            typeof shop.isIndependent === 'boolean',
+            'Shop should have boolean isIndependent'
+          );
         }
       }
     });

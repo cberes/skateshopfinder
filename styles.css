@@ -19,25 +19,21 @@
     --color-success: #28a745;
     --color-error: #dc3545;
     --color-independent: #2e7d32;
-
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, sans-serif;
     --font-size-base: 16px;
     --font-size-sm: 0.875rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.5rem;
     --font-size-xxl: 2rem;
-
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-xxl: 3rem;
-
     --border-radius: 8px;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
-
+    --shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    --shadow-lg: 0 4px 16px rgb(0 0 0 / 15%);
     --max-width: 800px;
 }
 
@@ -63,7 +59,7 @@ body {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
 }
@@ -392,7 +388,7 @@ footer p {
 }
 
 /* Responsive Styles */
-@media (min-width: 480px) {
+@media (width >= 480px) {
     .input-group {
         flex-direction: row;
     }
@@ -410,7 +406,7 @@ footer p {
     }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     header {
         padding: var(--spacing-xxl) var(--spacing-lg);
     }
@@ -480,7 +476,7 @@ footer p {
 .modal-backdrop {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0 0 0 / 50%);
 }
 
 .modal-content {
@@ -660,7 +656,7 @@ footer p {
 }
 
 /* Modal Responsive */
-@media (max-width: 479px) {
+@media (width <= 479px) {
     .modal-content {
         max-height: 100vh;
         border-radius: 0;
@@ -728,7 +724,7 @@ footer p {
     display: none;
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
     .results-map {
         height: 500px;
     }
@@ -744,7 +740,7 @@ footer p {
     background-color: var(--color-accent);
     border: 3px solid var(--color-white);
     border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
 }
 
 .shop-marker-independent {
@@ -760,7 +756,7 @@ footer p {
     background-color: var(--color-primary);
     border: 3px solid var(--color-white);
     border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
 }
 
 /* Map Popup */
@@ -858,7 +854,7 @@ footer p {
 }
 
 /* Mobile Map Adjustments */
-@media (max-width: 350px) {
+@media (width <= 350px) {
     .results-map {
         height: 300px;
     }

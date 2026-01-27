@@ -21,26 +21,26 @@ const rateLimiter = new RateLimiter(10);
 // Covers ~80% of US population and likely 95%+ of skateshops
 const US_METRO_AREAS = [
   // Top 50 metros by population
-  { name: 'New York', lat: 40.7128, lng: -74.0060 },
+  { name: 'New York', lat: 40.7128, lng: -74.006 },
   { name: 'Los Angeles', lat: 34.0522, lng: -118.2437 },
   { name: 'Chicago', lat: 41.8781, lng: -87.6298 },
-  { name: 'Dallas-Fort Worth', lat: 32.7767, lng: -96.7970 },
+  { name: 'Dallas-Fort Worth', lat: 32.7767, lng: -96.797 },
   { name: 'Houston', lat: 29.7604, lng: -95.3698 },
   { name: 'Washington DC', lat: 38.9072, lng: -77.0369 },
   { name: 'Philadelphia', lat: 39.9526, lng: -75.1652 },
   { name: 'Miami', lat: 25.7617, lng: -80.1918 },
-  { name: 'Atlanta', lat: 33.7490, lng: -84.3880 },
+  { name: 'Atlanta', lat: 33.749, lng: -84.388 },
   { name: 'Boston', lat: 42.3601, lng: -71.0589 },
-  { name: 'Phoenix', lat: 33.4484, lng: -112.0740 },
+  { name: 'Phoenix', lat: 33.4484, lng: -112.074 },
   { name: 'San Francisco', lat: 37.7749, lng: -122.4194 },
   { name: 'Riverside', lat: 33.9533, lng: -117.3962 },
   { name: 'Detroit', lat: 42.3314, lng: -83.0458 },
   { name: 'Seattle', lat: 47.6062, lng: -122.3321 },
-  { name: 'Minneapolis', lat: 44.9778, lng: -93.2650 },
+  { name: 'Minneapolis', lat: 44.9778, lng: -93.265 },
   { name: 'San Diego', lat: 32.7157, lng: -117.1611 },
   { name: 'Tampa', lat: 27.9506, lng: -82.4572 },
   { name: 'Denver', lat: 39.7392, lng: -104.9903 },
-  { name: 'St. Louis', lat: 38.6270, lng: -90.1994 },
+  { name: 'St. Louis', lat: 38.627, lng: -90.1994 },
   { name: 'Baltimore', lat: 39.2904, lng: -76.6122 },
   { name: 'Orlando', lat: 28.5383, lng: -81.3792 },
   { name: 'Charlotte', lat: 35.2271, lng: -80.8431 },
@@ -50,24 +50,24 @@ const US_METRO_AREAS = [
   { name: 'Pittsburgh', lat: 40.4406, lng: -79.9959 },
   { name: 'Las Vegas', lat: 36.1699, lng: -115.1398 },
   { name: 'Austin', lat: 30.2672, lng: -97.7431 },
-  { name: 'Cincinnati', lat: 39.1031, lng: -84.5120 },
+  { name: 'Cincinnati', lat: 39.1031, lng: -84.512 },
   { name: 'Kansas City', lat: 39.0997, lng: -94.5786 },
   { name: 'Columbus', lat: 39.9612, lng: -82.9988 },
   { name: 'Indianapolis', lat: 39.7684, lng: -86.1581 },
   { name: 'Cleveland', lat: 41.4993, lng: -81.6944 },
   { name: 'San Jose', lat: 37.3382, lng: -121.8863 },
   { name: 'Nashville', lat: 36.1627, lng: -86.7816 },
-  { name: 'Virginia Beach', lat: 36.8529, lng: -75.9780 },
-  { name: 'Providence', lat: 41.8240, lng: -71.4128 },
+  { name: 'Virginia Beach', lat: 36.8529, lng: -75.978 },
+  { name: 'Providence', lat: 41.824, lng: -71.4128 },
   { name: 'Milwaukee', lat: 43.0389, lng: -87.9065 },
   { name: 'Jacksonville', lat: 30.3322, lng: -81.6557 },
   { name: 'Oklahoma City', lat: 35.4676, lng: -97.5164 },
   { name: 'Raleigh', lat: 35.7796, lng: -78.6382 },
-  { name: 'Memphis', lat: 35.1495, lng: -90.0490 },
-  { name: 'Richmond', lat: 37.5407, lng: -77.4360 },
+  { name: 'Memphis', lat: 35.1495, lng: -90.049 },
+  { name: 'Richmond', lat: 37.5407, lng: -77.436 },
   { name: 'Louisville', lat: 38.2527, lng: -85.7585 },
   { name: 'New Orleans', lat: 29.9511, lng: -90.0715 },
-  { name: 'Salt Lake City', lat: 40.7608, lng: -111.8910 },
+  { name: 'Salt Lake City', lat: 40.7608, lng: -111.891 },
   { name: 'Hartford', lat: 41.7658, lng: -72.6734 },
   { name: 'Buffalo', lat: 42.8864, lng: -78.8784 },
   { name: 'Birmingham', lat: 33.5207, lng: -86.8025 },
@@ -76,7 +76,7 @@ const US_METRO_AREAS = [
   { name: 'Rochester NY', lat: 43.1566, lng: -77.6088 },
   { name: 'Grand Rapids', lat: 42.9634, lng: -85.6681 },
   { name: 'Tucson', lat: 32.2226, lng: -110.9747 },
-  { name: 'Tulsa', lat: 36.1540, lng: -95.9928 },
+  { name: 'Tulsa', lat: 36.154, lng: -95.9928 },
   { name: 'Fresno', lat: 36.7378, lng: -119.7871 },
   { name: 'Bridgeport CT', lat: 41.1865, lng: -73.1952 },
   { name: 'Worcester MA', lat: 42.2626, lng: -71.8023 },
@@ -86,16 +86,16 @@ const US_METRO_AREAS = [
   { name: 'Bakersfield', lat: 35.3733, lng: -119.0187 },
   { name: 'Knoxville', lat: 35.9606, lng: -83.9207 },
   { name: 'New Haven', lat: 41.3083, lng: -72.9279 },
-  { name: 'Greenville SC', lat: 34.8526, lng: -82.3940 },
+  { name: 'Greenville SC', lat: 34.8526, lng: -82.394 },
   { name: 'Oxnard', lat: 34.1975, lng: -119.1771 },
-  { name: 'El Paso', lat: 31.7619, lng: -106.4850 },
+  { name: 'El Paso', lat: 31.7619, lng: -106.485 },
   { name: 'Allentown', lat: 40.6084, lng: -75.4902 },
   { name: 'Baton Rouge', lat: 30.4515, lng: -91.1871 },
   { name: 'Dayton', lat: 39.7589, lng: -84.1916 },
-  { name: 'McAllen', lat: 26.2034, lng: -98.2300 },
+  { name: 'McAllen', lat: 26.2034, lng: -98.23 },
   { name: 'Columbia SC', lat: 34.0007, lng: -81.0348 },
-  { name: 'Greensboro', lat: 36.0726, lng: -79.7920 },
-  { name: 'Akron', lat: 41.0814, lng: -81.5190 },
+  { name: 'Greensboro', lat: 36.0726, lng: -79.792 },
+  { name: 'Akron', lat: 41.0814, lng: -81.519 },
   { name: 'Little Rock', lat: 34.7465, lng: -92.2896 },
   { name: 'Stockton', lat: 37.9577, lng: -121.2908 },
   { name: 'Colorado Springs', lat: 38.8339, lng: -104.8214 },
@@ -103,15 +103,15 @@ const US_METRO_AREAS = [
   { name: 'Charleston SC', lat: 32.7765, lng: -79.9311 },
   { name: 'Cape Coral', lat: 26.5629, lng: -81.9495 },
   { name: 'Springfield MA', lat: 42.1015, lng: -72.5898 },
-  { name: 'Boise', lat: 43.6150, lng: -116.2023 },
+  { name: 'Boise', lat: 43.615, lng: -116.2023 },
   { name: 'Wichita', lat: 37.6872, lng: -97.3301 },
   { name: 'Lakeland', lat: 28.0395, lng: -81.9498 },
   { name: 'Madison', lat: 43.0731, lng: -89.4012 },
-  { name: 'Ogden', lat: 41.2230, lng: -111.9738 },
+  { name: 'Ogden', lat: 41.223, lng: -111.9738 },
   { name: 'Winston-Salem', lat: 36.0999, lng: -80.2442 },
-  { name: 'Des Moines', lat: 41.5868, lng: -93.6250 },
+  { name: 'Des Moines', lat: 41.5868, lng: -93.625 },
   { name: 'Toledo', lat: 41.6528, lng: -83.5379 },
-  { name: 'Durham', lat: 35.9940, lng: -78.8986 },
+  { name: 'Durham', lat: 35.994, lng: -78.8986 },
   { name: 'Deltona', lat: 28.9005, lng: -81.2637 },
 
   // Additional metros (101-150)
@@ -119,9 +119,9 @@ const US_METRO_AREAS = [
   { name: 'Provo', lat: 40.2338, lng: -111.6585 },
   { name: 'Jackson MS', lat: 32.2988, lng: -90.1848 },
   { name: 'Harrisburg', lat: 40.2732, lng: -76.8867 },
-  { name: 'Spokane', lat: 47.6588, lng: -117.4260 },
+  { name: 'Spokane', lat: 47.6588, lng: -117.426 },
   { name: 'Chattanooga', lat: 35.0456, lng: -85.3097 },
-  { name: 'Scranton', lat: 41.4090, lng: -75.6624 },
+  { name: 'Scranton', lat: 41.409, lng: -75.6624 },
   { name: 'Modesto', lat: 37.6391, lng: -120.9969 },
   { name: 'Fayetteville AR', lat: 36.0626, lng: -94.1574 },
   { name: 'Youngstown', lat: 41.0998, lng: -80.6495 },
@@ -140,15 +140,15 @@ const US_METRO_AREAS = [
   { name: 'Anchorage', lat: 61.2181, lng: -149.9003 },
   { name: 'Savannah', lat: 32.0809, lng: -81.0912 },
   { name: 'Huntsville', lat: 34.7304, lng: -86.5861 },
-  { name: 'Port St. Lucie', lat: 27.2730, lng: -80.3582 },
+  { name: 'Port St. Lucie', lat: 27.273, lng: -80.3582 },
   { name: 'Mobile', lat: 30.6954, lng: -88.0399 },
-  { name: 'Ann Arbor', lat: 42.2808, lng: -83.7430 },
-  { name: 'Montgomery', lat: 32.3668, lng: -86.3000 },
+  { name: 'Ann Arbor', lat: 42.2808, lng: -83.743 },
+  { name: 'Montgomery', lat: 32.3668, lng: -86.3 },
   { name: 'Salinas', lat: 36.6777, lng: -121.6555 },
 
   // Smaller metros with active skate scenes
   { name: 'Asheville', lat: 35.5951, lng: -82.5515 },
-  { name: 'Boulder', lat: 40.0150, lng: -105.2705 },
+  { name: 'Boulder', lat: 40.015, lng: -105.2705 },
   { name: 'Santa Cruz', lat: 36.9741, lng: -122.0308 },
   { name: 'Burlington VT', lat: 44.4759, lng: -73.2121 },
   { name: 'Eugene', lat: 44.0521, lng: -123.0868 },
@@ -160,27 +160,27 @@ const US_METRO_AREAS = [
 
   // Additional cities for coverage gaps (151-220)
   // Mountain West
-  { name: 'Missoula', lat: 46.8721, lng: -113.9940 },
+  { name: 'Missoula', lat: 46.8721, lng: -113.994 },
   { name: 'Billings', lat: 45.7833, lng: -108.5007 },
   { name: 'Great Falls', lat: 47.5053, lng: -111.3008 },
-  { name: 'Bozeman', lat: 45.6770, lng: -111.0429 },
+  { name: 'Bozeman', lat: 45.677, lng: -111.0429 },
   { name: 'Casper', lat: 42.8666, lng: -106.3131 },
-  { name: 'Cheyenne', lat: 41.1400, lng: -104.8202 },
+  { name: 'Cheyenne', lat: 41.14, lng: -104.8202 },
   { name: 'Laramie', lat: 41.3114, lng: -105.5911 },
   { name: 'Pocatello', lat: 42.8713, lng: -112.4455 },
   { name: 'Twin Falls', lat: 42.5558, lng: -114.4701 },
   { name: 'Idaho Falls', lat: 43.4917, lng: -112.0339 },
   { name: 'Flagstaff', lat: 35.1983, lng: -111.6513 },
-  { name: 'Prescott', lat: 34.5400, lng: -112.4685 },
+  { name: 'Prescott', lat: 34.54, lng: -112.4685 },
   { name: 'Sierra Vista', lat: 31.5455, lng: -110.2773 },
   { name: 'Durango', lat: 37.2753, lng: -107.8801 },
   { name: 'Grand Junction', lat: 39.0639, lng: -108.5506 },
   { name: 'Pueblo', lat: 38.2544, lng: -104.6091 },
-  { name: 'Santa Fe', lat: 35.6870, lng: -105.9378 },
+  { name: 'Santa Fe', lat: 35.687, lng: -105.9378 },
   { name: 'Las Cruces', lat: 32.3199, lng: -106.7637 },
-  { name: 'Roswell', lat: 33.3943, lng: -104.5230 },
+  { name: 'Roswell', lat: 33.3943, lng: -104.523 },
   { name: 'St. George UT', lat: 37.0965, lng: -113.5684 },
-  { name: 'Logan UT', lat: 41.7370, lng: -111.8338 },
+  { name: 'Logan UT', lat: 41.737, lng: -111.8338 },
 
   // Pacific Northwest / Northern California
   { name: 'Bellingham', lat: 48.7519, lng: -122.4787 },
@@ -199,18 +199,18 @@ const US_METRO_AREAS = [
   // Midwest / Great Plains
   { name: 'Fargo', lat: 46.8772, lng: -96.7898 },
   { name: 'Sioux Falls', lat: 43.5446, lng: -96.7311 },
-  { name: 'Rapid City', lat: 44.0805, lng: -103.2310 },
+  { name: 'Rapid City', lat: 44.0805, lng: -103.231 },
   { name: 'Bismarck', lat: 46.8083, lng: -100.7837 },
   { name: 'Lincoln', lat: 40.8258, lng: -96.6852 },
-  { name: 'Topeka', lat: 39.0489, lng: -95.6780 },
-  { name: 'Springfield MO', lat: 37.2090, lng: -93.2923 },
+  { name: 'Topeka', lat: 39.0489, lng: -95.678 },
+  { name: 'Springfield MO', lat: 37.209, lng: -93.2923 },
   { name: 'Columbia MO', lat: 38.9517, lng: -92.3341 },
   { name: 'Cedar Rapids', lat: 41.9779, lng: -91.6656 },
   { name: 'Quad Cities', lat: 41.5236, lng: -90.5776 },
-  { name: 'Peoria', lat: 40.6936, lng: -89.5890 },
+  { name: 'Peoria', lat: 40.6936, lng: -89.589 },
   { name: 'Champaign', lat: 40.1164, lng: -88.2434 },
   { name: 'Bloomington IN', lat: 39.1653, lng: -86.5264 },
-  { name: 'South Bend', lat: 41.6764, lng: -86.2520 },
+  { name: 'South Bend', lat: 41.6764, lng: -86.252 },
   { name: 'Green Bay', lat: 44.5133, lng: -88.0133 },
   { name: 'Duluth', lat: 46.7867, lng: -92.1005 },
   { name: 'Rochester MN', lat: 44.0121, lng: -92.4802 },
@@ -220,32 +220,32 @@ const US_METRO_AREAS = [
   { name: 'Shreveport', lat: 32.5252, lng: -93.7502 },
   { name: 'Lafayette LA', lat: 30.2241, lng: -92.0198 },
   { name: 'Lake Charles', lat: 30.2266, lng: -93.2174 },
-  { name: 'Biloxi', lat: 30.3960, lng: -88.8853 },
+  { name: 'Biloxi', lat: 30.396, lng: -88.8853 },
   { name: 'Tallahassee', lat: 30.4383, lng: -84.2807 },
   { name: 'Gainesville FL', lat: 29.6516, lng: -82.3248 },
   { name: 'Ocala', lat: 29.1872, lng: -82.1401 },
   { name: 'Panama City', lat: 30.1588, lng: -85.6602 },
   { name: 'Dothan', lat: 31.2232, lng: -85.3905 },
-  { name: 'Columbus GA', lat: 32.4610, lng: -84.9877 },
+  { name: 'Columbus GA', lat: 32.461, lng: -84.9877 },
   { name: 'Macon', lat: 32.8407, lng: -83.6324 },
   { name: 'Athens GA', lat: 33.9519, lng: -83.3576 },
   { name: 'Florence SC', lat: 34.1954, lng: -79.7626 },
   { name: 'Fayetteville NC', lat: 35.0527, lng: -78.8784 },
   { name: 'Greenville NC', lat: 35.6127, lng: -77.3664 },
-  { name: 'Roanoke', lat: 37.2710, lng: -79.9414 },
+  { name: 'Roanoke', lat: 37.271, lng: -79.9414 },
   { name: 'Lynchburg', lat: 37.4138, lng: -79.1422 },
   { name: 'Charlottesville', lat: 38.0293, lng: -78.4767 },
   { name: 'Johnson City TN', lat: 36.3134, lng: -82.3535 },
 
   // Texas
   { name: 'Lubbock', lat: 33.5779, lng: -101.8552 },
-  { name: 'Amarillo', lat: 35.2220, lng: -101.8313 },
+  { name: 'Amarillo', lat: 35.222, lng: -101.8313 },
   { name: 'Midland', lat: 31.9973, lng: -102.0779 },
   { name: 'Abilene', lat: 32.4487, lng: -99.7331 },
   { name: 'Waco', lat: 31.5493, lng: -97.1467 },
   { name: 'Tyler', lat: 32.3513, lng: -95.3011 },
   { name: 'Beaumont', lat: 30.0802, lng: -94.1266 },
-  { name: 'College Station', lat: 30.6280, lng: -96.3344 },
+  { name: 'College Station', lat: 30.628, lng: -96.3344 },
   { name: 'Laredo', lat: 27.5306, lng: -99.4803 },
   { name: 'Brownsville', lat: 25.9017, lng: -97.4975 },
 
@@ -254,13 +254,13 @@ const US_METRO_AREAS = [
   { name: 'Concord NH', lat: 43.2081, lng: -71.5376 },
   { name: 'Bangor', lat: 44.8016, lng: -68.7712 },
   { name: 'Lewiston ME', lat: 44.1004, lng: -70.2148 },
-  { name: 'Ithaca', lat: 42.4440, lng: -76.5019 },
-  { name: 'Binghamton', lat: 42.0987, lng: -75.9180 },
+  { name: 'Ithaca', lat: 42.444, lng: -76.5019 },
+  { name: 'Binghamton', lat: 42.0987, lng: -75.918 },
   { name: 'Utica', lat: 43.1009, lng: -75.2327 },
   { name: 'Plattsburgh', lat: 44.6995, lng: -73.4529 },
-  { name: 'State College', lat: 40.7934, lng: -77.8600 },
+  { name: 'State College', lat: 40.7934, lng: -77.86 },
   { name: 'Erie', lat: 42.1292, lng: -80.0851 },
-  { name: 'Wheeling', lat: 40.0640, lng: -80.7209 },
+  { name: 'Wheeling', lat: 40.064, lng: -80.7209 },
 ];
 
 // Search query to find skateboard shops
@@ -339,7 +339,6 @@ async function searchMetroArea(metro, query) {
 
       // Get next page token (if any)
       pageToken = data.nextPageToken || null;
-
     } catch (error) {
       console.error(`  Error searching ${metro.name} (page ${pageNum}):`, error.message);
       break; // Stop pagination on error
@@ -375,7 +374,7 @@ function transformPlace(place) {
   const hasSkateboardShop = types.includes('skateboard_shop');
   const hasSkateboardPark = types.includes('skateboard_park');
   const storeTypes = ['store', 'sporting_goods_store', 'retail'];
-  const hasStoreType = storeTypes.some(type => types.includes(type));
+  const hasStoreType = storeTypes.some((type) => types.includes(type));
 
   const isDefinitelySkateboard = hasSkateboardShop || (hasSkateboardPark && hasStoreType);
 
@@ -415,7 +414,7 @@ function transformPlace(place) {
     // General sporting goods (don't sell skateboard components)
     'sport authority',
     'sports authority',
-    'dick\'s sporting',
+    "dick's sporting",
     'dicks sporting',
     'big 5 sporting',
     'academy sports',
@@ -430,19 +429,14 @@ function transformPlace(place) {
       return null;
     }
 
-    if (skipPatterns.some(pattern => lowerName.includes(pattern))) {
+    if (skipPatterns.some((pattern) => lowerName.includes(pattern))) {
       return null;
     }
 
     // Skip based on Google Places types that indicate non-skateshops
-    const excludedTypes = [
-      'ice_skating_rink',
-      'skating_rink',
-      'stadium',
-      'arena',
-    ];
+    const excludedTypes = ['ice_skating_rink', 'skating_rink', 'stadium', 'arena'];
 
-    if (excludedTypes.some(type => types.includes(type))) {
+    if (excludedTypes.some((type) => types.includes(type))) {
       return null;
     }
   }
@@ -517,7 +511,9 @@ export async function fetchFromGooglePlaces(options = {}) {
 
   for (const metro of US_METRO_AREAS) {
     metroCount++;
-    process.stdout.write(`\r  [${metroCount}/${US_METRO_AREAS.length}] Searching ${metro.name}...          `);
+    process.stdout.write(
+      `\r  [${metroCount}/${US_METRO_AREAS.length}] Searching ${metro.name}...          `
+    );
 
     const { places, apiCalls } = await searchMetroArea(metro, SEARCH_QUERIES[0]);
     totalApiCalls += apiCalls;
@@ -537,7 +533,9 @@ export async function fetchFromGooglePlaces(options = {}) {
   }
 
   console.log(`\n\nFound ${allShops.length} unique skateshops`);
-  console.log(`Used ${totalApiCalls} API requests across ${metroCount} metros (free tier: 5,000/month)`);
+  console.log(
+    `Used ${totalApiCalls} API requests across ${metroCount} metros (free tier: 5,000/month)`
+  );
 
   return allShops;
 }
@@ -555,7 +553,7 @@ async function main() {
 
   if (!dryRun && shops.length > 0) {
     console.log('\nSample results:');
-    shops.slice(0, 5).forEach(shop => {
+    shops.slice(0, 5).forEach((shop) => {
       console.log(`  - ${shop.name} (${shop.address})`);
     });
   }

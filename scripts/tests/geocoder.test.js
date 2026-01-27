@@ -1,5 +1,5 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { isWithinUSA } from '../processors/geocoder.js';
 
 describe('isWithinUSA', () => {
@@ -8,7 +8,7 @@ describe('isWithinUSA', () => {
   });
 
   it('should return true for coordinates in New York', () => {
-    assert.strictEqual(isWithinUSA(40.7128, -74.0060), true);
+    assert.strictEqual(isWithinUSA(40.7128, -74.006), true);
   });
 
   it('should return true for coordinates in Miami', () => {

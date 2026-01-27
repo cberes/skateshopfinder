@@ -5,10 +5,10 @@
 
 // Configuration constants
 export const CONFIG = {
-    MAX_RESULTS: 20,
-    MAX_DISTANCE_MILES: 100,
-    EARTH_RADIUS_MILES: 3959,
-    DATA_FILE: 'shops.json'
+  MAX_RESULTS: 20,
+  MAX_DISTANCE_MILES: 100,
+  EARTH_RADIUS_MILES: 3959,
+  DATA_FILE: 'shops.json',
 };
 
 /**
@@ -20,18 +20,18 @@ export const CONFIG = {
  * @returns {number} Distance in miles
  */
 export function calculateDistance(lat1, lng1, lat2, lng2) {
-    const toRad = (deg) => deg * (Math.PI / 180);
+  const toRad = (deg) => deg * (Math.PI / 180);
 
-    const dLat = toRad(lat2 - lat1);
-    const dLng = toRad(lng2 - lng1);
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
 
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-              Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
 
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    return CONFIG.EARTH_RADIUS_MILES * c;
+  return CONFIG.EARTH_RADIUS_MILES * c;
 }
 
 /**
@@ -40,18 +40,18 @@ export function calculateDistance(lat1, lng1, lat2, lng2) {
  * @returns {string} Escaped HTML string
  */
 export function escapeHtml(text) {
-    if (text === null || text === undefined) {
-        return '';
-    }
-    const str = String(text);
-    const htmlEscapes = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-    };
-    return str.replace(/[&<>"']/g, char => htmlEscapes[char]);
+  if (text === null || text === undefined) {
+    return '';
+  }
+  const str = String(text);
+  const htmlEscapes = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  };
+  return str.replace(/[&<>"']/g, (char) => htmlEscapes[char]);
 }
 
 /**
@@ -60,23 +60,21 @@ export function escapeHtml(text) {
  * @returns {string} HTML string for the shop card
  */
 export function createShopCardHTML(shop) {
-    const websiteLink = shop.website
-        ? `<a href="${escapeHtml(shop.website)}" class="shop-link" target="_blank" rel="noopener noreferrer">Visit Website</a>`
-        : '';
+  const websiteLink = shop.website
+    ? `<a href="${escapeHtml(shop.website)}" class="shop-link" target="_blank" rel="noopener noreferrer">Visit Website</a>`
+    : '';
 
-    const phoneDisplay = shop.phone
-        ? `<span class="shop-phone">${escapeHtml(shop.phone)}</span>`
-        : '';
+  const phoneDisplay = shop.phone
+    ? `<span class="shop-phone">${escapeHtml(shop.phone)}</span>`
+    : '';
 
-    const independentBadge = shop.isIndependent
-        ? '<span class="badge-independent">Independent</span>'
-        : '';
+  const independentBadge = shop.isIndependent
+    ? '<span class="badge-independent">Independent</span>'
+    : '';
 
-    const distanceDisplay = typeof shop.distance === 'number'
-        ? shop.distance.toFixed(1)
-        : '?';
+  const distanceDisplay = typeof shop.distance === 'number' ? shop.distance.toFixed(1) : '?';
 
-    return `
+  return `
         <div class="shop-header">
             <h3 class="shop-name">${escapeHtml(shop.name)}</h3>
             <span class="shop-distance">${distanceDisplay} mi</span>
@@ -99,30 +97,37 @@ export function createShopCardHTML(shop) {
  * @param {number} maxResults - Maximum number of results (default: CONFIG.MAX_RESULTS)
  * @returns {Array} Filtered and sorted array of shops with distance property
  */
-export function filterAndSortShops(shops, userLat, userLng, maxDistance = CONFIG.MAX_DISTANCE_MILES, maxResults = CONFIG.MAX_RESULTS) {
-    if (!Array.isArray(shops)) {
-        return [];
-    }
+export function filterAndSortShops(
+  shops,
+  userLat,
+  userLng,
+  maxDistance = CONFIG.MAX_DISTANCE_MILES,
+  maxResults = CONFIG.MAX_RESULTS
+) {
+  if (!Array.isArray(shops)) {
+    return [];
+  }
 
-    // Calculate distance to each shop
-    const shopsWithDistance = shops
-        .filter(shop =>
-            shop &&
-            typeof shop.lat === 'number' &&
-            typeof shop.lng === 'number' &&
-            !isNaN(shop.lat) &&
-            !isNaN(shop.lng)
-        )
-        .map(shop => ({
-            ...shop,
-            distance: calculateDistance(userLat, userLng, shop.lat, shop.lng)
-        }));
+  // Calculate distance to each shop
+  const shopsWithDistance = shops
+    .filter(
+      (shop) =>
+        shop &&
+        typeof shop.lat === 'number' &&
+        typeof shop.lng === 'number' &&
+        !Number.isNaN(shop.lat) &&
+        !Number.isNaN(shop.lng)
+    )
+    .map((shop) => ({
+      ...shop,
+      distance: calculateDistance(userLat, userLng, shop.lat, shop.lng),
+    }));
 
-    // Filter by max distance, sort by distance, limit results
-    return shopsWithDistance
-        .filter(shop => shop.distance <= maxDistance)
-        .sort((a, b) => a.distance - b.distance)
-        .slice(0, maxResults);
+  // Filter by max distance, sort by distance, limit results
+  return shopsWithDistance
+    .filter((shop) => shop.distance <= maxDistance)
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, maxResults);
 }
 
 /**
@@ -131,11 +136,11 @@ export function filterAndSortShops(shops, userLat, userLng, maxDistance = CONFIG
  * @returns {string} Summary text
  */
 export function generateResultsSummary(shops) {
-    if (!shops || shops.length === 0) {
-        return '';
-    }
-    const furthest = shops[shops.length - 1].distance.toFixed(1);
-    return `Showing ${shops.length} shop${shops.length !== 1 ? 's' : ''} within ${furthest} miles`;
+  if (!shops || shops.length === 0) {
+    return '';
+  }
+  const furthest = shops[shops.length - 1].distance.toFixed(1);
+  return `Showing ${shops.length} shop${shops.length !== 1 ? 's' : ''} within ${furthest} miles`;
 }
 
 /**
@@ -145,16 +150,16 @@ export function generateResultsSummary(shops) {
  * @returns {boolean} True if coordinates are valid
  */
 export function isValidCoordinates(lat, lng) {
-    return (
-        typeof lat === 'number' &&
-        typeof lng === 'number' &&
-        !isNaN(lat) &&
-        !isNaN(lng) &&
-        lat >= -90 &&
-        lat <= 90 &&
-        lng >= -180 &&
-        lng <= 180
-    );
+  return (
+    typeof lat === 'number' &&
+    typeof lng === 'number' &&
+    !Number.isNaN(lat) &&
+    !Number.isNaN(lng) &&
+    lat >= -90 &&
+    lat <= 90 &&
+    lng >= -180 &&
+    lng <= 180
+  );
 }
 
 /**
@@ -164,20 +169,20 @@ export function isValidCoordinates(lat, lng) {
  * @returns {Array} Filtered array of shops
  */
 export function filterShopsBySearchTerm(shops, searchTerm) {
-    if (!Array.isArray(shops) || !searchTerm) {
-        return shops || [];
-    }
+  if (!Array.isArray(shops) || !searchTerm) {
+    return shops || [];
+  }
 
-    const term = searchTerm.toLowerCase().trim();
-    if (!term) {
-        return shops;
-    }
+  const term = searchTerm.toLowerCase().trim();
+  if (!term) {
+    return shops;
+  }
 
-    return shops.filter(shop => {
-        const name = (shop.name || '').toLowerCase();
-        const address = (shop.address || '').toLowerCase();
-        return name.includes(term) || address.includes(term);
-    });
+  return shops.filter((shop) => {
+    const name = (shop.name || '').toLowerCase();
+    const address = (shop.address || '').toLowerCase();
+    return name.includes(term) || address.includes(term);
+  });
 }
 
 /**
@@ -186,18 +191,18 @@ export function filterShopsBySearchTerm(shops, searchTerm) {
  * @returns {string} Formatted string for display
  */
 export function formatShopForSelect(shop) {
-    if (!shop) return '';
+  if (!shop) return '';
 
-    const name = shop.name || 'Unknown Shop';
-    const address = shop.address || '';
+  const name = shop.name || 'Unknown Shop';
+  const address = shop.address || '';
 
-    // Extract city and state from address for brevity
-    const cityState = extractCityState(address);
+  // Extract city and state from address for brevity
+  const cityState = extractCityState(address);
 
-    if (cityState) {
-        return `${name} - ${cityState}`;
-    }
-    return name;
+  if (cityState) {
+    return `${name} - ${cityState}`;
+  }
+  return name;
 }
 
 /**
@@ -206,26 +211,26 @@ export function formatShopForSelect(shop) {
  * @returns {string} City, State portion or empty string
  */
 export function extractCityState(address) {
-    if (!address) return '';
+  if (!address) return '';
 
-    // Try to match "City, ST ZIP" or "City, ST" pattern
-    // e.g., "123 Main St, Los Angeles, CA 90210" -> "Los Angeles, CA"
-    const parts = address.split(',').map(p => p.trim());
+  // Try to match "City, ST ZIP" or "City, ST" pattern
+  // e.g., "123 Main St, Los Angeles, CA 90210" -> "Los Angeles, CA"
+  const parts = address.split(',').map((p) => p.trim());
 
-    if (parts.length >= 2) {
-        // Get second-to-last and last parts (usually city and state+zip)
-        const cityPart = parts[parts.length - 2];
-        const stateZipPart = parts[parts.length - 1];
+  if (parts.length >= 2) {
+    // Get second-to-last and last parts (usually city and state+zip)
+    const cityPart = parts[parts.length - 2];
+    const stateZipPart = parts[parts.length - 1];
 
-        // Extract just the state (first 2 characters after trimming, if it looks like a state)
-        const stateMatch = stateZipPart.match(/^([A-Z]{2})/);
-        if (stateMatch) {
-            return `${cityPart}, ${stateMatch[1]}`;
-        }
-        return `${cityPart}, ${stateZipPart}`;
+    // Extract just the state (first 2 characters after trimming, if it looks like a state)
+    const stateMatch = stateZipPart.match(/^([A-Z]{2})/);
+    if (stateMatch) {
+      return `${cityPart}, ${stateMatch[1]}`;
     }
+    return `${cityPart}, ${stateZipPart}`;
+  }
 
-    return '';
+  return '';
 }
 
 /**
@@ -234,26 +239,24 @@ export function extractCityState(address) {
  * @returns {string} HTML string for the map popup
  */
 export function createMapPopupHTML(shop) {
-    const distanceDisplay = typeof shop.distance === 'number'
-        ? shop.distance.toFixed(1)
-        : '?';
+  const distanceDisplay = typeof shop.distance === 'number' ? shop.distance.toFixed(1) : '?';
 
-    const independentBadge = shop.isIndependent
-        ? '<span class="popup-badge-independent">Independent</span>'
-        : '';
+  const independentBadge = shop.isIndependent
+    ? '<span class="popup-badge-independent">Independent</span>'
+    : '';
 
-    const websiteLink = shop.website
-        ? `<a href="${escapeHtml(shop.website)}" class="popup-link" target="_blank" rel="noopener noreferrer">Website</a>`
-        : '';
+  const websiteLink = shop.website
+    ? `<a href="${escapeHtml(shop.website)}" class="popup-link" target="_blank" rel="noopener noreferrer">Website</a>`
+    : '';
 
-    const phoneLink = shop.phone
-        ? `<a href="tel:${escapeHtml(shop.phone.replace(/[^0-9+]/g, ''))}" class="popup-link">${escapeHtml(shop.phone)}</a>`
-        : '';
+  const phoneLink = shop.phone
+    ? `<a href="tel:${escapeHtml(shop.phone.replace(/[^0-9+]/g, ''))}" class="popup-link">${escapeHtml(shop.phone)}</a>`
+    : '';
 
-    // Build Google Maps directions URL
-    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(shop.address || `${shop.lat},${shop.lng}`)}`;
+  // Build Google Maps directions URL
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(shop.address || `${shop.lat},${shop.lng}`)}`;
 
-    return `
+  return `
         <div class="map-popup">
             <div class="popup-header">
                 <strong class="popup-name">${escapeHtml(shop.name)}</strong>
@@ -276,34 +279,35 @@ export function createMapPopupHTML(shop) {
  * @returns {Object|null} Bounding box { north, south, east, west } or null if no valid shops
  */
 export function getMapBounds(shops) {
-    if (!Array.isArray(shops) || shops.length === 0) {
-        return null;
-    }
+  if (!Array.isArray(shops) || shops.length === 0) {
+    return null;
+  }
 
-    // Filter to shops with valid coordinates
-    const validShops = shops.filter(shop =>
-        shop &&
-        typeof shop.lat === 'number' &&
-        typeof shop.lng === 'number' &&
-        !isNaN(shop.lat) &&
-        !isNaN(shop.lng)
-    );
+  // Filter to shops with valid coordinates
+  const validShops = shops.filter(
+    (shop) =>
+      shop &&
+      typeof shop.lat === 'number' &&
+      typeof shop.lng === 'number' &&
+      !Number.isNaN(shop.lat) &&
+      !Number.isNaN(shop.lng)
+  );
 
-    if (validShops.length === 0) {
-        return null;
-    }
+  if (validShops.length === 0) {
+    return null;
+  }
 
-    let north = validShops[0].lat;
-    let south = validShops[0].lat;
-    let east = validShops[0].lng;
-    let west = validShops[0].lng;
+  let north = validShops[0].lat;
+  let south = validShops[0].lat;
+  let east = validShops[0].lng;
+  let west = validShops[0].lng;
 
-    for (const shop of validShops) {
-        if (shop.lat > north) north = shop.lat;
-        if (shop.lat < south) south = shop.lat;
-        if (shop.lng > east) east = shop.lng;
-        if (shop.lng < west) west = shop.lng;
-    }
+  for (const shop of validShops) {
+    if (shop.lat > north) north = shop.lat;
+    if (shop.lat < south) south = shop.lat;
+    if (shop.lng > east) east = shop.lng;
+    if (shop.lng < west) west = shop.lng;
+  }
 
-    return { north, south, east, west };
+  return { north, south, east, west };
 }

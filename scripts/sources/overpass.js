@@ -89,12 +89,12 @@ function normalizeWebsite(url) {
 
   // Remove common prefixes that aren't URLs
   if (normalized.startsWith('www.')) {
-    normalized = 'https://' + normalized;
+    normalized = `https://${normalized}`;
   }
 
   // Add protocol if missing
   if (!normalized.match(/^https?:\/\//i)) {
-    normalized = 'https://' + normalized;
+    normalized = `https://${normalized}`;
   }
 
   try {
@@ -166,9 +166,7 @@ export async function fetchFromOverpass() {
 
       console.log(`Found ${data.elements.length} elements from OSM`);
 
-      const shops = data.elements
-        .map(transformElement)
-        .filter((shop) => shop !== null);
+      const shops = data.elements.map(transformElement).filter((shop) => shop !== null);
 
       console.log(`Transformed ${shops.length} valid shops`);
 

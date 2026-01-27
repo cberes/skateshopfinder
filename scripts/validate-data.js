@@ -5,9 +5,9 @@
  * Checks shops.json for data quality issues
  */
 
-import { readFile } from 'fs/promises';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { readFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -98,7 +98,7 @@ function validateRequiredFields(shop, results) {
  * Validate coordinate ranges
  */
 function validateCoordinates(shop, results) {
-  if (typeof shop.lat !== 'number' || isNaN(shop.lat)) {
+  if (typeof shop.lat !== 'number' || Number.isNaN(shop.lat)) {
     results.addError('Invalid latitude (not a number)', {
       shopId: shop.id,
       shopName: shop.name,
@@ -106,7 +106,7 @@ function validateCoordinates(shop, results) {
     return;
   }
 
-  if (typeof shop.lng !== 'number' || isNaN(shop.lng)) {
+  if (typeof shop.lng !== 'number' || Number.isNaN(shop.lng)) {
     results.addError('Invalid longitude (not a number)', {
       shopId: shop.id,
       shopName: shop.name,

@@ -11,17 +11,19 @@
 function normalizeName(name) {
   if (!name) return 'Unknown Skateshop';
 
-  return name
-    // Normalize whitespace
-    .replace(/\s+/g, ' ')
-    .trim()
-    // Fix common encoding issues
-    .replace(/&amp;/g, '&')
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"')
-    // Normalize quotes
-    .replace(/[''`]/g, "'")
-    .replace(/[""]/g, '"');
+  return (
+    name
+      // Normalize whitespace
+      .replace(/\s+/g, ' ')
+      .trim()
+      // Fix common encoding issues
+      .replace(/&amp;/g, '&')
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      // Normalize quotes
+      .replace(/[''`]/g, "'")
+      .replace(/[""]/g, '"')
+  );
 }
 
 /**
@@ -66,9 +68,9 @@ function normalizeWebsite(url) {
   // Add protocol if missing
   if (!normalized.match(/^https?:\/\//i)) {
     if (normalized.startsWith('www.')) {
-      normalized = 'https://' + normalized;
+      normalized = `https://${normalized}`;
     } else if (normalized.includes('.')) {
-      normalized = 'https://' + normalized;
+      normalized = `https://${normalized}`;
     } else {
       return null; // Not a valid URL
     }
@@ -88,7 +90,7 @@ function normalizeWebsite(url) {
 
     // Remove trailing slash from path if it's just "/"
     if (parsed.pathname === '/') {
-      return `${parsed.protocol}//${parsed.hostname}${parsed.port ? ':' + parsed.port : ''}`;
+      return `${parsed.protocol}//${parsed.hostname}${parsed.port ? `:${parsed.port}` : ''}`;
     }
 
     return parsed.href;
@@ -105,21 +107,23 @@ function normalizeWebsite(url) {
 function normalizeAddress(address) {
   if (!address) return null;
 
-  return address
-    // Normalize whitespace
-    .replace(/\s+/g, ' ')
-    .trim()
-    // Fix common abbreviations
-    .replace(/\bSt\b(?!\.)/g, 'St.')
-    .replace(/\bAve\b(?!\.)/g, 'Ave.')
-    .replace(/\bBlvd\b(?!\.)/g, 'Blvd.')
-    .replace(/\bRd\b(?!\.)/g, 'Rd.')
-    .replace(/\bDr\b(?!\.)/g, 'Dr.')
-    .replace(/\bLn\b(?!\.)/g, 'Ln.')
-    .replace(/\bCt\b(?!\.)/g, 'Ct.')
-    .replace(/\bPl\b(?!\.)/g, 'Pl.')
-    // Normalize comma spacing
-    .replace(/\s*,\s*/g, ', ');
+  return (
+    address
+      // Normalize whitespace
+      .replace(/\s+/g, ' ')
+      .trim()
+      // Fix common abbreviations
+      .replace(/\bSt\b(?!\.)/g, 'St.')
+      .replace(/\bAve\b(?!\.)/g, 'Ave.')
+      .replace(/\bBlvd\b(?!\.)/g, 'Blvd.')
+      .replace(/\bRd\b(?!\.)/g, 'Rd.')
+      .replace(/\bDr\b(?!\.)/g, 'Dr.')
+      .replace(/\bLn\b(?!\.)/g, 'Ln.')
+      .replace(/\bCt\b(?!\.)/g, 'Ct.')
+      .replace(/\bPl\b(?!\.)/g, 'Pl.')
+      // Normalize comma spacing
+      .replace(/\s*,\s*/g, ', ')
+  );
 }
 
 /**
@@ -129,7 +133,7 @@ function normalizeAddress(address) {
  * @returns {number} Rounded coordinate
  */
 function normalizeCoordinate(coord) {
-  if (typeof coord !== 'number' || isNaN(coord)) {
+  if (typeof coord !== 'number' || Number.isNaN(coord)) {
     return null;
   }
   return Math.round(coord * 1000000) / 1000000;
@@ -176,8 +180,12 @@ export function normalizeShops(shops) {
   const withAddress = normalized.filter((s) => s.address).length;
 
   console.log(`Normalization complete:`);
-  console.log(`  - ${withAddress} with address (${Math.round((withAddress / shops.length) * 100)}%)`);
-  console.log(`  - ${withWebsite} with website (${Math.round((withWebsite / shops.length) * 100)}%)`);
+  console.log(
+    `  - ${withAddress} with address (${Math.round((withAddress / shops.length) * 100)}%)`
+  );
+  console.log(
+    `  - ${withWebsite} with website (${Math.round((withWebsite / shops.length) * 100)}%)`
+  );
   console.log(`  - ${withPhone} with phone (${Math.round((withPhone / shops.length) * 100)}%)`);
 
   return normalized;
