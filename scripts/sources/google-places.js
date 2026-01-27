@@ -263,38 +263,23 @@ const US_METRO_AREAS = [
   { name: 'Wheeling', lat: 40.0640, lng: -80.7209 },
 ];
 
-// Search queries to find skateboard shops
-// Multiple queries help catch different types of businesses
+// Search query to find skateboard shops
+// Single specific query - we paginate for depth instead of using multiple queries
 const SEARCH_QUERIES = [
-  'skate shop',      // Traditional skate shops
-  'skateboard shop', // More specific, catches skateparks with shops
+  'skateboard shop', // Specific query, reduces ice skating/roller skating false positives
 ];
 
 /**
- * Search for skateshops in a specific metro area
+ * Search for skateshops in a specific metro area (with pagination)
  * @param {Object} metro - Metro area with name, lat, lng
  * @param {string} query - Search query to use
- * @returns {Promise<Array>} Array of place results
+ * @returns {Promise<{places: Array, apiCalls: number}>} Array of place results and API call count
  */
 async function searchMetroArea(metro, query) {
-  await rateLimiter.wait();
-
-  const requestBody = {
-    textQuery: query,
-    locationBias: {
-      circle: {
-        center: {
-          latitude: metro.lat,
-          longitude: metro.lng,
-        },
-        radius: 50000, // ~31 miles (API max is 50,000 meters)
-      },
-    },
-    // Only search in USA
-    regionCode: 'US',
-    // Request fields we need (affects pricing tier)
-    // Using "Basic" tier fields to minimize cost
-  };
+  const allPlaces = [];
+  let pageToken = null;
+  let pageNum = 0;
+  const maxPages = 3; // Google allows max 60 results (3 pages of 20)
 
   const fieldMask = [
     'places.id',
@@ -305,30 +290,63 @@ async function searchMetroArea(metro, query) {
     'places.nationalPhoneNumber',
     'places.types',
     'places.businessStatus',
+    'nextPageToken',
   ].join(',');
 
-  try {
-    const response = await fetch(TEXT_SEARCH_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Goog-Api-Key': API_KEY,
-        'X-Goog-FieldMask': fieldMask,
-      },
-      body: JSON.stringify(requestBody),
-    });
+  do {
+    await rateLimiter.wait();
+    pageNum++;
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`HTTP ${response.status}: ${errorText}`);
+    const requestBody = {
+      textQuery: query,
+      locationBias: {
+        circle: {
+          center: {
+            latitude: metro.lat,
+            longitude: metro.lng,
+          },
+          radius: 50000, // ~31 miles (API max is 50,000 meters)
+        },
+      },
+      // Only search in USA
+      regionCode: 'US',
+    };
+
+    // Add pageToken for subsequent pages
+    if (pageToken) {
+      requestBody.pageToken = pageToken;
     }
 
-    const data = await response.json();
-    return data.places || [];
-  } catch (error) {
-    console.error(`  Error searching ${metro.name}:`, error.message);
-    return [];
-  }
+    try {
+      const response = await fetch(TEXT_SEARCH_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': API_KEY,
+          'X-Goog-FieldMask': fieldMask,
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errorText}`);
+      }
+
+      const data = await response.json();
+      const places = data.places || [];
+      allPlaces.push(...places);
+
+      // Get next page token (if any)
+      pageToken = data.nextPageToken || null;
+
+    } catch (error) {
+      console.error(`  Error searching ${metro.name} (page ${pageNum}):`, error.message);
+      break; // Stop pagination on error
+    }
+  } while (pageToken && pageNum < maxPages);
+
+  return { places: allPlaces, apiCalls: pageNum };
 }
 
 /**
@@ -472,12 +490,14 @@ export { transformPlace, US_METRO_AREAS, SEARCH_QUERIES };
 export async function fetchFromGooglePlaces(options = {}) {
   const { dryRun = false } = options;
 
-  const totalRequests = US_METRO_AREAS.length * SEARCH_QUERIES.length;
+  // Estimate: 1 query per metro, 1-3 pages each (pagination)
+  const minRequests = US_METRO_AREAS.length;
+  const maxRequests = US_METRO_AREAS.length * 3;
 
   if (dryRun) {
-    console.log(`\nDry run: would search ${US_METRO_AREAS.length} metro areas with ${SEARCH_QUERIES.length} queries each`);
-    console.log('Queries:', SEARCH_QUERIES.join(', '));
-    console.log('Estimated API requests:', totalRequests);
+    console.log(`\nDry run: would search ${US_METRO_AREAS.length} metro areas with pagination`);
+    console.log('Query:', SEARCH_QUERIES[0]);
+    console.log(`Estimated API requests: ${minRequests}-${maxRequests} (1-3 pages per metro)`);
     console.log('Estimated cost: $0 (within free tier of 5,000/month)');
     return [];
   }
@@ -486,38 +506,38 @@ export async function fetchFromGooglePlaces(options = {}) {
     return [];
   }
 
-  console.log(`\nSearching ${US_METRO_AREAS.length} US metro areas with ${SEARCH_QUERIES.length} queries each...`);
-  console.log('Queries:', SEARCH_QUERIES.join(', '));
-  console.log('This will use approximately', totalRequests, 'API requests\n');
+  console.log(`\nSearching ${US_METRO_AREAS.length} US metro areas with pagination...`);
+  console.log('Query:', SEARCH_QUERIES[0]);
+  console.log(`Estimated API requests: ${minRequests}-${maxRequests} (1-3 pages per metro)\n`);
 
   const allShops = [];
   const seenPlaceIds = new Set();
-  let searchCount = 0;
+  let metroCount = 0;
+  let totalApiCalls = 0;
 
   for (const metro of US_METRO_AREAS) {
-    for (const query of SEARCH_QUERIES) {
-      searchCount++;
-      process.stdout.write(`\r  [${searchCount}/${totalRequests}] Searching ${metro.name} ("${query}")...          `);
+    metroCount++;
+    process.stdout.write(`\r  [${metroCount}/${US_METRO_AREAS.length}] Searching ${metro.name}...          `);
 
-      const places = await searchMetroArea(metro, query);
+    const { places, apiCalls } = await searchMetroArea(metro, SEARCH_QUERIES[0]);
+    totalApiCalls += apiCalls;
 
-      for (const place of places) {
-        // Skip duplicates (same shop might appear in multiple metro/query searches)
-        if (seenPlaceIds.has(place.id)) {
-          continue;
-        }
-        seenPlaceIds.add(place.id);
+    for (const place of places) {
+      // Skip duplicates (same shop might appear in multiple metro searches)
+      if (seenPlaceIds.has(place.id)) {
+        continue;
+      }
+      seenPlaceIds.add(place.id);
 
-        const shop = transformPlace(place);
-        if (shop) {
-          allShops.push(shop);
-        }
+      const shop = transformPlace(place);
+      if (shop) {
+        allShops.push(shop);
       }
     }
   }
 
   console.log(`\n\nFound ${allShops.length} unique skateshops`);
-  console.log(`Used ${searchCount} API requests (free tier: 5,000/month)`);
+  console.log(`Used ${totalApiCalls} API requests across ${metroCount} metros (free tier: 5,000/month)`);
 
   return allShops;
 }

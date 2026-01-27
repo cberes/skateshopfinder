@@ -542,16 +542,16 @@ describe('transformPlace', () => {
 });
 
 describe('SEARCH_QUERIES', () => {
-  it('should include multiple search queries for better coverage', () => {
-    assert.ok(SEARCH_QUERIES.length >= 2, 'Should have at least 2 search queries');
+  it('should use a single specific query (pagination provides depth instead of multiple queries)', () => {
+    assert.strictEqual(SEARCH_QUERIES.length, 1, 'Should have exactly 1 search query');
   });
 
-  it('should include skate shop query', () => {
-    assert.ok(SEARCH_QUERIES.includes('skate shop'), 'Should include "skate shop"');
-  });
-
-  it('should include skateboard shop query', () => {
+  it('should use skateboard shop query', () => {
     assert.ok(SEARCH_QUERIES.includes('skateboard shop'), 'Should include "skateboard shop"');
+  });
+
+  it('should not include generic skate shop query (too many false positives)', () => {
+    assert.ok(!SEARCH_QUERIES.includes('skate shop'), 'Should not include "skate shop"');
   });
 });
 
