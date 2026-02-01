@@ -258,7 +258,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 - [ ] Recent searches (stored in localStorage)
 - [ ] Shareable URLs with encoded location
 - [ ] Print-friendly results page
-- [ ] Dark mode toggle
+- [x] Dark mode toggle (completed 2026-01-31)
 
 #### Information Display
 - [ ] Photo of storefront (if available)
@@ -350,7 +350,12 @@ Shops are scored based on Google Places types, name patterns, and website domain
   - Changed from 2 queries ("skate shop", "skateboard shop") to single "skateboard shop" query
   - Added pagination (up to 3 pages / 60 results per metro) for better coverage
   - Reduces false positives from ice skating and roller skating shops
-- [ ] Dark mode
+- [x] Dark mode (completed 2026-01-31)
+  - CSS-variable-based theming with `data-theme="dark"` attribute on `<html>`
+  - Toggle button in footer on all pages
+  - Respects `prefers-color-scheme` system preference on first visit
+  - Persists user choice in localStorage
+  - Inline `<script>` in `<head>` prevents flash of wrong theme
 - [ ] Performance optimization
 - [ ] User testing and feedback
 

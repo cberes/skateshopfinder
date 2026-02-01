@@ -20,6 +20,12 @@ Limited to shops within the United States for now.
 - **Blue marker**: Your current location
 - Click any marker to see shop details and get directions via Google Maps
 
+### Dark Mode
+- Toggle between light and dark themes via footer button
+- Respects system preference (`prefers-color-scheme`) on first visit
+- Persists user choice in localStorage across sessions
+- No flash of wrong theme on page load (early inline script)
+
 ## Running Locally
 
 The site requires a local HTTP server because:

@@ -52,6 +52,8 @@ import {
     listViewBtn: document.getElementById('list-view-btn'),
     mapViewBtn: document.getElementById('map-view-btn'),
     resultsMap: document.getElementById('results-map'),
+    // Theme toggle
+    themeToggle: document.querySelector('.theme-toggle'),
   };
 
   // Application State
@@ -148,6 +150,32 @@ import {
 
     // Shop click tracking via event delegation
     elements.resultsList.addEventListener('click', handleShopLinkClick);
+
+    // Theme toggle
+    initThemeToggle();
+  }
+
+  /**
+   * Initialize theme toggle button
+   */
+  function initThemeToggle() {
+    const btn = elements.themeToggle;
+    if (!btn) return;
+
+    function updateLabel() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    }
+
+    updateLabel();
+
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateLabel();
+    });
   }
 
   /**
