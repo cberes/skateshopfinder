@@ -921,3 +921,89 @@ footer p {
         font-size: var(--font-size-sm);
     }
 }
+
+/* Print Styles */
+@media print {
+    /* Force light color scheme */
+    :root {
+        --color-text: #333;
+        --color-text-light: #666;
+        --color-background: #fff;
+        --color-white: #fff;
+        --color-border: #ccc;
+        --color-primary: #1a1a2e;
+        --color-independent: #2e7d32;
+        --color-independent-bg: transparent;
+        --color-accent: #333;
+    }
+
+    /* Hide non-printable elements */
+    .search-section,
+    .view-toggle,
+    .results-map,
+    .modal,
+    .theme-toggle,
+    .footer-links,
+    .loading-indicator,
+    .error-message {
+        display: none !important;
+    }
+
+    /* Reset layout constraints */
+    body {
+        background: #fff;
+        color: #333;
+    }
+
+    main {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    /* Simplify header for print */
+    header {
+        background: none;
+        color: #333;
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Remove shadows and reduce borders */
+    .results-section,
+    .shop-card,
+    .no-results {
+        box-shadow: none;
+    }
+
+    .results-section {
+        border: none;
+        padding: 0;
+    }
+
+    /* Shop cards: avoid breaking mid-card */
+    .shop-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+
+    .shop-card:hover {
+        box-shadow: none;
+    }
+
+    /* Show URLs as visible text after links */
+    a.shop-link::after {
+        content: " (" attr(href) ")";
+    }
+
+    /* Independent badge: border instead of fill */
+    .badge-independent {
+        background-color: transparent;
+        border: 1px solid var(--color-independent);
+    }
+
+    /* Footer: keep last-updated, hide links */
+    footer {
+        background: none;
+        color: #333;
+        padding: var(--spacing-md) 0;
+    }
+}

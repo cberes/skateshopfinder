@@ -257,7 +257,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 #### User Experience
 - [ ] Recent searches (stored in localStorage)
 - [ ] Shareable URLs with encoded location
-- [ ] Print-friendly results page
+- [x] Print-friendly results page (completed 2026-01-31)
 - [x] Dark mode toggle (completed 2026-01-31)
 
 #### Information Display
