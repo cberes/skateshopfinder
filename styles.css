@@ -906,6 +906,29 @@ footer p {
     margin: var(--spacing-md);
 }
 
+/* Popups and markers always use light-mode colors (they sit on map tiles, not UI) */
+html[data-theme="dark"] .leaflet-popup-content-wrapper {
+    --color-primary: #1a1a2e;
+    --color-accent: #e94560;
+    --color-text-light: #666;
+    --color-independent: #2e7d32;
+    --color-independent-bg: #e8f5e9;
+    --color-btn-dark: #1a1a2e;
+    --color-btn-dark-hover: #16213e;
+}
+
+html[data-theme="dark"] .shop-marker {
+    background-color: #e94560;
+}
+
+html[data-theme="dark"] .shop-marker-independent {
+    background-color: #2e7d32;
+}
+
+html[data-theme="dark"] .user-marker {
+    background-color: #1a1a2e;
+}
+
 /* Mobile Map Adjustments */
 @media (width <= 350px) {
     .results-map {
