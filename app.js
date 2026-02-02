@@ -585,7 +585,7 @@ import {
     // Create shop cards with data attributes for tracking
     shops.forEach((shop) => {
       const li = document.createElement('li');
-      li.className = 'shop-card';
+      li.className = shop.isIndependent ? 'shop-card shop-card-independent' : 'shop-card';
       li.dataset.shopName = shop.name || '';
       li.dataset.isIndependent = shop.isIndependent ? 'true' : 'false';
       li.innerHTML = createShopCardHTML(shop);
