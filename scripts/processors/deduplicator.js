@@ -148,6 +148,9 @@ function mergeShops(existing, incoming) {
     website: base.website || other.website,
     phone: base.phone || other.phone,
     source: base.source,
+    // Keep Google Places metadata
+    googlePlaceId: base.googlePlaceId || other.googlePlaceId,
+    types: base.types || other.types,
     // Keep both OSM IDs if available
     osmId: base.osmId || other.osmId,
     osmType: base.osmType || other.osmType,
