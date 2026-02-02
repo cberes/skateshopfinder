@@ -197,17 +197,17 @@ main {
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: var(--font-size-sm);
-    color: var(--color-btn-dark);
+    color: var(--color-text);
     background: transparent;
-    border: 2px solid var(--color-btn-dark);
+    border: 2px solid var(--color-text);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .geolocation-btn:hover {
-    background-color: var(--color-btn-dark);
-    color: #fff;
+    background-color: var(--color-text);
+    color: var(--color-white);
 }
 
 .icon {
@@ -287,17 +287,17 @@ main {
     font-size: var(--font-size-sm);
     font-family: inherit;
     font-weight: 600;
-    color: var(--color-btn-dark);
+    color: var(--color-text);
     background: transparent;
-    border: 2px solid var(--color-btn-dark);
+    border: 2px solid var(--color-text);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .share-btn:hover {
-    background-color: var(--color-btn-dark);
-    color: #fff;
+    background-color: var(--color-text);
+    color: var(--color-white);
 }
 
 .results-list {
