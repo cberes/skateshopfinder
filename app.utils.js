@@ -274,6 +274,52 @@ export function createMapPopupHTML(shop) {
 }
 
 /**
+ * Build URL query string for sharing search results
+ * @param {string} searchMethod - 'address' or 'geolocation'
+ * @param {string} address - Address text (used when searchMethod is 'address')
+ * @param {number} lat - Latitude (used when searchMethod is not 'address')
+ * @param {number} lng - Longitude (used when searchMethod is not 'address')
+ * @returns {string} Query string including leading '?', or '' if no valid params
+ */
+export function buildShareParams(searchMethod, address, lat, lng) {
+  if (searchMethod === 'address' && address) {
+    return `?q=${encodeURIComponent(address)}`;
+  }
+  if (
+    typeof lat === 'number' &&
+    typeof lng === 'number' &&
+    !Number.isNaN(lat) &&
+    !Number.isNaN(lng)
+  ) {
+    return `?lat=${lat}&lng=${lng}`;
+  }
+  return '';
+}
+
+/**
+ * Parse URL search params into a search action
+ * @param {string} search - window.location.search string
+ * @returns {Object|null} { type: 'address', q } or { type: 'geo', lat, lng } or null
+ */
+export function parseShareParams(search) {
+  const params = new URLSearchParams(search);
+  const q = params.get('q');
+  if (q) {
+    return { type: 'address', q };
+  }
+  const latStr = params.get('lat');
+  const lngStr = params.get('lng');
+  if (latStr && lngStr) {
+    const lat = parseFloat(latStr);
+    const lng = parseFloat(lngStr);
+    if (!Number.isNaN(lat) && !Number.isNaN(lng)) {
+      return { type: 'geo', lat, lng };
+    }
+  }
+  return null;
+}
+
+/**
  * Calculate bounding box for a set of shops
  * @param {Array} shops - Array of shop objects with lat/lng
  * @returns {Object|null} Bounding box { north, south, east, west } or null if no valid shops

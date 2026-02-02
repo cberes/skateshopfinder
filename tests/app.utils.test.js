@@ -1,6 +1,7 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
 import {
+  buildShareParams,
   CONFIG,
   calculateDistance,
   createMapPopupHTML,
@@ -13,6 +14,7 @@ import {
   generateResultsSummary,
   getMapBounds,
   isValidCoordinates,
+  parseShareParams,
 } from '../app.utils.js';
 
 describe('CONFIG', () => {
@@ -769,5 +771,91 @@ describe('getMapBounds', () => {
     const result = getMapBounds(shops);
 
     assert.strictEqual(result, null);
+  });
+});
+
+describe('buildShareParams', () => {
+  it('should return ?q= for address search', () => {
+    const result = buildShareParams('address', 'Denver, CO', 39.7392, -104.9903);
+    assert.strictEqual(result, '?q=Denver%2C%20CO');
+  });
+
+  it('should encode special characters in address', () => {
+    const result = buildShareParams('address', '123 Main St, City & State', 0, 0);
+    assert.ok(result.startsWith('?q='), 'Should start with ?q=');
+    assert.ok(result.includes('%26'), 'Should encode ampersand');
+  });
+
+  it('should return ?lat=&lng= for geolocation search', () => {
+    const result = buildShareParams('geolocation', '', 39.7392, -104.9903);
+    assert.strictEqual(result, '?lat=39.7392&lng=-104.9903');
+  });
+
+  it('should use lat/lng even when address is provided for non-address search', () => {
+    const result = buildShareParams('geolocation', 'Denver, CO', 39.7392, -104.9903);
+    assert.strictEqual(result, '?lat=39.7392&lng=-104.9903');
+  });
+
+  it('should return empty string when address search has no address', () => {
+    const result = buildShareParams('address', '', null, null);
+    assert.strictEqual(result, '');
+  });
+
+  it('should return empty string when geolocation has NaN coords', () => {
+    const result = buildShareParams('geolocation', '', NaN, NaN);
+    assert.strictEqual(result, '');
+  });
+
+  it('should return empty string when geolocation has non-number coords', () => {
+    const result = buildShareParams('geolocation', '', 'bad', 'data');
+    assert.strictEqual(result, '');
+  });
+});
+
+describe('parseShareParams', () => {
+  it('should parse address query param', () => {
+    const result = parseShareParams('?q=Denver%2C+CO');
+    assert.deepStrictEqual(result, { type: 'address', q: 'Denver, CO' });
+  });
+
+  it('should parse lat/lng query params', () => {
+    const result = parseShareParams('?lat=39.7392&lng=-104.9903');
+    assert.deepStrictEqual(result, { type: 'geo', lat: 39.7392, lng: -104.9903 });
+  });
+
+  it('should prefer q over lat/lng when both present', () => {
+    const result = parseShareParams('?q=Denver&lat=39.7392&lng=-104.9903');
+    assert.strictEqual(result.type, 'address');
+    assert.strictEqual(result.q, 'Denver');
+  });
+
+  it('should return null for empty search string', () => {
+    const result = parseShareParams('');
+    assert.strictEqual(result, null);
+  });
+
+  it('should return null for search with no recognized params', () => {
+    const result = parseShareParams('?foo=bar');
+    assert.strictEqual(result, null);
+  });
+
+  it('should return null when lat is present but lng is missing', () => {
+    const result = parseShareParams('?lat=39.7392');
+    assert.strictEqual(result, null);
+  });
+
+  it('should return null when lng is present but lat is missing', () => {
+    const result = parseShareParams('?lng=-104.9903');
+    assert.strictEqual(result, null);
+  });
+
+  it('should return null when lat/lng are not valid numbers', () => {
+    const result = parseShareParams('?lat=abc&lng=def');
+    assert.strictEqual(result, null);
+  });
+
+  it('should handle negative coordinates', () => {
+    const result = parseShareParams('?lat=-33.8688&lng=151.2093');
+    assert.deepStrictEqual(result, { type: 'geo', lat: -33.8688, lng: 151.2093 });
   });
 });

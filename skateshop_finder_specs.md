@@ -256,7 +256,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 
 #### User Experience
 - [ ] Recent searches (stored in localStorage)
-- [ ] Shareable URLs with encoded location
+- [x] Shareable URLs with encoded location (completed 2026-02-01)
 - [x] Print-friendly results page (completed 2026-01-31)
 - [x] Dark mode toggle (completed 2026-01-31)
 
@@ -287,6 +287,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 - User wants to suggest a new shop → Clicks "Suggest a shop" → Fills out form → Submits
 - User notices a shop has closed → Clicks "Report closed shop" → Selects shop and submits report
 - User wants to find shops in different location → Enters new address → Sees new results
+- User wants to share results → Clicks "Copy Link" → Shares URL → Recipient opens link → Results auto-load
 
 ## Performance Requirements
 

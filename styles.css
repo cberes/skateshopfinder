@@ -277,6 +277,29 @@ main {
     font-size: var(--font-size-sm);
 }
 
+/* Share Button */
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--color-btn-dark);
+    background: transparent;
+    border: 2px solid var(--color-btn-dark);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.share-btn:hover {
+    background-color: var(--color-btn-dark);
+    color: #fff;
+}
+
 .results-list {
     list-style: none;
     display: flex;
@@ -968,7 +991,8 @@ html[data-theme="dark"] .user-marker {
     .theme-toggle,
     .footer-links,
     .loading-indicator,
-    .error-message {
+    .error-message,
+    .share-btn {
         display: none !important;
     }
 

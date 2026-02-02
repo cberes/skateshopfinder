@@ -20,6 +20,13 @@ Limited to shops within the United States for now.
 - **Blue marker**: Your current location
 - Click any marker to see shop details and get directions via Google Maps
 
+### Shareable URLs
+- Search results update the URL with query parameters for bookmarking and sharing
+- Address searches produce `?q=Denver%2C+CO` — re-geocodes on load
+- Geolocation searches produce `?lat=39.7392&lng=-104.9903` — searches directly
+- "Copy Link" button appears after a search for easy sharing
+- Opening a shared link auto-runs the search and shows results
+
 ### Dark Mode
 - Toggle between light and dark themes via footer button
 - Respects system preference (`prefers-color-scheme`) on first visit
@@ -76,7 +83,7 @@ Then open http://localhost:8000
 ├── styles.css          # Styling
 ├── shops.json          # Skateshop database
 ├── tests/
-│   ├── app.utils.test.js       # Frontend unit tests (91 tests)
+│   ├── app.utils.test.js       # Frontend unit tests (107 tests)
 │   └── analytics.test.js       # Analytics unit tests
 ├── scripts/
 │   ├── fetch-shops.js          # Fetch raw data from Google Places API

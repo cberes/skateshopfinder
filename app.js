@@ -15,6 +15,7 @@ import {
   trackViewResults,
 } from './analytics.js';
 import {
+  buildShareParams,
   CONFIG,
   createMapPopupHTML,
   createShopCardHTML,
@@ -23,6 +24,7 @@ import {
   formatShopForSelect,
   generateResultsSummary,
   getMapBounds,
+  parseShareParams,
 } from './app.utils.js';
 
 (() => {
@@ -39,6 +41,7 @@ import {
     resultsList: document.getElementById('results-list'),
     noResults: document.getElementById('no-results'),
     lastUpdated: document.getElementById('last-updated'),
+    shareBtn: document.getElementById('share-btn'),
     // Modal elements
     suggestModal: document.getElementById('suggest-modal'),
     reportModal: document.getElementById('report-modal'),
@@ -74,6 +77,7 @@ import {
     try {
       await loadShopsData();
       setupEventListeners();
+      checkURLParams();
     } catch (error) {
       showError('Failed to load shop data. Please refresh the page.');
       trackError('init_failed', error.message);
@@ -151,6 +155,9 @@ import {
     // Shop click tracking via event delegation
     elements.resultsList.addEventListener('click', handleShopLinkClick);
 
+    // Share button
+    elements.shareBtn.addEventListener('click', handleShareClick);
+
     // Theme toggle
     initThemeToggle();
   }
@@ -204,6 +211,19 @@ import {
     }
 
     trackShopClick(shopName, isIndependent, action);
+  }
+
+  /**
+   * Handle share button click — copy URL to clipboard
+   */
+  function handleShareClick() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = elements.shareBtn;
+      btn.textContent = 'Copied!';
+      setTimeout(() => {
+        btn.textContent = 'Copy Link';
+      }, 2000);
+    });
   }
 
   /**
@@ -375,6 +395,13 @@ import {
       return;
     }
 
+    await searchByAddress(address);
+  }
+
+  /**
+   * Geocode an address and search for nearby shops
+   */
+  async function searchByAddress(address) {
     showLoading();
     hideError();
 
@@ -472,6 +499,33 @@ import {
   }
 
   /**
+   * Update the URL query parameters without reloading
+   */
+  function updateURL(searchMethod, address, lat, lng) {
+    const queryString = buildShareParams(searchMethod, address, lat, lng);
+    if (queryString) {
+      history.replaceState(null, '', `${window.location.pathname}${queryString}`);
+      elements.shareBtn.hidden = false;
+    }
+  }
+
+  /**
+   * Check URL parameters on page load and auto-search if present
+   */
+  function checkURLParams() {
+    const parsed = parseShareParams(window.location.search);
+    if (!parsed) return;
+
+    if (parsed.type === 'address') {
+      elements.addressInput.value = parsed.q;
+      searchByAddress(parsed.q);
+    } else {
+      elements.shareBtn.hidden = false;
+      findNearbyShops(parsed.lat, parsed.lng, 'geolocation');
+    }
+  }
+
+  /**
    * Find shops near the given coordinates
    * @param {number} lat - Latitude
    * @param {number} lng - Longitude
@@ -487,6 +541,9 @@ import {
     // Store user coordinates for map centering
     lastUserLat = lat;
     lastUserLng = lng;
+
+    // Update URL with search parameters
+    updateURL(searchMethod, elements.addressInput.value.trim(), lat, lng);
 
     const nearbyShops = filterAndSortShops(
       shopsData.shops,
