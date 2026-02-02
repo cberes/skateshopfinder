@@ -323,15 +323,6 @@ main {
     box-shadow: var(--shadow);
 }
 
-.shop-card-independent {
-    border-left: 3px solid var(--color-independent);
-    background-color: var(--color-independent-bg);
-}
-
-.shop-card-independent:hover {
-    box-shadow: 0 4px 16px rgb(46 125 50 / 15%);
-}
-
 .shop-header {
     display: flex;
     justify-content: space-between;
@@ -1048,11 +1039,6 @@ html[data-theme="dark"] .user-marker {
     /* Show URLs as visible text after links */
     a.shop-link::after {
         content: " (" attr(href) ")";
-    }
-
-    /* Independent card: remove tint, keep border */
-    .shop-card-independent {
-        background-color: transparent;
     }
 
     /* Independent badge: border instead of fill */
