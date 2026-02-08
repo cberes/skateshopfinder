@@ -176,6 +176,7 @@ export function deduplicateShops(shops) {
   for (const shop of shops) {
     let foundDuplicate = false;
 
+    // TODO this is probably slow
     for (let i = 0; i < unique.length; i++) {
       if (areDuplicates(unique[i], shop)) {
         unique[i] = mergeShops(unique[i], shop);

@@ -5,7 +5,7 @@
  */
 
 // Store types that indicate a retail location
-export const STORE_TYPES = ['store', 'sporting_goods_store', 'retail'];
+export const STORE_TYPES = new Set(['store', 'sporting_goods_store', 'retail']);
 
 // Patterns that suggest a skateboard-related shop
 export const SKATE_NAME_PATTERNS = [/skate/i, /sk8/i, /board/i, /deck/i, /shred/i, /thrash/i];
@@ -74,13 +74,13 @@ export const SKIP_PATTERNS = [
 ];
 
 // Google Places types to exclude
-export const EXCLUDED_TYPES = [
+export const EXCLUDED_TYPES = new Set([
   'ice_skating_rink',
   'skating_rink',
   'stadium',
   'arena',
   'department_store',
-];
+]);
 
 // Known chain store patterns
 const CHAIN_PATTERNS = [
@@ -146,7 +146,7 @@ function matchKnownChain(shop) {
  * @returns {Object} Confidence result with level and reason
  */
 export function calculateConfidence(shop) {
-  const types = shop.types || [];
+  const types = new Set(shop.types || []);
   const name = (shop.name || '').toLowerCase();
 
   // Check for known skateboard chain stores (Zumiez, Tactics, etc.)
@@ -156,13 +156,13 @@ export function calculateConfidence(shop) {
   }
 
   // Check for explicit skateboard shop type
-  if (types.includes('skateboard_shop')) {
+  if (types.has('skateboard_shop')) {
     return { level: 'high', reason: 'Has skateboard_shop type' };
   }
 
   // Check for skate park with store
-  const hasStoreType = STORE_TYPES.some((t) => types.includes(t));
-  if (types.includes('skateboard_park') && hasStoreType) {
+  const hasStoreType = types.intersection(STORE_TYPES).size > 0;
+  if (types.has('skateboard_park') && hasStoreType) {
     return { level: 'very_high', reason: 'Skate park with store' };
   }
 
@@ -194,7 +194,7 @@ export function calculateConfidence(shop) {
   }
 
   // Check for excluded types
-  if (EXCLUDED_TYPES.some((t) => types.includes(t))) {
+  if (types.intersection(EXCLUDED_TYPES).size > 0) {
     return { level: 'exclude', reason: 'Has excluded type' };
   }
 
