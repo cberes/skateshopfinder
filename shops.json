@@ -15764,13 +15764,110 @@
       "isIndependent": false,
       "website": "https://www.zumiez.com/stores/us320?utm_source=google+my+business&utm_medium=organic&utm_campaign=store+locations",
       "phone": "(805) 987-3246"
+    },
+    {
+      "id": 1602,
+      "name": "Fucking Awesome",
+      "address": "420 E 9th St., New York, NY 10009",
+      "lat": 40.727627,
+      "lng": -73.983914,
+      "website": "https://faworldentertainment.com",
+      "phone": "(646) 490-4417",
+      "isIndependent": true
+    },
+    {
+      "id": 1603,
+      "name": "Tenant",
+      "address": "599 Manhattan Ave., Brooklyn, NY 11222",
+      "lat": 40.723061,
+      "lng": -73.950706,
+      "website": "http://tenantny.com",
+      "phone": "(718) 866-0484",
+      "isIndependent": true
+    },
+    {
+      "id": 1604,
+      "name": "Sideshow NYC",
+      "address": "62-15 Fresh Pond Rd., Queens, NY 11379",
+      "lat": 40.713339,
+      "lng": -73.900588,
+      "phone": "(718) 366-8702",
+      "isIndependent": true
+    },
+    {
+      "id": 1605,
+      "name": "Richmond Hood Company",
+      "address": "827 Castleton Ave., Staten Island, NY 10310",
+      "lat": 40.634826,
+      "lng": -74.110016,
+      "website": "http://www.richmondhood.com",
+      "phone": "(347) 857-5817",
+      "isIndependent": true
+    },
+    {
+      "id": 1606,
+      "name": "Premium Roots New York",
+      "address": "110 Frost St., Brooklyn, NY 11211",
+      "lat": 40.717564,
+      "lng": -73.94721,
+      "website": "http://www.premiumrootsnewyork.com",
+      "isIndependent": true
+    },
+    {
+      "id": 1607,
+      "name": "Supreme",
+      "address": "190 Bowery, New York, NY 10012",
+      "lat": 40.721189,
+      "lng": -73.994068,
+      "website": "https://www.supremenewyork.com",
+      "phone": "(212) 966-7799",
+      "isIndependent": true
+    },
+    {
+      "id": 1608,
+      "name": "Park Delicatessen",
+      "address": "722 Classon Ave., Brooklyn, NY 11238",
+      "lat": 40.675452,
+      "lng": -73.960142,
+      "website": "https://www.parkdelibk.com",
+      "phone": "(718) 789-8889",
+      "isIndependent": true
+    },
+    {
+      "id": 1609,
+      "name": "Long Island City Kleaners",
+      "address": "30-53 Steinway St., Long Island City, NY 11103",
+      "lat": 40.762471,
+      "lng": -73.915832,
+      "website": "https://www.licknyc.com",
+      "phone": "(718) 606-0540",
+      "isIndependent": true
+    },
+    {
+      "id": 1610,
+      "name": "Sneakouts",
+      "address": "2340 Bath Ave., Brooklyn, NY 11214",
+      "lat": 40.59622,
+      "lng": -73.994167,
+      "website": "http://sneakouts.com",
+      "phone": "(718) 269-3225",
+      "isIndependent": true
+    },
+    {
+      "id": 1611,
+      "name": "Moku Surf NY",
+      "address": "879 W Beech St., Long Beach, NY 11561",
+      "lat": 40.586242,
+      "lng": -73.690647,
+      "phone": "(516) 432-0031",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-08",
   "version": "1.0",
   "stats": {
-    "total": 1601,
-    "independent": 1031,
+    "total": 1611,
+    "independent": 1041,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
