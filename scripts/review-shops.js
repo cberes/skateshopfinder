@@ -56,10 +56,13 @@ function displayShop(shop, index, total) {
   console.log(`Shop ${index + 1} of ${total}`);
   console.log('='.repeat(60));
   console.log(`Name:    ${shop.name || 'N/A'}`);
-  console.log(`Address: ${shop.address || 'N/A'}`);
   console.log(`Types:   ${(shop.types || []).join(', ') || 'N/A'}`);
-  console.log(`Website: ${shop.website || 'N/A'}`);
+  console.log(`Address: ${shop.address || 'N/A'}`);
   console.log(`Phone:   ${shop.phone || 'N/A'}`);
+  console.log(`Website: ${shop.website || 'N/A'}`);
+  if (shop.googlePlaceId) {
+    console.log(`Google Maps: https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${shop.googlePlaceId}`);
+  }
   if (shop.confidenceReason) {
     console.log(`Reason:  ${shop.confidenceReason}`);
   }

@@ -15861,13 +15861,59 @@
       "lng": -73.690647,
       "phone": "(516) 432-0031",
       "isIndependent": true
+    },
+    {
+      "id": 1612,
+      "name": "America's Best Choice SKB, INC",
+      "address": "328 Omar St., Los Angeles, CA 90013",
+      "lat": 34.045908,
+      "lng": -118.241378,
+      "phone": "(213) 947-3035",
+      "isIndependent": true
+    },
+    {
+      "id": 1613,
+      "name": "Non Factory",
+      "address": "108 San Pedro St., Los Angeles, CA 90012",
+      "lat": 34.050013,
+      "lng": -118.240999,
+      "phone": "(213) 620-0314",
+      "isIndependent": true
+    },
+    {
+      "id": 1614,
+      "name": "3Deep",
+      "address": "208 S Ave. 20, Los Angeles, CA 90031",
+      "lat": 34.072376,
+      "lng": -118.219841,
+      "isIndependent": true
+    },
+    {
+      "id": 1615,
+      "name": "Maintain",
+      "address": "2643 N Figueroa St., Los Angeles, CA 90065",
+      "lat": 34.084844,
+      "lng": -118.221464,
+      "website": "https://maintainshop.com",
+      "phone": "(323) 226-0420",
+      "isIndependent": true
+    },
+    {
+      "id": 1616,
+      "name": "KINGSWELL",
+      "address": "4651 Kingswell Ave., Los Angeles, CA 90027",
+      "lat": 34.102784,
+      "lng": -118.291386,
+      "website": "http://www.kingswell.tv",
+      "phone": "(323) 522-3028",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-08",
   "version": "1.0",
   "stats": {
-    "total": 1611,
-    "independent": 1041,
+    "total": 1616,
+    "independent": 1046,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
