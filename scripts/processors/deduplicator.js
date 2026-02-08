@@ -46,9 +46,25 @@ function extractCity(address) {
 }
 
 /**
+ * Pre-compute normalized values for a shop to avoid repeated regex operations
+ */
+function precomputeNormalized(shop) {
+  const normalizedAddress = normalizeForComparison(shop.address);
+  return {
+    shop,
+    name: normalizeForComparison(shop.name),
+    address: normalizedAddress,
+    street: normalizedAddress.split(',')[0]?.trim() || '',
+    city: extractCity(shop.address),
+  };
+}
+
+/**
  * Check if two shops are duplicates by coordinates
  */
-function matchByCoordinates(shop1, shop2) {
+function matchByCoordinates(entry1, entry2) {
+  const shop1 = entry1.shop;
+  const shop2 = entry2.shop;
   if (!shop1.lat || !shop1.lng || !shop2.lat || !shop2.lng) {
     return false;
   }
@@ -60,20 +76,14 @@ function matchByCoordinates(shop1, shop2) {
 /**
  * Check if two shops are duplicates by name + city
  */
-function matchByNameAndCity(shop1, shop2) {
-  const name1 = normalizeForComparison(shop1.name);
-  const name2 = normalizeForComparison(shop2.name);
-
-  if (!name1 || !name2 || name1 !== name2) {
+function matchByNameAndCity(entry1, entry2) {
+  if (!entry1.name || !entry2.name || entry1.name !== entry2.name) {
     return false;
   }
 
-  const city1 = extractCity(shop1.address);
-  const city2 = extractCity(shop2.address);
-
   // If both have cities, they must match
-  if (city1 && city2) {
-    return city1 === city2;
+  if (entry1.city && entry2.city) {
+    return entry1.city === entry2.city;
   }
 
   // If only one has a city, consider it a potential match
@@ -84,28 +94,20 @@ function matchByNameAndCity(shop1, shop2) {
 /**
  * Check if two shops are duplicates by address
  */
-function matchByAddress(shop1, shop2) {
-  if (!shop1.address || !shop2.address) {
+function matchByAddress(entry1, entry2) {
+  if (!entry1.address || !entry2.address) {
     return false;
   }
 
-  const addr1 = normalizeForComparison(shop1.address);
-  const addr2 = normalizeForComparison(shop2.address);
-
   // Exact match
-  if (addr1 === addr2) {
+  if (entry1.address === entry2.address) {
     return true;
   }
 
   // Check if street addresses match (first part before first comma)
-  const street1 = addr1.split(',')[0]?.trim();
-  const street2 = addr2.split(',')[0]?.trim();
-
-  if (street1 && street2 && street1 === street2) {
+  if (entry1.street && entry2.street && entry1.street === entry2.street) {
     // Also check if same city
-    const city1 = extractCity(shop1.address);
-    const city2 = extractCity(shop2.address);
-    if (city1 && city2 && city1 === city2) {
+    if (entry1.city && entry2.city && entry1.city === entry2.city) {
       return true;
     }
   }
@@ -114,13 +116,13 @@ function matchByAddress(shop1, shop2) {
 }
 
 /**
- * Check if two shops are duplicates
+ * Check if two shops are duplicates using pre-computed normalized data
  */
-function areDuplicates(shop1, shop2) {
+function areDuplicates(entry1, entry2) {
   return (
-    matchByCoordinates(shop1, shop2) ||
-    matchByNameAndCity(shop1, shop2) ||
-    matchByAddress(shop1, shop2)
+    matchByCoordinates(entry1, entry2) ||
+    matchByNameAndCity(entry1, entry2) ||
+    matchByAddress(entry1, entry2)
   );
 }
 
@@ -170,16 +172,20 @@ function mergeShops(existing, incoming) {
 export function deduplicateShops(shops) {
   console.log(`Deduplicating ${shops.length} shops...`);
 
+  // Pre-compute normalized values once per shop
+  const entries = shops.map(precomputeNormalized);
+
   const unique = [];
   let duplicateCount = 0;
 
-  for (const shop of shops) {
+  for (const entry of entries) {
     let foundDuplicate = false;
 
-    // TODO this is probably slow
     for (let i = 0; i < unique.length; i++) {
-      if (areDuplicates(unique[i], shop)) {
-        unique[i] = mergeShops(unique[i], shop);
+      if (areDuplicates(unique[i], entry)) {
+        // Merge shops and recompute normalized values for merged result
+        const merged = mergeShops(unique[i].shop, entry.shop);
+        unique[i] = precomputeNormalized(merged);
         foundDuplicate = true;
         duplicateCount++;
         break;
@@ -187,11 +193,11 @@ export function deduplicateShops(shops) {
     }
 
     if (!foundDuplicate) {
-      unique.push({ ...shop });
+      unique.push(entry);
     }
   }
 
   console.log(`Removed ${duplicateCount} duplicates, ${unique.length} unique shops remain`);
 
-  return unique;
+  return unique.map((entry) => entry.shop);
 }
