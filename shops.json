@@ -15907,13 +15907,159 @@
       "website": "http://www.kingswell.tv",
       "phone": "(323) 522-3028",
       "isIndependent": true
+    },
+    {
+      "id": 1617,
+      "name": "XB Santa Ana",
+      "address": "2800 N Main St. #828, Santa Ana, CA 92705",
+      "lat": 33.774766,
+      "lng": -117.86965,
+      "website": "http://www.xbusa.com",
+      "phone": "(714) 285-9585",
+      "isIndependent": true
+    },
+    {
+      "id": 1618,
+      "name": "Transport",
+      "address": "4866 N Eagle Rock Blvd., Los Angeles, CA 90041",
+      "lat": 34.134359,
+      "lng": -118.215265,
+      "phone": "(323) 550-8115",
+      "isIndependent": true
+    },
+    {
+      "id": 1619,
+      "name": "Soul Performance and Brög Surf",
+      "address": "13429 S Western Ave. Unit C, Gardena, CA 90249",
+      "lat": 33.909934,
+      "lng": -118.309748,
+      "website": "http://soulperformance.com",
+      "phone": "(310) 370-1428",
+      "isIndependent": true
+    },
+    {
+      "id": 1620,
+      "name": "Brooklyn Projects",
+      "address": "7427 Melrose Ave., Los Angeles, CA 90046",
+      "lat": 34.083769,
+      "lng": -118.35198,
+      "website": "http://www.brooklynprojects.com",
+      "phone": "(323) 658-3030",
+      "isIndependent": true
+    },
+    {
+      "id": 1621,
+      "name": "XB Torrance",
+      "address": "21540 Hawthorne Blvd. UNIT 502, Torrance, CA 90503",
+      "lat": 33.832793,
+      "lng": -118.350305,
+      "website": "http://www.xbusa.com",
+      "phone": "(310) 214-0744",
+      "isIndependent": true
+    },
+    {
+      "id": 1622,
+      "name": "Supreme",
+      "address": "1438 N Milwaukee Ave., Chicago, IL 60622",
+      "lat": 41.90785,
+      "lng": -87.67401,
+      "website": "https://www.supremenewyork.com/shop",
+      "phone": "(312) 300-0562",
+      "isIndependent": true
+    },
+    {
+      "id": 1623,
+      "name": "HAVØK",
+      "address": "901 Calumet Ave. #5, Valparaiso, IN 46383",
+      "lat": 41.476367,
+      "lng": -87.05701,
+      "website": "http://havoknwi.com",
+      "phone": "(219) 256-5357",
+      "isIndependent": true
+    },
+    {
+      "id": 1624,
+      "name": "Tradewinds Cove Birkenstock",
+      "address": "372 W Virginia St., Crystal Lake, IL 60014",
+      "lat": 42.232876,
+      "lng": -88.334339,
+      "phone": "(815) 455-2296",
+      "isIndependent": true
+    },
+    {
+      "id": 1625,
+      "name": "STANDARD X FUTURE GALLERY",
+      "address": "8102 Lemont Rd. # 1700, Woodridge, IL 60517",
+      "lat": 41.741127,
+      "lng": -88.01431,
+      "website": "https://www.standardxfuture.com",
+      "isIndependent": true
+    },
+    {
+      "id": 1626,
+      "name": "The Trend Cellar",
+      "address": "1326 Riverside Dr., McHenry, IL 60050",
+      "lat": 42.345413,
+      "lng": -88.261992,
+      "website": "https://www.thetrendcellar.com",
+      "phone": "(815) 307-3352",
+      "isIndependent": true
+    },
+    {
+      "id": 1627,
+      "name": "Blaize Culture®",
+      "address": "6300 Hulen Bend Blvd., Fort Worth, TX 76132",
+      "lat": 32.661544,
+      "lng": -97.404271,
+      "website": "https://www.blaizeculture.com",
+      "phone": "(469) 858-6231",
+      "isIndependent": true
+    },
+    {
+      "id": 1628,
+      "name": "Custom Scooters",
+      "address": "912 E 15th St., Plano, TX 75074",
+      "lat": 33.019448,
+      "lng": -96.702504,
+      "website": "http://www.customscooters.com",
+      "phone": "(972) 509-1553",
+      "isIndependent": true
+    },
+    {
+      "id": 1629,
+      "name": "Mi Barrio 214",
+      "address": "4105 Urban Ave. #100, Dallas, TX 75227",
+      "lat": 32.773123,
+      "lng": -96.696771,
+      "website": "https://www.instagram.com/mibarrio214/",
+      "isIndependent": true
+    },
+    {
+      "id": 1630,
+      "name": "Freedom BMX",
+      "address": "624 Lincoln Square, Arlington, TX 76011",
+      "lat": 32.756542,
+      "lng": -97.098784,
+      "website": "https://www.freedombmx.life",
+      "phone": "(817) 629-2068",
+      "isIndependent": true
+    },
+    {
+      "id": 1631,
+      "name": "Soundwaves",
+      "address": "3509 Montrose Blvd., Houston, TX 77006",
+      "lat": 29.741026,
+      "lng": -95.391051,
+      "website": "http://soundwaves.com",
+      "phone": "(713) 520-9283",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-08",
   "version": "1.0",
   "stats": {
-    "total": 1616,
-    "independent": 1046,
+    "total": 1631,
+    "independent": 1061,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543

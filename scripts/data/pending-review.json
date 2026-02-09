@@ -1,121 +1,5 @@
 [
   {
-    "id": "google-ChIJb-aO387Z3IARORKKQFMeQJw",
-    "name": "XB Santa Ana",
-    "address": "2800 N Main St. #828, Santa Ana, CA 92705",
-    "lat": 33.774766,
-    "lng": -117.86965,
-    "website": "http://www.xbusa.com",
-    "phone": "(714) 285-9585",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJb-aO387Z3IARORKKQFMeQJw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJTVEsBV3BwoARrC0Vce6CUI8",
-    "name": "Transport",
-    "address": "4866 N Eagle Rock Blvd., Los Angeles, CA 90041",
-    "lat": 34.134359,
-    "lng": -118.215265,
-    "website": null,
-    "phone": "(323) 550-8115",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJTVEsBV3BwoARrC0Vce6CUI8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJIT0HPGC0woARQ3iFzBGudXE",
-    "name": "Soul Performance and Brög Surf",
-    "address": "13429 S Western Ave. Unit C, Gardena, CA 90249",
-    "lat": 33.909934,
-    "lng": -118.309748,
-    "website": "http://soulperformance.com",
-    "phone": "(310) 370-1428",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJIT0HPGC0woARQ3iFzBGudXE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ94m4ZtK-woAR4TnqGqOO3Ks",
-    "name": "Brooklyn Projects",
-    "address": "7427 Melrose Ave., Los Angeles, CA 90046",
-    "lat": 34.083769,
-    "lng": -118.35198,
-    "website": "http://www.brooklynprojects.com",
-    "phone": "(323) 658-3030",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ94m4ZtK-woAR4TnqGqOO3Ks",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJlTor1zJL3YARKKw2bZDV7Mw",
-    "name": "XB Torrance",
-    "address": "21540 Hawthorne Blvd. UNIT 502, Torrance, CA 90503",
-    "lat": 33.832793,
-    "lng": -118.350305,
-    "website": "http://www.xbusa.com",
-    "phone": "(310) 214-0744",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "shoe_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJlTor1zJL3YARKKw2bZDV7Mw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJZZ-jjkjGwoARSICzkuXw9DQ",
-    "name": "VANTAGE",
-    "address": "Weller Court Shopping Center, 123 Astronaut Ellison S Onizuka St. Suite 207, Los Angeles, CA 90012",
-    "lat": 34.050281,
-    "lng": -118.242188,
-    "website": "https://vantagesportshop.com",
-    "phone": "(213) 617-0875",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJZZ-jjkjGwoARSICzkuXw9DQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJhSb4IZYvDogRAwZsxSK3gxs",
     "name": "Underground Wheels Etc.",
     "address": "5401 S Wentworth Ave. #11E, Chicago, IL 60609",
@@ -131,719 +15,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJhSb4IZYvDogRAwZsxSK3gxs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJR80Qu7QsDogRkCR8M5IUdQo",
-    "name": "Leaders 1354",
-    "address": "1152 W Madison St., Chicago, IL 60607",
-    "lat": 41.881742,
-    "lng": -87.656442,
-    "website": "http://www.leaders1354.com",
-    "phone": "(312) 787-7144",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "shoe_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJR80Qu7QsDogRkCR8M5IUdQo",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJh5deSLHTD4gRI-Mcd3y6XN0",
-    "name": "Supreme",
-    "address": "1438 N Milwaukee Ave., Chicago, IL 60622",
-    "lat": 41.90785,
-    "lng": -87.67401,
-    "website": "https://www.supremenewyork.com/shop",
-    "phone": "(312) 300-0562",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJh5deSLHTD4gRI-Mcd3y6XN0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJBT9Jv1_nEYgRBnaUJ4mIVWQ",
-    "name": "Always Fresh Life",
-    "address": "1004 Reder Rd., Griffith, IN 46319",
-    "lat": 41.511904,
-    "lng": -87.416448,
-    "website": null,
-    "phone": "(219) 671-5810",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJBT9Jv1_nEYgRBnaUJ4mIVWQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJsU4910WbEYgRooB21t7HVUc",
-    "name": "HAVØK",
-    "address": "901 Calumet Ave. #5, Valparaiso, IN 46383",
-    "lat": 41.476367,
-    "lng": -87.05701,
-    "website": "http://havoknwi.com",
-    "phone": "(219) 256-5357",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJsU4910WbEYgRooB21t7HVUc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJQ_Yc8KptD4gRl8pIeQCZWtk",
-    "name": "Tradewinds Cove Birkenstock",
-    "address": "372 W Virginia St., Crystal Lake, IL 60014",
-    "lat": 42.232876,
-    "lng": -88.334339,
-    "website": null,
-    "phone": "(815) 455-2296",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJQ_Yc8KptD4gRl8pIeQCZWtk",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJu8sdP8fSD4gRDJiacesXl-k",
-    "name": "Burton Chicago Flagship Store",
-    "address": "1563 N Milwaukee Ave., Chicago, IL 60622",
-    "lat": 41.909957,
-    "lng": -87.676613,
-    "website": "https://www.burton.com/us/en/home",
-    "phone": "(708) 722-2230",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJu8sdP8fSD4gRDJiacesXl-k",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJw-rFg_3GD4gRSzbUL0vp_AU",
-    "name": "Rainbo Sports",
-    "address": "2665 Shermer Rd., Northbrook, IL 60062",
-    "lat": 42.104646,
-    "lng": -87.828841,
-    "website": "http://www.shoprainbo.com",
-    "phone": "(224) 235-4764",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJw-rFg_3GD4gRSzbUL0vp_AU",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ8fLzRJ_1DogRQjLZGfZNqew",
-    "name": "STANDARD X FUTURE GALLERY",
-    "address": "8102 Lemont Rd. # 1700, Woodridge, IL 60517",
-    "lat": 41.741127,
-    "lng": -88.01431,
-    "website": "https://www.standardxfuture.com",
-    "phone": null,
-    "isIndependent": true,
-    "types": [
-      "art_gallery",
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ8fLzRJ_1DogRQjLZGfZNqew",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJdW7FQb7ID4gR2UQ17qb0y0k",
-    "name": "Gunzo's Sports Center",
-    "address": "6730 Dempster St., Morton Grove, IL 60053",
-    "lat": 42.041086,
-    "lng": -87.794711,
-    "website": "https://www.gunzos.com",
-    "phone": "(847) 965-2300",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJdW7FQb7ID4gR2UQ17qb0y0k",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJE7j2qKwsDogRwq8W8qyjkmw",
-    "name": "Nike Chicago",
-    "address": "669 N Michigan Ave., Chicago, IL 60611",
-    "lat": 41.894421,
-    "lng": -87.623712,
-    "website": "https://www.nike.com/retail/s/nike-chicago?cp=84620811901_seo_%3Fcp%3D84620811901_seo_&y_source=1_NTQzNzUxNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
-    "phone": "(312) 642-6363",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "shoe_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJE7j2qKwsDogRwq8W8qyjkmw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ95tAkZ5xD4gRNA4i-iOGx_Y",
-    "name": "The Trend Cellar",
-    "address": "1326 Riverside Dr., McHenry, IL 60050",
-    "lat": 42.345413,
-    "lng": -88.261992,
-    "website": "https://www.thetrendcellar.com",
-    "phone": "(815) 307-3352",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ95tAkZ5xD4gRNA4i-iOGx_Y",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJFXi3yEfSD4gR0i6jTcGDWFQ",
-    "name": "Play It Again Sports - Lake View Chicago",
-    "address": "3119 N Lincoln Ave., Chicago, IL 60657",
-    "lat": 41.938615,
-    "lng": -87.666566,
-    "website": "https://www.playitagainsports.com/locations/lakeview-chicago-il",
-    "phone": "(773) 305-9900",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJFXi3yEfSD4gR0i6jTcGDWFQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJlWmxBCA1DogRQG9GwkN_rBQ",
-    "name": "Gunzo's Sports Center",
-    "address": "7706 Madison St., River Forest, IL 60305",
-    "lat": 41.879498,
-    "lng": -87.81664,
-    "website": "https://www.gunzos.com",
-    "phone": "(708) 771-8666",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJlWmxBCA1DogRQG9GwkN_rBQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJvdKT3VbTD4gREbKTAflEerc",
-    "name": "Electric Movement",
-    "address": "319 W North Ave., Chicago, IL 60610",
-    "lat": 41.910979,
-    "lng": -87.637475,
-    "website": "http://electricmovementchicago.com",
-    "phone": "(312) 526-3302",
-    "isIndependent": true,
-    "types": [
-      "bicycle_store",
-      "car_repair",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJvdKT3VbTD4gREbKTAflEerc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJyT5hoQEtDogRU2gDlMKBZ_g",
-    "name": "Drip Collective",
-    "address": "172 N Racine Ave., Chicago, IL 60607",
-    "lat": 41.885105,
-    "lng": -87.656944,
-    "website": "https://dripcollective.coffee",
-    "phone": null,
-    "isIndependent": true,
-    "types": [
-      "coffee_shop",
-      "cafe",
-      "food_store",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJyT5hoQEtDogRU2gDlMKBZ_g",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJq8YZxHm4D4gR8eRlfo7H71w",
-    "name": "Offensive Zone Pro Shop",
-    "address": "1851 Landwehr Rd., Glenview, IL 60026",
-    "lat": 42.090115,
-    "lng": -87.858234,
-    "website": "https://offensivezone.net",
-    "phone": "(847) 904-7141",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJq8YZxHm4D4gR8eRlfo7H71w",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJz7gBXiPTD4gRcqQS1N4ZpAk",
-    "name": "MCA Store",
-    "address": "220 E Chicago Ave., Chicago, IL 60611",
-    "lat": 41.897182,
-    "lng": -87.621029,
-    "website": "https://mcachicagostore.org",
-    "phone": "(312) 397-4000",
-    "isIndependent": true,
-    "types": [
-      "gift_shop",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJz7gBXiPTD4gRcqQS1N4ZpAk",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJQzZHVQDTD4gRCnE3jmMNark",
-    "name": "Chip City",
-    "address": "55 E Chicago Ave., Chicago, IL 60611",
-    "lat": 41.896488,
-    "lng": -87.626108,
-    "website": "https://chipcitycookies.com/locations/gold-coast",
-    "phone": "(814) 283-4046",
-    "isIndependent": true,
-    "types": [
-      "dessert_shop",
-      "confectionery",
-      "bakery",
-      "food_store",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJQzZHVQDTD4gRCnE3jmMNark",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJzYtRaUbTD4gRdP05BLWqKyM",
-    "name": "Village Cycle Center",
-    "address": "1337 N Wells St., Chicago, IL 60610",
-    "lat": 41.906806,
-    "lng": -87.634425,
-    "website": "http://villagecycle.com",
-    "phone": "(312) 751-2488",
-    "isIndependent": true,
-    "types": [
-      "bicycle_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJzYtRaUbTD4gRdP05BLWqKyM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJpT30MWEoDogR-KxarbzB4JM",
-    "name": "B & J Group Ltd",
-    "address": "2032 E 79th St., Chicago, IL 60649",
-    "lat": 41.751725,
-    "lng": -87.574619,
-    "website": null,
-    "phone": "(773) 374-1700",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJpT30MWEoDogR-KxarbzB4JM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJXULLAsfSD4gR-vc1NcQxw0I",
-    "name": "Urban Outfitters",
-    "address": "1521 N Milwaukee Ave., Chicago, IL 60622",
-    "lat": 41.909326,
-    "lng": -87.675279,
-    "website": "https://www.urbanoutfitters.com/stores/milwaukee-ave-chicago?utm_medium=organic&utm_source=google&utm_campaign=local&utm_content=86",
-    "phone": "(773) 772-8550",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "shoe_store",
-      "home_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJXULLAsfSD4gR-vc1NcQxw0I",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJZ4Ognf4vTIYR3YyDn-ITe5g",
-    "name": "A Collector’s Closet (formerly Incite)",
-    "address": "6121 W Park Blvd. Suite C107, Plano, TX 75093",
-    "lat": 33.031894,
-    "lng": -96.831641,
-    "website": null,
-    "phone": null,
-    "isIndependent": true,
-    "types": [
-      "shoe_store",
-      "book_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJZ4Ognf4vTIYR3YyDn-ITe5g",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJP20mHBpxToYRS4XV86OGmkY",
-    "name": "Blaize Culture®",
-    "address": "6300 Hulen Bend Blvd., Fort Worth, TX 76132",
-    "lat": 32.661544,
-    "lng": -97.404271,
-    "website": "https://www.blaizeculture.com",
-    "phone": "(469) 858-6231",
-    "isIndependent": true,
-    "types": [
-      "bicycle_store",
-      "clothing_store",
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJP20mHBpxToYRS4XV86OGmkY",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ4eBDoYQiTIYRe_QwBgDJkV0",
-    "name": "Play It Again Sports",
-    "address": "1937 Preston Rd. Unit 1000, Plano, TX 75093",
-    "lat": 33.024815,
-    "lng": -96.79863,
-    "website": "http://www.playitagainsports.com/locations/plano-tx",
-    "phone": "(972) 612-1101",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "sports_club",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ4eBDoYQiTIYRe_QwBgDJkV0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJMeY-ZxwZTIYRnAeh-HY17hc",
-    "name": "Custom Scooters",
-    "address": "912 E 15th St., Plano, TX 75074",
-    "lat": 33.019448,
-    "lng": -96.702504,
-    "website": "http://www.customscooters.com",
-    "phone": "(972) 509-1553",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "car_repair",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJMeY-ZxwZTIYRnAeh-HY17hc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJYZfgjYijToYRpF5a-6LXwgw",
-    "name": "Mi Barrio 214",
-    "address": "4105 Urban Ave. #100, Dallas, TX 75227",
-    "lat": 32.773123,
-    "lng": -96.696771,
-    "website": "https://www.instagram.com/mibarrio214/",
-    "phone": null,
-    "isIndependent": true,
-    "types": [
-      "art_studio",
-      "coffee_shop",
-      "art_gallery",
-      "book_store",
-      "food_store",
-      "cafe",
-      "community_center",
-      "sporting_goods_store",
-      "event_venue",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJYZfgjYijToYRpF5a-6LXwgw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJO9st0RUfTIYRmnibJrNhAtw",
-    "name": "X SMOKE SHOP",
-    "address": "804 West Shore Dr. suite # 7, Richardson, TX 75080",
-    "lat": 32.962232,
-    "lng": -96.74772,
-    "website": null,
-    "phone": "(214) 272-7617",
-    "isIndependent": true,
-    "types": [
-      "gift_shop",
-      "sporting_goods_store",
-      "store",
-      "health",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJO9st0RUfTIYRmnibJrNhAtw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJA9ieX-59ToYRMOACB3m-nKE",
-    "name": "Freedom BMX",
-    "address": "624 Lincoln Square, Arlington, TX 76011",
-    "lat": 32.756542,
-    "lng": -97.098784,
-    "website": "https://www.freedombmx.life",
-    "phone": "(817) 629-2068",
-    "isIndependent": true,
-    "types": [
-      "bicycle_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJA9ieX-59ToYRMOACB3m-nKE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ11J_j-I7TIYR0cFvs2WKPGA",
-    "name": "Scheels",
-    "address": "4450 Destination Dr., The Colony, TX 75056",
-    "lat": 33.075316,
-    "lng": -96.859299,
-    "website": "https://www.scheels.com/store/the-colony/096?utm_source=google&utm_medium=yext",
-    "phone": "(469) 854-7500",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "clothing_store",
-      "shoe_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ11J_j-I7TIYR0cFvs2WKPGA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJK3N6ZmCeToYR_mqyr0NrYpc",
-    "name": "TYLER'S",
-    "address": "5959 Royal Ln. #620, Dallas, TX 75230",
-    "lat": 32.895839,
-    "lng": -96.805733,
-    "website": "https://www.tylerstx.com",
-    "phone": "(214) 353-0068",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "shoe_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJK3N6ZmCeToYR_mqyr0NrYpc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJb9OZ1-s9TIYRj9ofUlseqwE",
-    "name": "PUFF LOVE - Smoke Shop - Plano",
-    "address": "4720 State Hwy 121 #100, Plano, TX 75024",
-    "lat": 33.098665,
-    "lng": -96.79857,
-    "website": "http://www.puff-love.com",
-    "phone": "(469) 200-8172",
-    "isIndependent": true,
-    "types": [
-      "gift_shop",
-      "store",
-      "health",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJb9OZ1-s9TIYRj9ofUlseqwE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJtYdHi0MFTIYRm0GwN86OiPg",
-    "name": "Funky Monkey Smoke Shop - Delta 8, CBD, Kratom, Vape, Hookah, Detox, Pipes, Tabacco",
-    "address": "503 S State Hwy 78, Wylie, TX 75098",
-    "lat": 33.007487,
-    "lng": -96.545976,
-    "website": "https://instagram.com/funkymonkeysmoke?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
-    "phone": "(214) 501-2278",
-    "isIndependent": true,
-    "types": [
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJtYdHi0MFTIYRm0GwN86OiPg",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJi27AopgnTIYRp_MpmhEjb8Y",
-    "name": "Josey Records",
-    "address": "2821 Lyndon B Johnson Fwy #100, Farmers Branch, TX 75234",
-    "lat": 32.911181,
-    "lng": -96.88468,
-    "website": "http://www.joseyrecords.com",
-    "phone": "(972) 243-2039",
-    "isIndependent": true,
-    "types": [
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJi27AopgnTIYRp_MpmhEjb8Y",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJUY5OsGO_QIYRAkO_QGSQejw",
-    "name": "Soundwaves",
-    "address": "3509 Montrose Blvd., Houston, TX 77006",
-    "lat": 29.741026,
-    "lng": -95.391051,
-    "website": "http://soundwaves.com",
-    "phone": "(713) 520-9283",
-    "isIndependent": true,
-    "types": [
-      "clothing_store",
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJUY5OsGO_QIYRAkO_QGSQejw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJU6-Yg8TDQIYRq_A7Iu30cdw",
-    "name": "Sun & Ski Sports",
-    "address": "6100 Westheimer Rd. #126, Houston, TX 77057",
-    "lat": 29.739018,
-    "lng": -95.489709,
-    "website": "https://www.sunandski.com/westheimer?utm_source=gbp&utm_medium=organic&utm_campaign=local",
-    "phone": "(713) 783-8180",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "clothing_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJU6-Yg8TDQIYRq_A7Iu30cdw",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -1965,25 +1136,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJdW8GfCAY9YgRs5yiEAB2dbg",
-    "name": "Play It Again Sports Austell",
-    "address": "1025 East-West Connector, Austell, GA 30106",
-    "lat": 33.855484,
-    "lng": -84.582649,
-    "website": "http://www.playitagainsportsaustell.com",
-    "phone": "(678) 388-0354",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJdW8GfCAY9YgRs5yiEAB2dbg",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJwQcnh34I9YgRGU9tnkt8mRc",
     "name": "Tuff City Distribution",
     "address": "1943 Wellona Pl. NE, Atlanta, GA 30345",
@@ -1999,44 +1151,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJwQcnh34I9YgRGU9tnkt8mRc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJTTyHdb909YgRjX5OulsUnSs",
-    "name": "Play It Again Sports",
-    "address": "993 Mansell Rd., Roswell, GA 30076",
-    "lat": 34.042179,
-    "lng": -84.334393,
-    "website": "http://www.playitagainsportsroswell.com",
-    "phone": "(770) 642-4880",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJTTyHdb909YgRjX5OulsUnSs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJjWUhLcnv9IgR4u4LfuOLOu4",
-    "name": "Play It Again Sports",
-    "address": "35 Hudson Plaza, Fayetteville, GA 30214",
-    "lat": 33.456638,
-    "lng": -84.453322,
-    "website": "http://www.playitagainsportsga.com",
-    "phone": "(770) 460-7511",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJjWUhLcnv9IgR4u4LfuOLOu4",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -2201,44 +1315,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJNRjOlYV044kRd8kqbX2G4zM",
-    "name": "Play It Again Sports Stoneham",
-    "address": "62 Montvale Ave., Stoneham, MA 02180",
-    "lat": 42.480949,
-    "lng": -71.108068,
-    "website": "https://www.playitagainsports.com/locations/stoneham-ma",
-    "phone": "(781) 438-2399",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJNRjOlYV044kRd8kqbX2G4zM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJJUsFRMaC44kRWcdbhqVyXPY",
-    "name": "Play It Again Sports- Waltham, MA",
-    "address": "108 River St., Waltham, MA 02453",
-    "lat": 42.368839,
-    "lng": -71.220182,
-    "website": "http://playitagainsports.com/locations/waltham-ma",
-    "phone": "(781) 609-2506",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJUsFRMaC44kRWcdbhqVyXPY",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJM0LzMfxm44kRLpSX_yfWC9I",
     "name": "Levitate",
     "address": "1871 Ocean St., Marshfield, MA 02050",
@@ -2335,25 +1411,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ-4FM6iR244kREy7KYO_uNAU",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJlx1slZJ_44kRLqLEEeC1zvM",
-    "name": "Play It Again Sports",
-    "address": "606 Washington St., Dedham, MA 02026",
-    "lat": 42.241202,
-    "lng": -71.17858,
-    "website": "http://www.playitagainsportsdedham.com",
-    "phone": "(781) 493-6796",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJlx1slZJ_44kRLqLEEeC1zvM",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -2553,27 +1610,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJJfoYrHoBK4cRgVD0W1qbhxI",
-    "name": "Scheels",
-    "address": "3199 W Chandler Blvd., Chandler, AZ 85226",
-    "lat": 33.302709,
-    "lng": -111.900447,
-    "website": "https://www.scheels.com/store/chandler/026?utm_source=google&utm_medium=yext",
-    "phone": "(480) 676-6855",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJfoYrHoBK4cRgVD0W1qbhxI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJeVNB_RYSK4cRG9LYfAjHZDc",
     "name": "Jobot Coffee, Breakfast and Pizzeria",
     "address": "333 E Roosevelt St., Phoenix, AZ 85004",
@@ -2703,25 +1739,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJtde_gidyK4cRbyleE6O28NI",
-    "name": "Play It Again Sports",
-    "address": "3143 E Greenway Rd., Phoenix, AZ 85032",
-    "lat": 33.624686,
-    "lng": -112.014447,
-    "website": "https://www.playitagainsports.com/locations/phoenix-az-greenway",
-    "phone": "(602) 971-8604",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJtde_gidyK4cRbyleE6O28NI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJJVAmNhUJK4cRHvitWn9bfQI",
     "name": "Wang's Closet",
     "address": "1810 N Scottsdale Rd., Tempe, AZ 85288",
@@ -2775,25 +1792,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJwRDMIQk5K4cRN4Riz5GMPxg",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJF6_dUuMGK4cR0HQa_mfuhv4",
-    "name": "Play It Again Sports",
-    "address": "1840 E Warner Rd. # 126, Tempe, AZ 85284",
-    "lat": 33.335792,
-    "lng": -111.908518,
-    "website": "http://playitagainsportstempe.com",
-    "phone": "(480) 345-6109",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJF6_dUuMGK4cR0HQa_mfuhv4",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -3223,25 +2221,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJW3KlKdjFJIgRfXBXP9Gpju8",
-    "name": "Play It Again Sports and Fitness",
-    "address": "1465 W 14 Mile Rd., Madison Heights, MI 48071",
-    "lat": 42.532533,
-    "lng": -83.124513,
-    "website": "https://www.playitagainsports.com/locations/clawson-mi",
-    "phone": "(248) 435-7240",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJW3KlKdjFJIgRfXBXP9Gpju8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJjYszTYY1O4gR-PfVBkirwzM",
     "name": "Sneaker Legends",
     "address": "1029 Howard St. #1033, Dearborn, MI 48124",
@@ -3457,26 +2436,6 @@
     "_mergedFrom": [
       "google-places"
     ],
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJU5tNPjQVkFQRUDMcQiJNK9U",
-    "name": "Play It Again Sports & Ski",
-    "address": "1304 Stewart St., Seattle, WA 98109",
-    "lat": 47.618655,
-    "lng": -122.330773,
-    "website": "https://www.playitagainsports.com/locations/seattle-wa",
-    "phone": "(206) 264-9255",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJU5tNPjQVkFQRUDMcQiJNK9U",
-    "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
@@ -3838,27 +2797,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJnbMB7KNV2YARG_qkiCnaYcY",
-    "name": "Play It Again Sports (Pacific Beach)",
-    "address": "1401 Garnet Ave., San Diego, CA 92109",
-    "lat": 32.79891,
-    "lng": -117.24424,
-    "website": "http://www.playitagainsportssd.com",
-    "phone": "(858) 490-0222",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "sports_club",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJnbMB7KNV2YARG_qkiCnaYcY",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJe5YvNEBT2YARal1jed8RFDM",
     "name": "Wotown Vintage",
     "address": "730 Market St., San Diego, CA 92101",
@@ -4059,26 +2997,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJF2Z178zcwogRgI1DOLpWiTo",
-    "name": "Play It Again Sports - Tampa, FL - South Tampa",
-    "address": "3914 S Dale Mabry Hwy, Tampa, FL 33611",
-    "lat": 27.906455,
-    "lng": -82.506095,
-    "website": "https://www.playitagainsportssouthtampa.com",
-    "phone": "(813) 837-8771",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJF2Z178zcwogRgI1DOLpWiTo",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJ-47STNH2wogRVSSimECymX8",
     "name": "Ron Jon Surf Shop",
     "address": "377 Mandalay Ave., Clearwater Beach, FL 33767",
@@ -4224,29 +3142,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJo7QKkKbywogRh8PdUn6FSvs",
-    "name": "Play It Again Sports",
-    "address": "35181 US Hwy 19 N, Palm Harbor, FL 34684",
-    "lat": 28.092128,
-    "lng": -82.738033,
-    "website": "https://www.playitagainsports.com/locations/palm-harbor-fl",
-    "phone": "(727) 408-5760",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "golf_course",
-      "wholesaler",
-      "athletic_field",
-      "sports_activity_location",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJo7QKkKbywogRh8PdUn6FSvs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJa9Jt8w-RwogRS00XE2XXp74",
     "name": "eCarve LLC, E-Ride Pro/E-Moto's, Electric Scooters & Onewheels Sales/Rentals.",
     "address": "5707 Main St., New Port Richey, FL 34652",
@@ -4328,25 +3223,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJi-KQNdzNwogRK5dZKf1EkWQ",
-    "name": "Play It Again Sports - Brandon",
-    "address": "744 W Lumsden Rd., Brandon, FL 33511",
-    "lat": 27.924794,
-    "lng": -82.295411,
-    "website": "https://www.playitagainsports.com/locations/brandon-fl",
-    "phone": "(813) 661-4141",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJi-KQNdzNwogRK5dZKf1EkWQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJf2Kzm7J954gRGj3EcDHSuVM",
     "name": "Surf-Wheels 'n E-Bikes",
     "address": "1021 W Bay Dr., Largo, FL 33770",
@@ -4384,28 +3260,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJCZk95X-RwogRNhatxVWAe0U",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJJfPCK-zAwogRpZ0v68oHtpw",
-    "name": "Play It Again Sports Carrollwood Tampa",
-    "address": "11921 N Dale Mabry Hwy #8, Tampa, FL 33618",
-    "lat": 28.058014,
-    "lng": -82.502731,
-    "website": "https://www.playitagainsports.com/locations/tampa-fl-carollwood",
-    "phone": "(813) 374-5932",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "clothing_store",
-      "store",
-      "wholesaler",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJfPCK-zAwogRpZ0v68oHtpw",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -4697,27 +3551,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJE0dHTuqDa4cRge5T_100QLw",
-    "name": "Play It Again Sports - Lakewood",
-    "address": "13057 W Alameda Pkwy, Lakewood, CO 80228",
-    "lat": 39.699163,
-    "lng": -105.145594,
-    "website": "https://playitagainsports.com/locations/lakewood-co/",
-    "phone": "(303) 593-2108",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "discount_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJE0dHTuqDa4cRge5T_100QLw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJI6grGtOaa4cRoFzjhAkQP-A",
     "name": "Vital Outdoors",
     "address": "1224 Washington Ave. #125, Golden, CO 80401",
@@ -4849,45 +3682,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJVxUbqdH5dYgR6dXaTPyVABo",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ3YkafE3M2IcRozzKoeSsNuo",
-    "name": "Play It Again Sports",
-    "address": "10947 Manchester Rd., Kirkwood, MO 63122",
-    "lat": 38.599628,
-    "lng": -90.411174,
-    "website": "http://www.playitagainsportsstlmo.com",
-    "phone": "(314) 821-4567",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ3YkafE3M2IcRozzKoeSsNuo",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJh_PLC9XF2IcRQwNZQ36LfNQ",
-    "name": "Play It Again Sports- Arnold, MO",
-    "address": "223 Arnold Crossroads Center, Arnold, MO 63010",
-    "lat": 38.446287,
-    "lng": -90.376161,
-    "website": "http://www.playitagainsportsarnold.com",
-    "phone": "(636) 333-2688",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJh_PLC9XF2IcRQwNZQ36LfNQ",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -5365,26 +4159,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ42mAMu29XIYRndVsOLunGRc",
-    "name": "Play It Again Sports",
-    "address": "651 S Business IH 35 Suite 1340, New Braunfels, TX 78130",
-    "lat": 29.696133,
-    "lng": -98.103226,
-    "website": "http://www.playitagainsportsnewbraunfels.com",
-    "phone": "(830) 312-7656",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ42mAMu29XIYRndVsOLunGRc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJB-HGzfj1XIYRAuz5RyquDeA",
     "name": "Roadmap Brewing Co.",
     "address": "723 N Alamo St., San Antonio, TX 78215",
@@ -5617,25 +4391,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ9aMYPGOhlVQRmLfteGPEqVc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJva1zfwgMlVQROHxoJQYtMMI",
-    "name": "Play It Again Sports",
-    "address": "9244 SW Beaverton Hillsdale Hwy, Beaverton, OR 97005",
-    "lat": 45.485513,
-    "lng": -122.772209,
-    "website": "http://www.playitagainsportsbeaverton.com",
-    "phone": "(503) 292-4552",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJva1zfwgMlVQROHxoJQYtMMI",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -6665,25 +5420,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ52c81w2TMIgRtb40Q7h4MpE",
-    "name": "Play It Again Sports",
-    "address": "25151 Lorain Rd., North Olmsted, OH 44070",
-    "lat": 41.424069,
-    "lng": -81.89997,
-    "website": "http://www.playitagainsportsnortholmstedohio.com",
-    "phone": "(440) 777-5569",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ52c81w2TMIgRtb40Q7h4MpE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJdXcNmtWrMYgRoEXs1oQT7zE",
     "name": "Tye Dye Sky",
     "address": "36495 Vine St., Willoughby, OH 44094",
@@ -6940,67 +5676,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJlxt0EU15ZIgRo15ngTj7wY4",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJi70y0fx7ZIgRV4itCFqs6W0",
-    "name": "Play It Again Sports - Brentwood",
-    "address": "1701 Mallory Ln. #350, Brentwood, TN 37027",
-    "lat": 35.965716,
-    "lng": -86.814909,
-    "website": "https://playitagainsports.com/locations/brentwood-tn/",
-    "phone": "(615) 661-1107",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "wholesaler",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJi70y0fx7ZIgRV4itCFqs6W0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJS8p5QK4gZYgR5NgHNsMKSY0",
-    "name": "Play It Again Sports",
-    "address": "121 Terminal Rd., Clarksville, TN 37040",
-    "lat": 36.58859,
-    "lng": -87.295206,
-    "website": null,
-    "phone": "(931) 645-8033",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "wholesaler",
-      "athletic_field",
-      "sports_activity_location",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJS8p5QK4gZYgR5NgHNsMKSY0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJbShZpuT3Y4gRoxnWIf6iuVY",
-    "name": "Play It Again Sports",
-    "address": "520 N Thompson Ln., Murfreesboro, TN 37129",
-    "lat": 35.856647,
-    "lng": -86.429558,
-    "website": "http://www.playitagainsportsmurfreesboro.com",
-    "phone": "(615) 895-7529",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJbShZpuT3Y4gRoxnWIf6iuVY",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -7324,25 +5999,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJeU2_lMZd5IkR_aq4-j1_ilA",
-    "name": "Play It Again Sports - North Attleboro",
-    "address": "40 Cumberland Ave., North Attleborough, MA 02760",
-    "lat": 41.931637,
-    "lng": -71.354139,
-    "website": "https://www.playitagainsports.com/locations/attleboro-north-ma",
-    "phone": "(508) 639-5037",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJeU2_lMZd5IkR_aq4-j1_ilA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJyVzM-sZl5IkR-4XvG_abBOE",
     "name": "Burton Wrentham Outlet Store",
     "address": "1 Outlet Blvd. Suite 692, Wrentham, MA 02093",
@@ -7462,25 +6118,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJYz6S1mFPBIgRz1StrVEYna0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJu8PICNQRBYgRNvaMBAzsHlU",
-    "name": "Play It Again Sports of Greenfield Place",
-    "address": "5042 S 74th St., Greenfield, WI 53220",
-    "lat": 42.953435,
-    "lng": -88.005064,
-    "website": "http://playitagainsportsgreenfield.com",
-    "phone": "(414) 282-1007",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJu8PICNQRBYgRNvaMBAzsHlU",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -7889,27 +6526,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJO89_UYW1JhURAhOSybxhiTc",
-    "name": "Play It Again Sports",
-    "address": "6325 Falls of Neuse Rd., Raleigh, NC 27615",
-    "lat": 35.869637,
-    "lng": -78.623059,
-    "website": "https://www.playitagainsports.com/locations/raleigh-nc",
-    "phone": "(919) 877-8171",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJO89_UYW1JhURAhOSybxhiTc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJ58UjwkzlrIkReXbLw5rqUVs",
     "name": "Balance Distribution",
     "address": "4608 Industry Ln. Unit E, Durham, NC 27713",
@@ -7952,25 +6568,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJkS1upJW0VIgRdBY7B46Djm8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJn9ShBxEVsYkR5IA-MylFx6Q",
-    "name": "Play It Again Sports",
-    "address": "8003 W Broad St., Richmond, VA 23294",
-    "lat": 37.624995,
-    "lng": -77.530361,
-    "website": "http://www.playitagainsportsrichmondva.com",
-    "phone": "(804) 527-1988",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJn9ShBxEVsYkR5IA-MylFx6Q",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -8264,27 +6861,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJo5IOsmKIUocRS15MTIPv464",
-    "name": "Scheels",
-    "address": "11282 S State St., Sandy, UT 84070",
-    "lat": 40.546604,
-    "lng": -111.893324,
-    "website": "https://www.scheels.com/store/sandy/080?utm_source=google&utm_medium=yext",
-    "phone": "(801) 948-7080",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJo5IOsmKIUocRS15MTIPv464",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJXybooiYDU4cRyAowkwUFPh8",
     "name": "Cardiff Snowcraft",
     "address": "3698 Fort Union Blvd. apt. B, Cottonwood Heights, UT 84121",
@@ -8339,25 +6915,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJq6oO2q4KUocRWmQ5glTJOZg",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJZzbYF4tiUocRYeNLXO57Mxk",
-    "name": "Play It Again Sports",
-    "address": "6910 S Highland Dr. #3, Cottonwood Heights, UT 84121",
-    "lat": 40.625751,
-    "lng": -111.83584,
-    "website": "https://www.playitagainsports.com/locations/salt-lake-city-ut-sugar-house",
-    "phone": "(801) 944-0094",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJZzbYF4tiUocRYeNLXO57Mxk",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -8517,26 +7074,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJGRgEjiap54kRoGnz8YFFnwc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJYcPk0u2s54kRVSOuvO3K098",
-    "name": "Play It Again Sports",
-    "address": "635 New Park Ave. Building #5, West Hartford, CT 06110",
-    "lat": 41.732271,
-    "lng": -72.726857,
-    "website": "https://www.playitagainsports.com/locations/west-hartford-ct",
-    "phone": "(860) 523-4692",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJYcPk0u2s54kRVSOuvO3K098",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -8980,25 +7517,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJN0WZN3pL0YkRWH31AZVCgH8",
-    "name": "Play It Again Sports",
-    "address": "3333 W Henrietta Rd. Suite 33B, Rochester, NY 14623",
-    "lat": 43.088913,
-    "lng": -77.645106,
-    "website": "https://www.playitagainsports.com/locations/rochester-ny",
-    "phone": "(585) 427-7750",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJN0WZN3pL0YkRWH31AZVCgH8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJNc9DERjF0IkRFdYVxtR4xus",
     "name": "Industry 24 7",
     "address": "109 Washington St., Geneva, NY 14456",
@@ -9101,26 +7619,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJc9X_gVmpGYgRyXvRN1fUMrs",
-    "name": "Play It Again Sports",
-    "address": "3560 Alpine Ave. NW, Grand Rapids, MI 49544",
-    "lat": 43.027563,
-    "lng": -85.688333,
-    "website": "http://www.playitagainsportscomstockpark.com",
-    "phone": "(616) 635-2919",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJc9X_gVmpGYgRyXvRN1fUMrs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJxegM5np71oYREWkFsdRtHak",
     "name": "The EMG Outlet",
     "address": "3240 S Dodge Blvd. STE 5, Tucson, AZ 85713",
@@ -9137,46 +7635,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJxegM5np71oYREWkFsdRtHak",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJR8j7o8xv1oYRg7J_8Kr23zA",
-    "name": "Play It Again Sports",
-    "address": "4750 E Speedway Blvd., Tucson, AZ 85712",
-    "lat": 32.235997,
-    "lng": -110.89093,
-    "website": "https://www.playitagainsports.com/locations/tucson-az-east",
-    "phone": "(520) 795-0363",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJR8j7o8xv1oYRg7J_8Kr23zA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJCdIYo0pz1oYRRLs0ljk-H60",
-    "name": "Play It Again Sports",
-    "address": "7963 N Oracle Rd., Oro Valley, AZ 85704",
-    "lat": 32.351311,
-    "lng": -110.977101,
-    "website": "https://www.playitagainsports.com/locations/oro-valley-az",
-    "phone": "(520) 293-2010",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJCdIYo0pz1oYRRLs0ljk-H60",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -9262,28 +7720,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJzUWJmKOTtocR6sVpMr4tQsQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJDy_kJDKNtocR8qbEsJThaKs",
-    "name": "Scheels",
-    "address": "6929 S Memorial Dr., Tulsa, OK 74133",
-    "lat": 36.06337,
-    "lng": -95.883577,
-    "website": "https://www.scheels.com/store?StoreID=028",
-    "phone": "(918) 953-8212",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJDy_kJDKNtocR8qbEsJThaKs",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -9685,48 +8121,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJV2_HjeeMk4cR9b7YU4F4_vw",
-    "name": "Play It Again Sports",
-    "address": "8453 W Center Rd., Omaha, NE 68124",
-    "lat": 41.233356,
-    "lng": -96.046508,
-    "website": "http://www.playitagainsportsomaha.com",
-    "phone": "(402) 934-8100",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "athletic_field",
-      "sports_activity_location",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJV2_HjeeMk4cR9b7YU4F4_vw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ_4--k8Xxk4cRybDwVXHLrLI",
-    "name": "Scheels",
-    "address": "17202 Davenport St., Omaha, NE 68118",
-    "lat": 41.261542,
-    "lng": -96.18379,
-    "website": "https://www.scheels.com/store/omaha/058?utm_source=google&utm_medium=yext",
-    "phone": "(402) 289-5666",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ_4--k8Xxk4cRybDwVXHLrLI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJh1leXngi3YkRMYuOt1wZff0",
     "name": "Likwid",
     "address": "65 Main St., New Paltz, NY 12561",
@@ -9742,25 +8136,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJh1leXngi3YkRMYuOt1wZff0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ8WeVWwoN3okRnVQf3YpHZ2M",
-    "name": "Play It Again Sports",
-    "address": "Peter Harris Plaza, 952 Troy-Schenectady Rd., Latham, NY 12110",
-    "lat": 42.762395,
-    "lng": -73.797735,
-    "website": "http://www.playitagainsportslatham.com",
-    "phone": "(518) 785-6587",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ8WeVWwoN3okRnVQf3YpHZ2M",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -9925,25 +8300,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJw1ABB_suWIgR-ZuUvIE7smw",
-    "name": "Play It Again Sports",
-    "address": "828 Woods Crossing Rd., Greenville, SC 29607",
-    "lat": 34.848084,
-    "lng": -82.337425,
-    "website": "http://www.playitagainsportsgreenville.com",
-    "phone": "(864) 242-2424",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJw1ABB_suWIgR-ZuUvIE7smw",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJJyK7UDlT2okRBGeVI2h8U34",
     "name": "Cruz Outdoors",
     "address": "379 Old Greenville Hwy Unit#105, Clemson, SC 29631",
@@ -10022,25 +8378,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJr0jFjQVS6IARVs6Fxu9d-jA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJz_v_yKtS6IAR5SrLmTWv2ds",
-    "name": "Play It Again Sports",
-    "address": "4705 Telephone Rd. #4, Ventura, CA 93003",
-    "lat": 34.260276,
-    "lng": -119.235467,
-    "website": "http://www.playitagainsportsventura.com",
-    "phone": "(805) 644-4948",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJz_v_yKtS6IAR5SrLmTWv2ds",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -10344,25 +8681,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJGboySXwoMYgRhaPWrElGewI",
-    "name": "Play It Again Sports",
-    "address": "661 Howe Ave., Cuyahoga Falls, OH 44221",
-    "lat": 41.120263,
-    "lng": -81.474705,
-    "website": "http://www.playitagainsportscfalls.com",
-    "phone": "(330) 922-0606",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJGboySXwoMYgRhaPWrElGewI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJAa-RoP7QNogRGkPEwWCjCw0",
     "name": "Quonset Hut",
     "address": "3775 Cleveland Ave. NW, Canton, OH 44709",
@@ -10481,65 +8799,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ4eDWoCRNE4cRG_MY1vIEBOI",
-    "name": "Scheels",
-    "address": "1226 Interquest Pkwy, Colorado Springs, CO 80921",
-    "lat": 38.994181,
-    "lng": -104.806517,
-    "website": "https://www.scheels.com/store/colorado-springs/022?utm_source=google&utm_medium=yext",
-    "phone": "(719) 220-6444",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ4eDWoCRNE4cRG_MY1vIEBOI",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJSdE2W9lFE4cR_6PcpLDSecs",
-    "name": "Play It Again Sports Colorado Springs South",
-    "address": "1808 N Academy Blvd., Colorado Springs, CO 80909",
-    "lat": 38.857948,
-    "lng": -104.757791,
-    "website": "http://www.playitagainsportscoloradospringssouth.com",
-    "phone": "(719) 574-4849",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJSdE2W9lFE4cR_6PcpLDSecs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJEeb-IB1PE4cRjTffa19sEXo",
-    "name": "Play It Again Sports Colorado Springs North",
-    "address": "5170 N Academy Blvd., Colorado Springs, CO 80918",
-    "lat": 38.904644,
-    "lng": -104.779797,
-    "website": "https://www.playitagainsports.com/locations/colorado-springs-north",
-    "phone": "(719) 528-5840",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJEeb-IB1PE4cRjTffa19sEXo",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJBa_tjQIXFYcRjANnc_l0lXU",
     "name": "Ramps and Alleys",
     "address": "645 E Rainbow Blvd., Salida, CO 81201",
@@ -10555,27 +8814,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJBa_tjQIXFYcRjANnc_l0lXU",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJHRg7OcCZbIcRbPdXRe1iopY",
-    "name": "Play It Again Sports - Castle Rock",
-    "address": "740 Wilcox St., Castle Rock, CO 80104",
-    "lat": 39.378185,
-    "lng": -104.859688,
-    "website": "http://www.playitagainsportscastlerock.com",
-    "phone": "(720) 479-8245",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "wholesaler",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJHRg7OcCZbIcRbPdXRe1iopY",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -10654,25 +8892,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJVSFsE1Fx_ogRZVhFrldltok",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ5YMyrq9x_ogRHKhDytIMEec",
-    "name": "Play It Again Sports",
-    "address": "1035 Johnnie Dodds Blvd., Mt Pleasant, SC 29464",
-    "lat": 32.810738,
-    "lng": -79.865288,
-    "website": "http://www.playitagainsportsmtp.com",
-    "phone": "(843) 388-2600",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ5YMyrq9x_ogRHKhDytIMEec",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -10945,26 +9164,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJd0mPOQ9WrlQRqvM8K34yg68",
-    "name": "Play It Again Sports",
-    "address": "8173 W Fairview Ave., Boise, ID 83704",
-    "lat": 43.617389,
-    "lng": -116.283649,
-    "website": "http://www.playitagainsportsboise.com/locations/boise-id",
-    "phone": "(208) 378-0053",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJd0mPOQ9WrlQRqvM8K34yg68",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJn7TlFtVXrlQRBsVe7E6cFUQ",
     "name": "Al's Sporting Goods",
     "address": "1301 N Milwaukee St., Boise, ID 83704",
@@ -10983,31 +9182,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJn7TlFtVXrlQRBsVe7E6cFUQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJt-wpat5TrlQR66WKoeNGmBc",
-    "name": "Scheels",
-    "address": "700 S Wayfinder Ave., Meridian, ID 83642",
-    "lat": 43.598353,
-    "lng": -116.42711,
-    "website": "https://www.scheels.com/store/meridian/030?utm_source=google&utm_medium=yext",
-    "phone": "(208) 347-7005",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "coffee_shop",
-      "cafe",
-      "clothing_store",
-      "shoe_store",
-      "food_store",
-      "store",
-      "food",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJt-wpat5TrlQR66WKoeNGmBc",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -11069,25 +9243,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ-Vo-mbAf6IgR6NBzqlgkwMM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ4y8FdV-uB4gRiCBkvvEiM0g",
-    "name": "Play It Again Sports Madison",
-    "address": "6674 Odana Rd., Madison, WI 53719",
-    "lat": 43.057,
-    "lng": -89.494925,
-    "website": "https://www.playitagainsports.com/locations/madison-wi",
-    "phone": "(608) 824-3920",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ4y8FdV-uB4gRiCBkvvEiM0g",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -11178,26 +9333,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJiZu6deWwU4gRWtKLFhcN4c8",
-    "name": "Play It Again Sports Winston Salem",
-    "address": "5005 Country Club Rd., Winston-Salem, NC 27104",
-    "lat": 36.085167,
-    "lng": -80.3488,
-    "website": "https://www.playitagainsports.com/locations/winston-salem-nc",
-    "phone": "(336) 760-1470",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJiZu6deWwU4gRWtKLFhcN4c8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJjVfW_X6d7ocRK6WgQ9hdCH8",
     "name": "The Dark Slide",
     "address": "3800 Merle Hay Rd. Suite 900, Des Moines, IA 50310",
@@ -11232,27 +9367,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJSZJlKz6Z7ocRqQh3NkAP2ko",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJZ_tdHZgh7IcRvuDW7UqaKN8",
-    "name": "Scheels",
-    "address": "101 Jordan Creek Pkwy Building 4000, West Des Moines, IA 50266",
-    "lat": 41.570848,
-    "lng": -93.803436,
-    "website": "https://www.scheels.com/store/des-moines/060?utm_source=google&utm_medium=yext",
-    "phone": "(515) 727-4065",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJZ_tdHZgh7IcRvuDW7UqaKN8",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -11388,26 +9502,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJLybl6PLlrIkRqT-L8YXzwas",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJoe0OACMpU4gRVjhbeyviNzI",
-    "name": "Play It Again Sports",
-    "address": "3280 S Church St., Burlington, NC 27215",
-    "lat": 36.080352,
-    "lng": -79.506845,
-    "website": "http://www.playitagainsportsburlingtonnc.com",
-    "phone": "(336) 350-8972",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJoe0OACMpU4gRVjhbeyviNzI",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -11650,25 +9744,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ0UvBbDTexIkRBWyEKGwv1H8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJt4WvIEpRkIARn1zfRQUoSc8",
-    "name": "Play It Again Sports",
-    "address": "2720 McHenry Ave., Modesto, CA 95350",
-    "lat": 37.679316,
-    "lng": -120.993706,
-    "website": "http://www.playitagainsportsmodesto.com",
-    "phone": "(209) 521-4664",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJt4WvIEpRkIARn1zfRQUoSc8",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -11937,25 +10012,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJS-IsWpojxokRcvPn4uopHbE",
-    "name": "Play It Again Sports",
-    "address": "411 Granite Run Dr., Lancaster, PA 17601",
-    "lat": 40.075397,
-    "lng": -76.328903,
-    "website": "http://www.playitagainsportslancaster.com",
-    "phone": "(717) 569-1400",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJS-IsWpojxokRcvPn4uopHbE",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJM8YMhmHN-YgRbNXl2ThVUlI",
     "name": "Half-Moon Outfitters",
     "address": "2907 Washington Rd., Augusta, GA 30909",
@@ -12195,25 +10251,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJf8304nYO3ogRdrhwTxJ96S4",
-    "name": "Play It Again Sports",
-    "address": "2605 W New Haven Ave., West Melbourne, FL 32904",
-    "lat": 28.078267,
-    "lng": -80.663491,
-    "website": "http://playitagainsports.com",
-    "phone": "(321) 984-1313",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJf8304nYO3ogRdrhwTxJ96S4",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJb2sx6Wph3ogRcHRwEnGZdQM",
     "name": "Rock - of - Ages",
     "address": "6200 20th St. Room 648, Vero Beach, FL 32966",
@@ -12290,26 +10327,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJnyeyFMKq4IgRN_nquNYVrD0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJDwt6ndVf3ogRoPR3Vb9Kfws",
-    "name": "Play It Again Sports - Vero Beach",
-    "address": "5445 20th St., Vero Beach, FL 32966",
-    "lat": 27.638079,
-    "lng": -80.441438,
-    "website": "http://www.playitagainsportsverobeach.com",
-    "phone": "(772) 563-0026",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJDwt6ndVf3ogRoPR3Vb9Kfws",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -12504,27 +10521,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJPbiUCRSgmYARvIz9v6Kkf8g",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJHefXBOs-mYARYT-GUi8dUKU",
-    "name": "Scheels",
-    "address": "1200 Scheels Drive, Sparks, NV 89434",
-    "lat": 39.530738,
-    "lng": -119.72168,
-    "website": "https://www.scheels.com/store/reno-sparks/074?utm_source=google&utm_medium=yext",
-    "phone": "(775) 331-2700",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJHefXBOs-mYARYT-GUi8dUKU",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -12864,26 +10860,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJeayZB1dSO4gRowvJTb30b1E",
-    "name": "Play It Again Sports - Canton, MI",
-    "address": "42079 Ford Rd., Canton Township, MI 48187",
-    "lat": 42.321779,
-    "lng": -83.457361,
-    "website": "http://playitagainsports.com/locations/canton-mi",
-    "phone": "(734) 844-8591",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJeayZB1dSO4gRowvJTb30b1E",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJbxl4MEqTkogRJDVO3BOzdoM",
     "name": "Reset Mercantile",
     "address": "2407 Montgomery Hwy Suite A, Dothan, AL 36303",
@@ -13062,26 +11038,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ5X9SDIXzWYgRvkGtt0o4cB0",
-    "name": "Play It Again Sports Asheville",
-    "address": "611 Tunnel Rd., Asheville, NC 28805",
-    "lat": 35.58639,
-    "lng": -82.509561,
-    "website": "http://playitagainsportsasheville.com",
-    "phone": "(828) 299-1221",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "sports_club",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ5X9SDIXzWYgRvkGtt0o4cB0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJB1e9i3DzWYgRHZtfjZrjA-o",
     "name": "Elementality",
     "address": "4 S Tunnel Rd. #220, Asheville, NC 28805",
@@ -13098,25 +11054,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJB1e9i3DzWYgRHZtfjZrjA-o",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJw2-LIQrta4cRb5XOOZnEFLE",
-    "name": "Play It Again Sports Boulder",
-    "address": "Table Mesa Shopping Center, 653 S Broadway, Boulder, CO 80305",
-    "lat": 39.98348,
-    "lng": -105.249716,
-    "website": "https://www.playitagainsports.com/locations/boulder-co",
-    "phone": "(303) 499-2011",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJw2-LIQrta4cRb5XOOZnEFLE",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -13395,25 +11332,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJob4M93wVjoARfk93qQm55hs",
-    "name": "Play It Again Sports",
-    "address": "4770 Soquel Dr., Soquel, CA 95073",
-    "lat": 36.988363,
-    "lng": -121.955968,
-    "website": "https://www.playitagainsports.com/locations/soquel-ca",
-    "phone": "(831) 475-1988",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJob4M93wVjoARfk93qQm55hs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJU8vmuPF6ykwRG9VcVypcP8s",
     "name": "Ridin' High",
     "address": "2 Pearl St., Burlington, VT 05401",
@@ -13492,27 +11410,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJr0hFBqJ7ykwRhwvbNwOgJP0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ_dagazJ6ykwRuINQGAi59Z0",
-    "name": "Play It Again Sports, South Burlington",
-    "address": "150 Dorset St., South Burlington, VT 05403",
-    "lat": 44.464717,
-    "lng": -73.179056,
-    "website": "https://www.playitagainsportssoburlington.com",
-    "phone": "(802) 865-3021",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "discount_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ_dagazJ6ykwRuINQGAi59Z0",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -13634,26 +11531,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJT9d1lYZAwFQRsrRg-kjOFNU",
-    "name": "Play It Again Sports",
-    "address": "1422 NW 9th St., Corvallis, OR 97330",
-    "lat": 44.580732,
-    "lng": -123.260023,
-    "website": "http://www.playitagainsportscorvallis.com",
-    "phone": "(541) 754-7529",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJT9d1lYZAwFQRsrRg-kjOFNU",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJ9X80P9WHwFQRQ4YhF8aXHvQ",
     "name": "Foster Lake Mall",
     "address": "5480 US-20, Sweet Home, OR 97386",
@@ -13669,27 +11546,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJ9X80P9WHwFQRQ4YhF8aXHvQ",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJHSefKFmsbocR3GlP_O7wy9g",
-    "name": "Scheels",
-    "address": "4755 Ronald Reagan Blvd., Johnstown, CO 80534",
-    "lat": 40.404477,
-    "lng": -104.979433,
-    "website": "https://www.scheels.com/store/johnstown/092?utm_source=google&utm_medium=yext",
-    "phone": "(970) 663-7800",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJHSefKFmsbocR3GlP_O7wy9g",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -14524,25 +12380,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ57ptHRHbNYgR-jIOMLfv0po",
-    "name": "Play It Again Sports",
-    "address": "574 Cabela Dr., Triadelphia, WV 26059",
-    "lat": 40.051755,
-    "lng": -80.601909,
-    "website": "http://www.playitagainsportswheeling.com",
-    "phone": "(304) 909-0042",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ57ptHRHbNYgR-jIOMLfv0po",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJEc8D3iV7SFMRVxlQksw5xjs",
     "name": "Discontent Lifestyle Stores",
     "address": "2123 First Ave. N, Billings, MT 59101",
@@ -14560,47 +12397,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJEc8D3iV7SFMRVxlQksw5xjs",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJwfhkJcc3QlMRmslGtt_ms2g",
-    "name": "Scheels",
-    "address": "1200 10th Ave. S Ste 92, Great Falls, MT 59405",
-    "lat": 47.493092,
-    "lng": -111.288136,
-    "website": "https://www.scheels.com/store/great-falls/070?utm_source=google&utm_medium=yext",
-    "phone": "(406) 453-7666",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "sports_activity_location",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJwfhkJcc3QlMRmslGtt_ms2g",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJSd0wzVk3QlMR0Q6qhcVR7cQ",
-    "name": "Play It Again Sports Great Falls",
-    "address": "1115 10th Ave. S, Great Falls, MT 59405",
-    "lat": 47.494624,
-    "lng": -111.287886,
-    "website": "https://www.playitagainsports.com/locations/great-falls-mt",
-    "phone": "(406) 315-1450",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJSd0wzVk3QlMR0Q6qhcVR7cQ",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -14628,25 +12424,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJvY4ch2dUQ1MRweWRtezfTN4",
-    "name": "Play It Again Sports Helena",
-    "address": "3215 Dredge Dr., Helena, MT 59602",
-    "lat": 46.619064,
-    "lng": -112.022064,
-    "website": "http://playitagainsportshelena.com",
-    "phone": "(406) 422-0655",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJvY4ch2dUQ1MRweWRtezfTN4",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJdZd6eH-0alMRI1MzJEOoXBg",
     "name": "Northstar Athletics",
     "address": "1753 US-2 #9, Havre, MT 59501",
@@ -14665,26 +12442,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJdZd6eH-0alMRI1MzJEOoXBg",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJNwsEVjFERVMRvBaVs6jB5jg",
-    "name": "Play It Again Sports",
-    "address": "1428 N 15th Ave., Bozeman, MT 59715",
-    "lat": 45.694305,
-    "lng": -111.056599,
-    "website": "http://www.playitagainsportsbozeman.com",
-    "phone": "(406) 587-7427",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJNwsEVjFERVMRvBaVs6jB5jg",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -15724,92 +13481,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJbQrZ9IPLyFIRkHrMSKsYtx0",
-    "name": "Scheels",
-    "address": "1551 45th St. S, Fargo, ND 58103",
-    "lat": 46.857431,
-    "lng": -96.864206,
-    "website": "https://www.scheels.com/store/fargo/064?utm_source=google&utm_medium=yext",
-    "phone": "(701) 298-2918",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJbQrZ9IPLyFIRkHrMSKsYtx0",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJPRrsi0DJyFIRmI8IozwdDhM",
-    "name": "Scheels",
-    "address": "505 Center Ave., Moorhead, MN 56560",
-    "lat": 46.874782,
-    "lng": -96.771371,
-    "website": "https://www.scheels.com/store/moorhead/020?utm_source=google&utm_medium=yext",
-    "phone": "(218) 233-2751",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "bicycle_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJPRrsi0DJyFIRmI8IozwdDhM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJxzz9xvjJjocRUOYN00IzN80",
-    "name": "Scheels",
-    "address": "2101 W 41st St. Unit 25a, Sioux Falls, SD 57105",
-    "lat": 43.513125,
-    "lng": -96.752379,
-    "website": "https://www.scheels.com/store/sioux-falls/048?utm_source=google&utm_medium=yext",
-    "phone": "(605) 334-7767",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJxzz9xvjJjocRUOYN00IzN80",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJ0cmGekNdfYcRaiQr_Imde-s",
-    "name": "Scheels",
-    "address": "1225 Eglin St., Rapid City, SD 57701",
-    "lat": 44.099057,
-    "lng": -103.191035,
-    "website": "https://www.scheels.com/store/rapid-city/076?utm_source=google&utm_medium=yext",
-    "phone": "(605) 342-9033",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "bicycle_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ0cmGekNdfYcRaiQr_Imde-s",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJ72mdMbiD11IROXL6zK6QFgI",
     "name": "Many Visions",
     "address": "204 E Broadway Ave., Bismarck, ND 58501",
@@ -15923,27 +13594,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJES7NouQ4dYgRxEyJRW1vTUc",
-    "name": "Scheels",
-    "address": "3801 S MacArthur Blvd., Springfield, IL 62711",
-    "lat": 39.749523,
-    "lng": -89.670844,
-    "website": "https://www.scheels.com/store/springfield/078?utm_source=google&utm_medium=yext",
-    "phone": "(217) 726-6330",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "point_of_interest",
-      "store",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJES7NouQ4dYgRxEyJRW1vTUc",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJrTwSe2nXDIgRBZWmdWBMYss",
     "name": "Durst Cycle and Fitness",
     "address": "1112 W University Ave., Urbana, IL 61801",
@@ -15960,25 +13610,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJrTwSe2nXDIgRBZWmdWBMYss",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJlVU9737CFogRmA37O27rfmc",
-    "name": "Play It Again Sports",
-    "address": "3527 S Main St., Elkhart, IN 46517",
-    "lat": 41.645605,
-    "lng": -85.934393,
-    "website": "https://playitagainsports.com/locations/elkhart-in/",
-    "phone": "(574) 293-2462",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJlVU9737CFogRmA37O27rfmc",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -16084,86 +13715,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJzSLEFMr7AogR7UlturuVPMM",
-    "name": "Play It Again Sports of Green Bay",
-    "address": "2270 S Ridge Rd., Green Bay, WI 54304",
-    "lat": 44.492701,
-    "lng": -88.071546,
-    "website": "https://www.playitagainsports.com/locations/green-bay-wi",
-    "phone": "(920) 497-1420",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJzSLEFMr7AogR7UlturuVPMM",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJOw4MecbuA4gRqk76GNt_4gk",
-    "name": "Play It Again Sports of Oshkosh",
-    "address": "1830 S Koeller St., Oshkosh, WI 54902",
-    "lat": 43.999647,
-    "lng": -88.580483,
-    "website": "https://www.playitagainsports.com/locations/oshkosh-wi",
-    "phone": "(920) 231-5200",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "bicycle_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJOw4MecbuA4gRqk76GNt_4gk",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJmWVH7sS2A4gRP-z9ic98SsA",
-    "name": "Play It Again Sports of Appleton",
-    "address": "611 W Northland Ave., Appleton, WI 54911",
-    "lat": 44.285946,
-    "lng": -88.414376,
-    "website": "https://playitagainsports.com/locations/appleton-wi/",
-    "phone": "(920) 735-0432",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJmWVH7sS2A4gRP-z9ic98SsA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJJyEXf9K3A4gRsnnGXxWS_iA",
-    "name": "Scheels",
-    "address": "4301 W Wisconsin Ave. STE 015, Appleton, WI 54913",
-    "lat": 44.268942,
-    "lng": -88.471421,
-    "website": "https://www.scheels.com/store/appleton/054?utm_source=google&utm_medium=yext",
-    "phone": "(920) 830-2977",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "sports_activity_location",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJyEXf9K3A4gRsnnGXxWS_iA",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJNVsRxb23A4gRUiqajAVWVc8",
     "name": "EJ Arena Sports & Embroidery",
     "address": "1770 N Casaloma Dr., Grand Chute, WI 54913",
@@ -16180,27 +13731,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJNVsRxb23A4gRUiqajAVWVc8",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJW4Vo5V1e94cRIMhyedqEnSs",
-    "name": "Scheels",
-    "address": "1220 12th St. SW STE 90, Rochester, MN 55902",
-    "lat": 44.00573,
-    "lng": -92.47977,
-    "website": "https://www.scheels.com/store/rochester/090?utm_source=google&utm_medium=yext",
-    "phone": "(507) 281-2444",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "shoe_store",
-      "clothing_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJW4Vo5V1e94cRIMhyedqEnSs",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
@@ -16378,25 +13908,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJ3U0kpGzfnIgRqypQ7edibko",
-    "name": "Play It Again Sports Hattiesburg",
-    "address": "4400 Hardy St. A12, Hattiesburg, MS 39402",
-    "lat": 31.32352,
-    "lng": -89.353819,
-    "website": "https://playitagainsports.com/locations/hattiesburg-ms/",
-    "phone": "(601) 268-8941",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJ3U0kpGzfnIgRqypQ7edibko",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJMxPYJa0s5ogRsHGAFqY8W0s",
     "name": "XFusion Smoke and Vape - 1",
     "address": "1131 E Silver Springs Blvd., Ocala, FL 34470",
@@ -16554,25 +14065,6 @@
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
   {
-    "id": "google-ChIJx9wJbRzRsokRXD47PiXwB0w",
-    "name": "Play It Again Sports Lynchburg",
-    "address": "1033-A, Woodberry Square Pl., Lynchburg, VA 24502",
-    "lat": 37.387782,
-    "lng": -79.240932,
-    "website": "http://www.playitagainsportslynchburg.com",
-    "phone": "(434) 385-5811",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJx9wJbRzRsokRXD47PiXwB0w",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
     "id": "google-ChIJA3l3qiuGs4kRbuv3Cov8Md4",
     "name": "High Tor Gear Exchange",
     "address": "1717-1A Allied St., Charlottesville, VA 22903",
@@ -16588,25 +14080,6 @@
       "establishment"
     ],
     "googlePlaceId": "ChIJA3l3qiuGs4kRbuv3Cov8Md4",
-    "_source": "google-places",
-    "confidenceReason": "Store type but no clear skateboard indicator"
-  },
-  {
-    "id": "google-ChIJJUJ1nv53tIkRududKxUUJ_Q",
-    "name": "Play It Again Sports",
-    "address": "1885 Seminole Trail Suite 102, Charlottesville, VA 22901",
-    "lat": 38.088077,
-    "lng": -78.469367,
-    "website": "https://www.playitagainsports.com/locations/charlottesville-va",
-    "phone": "(434) 973-2638",
-    "isIndependent": true,
-    "types": [
-      "sporting_goods_store",
-      "store",
-      "point_of_interest",
-      "establishment"
-    ],
-    "googlePlaceId": "ChIJJUJ1nv53tIkRududKxUUJ_Q",
     "_source": "google-places",
     "confidenceReason": "Store type but no clear skateboard indicator"
   },
