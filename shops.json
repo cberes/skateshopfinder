@@ -16053,13 +16053,259 @@
       "website": "http://soundwaves.com",
       "phone": "(713) 520-9283",
       "isIndependent": true
+    },
+    {
+      "id": 1632,
+      "name": "Strictly Hardcore Surf Specialties",
+      "address": "3702 Avenue R, Galveston, TX 77550",
+      "lat": 29.284541,
+      "lng": -94.804412,
+      "website": "http://www.surfspecialties.com",
+      "phone": "(409) 763-5422",
+      "isIndependent": true
+    },
+    {
+      "id": 1633,
+      "name": "Fairfax Surf Shop",
+      "address": "10304 Willard Way, Fairfax, VA 22030",
+      "lat": 38.848215,
+      "lng": -77.30186,
+      "website": "http://www.fairfaxsurfshop.com",
+      "phone": "(703) 273-0015",
+      "isIndependent": true
+    },
+    {
+      "id": 1634,
+      "name": "Archives",
+      "address": "1811 14th St. NW, Washington, DC 20009",
+      "lat": 38.914582,
+      "lng": -77.031534,
+      "website": "https://archivesofficial.com",
+      "phone": "(202) 621-7040",
+      "isIndependent": true
+    },
+    {
+      "id": 1635,
+      "name": "Roll Around Workshop",
+      "address": "239 Main St., Stevensville, MD 21666",
+      "lat": 38.980543,
+      "lng": -76.316144,
+      "website": "https://www.rollaroundworkshop.com",
+      "phone": "(443) 249-3148",
+      "isIndependent": true
+    },
+    {
+      "id": 1636,
+      "name": "Alpine Ski Shop",
+      "address": "9629 Fairfax Blvd., Fairfax, VA 22031",
+      "lat": 38.86272,
+      "lng": -77.277223,
+      "website": "http://www.alpineskishop.com",
+      "phone": "(703) 385-7669",
+      "isIndependent": true
+    },
+    {
+      "id": 1637,
+      "name": "Alpine Ski Shop Sterling",
+      "address": "21999 Shaw Rd., Sterling, VA 20164",
+      "lat": 39.004209,
+      "lng": -77.42978,
+      "website": "http://www.alpineskishop.com",
+      "phone": "(703) 444-7844",
+      "isIndependent": true
+    },
+    {
+      "id": 1638,
+      "name": "Ski Haus Sports center",
+      "address": "910 Bestgate Rd. Suites F/G, Annapolis, MD 21401",
+      "lat": 38.992205,
+      "lng": -76.54745,
+      "website": "http://www.skihaussports.com",
+      "phone": "(410) 757-6444",
+      "isIndependent": true
+    },
+    {
+      "id": 1639,
+      "name": "Carpet Company",
+      "address": "1720 Llewelyn Ave., Baltimore, MD 21213",
+      "lat": 39.30712,
+      "lng": -76.593702,
+      "website": "https://www.carpetco.us",
+      "isIndependent": true
+    },
+    {
+      "id": 1640,
+      "name": "Barking Spyder Pro Shop",
+      "address": "207 Mill St., Bristol, PA 19007",
+      "lat": 40.095358,
+      "lng": -74.857437,
+      "website": "http://www.barkingspyder.com",
+      "phone": "(215) 788-5200",
+      "isIndependent": true
+    },
+    {
+      "id": 1641,
+      "name": "Amateur Athlete",
+      "address": "2110 W Union Blvd., Bethlehem, PA 18018",
+      "lat": 40.62929,
+      "lng": -75.418523,
+      "website": "http://www.aa1982.com",
+      "phone": "(610) 866-0114",
+      "isIndependent": true
+    },
+    {
+      "id": 1642,
+      "name": "Underground Wheels Etc.",
+      "address": "5401 S Wentworth Ave. #11E, Chicago, IL 60609",
+      "lat": 41.795554,
+      "lng": -87.629059,
+      "website": "http://undergroundwheelsetc.com",
+      "phone": "(773) 767-0270",
+      "isIndependent": true
+    },
+    {
+      "id": 1643,
+      "name": "Five And Dime",
+      "address": "140 C Northampton St., Easton, PA 18042",
+      "lat": 40.69122,
+      "lng": -75.206417,
+      "website": "http://www.fiveanddimeeaston.com",
+      "phone": "(484) 544-4719",
+      "isIndependent": true
+    },
+    {
+      "id": 1644,
+      "name": "Andrew",
+      "address": "54 NE 40th St., Miami, FL 33137",
+      "lat": 25.813261,
+      "lng": -80.194415,
+      "website": "https://andrewdowntown.com",
+      "phone": "(786) 641-5146",
+      "isIndependent": true
+    },
+    {
+      "id": 1645,
+      "name": "Catch-A-Wave surf shop",
+      "address": "2741 SW 27th Ave., Miami, FL 33133",
+      "lat": 25.741153,
+      "lng": -80.237686,
+      "phone": "(305) 569-0339",
+      "isIndependent": true
+    },
+    {
+      "id": 1646,
+      "name": "BC Surf & Sport in Ft. Lauderdale",
+      "address": "1701 N Federal Hwy, Fort Lauderdale, FL 33305",
+      "lat": 26.150099,
+      "lng": -80.120144,
+      "website": "https://www.bcsurf.com",
+      "phone": "(954) 564-0202",
+      "isIndependent": true
+    },
+    {
+      "id": 1647,
+      "name": "Supreme",
+      "address": "45 NE 41st St., Miami, FL 33137",
+      "lat": 25.814292,
+      "lng": -80.194546,
+      "website": "http://www.supreme.com",
+      "phone": "(305) 831-0176",
+      "isIndependent": true
+    },
+    {
+      "id": 1648,
+      "name": "Toptier",
+      "address": "8275 W 12th Ave., Hialeah, FL 33014",
+      "lat": 25.897932,
+      "lng": -80.307796,
+      "phone": "(786) 662-9125",
+      "isIndependent": true
+    },
+    {
+      "id": 1649,
+      "name": "Island Water Sports",
+      "address": "1985 NE 2nd St. East Entrance, Deerfield Beach, FL 33441",
+      "lat": 26.316801,
+      "lng": -80.077907,
+      "website": "http://www.islandwatersports.com",
+      "phone": "(954) 427-4929",
+      "isIndependent": true
+    },
+    {
+      "id": 1650,
+      "name": "Billabong",
+      "address": "1997 NE 2nd St. APT 101, Deerfield Beach, FL 33441",
+      "lat": 26.316539,
+      "lng": -80.077326,
+      "website": "https://www.bcsurf.com",
+      "phone": "(954) 419-9283",
+      "isIndependent": true
+    },
+    {
+      "id": 1651,
+      "name": "Boca Surf & Sail",
+      "address": "3191 N Federal Hwy, Boca Raton, FL 33431",
+      "lat": 26.379175,
+      "lng": -80.076905,
+      "website": "http://www.bocasurfandsail.com",
+      "phone": "(561) 394-8818",
+      "isIndependent": true
+    },
+    {
+      "id": 1652,
+      "name": "Island Camps - Boca Raton & Deerfield Beach Surf Camp",
+      "address": "1987 NE 2nd St., Deerfield Beach, FL 33441",
+      "lat": 26.316482,
+      "lng": -80.077877,
+      "website": "http://www.islandcamps.com",
+      "phone": "(954) 281-2797",
+      "isIndependent": true
+    },
+    {
+      "id": 1653,
+      "name": "CLOCKWORK",
+      "address": "3661 Eisenhower Pkwy # 32, Macon, GA 31206",
+      "lat": 32.818218,
+      "lng": -83.692741,
+      "phone": "(478) 477-2898",
+      "isIndependent": true
+    },
+    {
+      "id": 1654,
+      "name": "Technical",
+      "address": "340 Washington St., Norwell, MA 02061",
+      "lat": 42.161464,
+      "lng": -70.863073,
+      "website": "https://www.facebook.com/TechnicalSkateShop",
+      "phone": "(781) 659-8887",
+      "isIndependent": true
+    },
+    {
+      "id": 1655,
+      "name": "Ocean House Surf Shop",
+      "address": "2A Wilson Rd., Nahant, MA 01908",
+      "lat": 42.436545,
+      "lng": -70.9367,
+      "website": "http://www.oceanhousesurf.com",
+      "phone": "(781) 593-1020",
+      "isIndependent": true
+    },
+    {
+      "id": 1656,
+      "name": "Nor'easter Surf Shop",
+      "address": "376 Gannett Rd., Scituate, MA 02066",
+      "lat": 42.219271,
+      "lng": -70.785579,
+      "website": "http://www.noreastersurfshop.com",
+      "phone": "(781) 544-9283",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-08",
   "version": "1.0",
   "stats": {
-    "total": 1631,
-    "independent": 1061,
+    "total": 1656,
+    "independent": 1086,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
