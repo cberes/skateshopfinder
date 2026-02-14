@@ -16299,13 +16299,81 @@
       "website": "http://www.noreastersurfshop.com",
       "phone": "(781) 544-9283",
       "isIndependent": true
+    },
+    {
+      "id": 1657,
+      "name": "Ski & Sport Shack",
+      "address": "286 Main St., Stoneham, MA 02180",
+      "lat": 42.482692,
+      "lng": -71.099909,
+      "website": "https://www.skiandsportshack.com",
+      "phone": "(781) 279-1990",
+      "isIndependent": true
+    },
+    {
+      "id": 1658,
+      "name": "Coureur Goods",
+      "address": "30 Daniel St., Portsmouth, NH 03801",
+      "lat": 43.077318,
+      "lng": -70.756931,
+      "website": "http://www.coureurgoods.com",
+      "phone": "(603) 427-8659",
+      "isIndependent": true
+    },
+    {
+      "id": 1659,
+      "name": "Sidewalk Surfer",
+      "address": "2602 N Scottsdale Rd., Scottsdale, AZ 85257",
+      "lat": 33.476999,
+      "lng": -111.926573,
+      "website": "http://www.sidewalksurfer.com",
+      "phone": "(480) 994-1017",
+      "isIndependent": true
+    },
+    {
+      "id": 1660,
+      "name": "Thrive Swim and Ride Shop",
+      "address": "20960 W Sentinel Dr. suite 105, Buckeye, AZ 85396",
+      "lat": 33.497542,
+      "lng": -112.510583,
+      "website": "http://www.thethriveshop.com",
+      "phone": "(623) 594-4000",
+      "isIndependent": true
+    },
+    {
+      "id": 1661,
+      "name": "Double Down",
+      "address": "315 Valencia St., San Francisco, CA 94103",
+      "lat": 37.767829,
+      "lng": -122.422023,
+      "website": "http://doubledownzine.com/shop",
+      "isIndependent": true
+    },
+    {
+      "id": 1662,
+      "name": "8Ball Oakland",
+      "address": "329 15th St., Oakland, CA 94612",
+      "lat": 37.804007,
+      "lng": -122.267729,
+      "phone": "(510) 817-4855",
+      "isIndependent": true
+    },
+    {
+      "id": 1663,
+      "name": "Supreme",
+      "address": "1015 Market St., San Francisco, CA 94103",
+      "lat": 37.781771,
+      "lng": -122.410506,
+      "website": "https://www.supremenewyork.com",
+      "phone": "(415) 991-2929",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-08",
   "version": "1.0",
   "stats": {
-    "total": 1656,
-    "independent": 1086,
+    "total": 1663,
+    "independent": 1093,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
