@@ -184,6 +184,26 @@ describe('normalizeShops', () => {
   });
 });
 
+describe('normalizeShop photoName', () => {
+  it('should preserve photoName when present', () => {
+    const shop = {
+      id: '1',
+      name: 'Shop',
+      lat: 34.0,
+      lng: -118.0,
+      photoName: 'places/abc/photos/xyz',
+    };
+    const result = normalizeShop(shop);
+    assert.strictEqual(result.photoName, 'places/abc/photos/xyz');
+  });
+
+  it('should set photoName to null when missing', () => {
+    const shop = { id: '1', name: 'Shop', lat: 34.0, lng: -118.0 };
+    const result = normalizeShop(shop);
+    assert.strictEqual(result.photoName, null);
+  });
+});
+
 describe('prepareForOutput', () => {
   it('should remove internal metadata', () => {
     const shops = [
@@ -214,5 +234,46 @@ describe('prepareForOutput', () => {
     const result = prepareForOutput(shops);
     assert.strictEqual(result[0].website, undefined);
     assert.strictEqual(result[0].phone, undefined);
+  });
+
+  it('should include photoName when present', () => {
+    const shops = [
+      {
+        id: '1',
+        name: 'Shop',
+        address: '123 Main',
+        lat: 34.0,
+        lng: -118.0,
+        isIndependent: true,
+        photoName: 'places/abc/photos/xyz',
+      },
+    ];
+    const result = prepareForOutput(shops);
+    assert.strictEqual(result[0].photoName, 'places/abc/photos/xyz');
+  });
+
+  it('should include photo when present', () => {
+    const shops = [
+      {
+        id: '1',
+        name: 'Shop',
+        address: '123 Main',
+        lat: 34.0,
+        lng: -118.0,
+        isIndependent: true,
+        photo: '1.jpg',
+      },
+    ];
+    const result = prepareForOutput(shops);
+    assert.strictEqual(result[0].photo, '1.jpg');
+  });
+
+  it('should omit photoName and photo when not present', () => {
+    const shops = [
+      { id: '1', name: 'Shop', address: '123 Main', lat: 34.0, lng: -118.0, isIndependent: true },
+    ];
+    const result = prepareForOutput(shops);
+    assert.strictEqual(result[0].photoName, undefined);
+    assert.strictEqual(result[0].photo, undefined);
   });
 });

@@ -308,6 +308,7 @@ async function writeOutput(shops) {
       chain: output.filter((s) => !s.isIndependent).length,
       withWebsite: output.filter((s) => s.website).length,
       withPhone: output.filter((s) => s.phone).length,
+      withPhoto: output.filter((s) => s.photoName || s.photo).length,
     },
   };
 
@@ -320,6 +321,7 @@ async function writeOutput(shops) {
   console.log(`  - Chain: ${data.stats.chain}`);
   console.log(`  - With website: ${data.stats.withWebsite}`);
   console.log(`  - With phone: ${data.stats.withPhone}`);
+  console.log(`  - With photo: ${data.stats.withPhoto}`);
 }
 
 /**

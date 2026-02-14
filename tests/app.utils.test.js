@@ -219,6 +219,50 @@ describe('createShopCardHTML', () => {
 
     assert.ok(html.includes('? mi'), 'Should show ? for unknown distance');
   });
+
+  it('should include photo when provided', () => {
+    const shop = {
+      name: 'Photo Shop',
+      address: '123 Main',
+      distance: 1.0,
+      isIndependent: true,
+      photo: '42.jpg',
+    };
+    const html = createShopCardHTML(shop);
+
+    assert.ok(html.includes('shop-photo'), 'Should include photo container');
+    assert.ok(html.includes('images/shops/42.jpg'), 'Should include photo src');
+    assert.ok(html.includes('loading="lazy"'), 'Should lazy load photo');
+    assert.ok(html.includes('alt="Photo Shop"'), 'Should include alt text');
+    assert.ok(html.includes('onerror'), 'Should include error handler');
+  });
+
+  it('should not include photo when not provided', () => {
+    const shop = {
+      name: 'No Photo Shop',
+      address: '123 Main',
+      distance: 1.0,
+      isIndependent: true,
+    };
+    const html = createShopCardHTML(shop);
+
+    assert.ok(!html.includes('shop-photo'), 'Should not include photo container');
+    assert.ok(!html.includes('<img'), 'Should not include img tag');
+  });
+
+  it('should escape shop name in photo alt text', () => {
+    const shop = {
+      name: 'Tom & Jerry\'s "Shop"',
+      address: '123 Main',
+      distance: 1.0,
+      isIndependent: true,
+      photo: '1.jpg',
+    };
+    const html = createShopCardHTML(shop);
+
+    assert.ok(!html.includes('alt="Tom & Jerry'), 'Should escape ampersand in alt');
+    assert.ok(html.includes('&amp;'), 'Should contain escaped ampersand');
+  });
 });
 
 describe('filterAndSortShops', () => {
@@ -699,6 +743,38 @@ describe('createMapPopupHTML', () => {
       html.includes(encodeURIComponent('123 Main St, Los Angeles, CA')),
       'Should encode address in URL'
     );
+  });
+
+  it('should include photo when provided', () => {
+    const shop = {
+      name: 'Photo Shop',
+      address: '123 Main',
+      distance: 1.0,
+      lat: 34.0522,
+      lng: -118.2437,
+      isIndependent: true,
+      photo: '42.jpg',
+    };
+    const html = createMapPopupHTML(shop);
+
+    assert.ok(html.includes('popup-photo'), 'Should include popup photo container');
+    assert.ok(html.includes('images/shops/42.jpg'), 'Should include photo src');
+    assert.ok(html.includes('loading="lazy"'), 'Should lazy load photo');
+    assert.ok(html.includes('onerror'), 'Should include error handler');
+  });
+
+  it('should not include photo when not provided', () => {
+    const shop = {
+      name: 'No Photo Shop',
+      address: '123 Main',
+      distance: 1.0,
+      lat: 34.0522,
+      lng: -118.2437,
+      isIndependent: false,
+    };
+    const html = createMapPopupHTML(shop);
+
+    assert.ok(!html.includes('popup-photo'), 'Should not include popup photo container');
   });
 });
 

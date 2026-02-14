@@ -57,7 +57,8 @@ Static website with pre-compiled skateshop database, updated quarterly through m
       "lng": -118.2437,
       "isIndependent": true,
       "website": "https://example.com",
-      "phone": "(555) 123-4567"
+      "phone": "(555) 123-4567",
+      "photo": "1.jpg"
     }
   ],
   "lastUpdated": "2026-01-25",
@@ -67,7 +68,8 @@ Static website with pre-compiled skateshop database, updated quarterly through m
     "independent": 188,
     "chain": 3,
     "withWebsite": 116,
-    "withPhone": 100
+    "withPhone": 100,
+    "withPhoto": 150
   }
 }
 ```
@@ -81,6 +83,7 @@ Static website with pre-compiled skateshop database, updated quarterly through m
 - **isIndependent**: Boolean flag - true for independent shops, false for chains (boolean, required)
 - **website**: Shop website URL with https:// prefix (string, optional - 61% coverage)
 - **phone**: Contact phone number in (XXX) XXX-XXXX format (string, optional - 52% coverage)
+- **photo**: Storefront photo filename in `images/shops/` directory (string, optional - downloaded from Google Places)
 
 ## Data Collection Strategy
 
@@ -113,6 +116,7 @@ scripts/
 ├── fetch-shops.js            # Fetch raw API data (npm run fetch)
 ├── collect-shops.js          # Process cached data (npm run collect)
 ├── review-shops.js           # Interactive CLI for manual review (npm run review)
+├── download-photos.js        # Download storefront photos (npm run download:photos)
 ├── validate-data.js          # Data quality checks (npm run validate)
 ├── sources/
 │   ├── google-places.js      # Google Places API integration (primary)
@@ -151,7 +155,8 @@ The pipeline is split into two phases to separate API calls from data processing
 1. Run `npm run fetch` - calls Google Places API, saves raw responses to `scripts/data/google-places-raw.json`
 
 **Phase 2: Process and transform**
-2. Run `npm run collect` - reads cached raw data, transforms and processes:
+2. Run `npm run collect` - reads cached raw data, transforms and processes (now includes photo references):
+
    - Automatic deduplication (coordinate + name matching)
    - Automatic classification (independent vs chain)
    - Automatic normalization (phone format, URLs, coordinates)
@@ -160,8 +165,9 @@ The pipeline is split into two phases to separate API calls from data processing
      - **Good confidence** (store + skate name/website) → auto-include in `shops.json`
      - **Review needed** (store type, no indicators) → written to `pending-review.json`
      - **Exclude** (ice skate, hockey, no store type) → dropped
-3. Run `npm run review` - interactive CLI to approve/deny uncertain shops
-4. Run `npm run validate` - verify data quality
+3. Run `npm run download:photos` - downloads storefront photos as static images, updates shops.json
+4. Run `npm run review` - interactive CLI to approve/deny uncertain shops
+5. Run `npm run validate` - verify data quality
 
 This split allows re-running processing without burning API quota (useful when fixing bugs in transformation logic).
 
@@ -193,6 +199,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 - **Data collection:** Node.js scripts with npm commands:
   - `npm run fetch` - Fetch raw data from Google Places API (saves to intermediate file)
   - `npm run collect` - Process cached raw data and generate `shops.json`
+  - `npm run download:photos` - Download storefront photos from Google Places
   - `npm run review` - Interactive CLI to approve/deny uncertain shops
   - `npm run validate` - Check data quality (required fields, coordinates, formats)
   - `npm test` - Run unit tests covering all processors, frontend utilities, and analytics
@@ -261,7 +268,7 @@ Shops are scored based on Google Places types, name patterns, and website domain
 - [x] Dark mode toggle (completed 2026-01-31)
 
 #### Information Display
-- [ ] Photo of storefront (if available)
+- [x] Photo of storefront (if available) (completed 2026-02-14)
 - [ ] Enhanced independent shop highlighting
 
 ### Explicitly Excluded Features
@@ -372,7 +379,11 @@ Shops are scored based on Google Places types, name patterns, and website domain
   - Tracks: searches, geolocation, shop clicks, view changes, form submissions
   - Privacy policy page with clear data handling disclosure
   - Graceful degradation when blocked by ad blockers
-- Additional data fields (hours, photos)
+- [x] Storefront photos (completed 2026-02-14)
+  - Photos downloaded from Google Places Photo Media API as static assets
+  - Displayed in shop cards (lazy loaded) and map popups
+  - `npm run download:photos` for incremental photo downloads
+- Additional data fields (hours)
 - Advanced filtering options
 
 ## Success Metrics

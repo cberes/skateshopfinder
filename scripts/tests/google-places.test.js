@@ -52,6 +52,41 @@ describe('transformPlace', () => {
       assert.strictEqual(result.phone, null);
     });
 
+    it('should extract photoName from photos array', () => {
+      const place = {
+        id: 'photo1',
+        displayName: { text: 'Photo Shop' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        photos: [
+          { name: 'places/photo1/photos/AelY_abc123' },
+          { name: 'places/photo1/photos/AelY_def456' },
+        ],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result.photoName, 'places/photo1/photos/AelY_abc123');
+    });
+
+    it('should set photoName to null when no photos', () => {
+      const place = {
+        id: 'nophoto1',
+        displayName: { text: 'No Photo Shop' },
+        location: { latitude: 34.0, longitude: -118.0 },
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result.photoName, null);
+    });
+
+    it('should set photoName to null when photos array is empty', () => {
+      const place = {
+        id: 'nophoto2',
+        displayName: { text: 'Empty Photos Shop' },
+        location: { latitude: 34.0, longitude: -118.0 },
+        photos: [],
+      };
+      const result = transformPlace(place);
+      assert.strictEqual(result.photoName, null);
+    });
+
     it('should handle missing displayName text gracefully', () => {
       const place = {
         id: 'test1',

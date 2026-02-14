@@ -290,6 +290,7 @@ async function searchMetroArea(metro, query) {
     'places.nationalPhoneNumber',
     'places.types',
     'places.businessStatus',
+    'places.photos',
     'nextPageToken',
   ].join(',');
 
@@ -441,6 +442,9 @@ function transformPlace(place) {
     }
   }
 
+  // Extract first photo reference if available
+  const photoName = place.photos?.[0]?.name || null;
+
   return {
     id: `google-${place.id}`,
     name: name,
@@ -452,6 +456,7 @@ function transformPlace(place) {
     source: 'google-places',
     googlePlaceId: place.id,
     types: place.types || [],
+    photoName,
   };
 }
 

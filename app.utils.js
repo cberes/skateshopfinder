@@ -74,7 +74,12 @@ export function createShopCardHTML(shop) {
 
   const distanceDisplay = typeof shop.distance === 'number' ? shop.distance.toFixed(1) : '?';
 
+  const photoHTML = shop.photo
+    ? `<div class="shop-photo"><img src="images/shops/${escapeHtml(shop.photo)}" alt="${escapeHtml(shop.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`
+    : '';
+
   return `
+        ${photoHTML}
         <div class="shop-header">
             <h3 class="shop-name">${escapeHtml(shop.name)}</h3>
             <span class="shop-distance">${distanceDisplay} mi</span>
@@ -256,8 +261,13 @@ export function createMapPopupHTML(shop) {
   // Build Google Maps directions URL
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(shop.address || `${shop.lat},${shop.lng}`)}`;
 
+  const popupPhoto = shop.photo
+    ? `<div class="popup-photo"><img src="images/shops/${escapeHtml(shop.photo)}" alt="${escapeHtml(shop.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`
+    : '';
+
   return `
         <div class="map-popup">
+            ${popupPhoto}
             <div class="popup-header">
                 <strong class="popup-name">${escapeHtml(shop.name)}</strong>
                 <span class="popup-distance">${distanceDisplay} mi</span>

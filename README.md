@@ -11,8 +11,8 @@ Limited to shops within the United States for now.
 - **Geolocation**: Use your current location to find shops near you
 
 ### View Modes
-- **List View** (default): Shows shops as cards with name, address, distance, and contact info
-- **Map View**: Interactive map powered by Leaflet.js and OpenStreetMap
+- **List View** (default): Shows shops as cards with storefront photo, name, address, distance, and contact info
+- **Map View**: Interactive map powered by Leaflet.js and OpenStreetMap, with photo thumbnails in popups
 
 ### Map Features
 - **Pink markers**: Chain store locations (Zumiez, Vans, etc.)
@@ -82,12 +82,14 @@ Then open http://localhost:8000
 ├── privacy.html        # Privacy policy page
 ├── styles.css          # Styling
 ├── shops.json          # Skateshop database
+├── images/shops/       # Storefront photos (downloaded from Google Places)
 ├── tests/
-│   ├── app.utils.test.js       # Frontend unit tests (107 tests)
+│   ├── app.utils.test.js       # Frontend unit tests
 │   └── analytics.test.js       # Analytics unit tests
 ├── scripts/
 │   ├── fetch-shops.js          # Fetch raw data from Google Places API
 │   ├── collect-shops.js        # Process raw data and generate shops.json
+│   ├── download-photos.js      # Download storefront photos from Google Places
 │   ├── review-shops.js         # Interactive CLI for manual review
 │   ├── validate-data.js        # Data quality validation
 │   ├── sources/
@@ -135,7 +137,7 @@ The primary data source requires a Google Places API key:
 export GOOGLE_PLACES_API_KEY=your_key_here
 ```
 
-**Cost:** Free tier includes 1,000 Text Search requests/month. Our collection uses ~220-660 requests (with pagination), so quarterly updates cost $0.
+**Cost:** Free tier includes 1,000 Text Search requests/month. Our collection uses ~220-660 requests (with pagination), so quarterly updates cost $0. Photo downloads use the Places Photo Media API which has its own free tier.
 
 ### Commands
 
@@ -145,6 +147,7 @@ export GOOGLE_PLACES_API_KEY=your_key_here
 | `npm run fetch` | Fetch raw data from Google Places API (saves to intermediate file) |
 | `npm run fetch:dry-run` | Preview Google Places search (no API calls) |
 | `npm run collect` | Process cached raw data and generate `shops.json` |
+| `npm run download:photos` | Download storefront photos for shops in `shops.json` |
 | `npm run review` | Interactive CLI to approve/deny pending shops |
 | `npm run collect:google` | Run Google Places collection standalone (legacy) |
 | `npm run collect:google:dry-run` | Preview Google Places search (no API key needed) |
@@ -174,13 +177,19 @@ The pipeline is split into two phases to separate API calls from data processing
 
 **Phase 2: Collect (`npm run collect`)**
 1. **Load** - Read cached raw data from intermediate file
-2. **Transform** - Convert raw API responses to shop objects
+2. **Transform** - Convert raw API responses to shop objects (includes photo references)
 3. **Deduplicate** - Remove duplicates by coordinates (~11m threshold) or name+city
 4. **Validate** - Filter to USA bounds, check coordinate validity
 5. **Classify** - Detect chain stores (Zumiez, Vans, Tactics, CCS, Tilly's, PacSun)
 6. **Normalize** - Clean names, format phones as `(XXX) XXX-XXXX`, prefix URLs with `https://`
 7. **Confidence Filter** - Score shops and route to appropriate output (see below)
 8. **Output** - Write high-confidence shops to `shops.json`, uncertain shops to `pending-review.json`
+
+**Phase 3: Download Photos (`npm run download:photos`)**
+- Downloads storefront photos from the Google Places Photo Media API
+- Saves images to `images/shops/` as static JPEG files (max 600x400px)
+- Incremental: skips shops that already have a downloaded photo
+- Updates `shops.json` with `photo` filenames and removes temporary `photoName` references
 
 This split allows re-running processing without burning API quota (useful when fixing bugs in transformation logic).
 

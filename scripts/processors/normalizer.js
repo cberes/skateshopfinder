@@ -157,6 +157,7 @@ export function normalizeShop(shop) {
     // Preserve for confidence filtering (stripped in prepareForOutput)
     types: shop.types,
     googlePlaceId: shop.googlePlaceId,
+    photoName: shop.photoName || null,
     // Preserve metadata for debugging but don't include in final output
     _source: shop.source,
     _osmId: shop.osmId,
@@ -210,6 +211,8 @@ export function prepareForOutput(shops) {
     // Only include optional fields if they have values
     if (shop.website) output.website = shop.website;
     if (shop.phone) output.phone = shop.phone;
+    if (shop.photoName) output.photoName = shop.photoName;
+    if (shop.photo) output.photo = shop.photo;
 
     return output;
   });
