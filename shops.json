@@ -16367,13 +16367,181 @@
       "website": "https://www.supremenewyork.com",
       "phone": "(415) 991-2929",
       "isIndependent": true
+    },
+    {
+      "id": 1664,
+      "name": "The Fort",
+      "address": "23994 Aliso Creek Rd., Laguna Niguel, CA 92677",
+      "lat": 33.554675,
+      "lng": -117.711541,
+      "website": "https://www.thefortca.com",
+      "phone": "(949) 916-5858",
+      "isIndependent": true
+    },
+    {
+      "id": 1665,
+      "name": "CROWN",
+      "address": "591 N McKinley St. #101, Corona, CA 92879",
+      "lat": 33.891749,
+      "lng": -117.518488,
+      "website": "http://shopcrownonline.com",
+      "phone": "(951) 736-2991",
+      "isIndependent": true
+    },
+    {
+      "id": 1666,
+      "name": "Kore",
+      "address": "199 N E St., San Bernardino, CA 92401",
+      "lat": 34.102608,
+      "lng": -117.2939,
+      "website": "http://korecalifornia.com",
+      "phone": "(909) 381-0134",
+      "isIndependent": true
+    },
+    {
+      "id": 1667,
+      "name": "Main Street Surf Shop",
+      "address": "105 Main St. #B, Newport Beach, CA 92661",
+      "lat": 33.601475,
+      "lng": -117.899899,
+      "website": "https://www.mainstreetsurfshop.com",
+      "phone": "(949) 673-4412",
+      "isIndependent": true
+    },
+    {
+      "id": 1668,
+      "name": "KORE",
+      "address": "1299 Tyler St., Riverside, CA 92503",
+      "lat": 33.909734,
+      "lng": -117.457347,
+      "website": "https://www.korecalifornia.com",
+      "phone": "(951) 358-0610",
+      "isIndependent": true
+    },
+    {
+      "id": 1669,
+      "name": "Family Sports",
+      "address": "12745 Valley View Ave., La Mirada, CA 90638",
+      "lat": 33.915511,
+      "lng": -118.030433,
+      "website": "https://shopatfamily.com",
+      "phone": "(562) 404-7651",
+      "isIndependent": true
+    },
+    {
+      "id": 1670,
+      "name": "Exodus Ride Shop",
+      "address": "7401 Highland Rd., White Lake, MI 48383",
+      "lat": 42.649525,
+      "lng": -83.513534,
+      "website": "http://exodusrideshop.com",
+      "phone": "(248) 520-9774",
+      "isIndependent": true
+    },
+    {
+      "id": 1671,
+      "name": "BRUH.",
+      "address": "222 S Main St., Rochester, MI 48307",
+      "lat": 42.678598,
+      "lng": -83.133398,
+      "website": "http://bruhshop.com",
+      "phone": "(248) 860-8086",
+      "isIndependent": true
+    },
+    {
+      "id": 1672,
+      "name": "West 49",
+      "address": "3100 Howard Ave. #13, Windsor, ON N8X 3Y8, Canada",
+      "lat": 42.275634,
+      "lng": -83.003005,
+      "website": "https://west49.com/pages/store-locator",
+      "phone": "(519) 972-5030",
+      "isIndependent": true
+    },
+    {
+      "id": 1673,
+      "name": "Southwest Rides",
+      "address": "2026 Lawndale St., Detroit, MI 48209",
+      "lat": 42.307861,
+      "lng": -83.131267,
+      "phone": "(313) 841-4447",
+      "isIndependent": true
+    },
+    {
+      "id": 1674,
+      "name": "Motorsport Co / Captive Sports",
+      "address": "1830 W Court St., Flint, MI 48503",
+      "lat": 43.007073,
+      "lng": -83.710467,
+      "website": "https://m.facebook.com/Captive-Sports-64329733816/",
+      "phone": "(810) 239-7191",
+      "isIndependent": true
+    },
+    {
+      "id": 1675,
+      "name": "Shumaker's Ski Shop",
+      "address": "2342 S Ballenger Hwy, Flint, MI 48503",
+      "lat": 42.992793,
+      "lng": -83.733302,
+      "website": "https://shumakers.com",
+      "phone": "(810) 239-6931",
+      "isIndependent": true
+    },
+    {
+      "id": 1676,
+      "name": "DEAD BREAD",
+      "address": "822 W Main St., Owosso, MI 48867",
+      "lat": 42.997864,
+      "lng": -84.182766,
+      "website": "http://www.deadbreadmfg.com",
+      "phone": "(989) 413-3961",
+      "isIndependent": true
+    },
+    {
+      "id": 1677,
+      "name": "By and By",
+      "address": "4502 California Ave. SW, Seattle, WA 98116",
+      "lat": 47.562715,
+      "lng": -122.386578,
+      "website": "http://byandbyseattle.com",
+      "phone": "(206) 327-3512",
+      "isIndependent": true
+    },
+    {
+      "id": 1678,
+      "name": "Gravity Sports",
+      "address": "126 Rainier Ave. S, Renton, WA 98057",
+      "lat": 47.482169,
+      "lng": -122.216894,
+      "website": "http://www.gravitysports.com",
+      "phone": "(425) 255-1874",
+      "isIndependent": true
+    },
+    {
+      "id": 1679,
+      "name": "evo Seattle",
+      "address": "3500 Stone Way N, Seattle, WA 98103",
+      "lat": 47.649498,
+      "lng": -122.342392,
+      "website": "https://www.evo.com/locations/seattle?utm_source=GMBlisting&utm_medium=organic",
+      "phone": "(206) 973-4470",
+      "isIndependent": true
+    },
+    {
+      "id": 1680,
+      "name": "Noping The Shop",
+      "address": "304 4th Ave. E, Olympia, WA 98501",
+      "lat": 47.045267,
+      "lng": -122.89888,
+      "phone": "(360) 754-5538",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-08",
   "version": "1.0",
   "stats": {
-    "total": 1663,
-    "independent": 1093,
+    "total": 1680,
+    "independent": 1110,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
