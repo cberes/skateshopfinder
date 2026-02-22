@@ -16670,13 +16670,53 @@
       "website": "http://www.1epictrends.com",
       "phone": "(760) 936-5146",
       "isIndependent": true
+    },
+    {
+      "id": 1695,
+      "name": "Surf Style 105: Indoor Surfing, Swimwear, Sporting Goods in Clearwater",
+      "address": "315 S Gulfview Blvd., Clearwater, FL 33767",
+      "lat": 27.973093,
+      "lng": -82.828902,
+      "website": "https://surfstyle.com/pages/surf-style-store-105?utm_source=google&utm_medium=organic&utm_campaign=gbl",
+      "phone": "(954) 924-9779",
+      "isIndependent": true
+    },
+    {
+      "id": 1696,
+      "name": "Reno Beach Surf Shop",
+      "address": "1031 4th St. N, St. Petersburg, FL 33701",
+      "lat": 27.782912,
+      "lng": -82.638265,
+      "website": "https://www.facebook.com/renobeachsurfshop/",
+      "phone": "(727) 510-1921",
+      "isIndependent": true
+    },
+    {
+      "id": 1697,
+      "name": "BCSC / Lenny's Surf Shop",
+      "address": "7517 Blind Pass Rd., St. Pete Beach, FL 33706",
+      "lat": 27.743301,
+      "lng": -82.750568,
+      "website": "http://www.lennyssurfshop.com",
+      "phone": "(727) 367-5001",
+      "isIndependent": true
+    },
+    {
+      "id": 1698,
+      "name": "Emage",
+      "address": "1620 Platte St., Denver, CO 80202",
+      "lat": 39.757389,
+      "lng": -105.007869,
+      "website": "http://emagenetwork.com",
+      "phone": "(720) 855-8297",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-21",
   "version": "1.0",
   "stats": {
-    "total": 1694,
-    "independent": 1124,
+    "total": 1698,
+    "independent": 1128,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
