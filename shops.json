@@ -16535,13 +16535,148 @@
       "lng": -122.89888,
       "phone": "(360) 754-5538",
       "isIndependent": true
+    },
+    {
+      "id": 1681,
+      "name": "Main Street Mountain Sports - Monroe",
+      "address": "120 W Main St., Monroe, WA 98272",
+      "lat": 47.855181,
+      "lng": -121.971704,
+      "website": "http://mainstreetmtnsports.com",
+      "phone": "(360) 863-3381",
+      "isIndependent": true
+    },
+    {
+      "id": 1682,
+      "name": "Cal Surf",
+      "address": "1715 W Lake St., Minneapolis, MN 55408",
+      "lat": 44.948213,
+      "lng": -93.304112,
+      "website": "http://www.cal-surf.com",
+      "phone": "(612) 822-6840",
+      "isIndependent": true
+    },
+    {
+      "id": 1683,
+      "name": "Slappy's Garage",
+      "address": "465 17th St., San Diego, CA 92101",
+      "lat": 32.710312,
+      "lng": -117.148271,
+      "website": "http://slappys.online",
+      "phone": "(619) 723-6094",
+      "isIndependent": true
+    },
+    {
+      "id": 1684,
+      "name": "Overload",
+      "address": "3827 30th St., San Diego, CA 92104",
+      "lat": 32.747911,
+      "lng": -117.129955,
+      "website": "http://www.shopoverload.com",
+      "phone": "(619) 819-6143",
+      "isIndependent": true
+    },
+    {
+      "id": 1685,
+      "name": "CALI Strong: The California Sports Company",
+      "address": "789 W Harbor Dr. UNIT 142, San Diego, CA 92101",
+      "lat": 32.710479,
+      "lng": -117.170048,
+      "website": "https://store.cali-strong.com",
+      "phone": "(480) 228-3517",
+      "isIndependent": true
+    },
+    {
+      "id": 1686,
+      "name": "Emerald City Surf Shop",
+      "address": "1118 Orange Ave., Coronado, CA 92118",
+      "lat": 32.684542,
+      "lng": -117.179835,
+      "website": "http://emeraldcitysurf.com",
+      "phone": "(619) 435-6677",
+      "isIndependent": true
+    },
+    {
+      "id": 1687,
+      "name": "Hanger 94",
+      "address": "5270 Jackson Dr., La Mesa, CA 91942",
+      "lat": 32.775073,
+      "lng": -117.012669,
+      "website": "http://www.hanger94.com",
+      "phone": "(619) 469-9494",
+      "isIndependent": true
+    },
+    {
+      "id": 1688,
+      "name": "Clairemont Surf Shop",
+      "address": "6393 Balboa Ave., San Diego, CA 92111",
+      "lat": 32.819628,
+      "lng": -117.173681,
+      "website": "http://www.clairemontsurf.com",
+      "phone": "(858) 292-1153",
+      "isIndependent": true
+    },
+    {
+      "id": 1689,
+      "name": "Grandeur",
+      "address": "945 W Valley Pkwy suite m, Escondido, CA 92025",
+      "lat": 33.1171,
+      "lng": -117.094899,
+      "isIndependent": true
+    },
+    {
+      "id": 1690,
+      "name": "Second Chance Sports(Surf shop)",
+      "address": "4811 W Point Loma Blvd., San Diego, CA 92107",
+      "lat": 32.750919,
+      "lng": -117.242717,
+      "phone": "(619) 224-9524",
+      "isIndependent": true
+    },
+    {
+      "id": 1691,
+      "name": "HeritageSKTBDS",
+      "address": "1019 S Coast Hwy, Oceanside, CA 92054",
+      "lat": 33.186037,
+      "lng": -117.37154,
+      "website": "http://www.heritagesktbds.com",
+      "phone": "(442) 266-8002",
+      "isIndependent": true
+    },
+    {
+      "id": 1692,
+      "name": "Grandeur",
+      "address": "215 N Coast Hwy, Oceanside, CA 92054",
+      "lat": 33.196318,
+      "lng": -117.380047,
+      "isIndependent": true
+    },
+    {
+      "id": 1693,
+      "name": "Wavelines",
+      "address": "11658 Carmel Mountain Rd. #132, San Diego, CA 92128",
+      "lat": 32.980976,
+      "lng": -117.081268,
+      "website": "http://www.wave-lines.com",
+      "phone": "(858) 675-9696",
+      "isIndependent": true
+    },
+    {
+      "id": 1694,
+      "name": "Epic Trends",
+      "address": "3776 Mission Ave. #139, Oceanside, CA 92058",
+      "lat": 33.226665,
+      "lng": -117.331967,
+      "website": "http://www.1epictrends.com",
+      "phone": "(760) 936-5146",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-02-08",
+  "lastUpdated": "2026-02-21",
   "version": "1.0",
   "stats": {
-    "total": 1680,
-    "independent": 1110,
+    "total": 1694,
+    "independent": 1124,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
