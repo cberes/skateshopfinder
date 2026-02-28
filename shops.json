@@ -16710,13 +16710,83 @@
       "website": "http://emagenetwork.com",
       "phone": "(720) 855-8297",
       "isIndependent": true
+    },
+    {
+      "id": 1699,
+      "name": "evo Denver",
+      "address": "860 N Broadway, Denver, CO 80203",
+      "lat": 39.730263,
+      "lng": -104.987121,
+      "website": "https://www.evo.com/locations/denver?utm_source=GMBlisting&utm_medium=organic",
+      "phone": "(303) 831-7228",
+      "isIndependent": true
+    },
+    {
+      "id": 1700,
+      "name": "BC Surf & Sport @ Lonetree",
+      "address": "8678 Park Meadows Center Dr., Lone Tree, CO 80124",
+      "lat": 39.557412,
+      "lng": -104.874243,
+      "website": "https://www.bcsurf.com",
+      "phone": "(303) 768-8908",
+      "isIndependent": true
+    },
+    {
+      "id": 1701,
+      "name": "BC Surf & Sport in Boulder",
+      "address": "1600 28th St. #1200, Boulder, CO 80301",
+      "lat": 40.015307,
+      "lng": -105.257912,
+      "website": "http://bcsurf.com",
+      "phone": "(303) 440-6030",
+      "isIndependent": true
+    },
+    {
+      "id": 1702,
+      "name": "BC Surf & Sport",
+      "address": "1 W Flatiron Crossing Dr., Broomfield, CO 80021",
+      "lat": 39.932299,
+      "lng": -105.131871,
+      "website": "https://www.bcsurf.com",
+      "phone": "(720) 887-2444",
+      "isIndependent": true
+    },
+    {
+      "id": 1703,
+      "name": "Patina Hardware",
+      "address": "2180 E 40th Ave., Denver, CO 80205",
+      "lat": 39.772726,
+      "lng": -104.961912,
+      "website": "https://www.patinahardware.us",
+      "phone": "(505) 449-8990",
+      "isIndependent": true
+    },
+    {
+      "id": 1704,
+      "name": "Chain Reaction Records",
+      "address": "8795 W Colfax Ave., Lakewood, CO 80215",
+      "lat": 39.740548,
+      "lng": -105.095455,
+      "website": "http://www.chainreactionrecords.com",
+      "phone": "(303) 237-4445",
+      "isIndependent": true
+    },
+    {
+      "id": 1705,
+      "name": "BingShop",
+      "address": "211 E Vandalia St., Edwardsville, IL 62025",
+      "lat": 38.811865,
+      "lng": -89.953865,
+      "website": "http://www.bingshop.com",
+      "phone": "(618) 692-8271",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-02-21",
+  "lastUpdated": "2026-02-27",
   "version": "1.0",
   "stats": {
-    "total": 1698,
-    "independent": 1128,
+    "total": 1705,
+    "independent": 1135,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
