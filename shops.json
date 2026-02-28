@@ -16780,13 +16780,151 @@
       "website": "http://www.bingshop.com",
       "phone": "(618) 692-8271",
       "isIndependent": true
+    },
+    {
+      "id": 1706,
+      "name": "Ocean Wave Surf Shop",
+      "address": "5770 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746",
+      "lat": 28.331086,
+      "lng": -81.515935,
+      "phone": "(407) 396-9534",
+      "isIndependent": true
+    },
+    {
+      "id": 1707,
+      "name": "518 underground",
+      "address": "561 W Eau Gallie Blvd., Melbourne, FL 32935",
+      "lat": 28.130238,
+      "lng": -80.627211,
+      "website": "https://www.thestandardcollective.com",
+      "phone": "(321) 655-9074",
+      "isIndependent": true
+    },
+    {
+      "id": 1708,
+      "name": "Sandy Point Progressive Sports",
+      "address": "3090 S Ridgewood Ave., South Daytona, FL 32119",
+      "lat": 29.153981,
+      "lng": -80.993374,
+      "website": "https://progressivesports.com",
+      "phone": "(386) 756-7564",
+      "isIndependent": true
+    },
+    {
+      "id": 1709,
+      "name": "Another Ride Surf Shop",
+      "address": "1777 S Patrick Dr., Indian Harbour Beach, FL 32937",
+      "lat": 28.158458,
+      "lng": -80.602031,
+      "website": "http://anotherride.com",
+      "phone": "(321) 720-5825",
+      "isIndependent": true
+    },
+    {
+      "id": 1710,
+      "name": "Maui Nix Surf Shop",
+      "address": "635 N Atlantic Ave., Daytona Beach, FL 32118",
+      "lat": 29.236581,
+      "lng": -81.013334,
+      "website": "http://www.mauinix.com",
+      "phone": "(386) 253-1234",
+      "isIndependent": true
+    },
+    {
+      "id": 1711,
+      "name": "Parts & Service",
+      "address": "701 Keswick Ave. #107, Charlotte, NC 28206",
+      "lat": 35.245593,
+      "lng": -80.833138,
+      "website": "https://partsandserviceco.com",
+      "isIndependent": true
+    },
+    {
+      "id": 1712,
+      "name": "APB Charlotte",
+      "address": "2705 Tuckaseegee Rd., Charlotte, NC 28208",
+      "lat": 35.239201,
+      "lng": -80.876039,
+      "website": "https://apbstore.com",
+      "phone": "(704) 919-1137",
+      "isIndependent": true
+    },
+    {
+      "id": 1713,
+      "name": "CENTRAL",
+      "address": "421 N Main Ave., San Antonio, TX 78205",
+      "lat": 29.429076,
+      "lng": -98.494112,
+      "website": "http://instagram.com/central.tx",
+      "phone": "(210) 253-9750",
+      "isIndependent": true
+    },
+    {
+      "id": 1714,
+      "name": "evo Portland",
+      "address": "200 SE Martin Luther King Jr Blvd., Portland, OR 97214",
+      "lat": 45.521415,
+      "lng": -122.661622,
+      "website": "https://www.evo.com/locations/portland?utm_source=GMBlisting&utm_medium=organic",
+      "phone": "(503) 972-5850",
+      "isIndependent": true
+    },
+    {
+      "id": 1715,
+      "name": "Gorge Performance",
+      "address": "6626 S Macadam Ave., Portland, OR 97239",
+      "lat": 45.476018,
+      "lng": -122.671476,
+      "website": "http://gorgeperformance.com",
+      "phone": "(503) 246-6646",
+      "isIndependent": true
+    },
+    {
+      "id": 1716,
+      "name": "NW Ambush Extreme Sports",
+      "address": "711 E Main St. UNIT 103, Battle Ground, WA 98604",
+      "lat": 45.78076,
+      "lng": -122.529594,
+      "website": "https://www.nwambush.com",
+      "phone": "(360) 666-0029",
+      "isIndependent": true
+    },
+    {
+      "id": 1717,
+      "name": "Hillcrest Ski & Sports",
+      "address": "2424 SE Burnside Rd., Gresham, OR 97080",
+      "lat": 45.495486,
+      "lng": -122.408136,
+      "website": "http://www.hillcrestsports.com",
+      "phone": "(503) 665-4455",
+      "isIndependent": true
+    },
+    {
+      "id": 1718,
+      "name": "Seaside Surf Shop",
+      "address": "1116 S Roosevelt Dr., Seaside, OR 97138",
+      "lat": 45.98635,
+      "lng": -123.92323,
+      "website": "http://www.seasidesurfshop.com",
+      "phone": "(503) 717-1110",
+      "isIndependent": true
+    },
+    {
+      "id": 1719,
+      "name": "Fall Line Sports",
+      "address": "302 Lewis St., Silverton, OR 97381",
+      "lat": 45.004972,
+      "lng": -122.781219,
+      "website": "http://www.falllinesports.shop",
+      "phone": "(503) 873-0977",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-02-27",
   "version": "1.0",
   "stats": {
-    "total": 1705,
-    "independent": 1135,
+    "total": 1719,
+    "independent": 1149,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
