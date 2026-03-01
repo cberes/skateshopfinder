@@ -17024,13 +17024,43 @@
       "website": "https://www.tylerstx.com",
       "phone": "(512) 327-9888",
       "isIndependent": true
+    },
+    {
+      "id": 1731,
+      "name": "UNheardof",
+      "address": "15 W 4th St., Cincinnati, OH 45202",
+      "lat": 39.099757,
+      "lng": -84.513336,
+      "website": "http://unheardofbrand.com",
+      "phone": "(513) 744-9444",
+      "isIndependent": true
+    },
+    {
+      "id": 1732,
+      "name": "Vertical Drop",
+      "address": "110 S 2nd St. suite j, Loveland, OH 45140",
+      "lat": 39.267401,
+      "lng": -84.257764,
+      "website": "http://verticaldropoutdoors.com",
+      "phone": "(513) 583-5822",
+      "isIndependent": true
+    },
+    {
+      "id": 1733,
+      "name": "Velozity",
+      "address": "114 E Boehringer St., Batesville, IN 47006",
+      "lat": 39.299274,
+      "lng": -85.221436,
+      "website": "https://m.facebook.com/people/Velozity-Boards-and-More/100090966671961/",
+      "phone": "(812) 212-9167",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-02-28",
+  "lastUpdated": "2026-03-01",
   "version": "1.0",
   "stats": {
-    "total": 1730,
-    "independent": 1160,
+    "total": 1733,
+    "independent": 1163,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
