@@ -16918,13 +16918,119 @@
       "website": "http://www.falllinesports.shop",
       "phone": "(503) 873-0977",
       "isIndependent": true
+    },
+    {
+      "id": 1720,
+      "name": "Bland Pro Shop",
+      "address": "2290 Nicolaus Rd. Suite 103, Lincoln, CA 95648",
+      "lat": 38.897974,
+      "lng": -121.322331,
+      "website": "http://blandpro.shop",
+      "phone": "(916) 415-8736",
+      "isIndependent": true
+    },
+    {
+      "id": 1721,
+      "name": "Wicked Wayz",
+      "address": "920 S Cherokee Ln. A, Lodi, CA 95240",
+      "lat": 38.121914,
+      "lng": -121.260178,
+      "website": "http://www.wickedwayz.biz",
+      "phone": "(209) 339-1779",
+      "isIndependent": true
+    },
+    {
+      "id": 1722,
+      "name": "GoodTimes",
+      "address": "146 Mill St., Grass Valley, CA 95945",
+      "lat": 39.217824,
+      "lng": -121.063258,
+      "website": "http://goodtimesgv.com",
+      "phone": "(530) 272-7751",
+      "isIndependent": true
+    },
+    {
+      "id": 1723,
+      "name": "bored.",
+      "address": "605 Main St., Martinez, CA 94553",
+      "lat": 38.017066,
+      "lng": -122.137465,
+      "website": "http://bored.business",
+      "phone": "(925) 289-8654",
+      "isIndependent": true
+    },
+    {
+      "id": 1724,
+      "name": "Sluggers",
+      "address": "529 Broad Ave., Belle Vernon, PA 15012",
+      "lat": 40.130572,
+      "lng": -79.865046,
+      "isIndependent": true
+    },
+    {
+      "id": 1725,
+      "name": "DRY BONES",
+      "address": "317 E 6th Ave., Tarentum, PA 15084",
+      "lat": 40.60301,
+      "lng": -79.753456,
+      "phone": "(412) 735-3172",
+      "isIndependent": true
+    },
+    {
+      "id": 1726,
+      "name": "The Adventure Shop",
+      "address": "524-526 McKean Ave., Charleroi, PA 15022",
+      "lat": 40.139238,
+      "lng": -79.898039,
+      "phone": "(724) 565-6108",
+      "isIndependent": true
+    },
+    {
+      "id": 1727,
+      "name": "Powder and Sun",
+      "address": "4555 S Fort Apache Rd., Las Vegas, NV 89147",
+      "lat": 36.106498,
+      "lng": -115.297973,
+      "website": "http://powderandsunrideshop.com",
+      "phone": "(702) 221-7669",
+      "isIndependent": true
+    },
+    {
+      "id": 1728,
+      "name": "Gravity Sports Las Vegas",
+      "address": "9775 W Russell Rd. Ste 130, Las Vegas, NV 89148",
+      "lat": 36.084409,
+      "lng": -115.306,
+      "website": "https://gravitysportslv.com",
+      "phone": "(702) 665-6840",
+      "isIndependent": true
+    },
+    {
+      "id": 1729,
+      "name": "Double R Kicks",
+      "address": "409 W Front St. Suite 140, Hutto, TX 78634",
+      "lat": 30.541358,
+      "lng": -97.548885,
+      "website": "https://doublerkicks.com",
+      "phone": "(512) 277-9383",
+      "isIndependent": true
+    },
+    {
+      "id": 1730,
+      "name": "TYLER'S",
+      "address": "701 S Capital of Texas Hwy, Austin, TX 78746",
+      "lat": 30.292283,
+      "lng": -97.825128,
+      "website": "https://www.tylerstx.com",
+      "phone": "(512) 327-9888",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-02-27",
+  "lastUpdated": "2026-02-28",
   "version": "1.0",
   "stats": {
-    "total": 1719,
-    "independent": 1149,
+    "total": 1730,
+    "independent": 1160,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
