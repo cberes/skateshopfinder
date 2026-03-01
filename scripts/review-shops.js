@@ -61,7 +61,9 @@ function displayShop(shop, index, total) {
   console.log(`Phone:   ${shop.phone || 'N/A'}`);
   console.log(`Website: ${shop.website || 'N/A'}`);
   if (shop.googlePlaceId) {
-    console.log(`Google Maps: https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${shop.googlePlaceId}`);
+    console.log(
+      `Google Maps: https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${shop.googlePlaceId}`
+    );
   }
   if (shop.confidenceReason) {
     console.log(`Reason:  ${shop.confidenceReason}`);
@@ -109,6 +111,7 @@ function addToShops(shop, shopsData) {
   shopsData.stats.total = shopsData.shops.length;
   shopsData.stats.independent = shopsData.shops.filter((s) => s.isIndependent).length;
   shopsData.stats.chain = shopsData.shops.filter((s) => !s.isIndependent).length;
+  shopsData.lastUpdated = new Date().toISOString().split('T')[0];
 
   return shopsData;
 }
