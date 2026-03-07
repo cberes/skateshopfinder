@@ -17054,13 +17054,173 @@
       "website": "https://m.facebook.com/people/Velozity-Boards-and-More/100090966671961/",
       "phone": "(812) 212-9167",
       "isIndependent": true
+    },
+    {
+      "id": 1734,
+      "name": "Pacific Wave",
+      "address": "1502 Pacific Ave., Santa Cruz, CA 95060",
+      "lat": 36.975219,
+      "lng": -122.026356,
+      "website": "https://pacwave.com",
+      "phone": "(831) 458-9283",
+      "isIndependent": true
+    },
+    {
+      "id": 1735,
+      "name": "Sun & Ski Sports",
+      "address": "501 Opry Mills Dr., Nashville, TN 37214",
+      "lat": 36.204705,
+      "lng": -86.693395,
+      "website": "https://www.sunandski.com/opry-mills?utm_source=gbp&utm_medium=organic&utm_campaign=local",
+      "phone": "(615) 886-4854",
+      "isIndependent": true
+    },
+    {
+      "id": 1736,
+      "name": "17th Street Surf Shop",
+      "address": "1612 Pacific Ave., Virginia Beach, VA 23451",
+      "lat": 36.844773,
+      "lng": -75.975871,
+      "website": "http://17thst.com",
+      "phone": "(757) 422-6105",
+      "isIndependent": true
+    },
+    {
+      "id": 1737,
+      "name": "Coastal Edge 14th Street",
+      "address": "1428 Atlantic Ave., Virginia Beach, VA 23451",
+      "lat": 36.843005,
+      "lng": -75.973887,
+      "website": "https://www.coastaledge.com",
+      "phone": "(757) 600-8559",
+      "isIndependent": true
+    },
+    {
+      "id": 1738,
+      "name": "Coastal Edge Pembroke Square",
+      "address": "4554 Virginia Beach Blvd. Suite 810, Virginia Beach, VA 23462",
+      "lat": 36.844936,
+      "lng": -76.134337,
+      "website": "https://www.coastaledge.com",
+      "phone": "(757) 499-9155",
+      "isIndependent": true
+    },
+    {
+      "id": 1739,
+      "name": "Coastal Edge Red Mill",
+      "address": "1157 Nimmo Pkwy, Virginia Beach, VA 23456",
+      "lat": 36.75956,
+      "lng": -76.010157,
+      "website": "https://www.coastaledge.com",
+      "phone": "(757) 427-5665",
+      "isIndependent": true
+    },
+    {
+      "id": 1740,
+      "name": "Coastal Edge",
+      "address": "Next to Maggie McFly’s and Barnes & Noble, 701 Lynnhaven Pkwy, Virginia Beach, VA 23452",
+      "lat": 36.817212,
+      "lng": -76.06992,
+      "website": "http://www.coastaledge.com",
+      "phone": "(757) 974-9714",
+      "isIndependent": true
+    },
+    {
+      "id": 1741,
+      "name": "Coastal Edge",
+      "address": "1412 Greenbrier Pkwy, Chesapeake, VA 23320",
+      "lat": 36.775764,
+      "lng": -76.233985,
+      "website": "https://www.coastaledge.com",
+      "phone": "(757) 424-0055",
+      "isIndependent": true
+    },
+    {
+      "id": 1742,
+      "name": "Omen Newport",
+      "address": "89 Aquidneck Ave., Middletown, RI 02842",
+      "lat": 41.49206,
+      "lng": -71.283792,
+      "website": "https://www.omen-newport.com",
+      "phone": "(401) 846-2280",
+      "isIndependent": true
+    },
+    {
+      "id": 1743,
+      "name": "Break Water Surf",
+      "address": "438 Thames St., Newport, RI 02840",
+      "lat": 41.481364,
+      "lng": -71.314286,
+      "website": "http://www.breakwatersurf.com",
+      "phone": "(401) 619-2930",
+      "isIndependent": true
+    },
+    {
+      "id": 1744,
+      "name": "X-wear",
+      "address": "193 Main St., Falmouth, MA 02540",
+      "lat": 41.552124,
+      "lng": -70.616751,
+      "website": "http://www.x-wear.com",
+      "phone": "(800) 875-0174",
+      "isIndependent": true
+    },
+    {
+      "id": 1745,
+      "name": "Cutting Edge",
+      "address": "945 Farmington Ave., Berlin, CT 06037",
+      "lat": 41.633019,
+      "lng": -72.762776,
+      "website": "https://www.cuttingedgect.com",
+      "phone": "(860) 828-3428",
+      "isIndependent": true
+    },
+    {
+      "id": 1746,
+      "name": "Plush",
+      "address": "96 Orange St., New Haven, CT 06510",
+      "lat": 41.305172,
+      "lng": -72.924905,
+      "website": "https://plush-tek.com",
+      "phone": "(203) 691-1664",
+      "isIndependent": true
+    },
+    {
+      "id": 1747,
+      "name": "Expedition Supply",
+      "address": "20 W Sumner St., Hartford, WI 53027",
+      "lat": 43.317894,
+      "lng": -88.379376,
+      "website": "http://expeditionsupply.com",
+      "phone": "(262) 673-7303",
+      "isIndependent": true
+    },
+    {
+      "id": 1748,
+      "name": "EOS Surf & Outdoor",
+      "address": "510 N 8th St., Sheboygan, WI 53081",
+      "lat": 43.75013,
+      "lng": -87.713268,
+      "website": "http://www.eossurf.com",
+      "phone": "(920) 208-7873",
+      "isIndependent": true
+    },
+    {
+      "id": 1749,
+      "name": "TRAILSIDE CYCLE Inc.",
+      "address": "1849 S Calhoun Rd., New Berlin, WI 53151",
+      "lat": 43.010145,
+      "lng": -88.127673,
+      "website": "http://www.trailsidecycle.com",
+      "phone": "(262) 782-7433",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-01",
+  "lastUpdated": "2026-03-07",
   "version": "1.0",
   "stats": {
-    "total": 1733,
-    "independent": 1163,
+    "total": 1749,
+    "independent": 1179,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
