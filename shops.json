@@ -17214,13 +17214,103 @@
       "website": "http://www.trailsidecycle.com",
       "phone": "(262) 782-7433",
       "isIndependent": true
+    },
+    {
+      "id": 1750,
+      "name": "Sunrise Surf Shop",
+      "address": "834 Beach Blvd., Jacksonville Beach, FL 32250",
+      "lat": 30.287932,
+      "lng": -81.39834,
+      "website": "https://sunrisesurfshop.com",
+      "phone": "(904) 241-0822",
+      "isIndependent": true
+    },
+    {
+      "id": 1751,
+      "name": "Surf Station",
+      "address": "1020 Anastasia Blvd., St. Augustine, FL 32080",
+      "lat": 29.880086,
+      "lng": -81.286081,
+      "website": "https://www.surfstationstore.com",
+      "phone": "(904) 471-9463",
+      "isIndependent": true
+    },
+    {
+      "id": 1752,
+      "name": "ALL WET SPORTS",
+      "address": "8550 Beach Blvd., Jacksonville, FL 32216",
+      "lat": 30.286868,
+      "lng": -81.569435,
+      "website": "http://allwetsports.net",
+      "phone": "(904) 646-9887",
+      "isIndependent": true
+    },
+    {
+      "id": 1753,
+      "name": "Pit Surf Shop",
+      "address": "18 A St., St. Augustine, FL 32080",
+      "lat": 29.844734,
+      "lng": -81.266941,
+      "website": "http://thepitsurfshop.com",
+      "phone": "(904) 471-4700",
+      "isIndependent": true
+    },
+    {
+      "id": 1754,
+      "name": "Driftwood Surf Shop",
+      "address": "31 S Fletcher Ave., Fernandina Beach, FL 32034",
+      "lat": 30.66716,
+      "lng": -81.432144,
+      "website": "http://www.driftwoodsurfshop.com",
+      "phone": "(904) 321-2188",
+      "isIndependent": true
+    },
+    {
+      "id": 1755,
+      "name": "Aqua East Surf Shop",
+      "address": "1850 A1A S, St. Augustine, FL 32080",
+      "lat": 29.861364,
+      "lng": -81.280193,
+      "website": "https://www.aquaeast.com",
+      "phone": "(904) 471-8070",
+      "isIndependent": true
+    },
+    {
+      "id": 1756,
+      "name": "Money Ruins Everything",
+      "address": "516 NW 23rd St., Oklahoma City, OK 73103",
+      "lat": 35.493134,
+      "lng": -97.521922,
+      "website": "http://moneyruinseverything.com",
+      "phone": "(405) 848-3440",
+      "isIndependent": true
+    },
+    {
+      "id": 1757,
+      "name": "Endless Grind",
+      "address": "424 W Peace St., Raleigh, NC 27603",
+      "lat": 35.788962,
+      "lng": -78.64494,
+      "website": "http://endlessgrind.com",
+      "phone": "(919) 828-5877",
+      "isIndependent": true
+    },
+    {
+      "id": 1758,
+      "name": "Flowland Counter-Culture Outlet",
+      "address": "1200 N Sandhills Blvd. Ste A, Aberdeen, NC 28315",
+      "lat": 35.148179,
+      "lng": -79.419357,
+      "website": "http://www.shopflowland.com",
+      "phone": "(910) 757-0244",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-07",
+  "lastUpdated": "2026-03-08",
   "version": "1.0",
   "stats": {
-    "total": 1749,
-    "independent": 1179,
+    "total": 1758,
+    "independent": 1188,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
