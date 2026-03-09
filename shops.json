@@ -17304,13 +17304,259 @@
       "website": "http://www.shopflowland.com",
       "phone": "(910) 757-0244",
       "isIndependent": true
+    },
+    {
+      "id": 1759,
+      "name": "Asylum Xtreme",
+      "address": "531 Eastern Blvd., Clarksville, IN 47129",
+      "lat": 38.297502,
+      "lng": -85.760857,
+      "website": "http://www.asylumxtreme.com",
+      "phone": "(812) 282-6999",
+      "isIndependent": true
+    },
+    {
+      "id": 1760,
+      "name": "Owheelies Bicycle Co.",
+      "address": "639 Girod St., Mandeville, LA 70448",
+      "lat": 30.360464,
+      "lng": -90.063094,
+      "website": "https://www.owheelies.com",
+      "phone": "(985) 629-4211",
+      "isIndependent": true
+    },
+    {
+      "id": 1761,
+      "name": "Modern Monark",
+      "address": "353 W 200 S Suite 101, Salt Lake City, UT 84101",
+      "lat": 40.764799,
+      "lng": -111.90136,
+      "website": "http://modernmonark.com",
+      "phone": "(801) 471-6614",
+      "isIndependent": true
+    },
+    {
+      "id": 1762,
+      "name": "evo Salt Lake",
+      "address": "660 S 400 W Suite 300, Salt Lake City, UT 84101",
+      "lat": 40.754949,
+      "lng": -111.902981,
+      "website": "https://www.evo.com/locations/salt-lake-city?utm_source=GMBlisting&utm_medium=organic",
+      "phone": "(385) 379-3172",
+      "isIndependent": true
+    },
+    {
+      "id": 1763,
+      "name": "BC Surf & Sport",
+      "address": "10450 State St., Sandy, UT 84070",
+      "lat": 40.562943,
+      "lng": -111.895261,
+      "phone": "(801) 523-9270",
+      "isIndependent": true
+    },
+    {
+      "id": 1764,
+      "name": "Milosport",
+      "address": "3119 E 3300 S, Salt Lake City, UT 84109",
+      "lat": 40.70021,
+      "lng": -111.805452,
+      "website": "http://www.milosport.com",
+      "phone": "(801) 487-8600",
+      "isIndependent": true
+    },
+    {
+      "id": 1765,
+      "name": "Gear Vault",
+      "address": "10450 S State St. Suite 1224, Sandy, UT 84070",
+      "lat": 40.562007,
+      "lng": -111.893822,
+      "website": "http://www.e-machinez.com",
+      "phone": "(385) 342-2032",
+      "isIndependent": true
+    },
+    {
+      "id": 1766,
+      "name": "Gravity Coalition",
+      "address": "269A E Main St., Midway, UT 84049",
+      "lat": 40.512392,
+      "lng": -111.466784,
+      "website": "http://gravitycoalition.com",
+      "phone": "(801) 448-6096",
+      "isIndependent": true
+    },
+    {
+      "id": 1767,
+      "name": "XT Outfitters",
+      "address": "1410 W 1200 N St. #4, Orem, UT 84057",
+      "lat": 40.320265,
+      "lng": -111.730539,
+      "website": "https://xtoutfitters.com",
+      "phone": "(801) 607-1087",
+      "isIndependent": true
+    },
+    {
+      "id": 1768,
+      "name": "Emachinez - Gear Vault Lehi",
+      "address": "3700 N Cabelas Blvd. Ste 244, Lehi, UT 84043",
+      "lat": 40.435809,
+      "lng": -111.885136,
+      "website": "http://e-machinez.com",
+      "phone": "(801) 230-1470",
+      "isIndependent": true
+    },
+    {
+      "id": 1769,
+      "name": "Emachinez - Gear Vault Layton",
+      "address": "1201 N Hill Field Rd. #1096, Layton, UT 84041",
+      "lat": 41.078269,
+      "lng": -111.976516,
+      "website": "http://www.e-machinez.com",
+      "phone": "(801) 230-6815",
+      "isIndependent": true
+    },
+    {
+      "id": 1770,
+      "name": "Legit ride n jam",
+      "address": "41 Bridge St., Collinsville, CT 06019",
+      "lat": 41.811487,
+      "lng": -72.923769,
+      "phone": "(860) 323-3460",
+      "isIndependent": true
+    },
+    {
+      "id": 1771,
+      "name": "Sartorius Sports",
+      "address": "177 W Main St., Avon, CT 06001",
+      "lat": 41.811072,
+      "lng": -72.846632,
+      "website": "http://www.sartoriussports.com",
+      "phone": "(860) 676-8850",
+      "isIndependent": true
+    },
+    {
+      "id": 1772,
+      "name": "Fat Trax",
+      "address": "612 N Main St., East Longmeadow, MA 01028",
+      "lat": 42.079959,
+      "lng": -72.536357,
+      "phone": "(413) 781-5142",
+      "isIndependent": true
+    },
+    {
+      "id": 1773,
+      "name": "The Devil's Gear Bike Shop",
+      "address": "845 Chapel St., New Haven, CT 06510",
+      "lat": 41.305821,
+      "lng": -72.92499,
+      "website": "http://www.thedevilsgear.com",
+      "phone": "(203) 773-9288",
+      "isIndependent": true
+    },
+    {
+      "id": 1774,
+      "name": "Wampum",
+      "address": "2487 Main St., Bridgehampton, NY 11932",
+      "lat": 40.937004,
+      "lng": -72.301599,
+      "website": "http://wampumny.com",
+      "phone": "(631) 461-6102",
+      "isIndependent": true
+    },
+    {
+      "id": 1775,
+      "name": "West 49",
+      "address": "221 Glendale Ave. Unit #38, St. Catharines, ON L2T 2K9, Canada",
+      "lat": 43.137057,
+      "lng": -79.225681,
+      "website": "https://west49.com/pages/store-locator",
+      "phone": "(905) 682-6444",
+      "isIndependent": true
+    },
+    {
+      "id": 1776,
+      "name": "Blue Tile Lounge",
+      "address": "803 Queen St. W, Toronto, ON M6J 1G1, Canada",
+      "lat": 43.64612,
+      "lng": -79.408797,
+      "website": "http://www.bluetilelounge.com",
+      "phone": "(416) 792-7171",
+      "isIndependent": true
+    },
+    {
+      "id": 1777,
+      "name": "Jibs Action Sports",
+      "address": "423 Guelph Line, Burlington, ON L7R 3L7, Canada",
+      "lat": 43.338189,
+      "lng": -79.784522,
+      "website": "http://jibsactionsports.ca",
+      "phone": "(905) 635-2878",
+      "isIndependent": true
+    },
+    {
+      "id": 1778,
+      "name": "Beefer's",
+      "address": "789 King St. W, Hamilton, ON L8S 1K2, Canada",
+      "lat": 43.262083,
+      "lng": -79.897433,
+      "website": "https://www.beefershamilton.com",
+      "phone": "(905) 528-7710",
+      "isIndependent": true
+    },
+    {
+      "id": 1779,
+      "name": "Scotties",
+      "address": "319 Brock St. S, Whitby, ON L1N 4K3, Canada",
+      "lat": 43.877076,
+      "lng": -78.940369,
+      "website": "http://www.scottiesshop.com",
+      "phone": "(905) 493-7543",
+      "isIndependent": true
+    },
+    {
+      "id": 1780,
+      "name": "So Hip Toronto",
+      "address": "323 Queen St. W 2nd Floor, Toronto, ON M5V 2A4, Canada",
+      "lat": 43.649498,
+      "lng": -79.391695,
+      "website": "http://sohip.ca",
+      "phone": "(416) 971-6901",
+      "isIndependent": true
+    },
+    {
+      "id": 1781,
+      "name": "NorthLine Sports",
+      "address": "109 Vanderhoof Ave., Toronto, ON M4G 2H7, Canada",
+      "lat": 43.712275,
+      "lng": -79.359964,
+      "website": "https://www.northlinesports.ca",
+      "phone": "(416) 485-9463",
+      "isIndependent": true
+    },
+    {
+      "id": 1782,
+      "name": "World Conspiracy",
+      "address": "610 Pratt Ave. NW, Huntsville, AL 35801",
+      "lat": 34.740306,
+      "lng": -86.59235,
+      "website": "http://worldconspiracy.org",
+      "phone": "(256) 534-3198",
+      "isIndependent": true
+    },
+    {
+      "id": 1783,
+      "name": "Old Souls Trading Company",
+      "address": "807 AL-69, Jasper, AL 35501",
+      "lat": 33.830422,
+      "lng": -87.284194,
+      "phone": "(205) 265-5902",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-08",
+  "lastUpdated": "2026-03-09",
   "version": "1.0",
   "stats": {
-    "total": 1758,
-    "independent": 1188,
+    "total": 1783,
+    "independent": 1213,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
