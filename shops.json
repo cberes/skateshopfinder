@@ -17550,13 +17550,191 @@
       "lng": -87.284194,
       "phone": "(205) 265-5902",
       "isIndependent": true
+    },
+    {
+      "id": 1784,
+      "name": "Premier",
+      "address": "10 Weston St. SE, Grand Rapids, MI 49503",
+      "lat": 42.961906,
+      "lng": -85.667166,
+      "website": "https://thepremierstore.com",
+      "phone": "(616) 742-2660",
+      "isIndependent": true
+    },
+    {
+      "id": 1785,
+      "name": "Level 6",
+      "address": "1776 Lakeshore Dr., Muskegon, MI 49441",
+      "lat": 43.217692,
+      "lng": -86.287246,
+      "website": "https://www.thelevel6.com",
+      "phone": "(231) 755-7000",
+      "isIndependent": true
+    },
+    {
+      "id": 1786,
+      "name": "The EMG Outlet",
+      "address": "3240 S Dodge Blvd. STE 5, Tucson, AZ 85713",
+      "lat": 32.186185,
+      "lng": -110.9142,
+      "website": "http://www.emg-outlet.com",
+      "phone": "(480) 439-8022",
+      "isIndependent": true
+    },
+    {
+      "id": 1787,
+      "name": "Quickie-Mart",
+      "address": "5310 S Peoria Ave., Tulsa, OK 74105",
+      "lat": 36.086003,
+      "lng": -95.976125,
+      "website": "https://www.quickiemart.net",
+      "phone": "(918) 744-7800",
+      "isIndependent": true
+    },
+    {
+      "id": 1788,
+      "name": "Simply Fun",
+      "address": "12701 East 86th St. N, Owasso, OK 74055",
+      "lat": 36.279016,
+      "lng": -95.832272,
+      "website": "http://instagram.com/simplyfunowasso",
+      "phone": "(918) 376-9610",
+      "isIndependent": true
+    },
+    {
+      "id": 1789,
+      "name": "Flowline Sports",
+      "address": "321 E St., Lemoore, CA 93245",
+      "lat": 36.302683,
+      "lng": -119.785751,
+      "phone": "(559) 997-1616",
+      "isIndependent": true
+    },
+    {
+      "id": 1790,
+      "name": "Village Sports",
+      "address": "941 W Pacheco Blvd., Los Banos, CA 93635",
+      "lat": 37.055538,
+      "lng": -120.868152,
+      "phone": "(209) 829-1349",
+      "isIndependent": true
+    },
+    {
+      "id": 1791,
+      "name": "Bunger Sayville",
+      "address": "247A W Main St., Sayville, NY 11782",
+      "lat": 40.733342,
+      "lng": -73.087843,
+      "website": "http://www.bungersayville.com",
+      "phone": "(631) 244-7070",
+      "isIndependent": true
+    },
+    {
+      "id": 1792,
+      "name": "Nalu Dry Goods",
+      "address": "100 W Main St., Bay Shore, NY 11706",
+      "lat": 40.719791,
+      "lng": -73.249789,
+      "website": "http://www.naludrygoods.com",
+      "phone": "(631) 647-9000",
+      "isIndependent": true
+    },
+    {
+      "id": 1793,
+      "name": "Atlas Sports",
+      "address": "25 Bridge St., Lowell, MA 01852",
+      "lat": 42.645571,
+      "lng": -71.30705,
+      "website": "http://www.atlassportinggoods.com",
+      "phone": "(978) 446-1240",
+      "isIndependent": true
+    },
+    {
+      "id": 1794,
+      "name": "Microwave",
+      "address": "107 4th St. SW, Albuquerque, NM 87102",
+      "lat": 35.084282,
+      "lng": -106.651775,
+      "website": "https://www.instagram.com/microwaveskateshop/",
+      "phone": "(505) 243-9127",
+      "isIndependent": true
+    },
+    {
+      "id": 1795,
+      "name": "KINGSWELL",
+      "address": "3407 Central Ave. NE, Albuquerque, NM 87106",
+      "lat": 35.080253,
+      "lng": -106.606574,
+      "website": "https://kingswell.tv",
+      "phone": "(505) 355-5967",
+      "isIndependent": true
+    },
+    {
+      "id": 1796,
+      "name": "Silo",
+      "address": "517 S 13th St., Omaha, NE 68102",
+      "lat": 41.254765,
+      "lng": -95.932907,
+      "website": "http://www.silostore.com",
+      "phone": "(308) 395-8987",
+      "isIndependent": true
+    },
+    {
+      "id": 1797,
+      "name": "Likwid",
+      "address": "65 Main St., New Paltz, NY 12561",
+      "lat": 41.747912,
+      "lng": -74.086041,
+      "website": "http://instagram.com/likwidnp",
+      "phone": "(845) 256-1013",
+      "isIndependent": true
+    },
+    {
+      "id": 1798,
+      "name": "Pluto Sports",
+      "address": "245 N Seven Oaks Dr., Knoxville, TN 37922",
+      "lat": 35.912559,
+      "lng": -84.100827,
+      "website": "http://www.plutosports.com",
+      "phone": "(865) 693-8990",
+      "isIndependent": true
+    },
+    {
+      "id": 1799,
+      "name": "HeadQuarters",
+      "address": "1229 E Broadway Ave., Maryville, TN 37804",
+      "lat": 35.765881,
+      "lng": -83.960969,
+      "website": "https://www.facebook.com/little5points/",
+      "phone": "(865) 287-4511",
+      "isIndependent": true
+    },
+    {
+      "id": 1800,
+      "name": "Cruz Outdoors",
+      "address": "379 Old Greenville Hwy Unit#105, Clemson, SC 29631",
+      "lat": 34.684818,
+      "lng": -82.816225,
+      "website": "https://cruzoutdoors.com",
+      "phone": "(864) 722-9330",
+      "isIndependent": true
+    },
+    {
+      "id": 1801,
+      "name": "Momentum Ride Shop",
+      "address": "461 W Channel Islands Blvd., Port Hueneme, CA 93041",
+      "lat": 34.176322,
+      "lng": -119.210364,
+      "website": "http://www.momentumrideshop.com",
+      "phone": "(805) 985-4929",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-09",
+  "lastUpdated": "2026-03-11",
   "version": "1.0",
   "stats": {
-    "total": 1783,
-    "independent": 1213,
+    "total": 1801,
+    "independent": 1231,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
