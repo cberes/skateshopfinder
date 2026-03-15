@@ -17728,13 +17728,141 @@
       "website": "http://www.momentumrideshop.com",
       "phone": "(805) 985-4929",
       "isIndependent": true
+    },
+    {
+      "id": 1802,
+      "name": "Val Surf",
+      "address": "3055 Thousand Oaks Blvd., Thousand Oaks, CA 91362",
+      "lat": 34.169585,
+      "lng": -118.836064,
+      "website": "https://valsurf.com",
+      "phone": "(805) 497-1166",
+      "isIndependent": true
+    },
+    {
+      "id": 1803,
+      "name": "Val Surf",
+      "address": "24140 Valencia Blvd., Valencia, CA 91355",
+      "lat": 34.412795,
+      "lng": -118.556181,
+      "website": "https://valsurf.com",
+      "phone": "(661) 222-7288",
+      "isIndependent": true
+    },
+    {
+      "id": 1804,
+      "name": "Arbor Venice",
+      "address": "102 Washington Blvd., Venice, CA 90292",
+      "lat": 33.979667,
+      "lng": -118.46524,
+      "website": "https://www.arborcollective.com/pages/arbor-flagship-venice-ca",
+      "phone": "(310) 577-1131",
+      "isIndependent": true
+    },
+    {
+      "id": 1805,
+      "name": "Holy Stokes",
+      "address": "114 Washington St. Suite 200, East Stroudsburg, PA 18301",
+      "lat": 40.996751,
+      "lng": -75.183613,
+      "website": "http://www.holystokes.com",
+      "phone": "(570) 213-8357",
+      "isIndependent": true
+    },
+    {
+      "id": 1806,
+      "name": "Colorful Thoughts",
+      "address": "410 Four seasons Town center, Greensboro, NC 27407",
+      "lat": 36.039494,
+      "lng": -79.837946,
+      "phone": "(336) 708-4235",
+      "isIndependent": true
+    },
+    {
+      "id": 1807,
+      "name": "Quonset Hut",
+      "address": "3775 Cleveland Ave. NW, Canton, OH 44709",
+      "lat": 40.840653,
+      "lng": -81.391104,
+      "website": "https://qhut.com",
+      "phone": "(330) 492-1293",
+      "isIndependent": true
+    },
+    {
+      "id": 1808,
+      "name": "Bungalow Bills",
+      "address": "7610 N Hills Blvd., North Little Rock, AR 72116",
+      "lat": 34.822337,
+      "lng": -92.237993,
+      "phone": "(501) 548-5456",
+      "isIndependent": true
+    },
+    {
+      "id": 1809,
+      "name": "yours and mine SPORTS",
+      "address": "416 N 9th St. F, Modesto, CA 95350",
+      "lat": 37.650323,
+      "lng": -121.013838,
+      "website": "https://yoursandminesports.com",
+      "phone": "(209) 527-1519",
+      "isIndependent": true
+    },
+    {
+      "id": 1810,
+      "name": "Ramps and Alleys",
+      "address": "645 E Rainbow Blvd., Salida, CO 81201",
+      "lat": 38.523876,
+      "lng": -105.995132,
+      "website": "http://rampsandalleys.com",
+      "phone": "(719) 539-5468",
+      "isIndependent": true
+    },
+    {
+      "id": 1811,
+      "name": "Mc Kevlin's Surf Shop",
+      "address": "8 Center St., Folly Beach, SC 29439",
+      "lat": 32.655464,
+      "lng": -79.940509,
+      "website": "http://www.mckevlins.com",
+      "phone": "(843) 588-2247",
+      "isIndependent": true
+    },
+    {
+      "id": 1812,
+      "name": "The House of Ride Nature",
+      "address": "2464 Second St., Fort Myers, FL 33901",
+      "lat": 26.644319,
+      "lng": -81.865032,
+      "website": "http://thehouseofridenature.com",
+      "phone": "(239) 357-7490",
+      "isIndependent": true
+    },
+    {
+      "id": 1813,
+      "name": "Ron Jon Surf Shop",
+      "address": "10045 Gulf Center Dr., Fort Myers, FL 33913",
+      "lat": 26.487521,
+      "lng": -81.790761,
+      "website": "https://www.ronjonsurfshop.com/store/ft-myers-florida",
+      "phone": "(239) 482-8888",
+      "isIndependent": true
+    },
+    {
+      "id": 1814,
+      "name": "I Get Around",
+      "address": "609 N Orchard St., Boise, ID 83706",
+      "lat": 43.610103,
+      "lng": -116.2439,
+      "website": "http://www.igaboise.com",
+      "phone": "(208) 807-4957",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-11",
+  "lastUpdated": "2026-03-15",
   "version": "1.0",
   "stats": {
-    "total": 1801,
-    "independent": 1231,
+    "total": 1814,
+    "independent": 1244,
     "chain": 570,
     "withWebsite": 1414,
     "withPhone": 1543
