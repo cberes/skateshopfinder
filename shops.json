@@ -17856,14 +17856,64 @@
       "website": "http://www.igaboise.com",
       "phone": "(208) 807-4957",
       "isIndependent": true
+    },
+    {
+      "id": 1815,
+      "name": "Street Skinz",
+      "address": "7700 E Kellogg Ave., Wichita, KS 67207",
+      "lat": 37.683325,
+      "lng": -97.247432,
+      "website": "http://facebook.com/streetskinz",
+      "phone": "(316) 218-3664",
+      "isIndependent": true
+    },
+    {
+      "id": 1816,
+      "name": "The Dark Slide",
+      "address": "3800 Merle Hay Rd. Suite 900, Des Moines, IA 50310",
+      "lat": 41.632195,
+      "lng": -93.703548,
+      "website": "https://thedarkslide.com",
+      "phone": "(515) 381-0062",
+      "isIndependent": true
+    },
+    {
+      "id": 1817,
+      "name": "Unkl Ruckus's & Purple Moon's On Merle Hay Rd.",
+      "address": "3427 Merle Hay Rd., Des Moines, IA 50310",
+      "lat": 41.625986,
+      "lng": -93.697152,
+      "website": "https://www.unklruckussdsm.store",
+      "phone": "(515) 619-9632",
+      "isIndependent": true
+    },
+    {
+      "id": 1818,
+      "name": "Skills on Wheels",
+      "address": "911 Jefferson Ave., Toledo, OH 43604",
+      "lat": 41.652485,
+      "lng": -83.541259,
+      "website": "http://skillsonwheels.co",
+      "phone": "(419) 494-7151",
+      "isIndependent": true
+    },
+    {
+      "id": 1819,
+      "name": "Level Up",
+      "address": "118 S Washington St., Tiffin, OH 44883",
+      "lat": 41.114202,
+      "lng": -83.176688,
+      "website": "http://www.facebook.com/levelupohio",
+      "phone": "(419) 447-0754",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-15",
   "version": "1.0",
   "stats": {
-    "total": 1814,
-    "independent": 1244,
-    "chain": 570,
+    "total": 1819,
+    "independent": 1247,
+    "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
   }
