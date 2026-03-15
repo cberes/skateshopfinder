@@ -16456,7 +16456,7 @@
       "lng": -83.003005,
       "website": "https://west49.com/pages/store-locator",
       "phone": "(519) 972-5030",
-      "isIndependent": true
+      "isIndependent": false
     },
     {
       "id": 1673,
@@ -17470,7 +17470,7 @@
       "lng": -79.225681,
       "website": "https://west49.com/pages/store-locator",
       "phone": "(905) 682-6444",
-      "isIndependent": true
+      "isIndependent": false
     },
     {
       "id": 1776,
