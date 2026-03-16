@@ -18033,13 +18033,53 @@
       "website": "https://www.drifthouse.com",
       "phone": "(321) 613-3240",
       "isIndependent": true
+    },
+    {
+      "id": 1833,
+      "name": "Wind & Wave Watersports",
+      "address": "10721 S Padre Island Dr., Corpus Christi, TX 78418",
+      "lat": 27.664893,
+      "lng": -97.276011,
+      "website": "http://www.windandwave.net",
+      "phone": "(361) 937-9283",
+      "isIndependent": true
+    },
+    {
+      "id": 1834,
+      "name": "Bear Walker Pensacola",
+      "address": "410 E Wright St., Pensacola, FL 32501",
+      "lat": 30.417943,
+      "lng": -87.210641,
+      "website": "https://bearwalker.com",
+      "phone": "(850) 542-7528",
+      "isIndependent": true
+    },
+    {
+      "id": 1835,
+      "name": "Ron Jon Surf Shop - Orange Beach",
+      "address": "22723 Perdido Beach Blvd., Orange Beach, AL 36561",
+      "lat": 30.257255,
+      "lng": -87.636757,
+      "website": "https://www.ronjonsurfshop.com/store/orange-beach-alabama",
+      "phone": "(251) 981-8008",
+      "isIndependent": true
+    },
+    {
+      "id": 1836,
+      "name": "The WheelHouse",
+      "address": "1800 E William St. Suite 1, Carson City, NV 89701",
+      "lat": 39.172727,
+      "lng": -119.749145,
+      "website": "http://www.wheelhousecc.com",
+      "phone": "(775) 461-3889",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-16",
   "version": "1.0",
   "stats": {
-    "total": 1832,
-    "independent": 1260,
+    "total": 1836,
+    "independent": 1264,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
