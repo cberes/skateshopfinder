@@ -17906,13 +17906,91 @@
       "website": "http://www.facebook.com/levelupohio",
       "phone": "(419) 447-0754",
       "isIndependent": true
+    },
+    {
+      "id": 1820,
+      "name": "Empire’s Emporium",
+      "address": "119 N Woodland Blvd., DeLand, FL 32720",
+      "lat": 29.028754,
+      "lng": -81.303194,
+      "website": "https://empiresemporium.com",
+      "phone": "(386) 279-7017",
+      "isIndependent": true
+    },
+    {
+      "id": 1821,
+      "name": "Sea The Source",
+      "address": "3100 SW College Rd., Ocala, FL 34474",
+      "lat": 29.159082,
+      "lng": -82.173063,
+      "phone": "(352) 861-0008",
+      "isIndependent": true
+    },
+    {
+      "id": 1822,
+      "name": "Swell-O-Phonic",
+      "address": "2906 N State St. # 103, Jackson, MS 39216",
+      "lat": 32.334661,
+      "lng": -90.176391,
+      "website": "http://shopswellophonic.com",
+      "phone": "(601) 981-3547",
+      "isIndependent": true
+    },
+    {
+      "id": 1823,
+      "name": "Killer Sloth Inc.",
+      "address": "2265 Carlisle Rd., York, PA 17408",
+      "lat": 39.978634,
+      "lng": -76.798563,
+      "website": "https://www.killersloth.com",
+      "phone": "(717) 881-7545",
+      "isIndependent": true
+    },
+    {
+      "id": 1824,
+      "name": "Solnix",
+      "address": "4505 N Division St., Spokane, WA 99207",
+      "lat": 47.699461,
+      "lng": -117.412076,
+      "website": "https://www.solnix.com",
+      "phone": "(509) 325-1620",
+      "isIndependent": true
+    },
+    {
+      "id": 1825,
+      "name": "No Limit Gifts & Body Piercing",
+      "address": "1209 McHenry Ave. C, Modesto, CA 95350",
+      "lat": 37.660862,
+      "lng": -120.994197,
+      "phone": "(209) 576-1699",
+      "isIndependent": true
+    },
+    {
+      "id": 1826,
+      "name": "The Shop Streetwear",
+      "address": "1037 Youngstown Warren Rd., Niles, OH 44446",
+      "lat": 41.201407,
+      "lng": -80.733798,
+      "website": "http://theshopstreetwear.com",
+      "phone": "(330) 652-7467",
+      "isIndependent": true
+    },
+    {
+      "id": 1827,
+      "name": "YM camera",
+      "address": "755 Boardman-Canfield Rd. Building J1, Boardman, OH 44512",
+      "lat": 41.024133,
+      "lng": -80.685182,
+      "website": "https://ymcamera.com",
+      "phone": "(330) 758-7005",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-15",
+  "lastUpdated": "2026-03-16",
   "version": "1.0",
   "stats": {
-    "total": 1819,
-    "independent": 1247,
+    "total": 1827,
+    "independent": 1255,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
