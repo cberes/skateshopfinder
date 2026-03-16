@@ -17984,13 +17984,62 @@
       "website": "https://ymcamera.com",
       "phone": "(330) 758-7005",
       "isIndependent": true
+    },
+    {
+      "id": 1828,
+      "name": "The Wub Store",
+      "address": "108 N Michigan Ave., Saginaw, MI 48602",
+      "lat": 43.417569,
+      "lng": -83.963885,
+      "website": "http://www.wubwheelco.com",
+      "phone": "(989) 401-3551",
+      "isIndependent": true
+    },
+    {
+      "id": 1829,
+      "name": "Coast City Comics & The Fun Box Monster Emporium",
+      "address": "634 Congress St., Portland, ME 04101",
+      "lat": 43.653378,
+      "lng": -70.264525,
+      "website": "http://www.coastcitycomics.com",
+      "phone": "(207) 899-1505",
+      "isIndependent": true
+    },
+    {
+      "id": 1830,
+      "name": "Superb Studios",
+      "address": "14913 Lakeshore Dr. Ste A, Clearlake, CA 95422",
+      "lat": 38.949672,
+      "lng": -122.632815,
+      "phone": "(707) 850-9636",
+      "isIndependent": true
+    },
+    {
+      "id": 1831,
+      "name": "Up The Creek Records",
+      "address": "2042 Mt Diablo Blvd., Walnut Creek, CA 94596",
+      "lat": 37.89724,
+      "lng": -122.068499,
+      "website": "http://www.upthecreekrecords.com",
+      "phone": "(925) 954-1261",
+      "isIndependent": true
+    },
+    {
+      "id": 1832,
+      "name": "Drift House",
+      "address": "350 N Orlando Ave., Cocoa Beach, FL 32931",
+      "lat": 28.324784,
+      "lng": -80.610277,
+      "website": "https://www.drifthouse.com",
+      "phone": "(321) 613-3240",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-16",
   "version": "1.0",
   "stats": {
-    "total": 1827,
-    "independent": 1255,
+    "total": 1832,
+    "independent": 1260,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
