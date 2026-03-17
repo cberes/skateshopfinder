@@ -18073,13 +18073,83 @@
       "website": "http://www.wheelhousecc.com",
       "phone": "(775) 461-3889",
       "isIndependent": true
+    },
+    {
+      "id": 1837,
+      "name": "Surf Connection",
+      "address": "1307 N H St., Lompoc, CA 93436",
+      "lat": 34.658847,
+      "lng": -120.458108,
+      "website": "http://www.surfconnection.net",
+      "phone": "(805) 736-1730",
+      "isIndependent": true
+    },
+    {
+      "id": 1838,
+      "name": "CLOCKWORK",
+      "address": "321 W Broughton St., Savannah, GA 31401",
+      "lat": 32.079798,
+      "lng": -81.096086,
+      "website": "https://instagram.com/clockwork_savannah?igshid=OGQ5ZDc2ODk2ZA==",
+      "phone": "(912) 777-7177",
+      "isIndependent": true
+    },
+    {
+      "id": 1839,
+      "name": "High Tide Surf Shop",
+      "address": "406 1st St., Tybee Island, GA 31328",
+      "lat": 32.013026,
+      "lng": -80.843946,
+      "website": "http://www.hightide-surfshop.com",
+      "phone": "(912) 786-6556",
+      "isIndependent": true
+    },
+    {
+      "id": 1840,
+      "name": "Locals Surf Shop",
+      "address": "12836 US-1, Juno Beach, FL 33408",
+      "lat": 26.865181,
+      "lng": -80.054667,
+      "website": "http://www.localssurfshop.com",
+      "phone": "(561) 624-6006",
+      "isIndependent": true
+    },
+    {
+      "id": 1841,
+      "name": "Ocean Magic Surf Shop",
+      "address": "103 US-1 C6, Jupiter, FL 33477",
+      "lat": 26.932555,
+      "lng": -80.078292,
+      "website": "http://www.oceanmagicsurf.com",
+      "phone": "(561) 744-8925",
+      "isIndependent": true
+    },
+    {
+      "id": 1842,
+      "name": "Reset Mercantile",
+      "address": "2407 Montgomery Hwy Suite A, Dothan, AL 36303",
+      "lat": 31.241599,
+      "lng": -85.417678,
+      "website": "http://resetmercantile.com",
+      "phone": "(334) 479-0095",
+      "isIndependent": true
+    },
+    {
+      "id": 1843,
+      "name": "On The Beach Surf Shop",
+      "address": "693 Lighthouse Ave., Monterey, CA 93940",
+      "lat": 36.614533,
+      "lng": -121.90276,
+      "website": "http://www.onthebeachsurfshop.com",
+      "phone": "(831) 646-9283",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-16",
+  "lastUpdated": "2026-03-17",
   "version": "1.0",
   "stats": {
-    "total": 1836,
-    "independent": 1264,
+    "total": 1843,
+    "independent": 1271,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
