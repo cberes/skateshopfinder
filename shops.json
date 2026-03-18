@@ -18143,13 +18143,90 @@
       "website": "http://www.onthebeachsurfshop.com",
       "phone": "(831) 646-9283",
       "isIndependent": true
+    },
+    {
+      "id": 1844,
+      "name": "Cali Style Scotts Valley",
+      "address": "222 Mt Hermon Rd., Scotts Valley, CA 95066",
+      "lat": 37.047146,
+      "lng": -122.026822,
+      "phone": "(831) 334-5553",
+      "isIndependent": true
+    },
+    {
+      "id": 1845,
+      "name": "Lithium",
+      "address": "204 W Elkhorn Ave., Estes Park, CO 80517",
+      "lat": 40.375929,
+      "lng": -105.525504,
+      "phone": "(970) 577-1800",
+      "isIndependent": true
+    },
+    {
+      "id": 1846,
+      "name": "Wright Life, Inc.",
+      "address": "200B Linden St., Fort Collins, CO 80524",
+      "lat": 40.588002,
+      "lng": -105.074926,
+      "website": "https://www.wrightlife.com",
+      "phone": "(970) 484-6932",
+      "isIndependent": true
+    },
+    {
+      "id": 1847,
+      "name": "Berdels",
+      "address": "1233 Pacific Ave., Santa Cruz, CA 95060",
+      "lat": 36.973376,
+      "lng": -122.026118,
+      "website": "http://www.berdels.com",
+      "phone": "(831) 421-1962",
+      "isIndependent": true
+    },
+    {
+      "id": 1848,
+      "name": "Freeline Surf Shop",
+      "address": "821 41st Ave., Santa Cruz, CA 95062",
+      "lat": 36.963845,
+      "lng": -121.965137,
+      "website": "http://www.freelinesurf.com",
+      "phone": "(831) 476-2950",
+      "isIndependent": true
+    },
+    {
+      "id": 1849,
+      "name": "Maui North Ski & Bicycle Company LLC",
+      "address": "316 Cornelia St. Suite 13, Plattsburgh, NY 12901",
+      "lat": 44.698311,
+      "lng": -73.477989,
+      "website": "http://www.mauinorth.net",
+      "phone": "(518) 563-7245",
+      "isIndependent": true
+    },
+    {
+      "id": 1850,
+      "name": "BLUE HUBBARD SLICKERS",
+      "address": "3180 German Flats Rd., Warren, VT 05674",
+      "lat": 44.150032,
+      "lng": -72.882669,
+      "website": "http://www.bluehubbardslickers.com",
+      "phone": "(802) 380-1652",
+      "isIndependent": true
+    },
+    {
+      "id": 1851,
+      "name": "The Uprise",
+      "address": "1110 NW Van Buren Ave., Corvallis, OR 97330",
+      "lat": 44.568446,
+      "lng": -123.268939,
+      "phone": "(541) 754-4257",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-17",
+  "lastUpdated": "2026-03-18",
   "version": "1.0",
   "stats": {
-    "total": 1843,
-    "independent": 1271,
+    "total": 1851,
+    "independent": 1279,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
