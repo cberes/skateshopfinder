@@ -18319,13 +18319,121 @@
       "website": "https://www.surfcitysurfshop.com",
       "phone": "(843) 945-1237",
       "isIndependent": true
+    },
+    {
+      "id": 1862,
+      "name": "Ron Jon Surf Shop - Barefoot Landing",
+      "address": "4810 Hwy 17 S, North Myrtle Beach, SC 29582",
+      "lat": 33.798124,
+      "lng": -78.743225,
+      "website": "https://www.ronjonsurfshop.com/store/north-myrtle-beach-south-carolina-barefoot-landing",
+      "phone": "(843) 272-0888",
+      "isIndependent": true
+    },
+    {
+      "id": 1863,
+      "name": "Bert's Surf Shop",
+      "address": "300 Islander Dr., Emerald Isle, NC 28594",
+      "lat": 34.660821,
+      "lng": -77.055604,
+      "website": "https://www.bertsurfshop.com",
+      "phone": "(252) 354-6282",
+      "isIndependent": true
+    },
+    {
+      "id": 1864,
+      "name": "Ron Jon Surf Shop",
+      "address": "1308 Celebrity Cir #R - 9, Myrtle Beach, SC 29577",
+      "lat": 33.717405,
+      "lng": -78.882889,
+      "website": "https://www.ronjonsurfshop.com/store/myrtle-beach-south-carolina-broadway-at-the-beach",
+      "phone": "(843) 448-8882",
+      "isIndependent": true
+    },
+    {
+      "id": 1865,
+      "name": "Good Vibes Surf Shop",
+      "address": "510 US-17 BUS suite c, Surfside Beach, SC 29575",
+      "lat": 33.617207,
+      "lng": -78.977329,
+      "website": "https://goodvibessurfshop.com",
+      "phone": "(843) 808-9093",
+      "isIndependent": true
+    },
+    {
+      "id": 1866,
+      "name": "Eternal Wave Surf Shop",
+      "address": "837 Surfside Dr., Surfside Beach, SC 29575",
+      "lat": 33.611526,
+      "lng": -78.981608,
+      "website": "http://www.eternalwavesurfshop.com",
+      "phone": "(843) 839-1239",
+      "isIndependent": true
+    },
+    {
+      "id": 1867,
+      "name": "Elk City Cycles",
+      "address": "613 Tennessee Ave., Charleston, WV 25302",
+      "lat": 38.360946,
+      "lng": -81.641929,
+      "website": "http://www.elkcitycycles.com",
+      "phone": "(681) 265-1014",
+      "isIndependent": true
+    },
+    {
+      "id": 1868,
+      "name": "Very Rare Vintage",
+      "address": "130 S Court St., Fayetteville, WV 25840",
+      "lat": 38.052437,
+      "lng": -81.103409,
+      "website": "https://www.veryrarevintagestore.com",
+      "phone": "(304) 658-8058",
+      "isIndependent": true
+    },
+    {
+      "id": 1869,
+      "name": "540 COLLECTIVE",
+      "address": "2 W Main St., Pulaski, VA 24301",
+      "lat": 37.04793,
+      "lng": -80.780103,
+      "phone": "(540) 835-3622",
+      "isIndependent": true
+    },
+    {
+      "id": 1870,
+      "name": "Discontent Lifestyle Stores",
+      "address": "2123 First Ave. N, Billings, MT 59101",
+      "lat": 45.786154,
+      "lng": -108.49818,
+      "phone": "(406) 969-4985",
+      "isIndependent": true
+    },
+    {
+      "id": 1871,
+      "name": "Ernie November Inc.",
+      "address": "217 W Lincolnway, Cheyenne, WY 82001",
+      "lat": 41.132192,
+      "lng": -104.815845,
+      "website": "https://www.facebook.com/ernie.november.77?fref=ts",
+      "phone": "(307) 632-6867",
+      "isIndependent": true
+    },
+    {
+      "id": 1872,
+      "name": "Urbane Clothing",
+      "address": "703 Lincoln Ave. # B-101, Steamboat Springs, CO 80487",
+      "lat": 40.485289,
+      "lng": -106.834039,
+      "website": "http://www.urbanesteamboat.com",
+      "phone": "(970) 879-9169",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-19",
+  "lastUpdated": "2026-03-20",
   "version": "1.0",
   "stats": {
-    "total": 1861,
-    "independent": 1289,
+    "total": 1872,
+    "independent": 1300,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
