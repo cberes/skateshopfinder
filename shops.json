@@ -18724,13 +18724,52 @@
       "website": "http://www.shopwildflier.com",
       "phone": "(228) 334-5574",
       "isIndependent": true
+    },
+    {
+      "id": 1903,
+      "name": "Ron Jon Surf Shop",
+      "address": "16150 Front Beach Rd., Panama City Beach, FL 32413",
+      "lat": 30.215771,
+      "lng": -85.876212,
+      "website": "https://www.ronjonsurfshop.com/store/panama-city-beach-florida",
+      "phone": "(850) 233-8898",
+      "isIndependent": true
+    },
+    {
+      "id": 1904,
+      "name": "All Out Bikes",
+      "address": "106 S Main St., Four Oaks, NC 27524",
+      "lat": 35.443603,
+      "lng": -78.428909,
+      "website": "http://www.alloutbikeshop.com",
+      "phone": "(919) 628-1089",
+      "isIndependent": true
+    },
+    {
+      "id": 1905,
+      "name": "Troy's Ski Lubbock",
+      "address": "3403 34th St., Lubbock, TX 79410",
+      "lat": 33.562782,
+      "lng": -101.888916,
+      "website": "http://www.skilubbock.com",
+      "phone": "(806) 748-7400",
+      "isIndependent": true
+    },
+    {
+      "id": 1906,
+      "name": "The Trendy Store US",
+      "address": "2107 Shiloh Dr. Suite #A-14, Laredo, TX 78045",
+      "lat": 27.599811,
+      "lng": -99.449834,
+      "phone": "(956) 271-8263",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-22",
   "version": "1.0",
   "stats": {
-    "total": 1902,
-    "independent": 1330,
+    "total": 1906,
+    "independent": 1334,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
