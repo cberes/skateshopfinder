@@ -18585,13 +18585,152 @@
       "website": "https://www.facebook.com/The-Happy-Hut-608065702544985/?fref=ts",
       "phone": "(503) 435-1770",
       "isIndependent": true
+    },
+    {
+      "id": 1889,
+      "name": "Safari Town Surf Shop",
+      "address": "3026 NE Hwy 101 Suite 3, Lincoln City, OR 97367",
+      "lat": 44.987475,
+      "lng": -124.005507,
+      "website": "https://safaritownsurf.com",
+      "phone": "(541) 996-6335",
+      "isIndependent": true
+    },
+    {
+      "id": 1890,
+      "name": "Sub Culture",
+      "address": "335 Walnut St., Red Bluff, CA 96080",
+      "lat": 40.17785,
+      "lng": -122.236278,
+      "website": "http://subculturevape.com",
+      "phone": "(530) 529-5510",
+      "isIndependent": true
+    },
+    {
+      "id": 1891,
+      "name": "Darkside",
+      "address": "1068 S Main St., Red Bluff, CA 96080",
+      "lat": 40.16166,
+      "lng": -122.227038,
+      "phone": "(530) 527-9700",
+      "isIndependent": true
+    },
+    {
+      "id": 1892,
+      "name": "Moondoggies Beach Club",
+      "address": "837 Monterey St., San Luis Obispo, CA 93401",
+      "lat": 35.280541,
+      "lng": -120.66328,
+      "website": "http://www.moondoggiesbeachclub.com",
+      "phone": "(805) 541-1995",
+      "isIndependent": true
+    },
+    {
+      "id": 1893,
+      "name": "Pancho's Surf Shop",
+      "address": "181 Pomeroy Ave., Pismo Beach, CA 93449",
+      "lat": 35.139857,
+      "lng": -120.642642,
+      "website": "http://www.panchospismobeach.com",
+      "phone": "(805) 773-7100",
+      "isIndependent": true
+    },
+    {
+      "id": 1894,
+      "name": "Pismo Supply Company",
+      "address": "600 Cypress St., Pismo Beach, CA 93449",
+      "lat": 35.139483,
+      "lng": -120.641407,
+      "website": "https://www.pismosupplycompany.com",
+      "phone": "(805) 773-0700",
+      "isIndependent": true
+    },
+    {
+      "id": 1895,
+      "name": "Esteem Surf Co & Coffee Shop",
+      "address": "590 Cypress St., Pismo Beach, CA 93449",
+      "lat": 35.139301,
+      "lng": -120.641323,
+      "website": "http://esteemsurf.com",
+      "phone": "(805) 773-2144",
+      "isIndependent": true
+    },
+    {
+      "id": 1896,
+      "name": "Wavelengths Surf Shop",
+      "address": "988 Embarcadero, Morro Bay, CA 93442",
+      "lat": 35.36761,
+      "lng": -120.853735,
+      "website": "http://www.wavelengthssbi.com",
+      "phone": "(805) 772-3904",
+      "isIndependent": true
+    },
+    {
+      "id": 1897,
+      "name": "Many Visions",
+      "address": "204 E Broadway Ave., Bismarck, ND 58501",
+      "lat": 46.806643,
+      "lng": -100.78876,
+      "website": "https://www.manyvisionsapparel.com",
+      "phone": "(701) 214-8111",
+      "isIndependent": true
+    },
+    {
+      "id": 1898,
+      "name": "Switch Wicked",
+      "address": "413 Poyntz Ave., Manhattan, KS 66502",
+      "lat": 39.179087,
+      "lng": -96.56257,
+      "website": "http://switchwicked.com",
+      "phone": "(785) 707-9743",
+      "isIndependent": true
+    },
+    {
+      "id": 1899,
+      "name": "skeuwep",
+      "address": "208 W Main St. #2714, Urbana, IL 61801",
+      "lat": 40.112655,
+      "lng": -88.209314,
+      "website": "http://skeuwep.com",
+      "phone": "(217) 778-0515",
+      "isIndependent": true
+    },
+    {
+      "id": 1900,
+      "name": "The Edge inc.",
+      "address": "9009 Portage Rd., Portage, MI 49002",
+      "lat": 42.186204,
+      "lng": -85.562361,
+      "website": "http://www.edgeski.com",
+      "phone": "(269) 327-1000",
+      "isIndependent": true
+    },
+    {
+      "id": 1901,
+      "name": "Levena Paintball Store",
+      "address": "1906 S Richfield Rd., Duson, LA 70529",
+      "lat": 30.200097,
+      "lng": -92.176908,
+      "website": "http://www.shoplevena.com",
+      "phone": "(337) 552-1166",
+      "isIndependent": true
+    },
+    {
+      "id": 1902,
+      "name": "Wild Flier",
+      "address": "1018 Government St., Ocean Springs, MS 39564",
+      "lat": 30.413423,
+      "lng": -88.826812,
+      "website": "http://www.shopwildflier.com",
+      "phone": "(228) 334-5574",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-21",
+  "lastUpdated": "2026-03-22",
   "version": "1.0",
   "stats": {
-    "total": 1888,
-    "independent": 1316,
+    "total": 1902,
+    "independent": 1330,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
