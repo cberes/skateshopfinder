@@ -18763,13 +18763,171 @@
       "lng": -99.449834,
       "phone": "(956) 271-8263",
       "isIndependent": true
+    },
+    {
+      "id": 1907,
+      "name": "Birth of the Blues",
+      "address": "1 Glen Rd. UNIT 12, West Lebanon, NH 03784",
+      "lat": 43.635052,
+      "lng": -72.315808,
+      "website": "https://www.facebook.com/Birth-Of-The-Blues-311376941321/timeline/",
+      "phone": "(603) 298-7848",
+      "isIndependent": true
+    },
+    {
+      "id": 1908,
+      "name": "Birgfelds Bicycle Shop",
+      "address": "184 E Main St., Searsport, ME 04974",
+      "lat": 44.46279,
+      "lng": -68.906597,
+      "phone": "(207) 548-2916",
+      "isIndependent": true
+    },
+    {
+      "id": 1909,
+      "name": "The Sensi Side",
+      "address": "185 Broadway, Farmington, ME 04938",
+      "lat": 44.670576,
+      "lng": -70.150653,
+      "website": "https://www.sensiside.com",
+      "phone": "(207) 778-0800",
+      "isIndependent": true
+    },
+    {
+      "id": 1910,
+      "name": "BC Bicycles",
+      "address": "215 Vestal Pkwy E, Vestal, NY 13850",
+      "lat": 42.087559,
+      "lng": -76.049062,
+      "phone": "(607) 785-3772",
+      "isIndependent": true
+    },
+    {
+      "id": 1911,
+      "name": "Empire Dix30",
+      "address": "9850 Boul. Leduc Suite 10, Brossard, QC J4Y 0B4, Canada",
+      "lat": 45.436919,
+      "lng": -73.441904,
+      "website": "https://thinkempire.com",
+      "phone": "(450) 812-7413",
+      "isIndependent": true
+    },
+    {
+      "id": 1912,
+      "name": "Empire Sports Vaudreuil",
+      "address": "46 Bd de la Cité-des-Jeunes Suite 120, Vaudreuil-Dorion, QC J7V 9L5, Canada",
+      "lat": 45.408773,
+      "lng": -74.037664,
+      "website": "https://thinkempire.com",
+      "phone": "(450) 455-0999",
+      "isIndependent": true
+    },
+    {
+      "id": 1913,
+      "name": "Rookery",
+      "address": "160 Rue Richelieu, Saint-Jean-sur-Richelieu, QC J3B 6X4, Canada",
+      "lat": 45.305387,
+      "lng": -73.250992,
+      "website": "http://www.boutiquerookery.com",
+      "phone": "(450) 358-3535",
+      "isIndependent": true
+    },
+    {
+      "id": 1914,
+      "name": "exoplus",
+      "address": "2125 Crescent St. Suite 200 Floor 2, Montreal, QC H3G 2C1, Canada",
+      "lat": 45.498539,
+      "lng": -73.578182,
+      "website": "http://exoplus.co",
+      "phone": "(438) 383-8813",
+      "isIndependent": true
+    },
+    {
+      "id": 1915,
+      "name": "Versus Pro Shop",
+      "address": "8931 Av. Papineau, Montréal, QC H2M 0A5, Canada",
+      "lat": 45.561053,
+      "lng": -73.635046,
+      "website": "http://versusproshop.com",
+      "phone": "(514) 284-0051 ext. 120",
+      "isIndependent": true
+    },
+    {
+      "id": 1916,
+      "name": "Revolution 514",
+      "address": "4062 Boul. Saint-Laurent, Montréal, QC H2W 1Y8, Canada",
+      "lat": 45.517036,
+      "lng": -73.580047,
+      "website": "http://www.revolution514.com",
+      "phone": "(514) 903-4151",
+      "isIndependent": true
+    },
+    {
+      "id": 1917,
+      "name": "Boutique Adrénaline",
+      "address": "965b Bd de Périgny, Chambly, QC J3L 4P3, Canada",
+      "lat": 45.450084,
+      "lng": -73.296565,
+      "website": "http://www.boutiqueadrenaline.com",
+      "phone": "(450) 447-8933",
+      "isIndependent": true
+    },
+    {
+      "id": 1918,
+      "name": "Empire Granby",
+      "address": "57 Rue Robichaud, Granby, QC J2H 0W6, Canada",
+      "lat": 45.421944,
+      "lng": -72.72,
+      "website": "https://thinkempire.com",
+      "phone": "(450) 777-2575",
+      "isIndependent": true
+    },
+    {
+      "id": 1919,
+      "name": "Empire Boucherville",
+      "address": "1155 Pl. Nobel Suite C, Boucherville, QC J4B 7L3, Canada",
+      "lat": 45.571655,
+      "lng": -73.447772,
+      "website": "https://thinkempire.com",
+      "phone": "(450) 645-9998",
+      "isIndependent": true
+    },
+    {
+      "id": 1920,
+      "name": "Empire Montréal",
+      "address": "1275 Rue Berri, Montréal, QC H2L 4X4, Canada",
+      "lat": 45.514552,
+      "lng": -73.559078,
+      "website": "https://thinkempire.com/fr",
+      "phone": "(514) 390-1212",
+      "isIndependent": true
+    },
+    {
+      "id": 1921,
+      "name": "Wheelzup Adventures",
+      "address": "14 Howard St., Cumberland, MD 21502",
+      "lat": 39.648498,
+      "lng": -78.762717,
+      "website": "http://www.wheelzupadventures.com",
+      "phone": "(240) 362-7021",
+      "isIndependent": true
+    },
+    {
+      "id": 1922,
+      "name": "Ernie's Bicycle Shop",
+      "address": "1103 4th St. NW, New Philadelphia, OH 44663",
+      "lat": 40.504572,
+      "lng": -81.450727,
+      "website": "http://www.erniesbikeshop.com",
+      "phone": "(330) 343-4056",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-22",
+  "lastUpdated": "2026-03-23",
   "version": "1.0",
   "stats": {
-    "total": 1906,
-    "independent": 1334,
+    "total": 1922,
+    "independent": 1350,
     "chain": 572,
     "withWebsite": 1414,
     "withPhone": 1543
