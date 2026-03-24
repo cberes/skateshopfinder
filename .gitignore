@@ -1,4 +1,4 @@
 _site/
-.envrc
+.env
 node_modules/
 scripts/data/google-places-raw.json
