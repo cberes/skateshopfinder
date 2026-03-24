@@ -84,27 +84,29 @@ export const EXCLUDED_TYPES = new Set([
 
 // Known chain store patterns
 const CHAIN_PATTERNS = [
-  { pattern: /\bzumiez\b/i, name: 'Zumiez' },
-  { pattern: /\bvans\s*(store|outlet)?\b/i, name: 'Vans' },
-  { pattern: /\btactics\b/i, name: 'Tactics' },
-  { pattern: /\bccs\b/i, name: 'CCS' },
-  { pattern: /\btilly'?s\b/i, name: "Tilly's" },
-  { pattern: /\bpacsun\b/i, name: 'PacSun' },
   { pattern: /\bactive\s*ride\s*shop\b/i, name: 'Active Ride Shop' },
+  { pattern: /\bccs\b/i, name: 'CCS' },
   { pattern: /\bempire\s*skate\b/i, name: 'Empire' },
+  { pattern: /\bpacsun\b/i, name: 'PacSun' },
   { pattern: /\bskatewarehouse\b/i, name: 'Skate Warehouse' },
+  { pattern: /\btactics\b/i, name: 'Tactics' },
+  { pattern: /\btilly'?s\b/i, name: "Tilly's" },
+  { pattern: /\bvans\s*(store|outlet)?\b/i, name: 'Vans' },
+  { pattern: /\bwest\s*49\b/i, name: 'West 49' },
+  { pattern: /\bzumiez\b/i, name: 'Zumiez' },
 ];
 
 // Websites that indicate chain stores
 const CHAIN_WEBSITES = [
-  'zumiez.com',
-  'vans.com',
-  'tactics.com',
-  'ccs.com',
-  'tillys.com',
-  'pacsun.com',
   'activeridestore.com',
+  'ccs.com',
+  'pacsun.com',
   'skatewarehouse.com',
+  'tactics.com',
+  'tillys.com',
+  'vans.com',
+  'west49.com',
+  'zumiez.com',
 ];
 
 /**
