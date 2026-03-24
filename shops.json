@@ -19366,13 +19366,42 @@
       "isIndependent": false,
       "website": "https://www.zumiez.com/stores/us320?utm_source=google+my+business&utm_medium=organic&utm_campaign=store+locations",
       "phone": "(805) 987-3246"
+    },
+    {
+      "id": 1867,
+      "name": "Supreme",
+      "address": "152 Grand St., Brooklyn, NY 11249",
+      "lat": 40.714552,
+      "lng": -73.96214,
+      "website": "https://www.supreme.com",
+      "phone": "(718) 599-2700",
+      "isIndependent": true
+    },
+    {
+      "id": 1868,
+      "name": "Paragon Sports",
+      "address": "867 Broadway, New York, NY 10003",
+      "lat": 40.737709,
+      "lng": -73.990417,
+      "website": "http://www.paragonsports.com",
+      "phone": "(800) 961-3030",
+      "isIndependent": true
+    },
+    {
+      "id": 1869,
+      "name": "Economy bike shop",
+      "address": "1637 NJ-33, Trenton, NJ 08690",
+      "lat": 40.225013,
+      "lng": -74.65469,
+      "phone": "(609) 586-0150",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-24",
   "version": "1.0",
   "stats": {
-    "total": 1866,
-    "independent": 1332,
+    "total": 1869,
+    "independent": 1335,
     "chain": 534,
     "withWebsite": 1642,
     "withPhone": 1798,
