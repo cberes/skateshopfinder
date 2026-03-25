@@ -19414,13 +19414,53 @@
       "lng": -117.611594,
       "phone": "(949) 218-9012",
       "isIndependent": true
+    },
+    {
+      "id": 1872,
+      "name": "Epic Trends",
+      "address": "985 Civic Center Dr. #110, Vista, CA 92083",
+      "lat": 33.192178,
+      "lng": -117.236453,
+      "website": "http://www.1epictrends.com",
+      "phone": "(760) 936-5146",
+      "isIndependent": true
+    },
+    {
+      "id": 1873,
+      "name": "CommonWealth Press",
+      "address": "415 W Warrington Ave., Pittsburgh, PA 15210",
+      "lat": 40.418735,
+      "lng": -80.009908,
+      "website": "http://www.cwpress.com",
+      "phone": "(412) 431-4207",
+      "isIndependent": true
+    },
+    {
+      "id": 1874,
+      "name": "Stellar Sports",
+      "address": "1220 Miller Ave. Suite 2, Shelbyville, IN 46176",
+      "lat": 39.513291,
+      "lng": -85.79203,
+      "website": "http://www.stellar-sports.com",
+      "phone": "(317) 604-5016",
+      "isIndependent": true
+    },
+    {
+      "id": 1875,
+      "name": "Blue Flowers",
+      "address": "935A Woodland St., Nashville, TN 37206",
+      "lat": 36.176192,
+      "lng": -86.753972,
+      "website": "http://www.blueflowers.com",
+      "phone": "(615) 807-1078",
+      "isIndependent": true
     }
   ],
-  "lastUpdated": "2026-03-24",
+  "lastUpdated": "2026-03-25",
   "version": "1.0",
   "stats": {
-    "total": 1871,
-    "independent": 1337,
+    "total": 1875,
+    "independent": 1341,
     "chain": 534,
     "withWebsite": 1642,
     "withPhone": 1798,
