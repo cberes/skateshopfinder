@@ -19454,13 +19454,32 @@
       "website": "http://www.blueflowers.com",
       "phone": "(615) 807-1078",
       "isIndependent": true
+    },
+    {
+      "id": 1876,
+      "name": "Adrift",
+      "address": "116 Spadina Ave., Toronto, ON M5V 2K6, Canada",
+      "lat": 43.647093,
+      "lng": -79.396129,
+      "website": "http://www.adriftshop.com",
+      "phone": "(416) 515-0550",
+      "isIndependent": true
+    },
+    {
+      "id": 1877,
+      "name": "Citrus Surf Shop",
+      "address": "1740 Ocean Shore Blvd., Ormond Beach, FL 32176",
+      "lat": 29.336239,
+      "lng": -81.060515,
+      "phone": "(386) 506-9685",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-25",
   "version": "1.0",
   "stats": {
-    "total": 1875,
-    "independent": 1341,
+    "total": 1877,
+    "independent": 1343,
     "chain": 534,
     "withWebsite": 1642,
     "withPhone": 1798,
