@@ -19473,13 +19473,142 @@
       "lng": -81.060515,
       "phone": "(386) 506-9685",
       "isIndependent": true
+    },
+    {
+      "id": 1878,
+      "name": "Surf Country",
+      "address": "109 S Fairview Ave., Goleta, CA 93117",
+      "lat": 34.437602,
+      "lng": -119.830962,
+      "website": "http://surfcountrygoleta.com",
+      "phone": "(805) 683-4450",
+      "isIndependent": true
+    },
+    {
+      "id": 1879,
+      "name": "Varsity Bike Shop",
+      "address": "6549 Pardall Rd. # A, Goleta, CA 93117",
+      "lat": 34.412956,
+      "lng": -119.856058,
+      "website": "http://varsitybikeshopiv.com",
+      "phone": "(805) 968-4914",
+      "isIndependent": true
+    },
+    {
+      "id": 1880,
+      "name": "Louisville Cyclery",
+      "address": "889 E South Boulder Rd., Louisville, CO 80027",
+      "lat": 39.987175,
+      "lng": -105.132558,
+      "website": "http://www.louisvillecyclery.com",
+      "phone": "(303) 665-6343",
+      "isIndependent": true
+    },
+    {
+      "id": 1881,
+      "name": "Moon Rock Outfitters",
+      "address": "313 N Main St., Roswell, NM 88201",
+      "lat": 33.395848,
+      "lng": -104.522577,
+      "website": "http://moonrockoutfitters.com",
+      "phone": "(575) 626-7121",
+      "isIndependent": true
+    },
+    {
+      "id": 1882,
+      "name": "Sitzmark Sports",
+      "address": "10500 Marty St., Overland Park, KS 66212",
+      "lat": 38.938246,
+      "lng": -94.671176,
+      "website": "http://sitzmarksports.com",
+      "phone": "(913) 341-5330",
+      "isIndependent": true
+    },
+    {
+      "id": 1883,
+      "name": "Amused Clothing",
+      "address": "316 1/2 W State St., West Lafayette, IN 47906",
+      "lat": 40.424094,
+      "lng": -86.908741,
+      "website": "https://sites.google.com/view/amusedclothing",
+      "phone": "(765) 743-8733",
+      "isIndependent": true
+    },
+    {
+      "id": 1884,
+      "name": "Simple Sports",
+      "address": "400 Main St. E, Menomonie, WI 54751",
+      "lat": 44.876283,
+      "lng": -91.925746,
+      "website": "https://www.facebook.com/SimpleSportsUS/",
+      "phone": "(715) 233-3493",
+      "isIndependent": true
+    },
+    {
+      "id": 1885,
+      "name": "BasicShirtCo",
+      "address": "427 S 18th St., Fort Dodge, IA 50501",
+      "lat": 42.501248,
+      "lng": -94.173304,
+      "website": "https://basictshirtco.etsy.com",
+      "phone": "(515) 835-2301",
+      "isIndependent": true
+    },
+    {
+      "id": 1886,
+      "name": "The Sports Den",
+      "address": "1202 S Central Ave., Marshfield, WI 54449",
+      "lat": 44.656872,
+      "lng": -90.181248,
+      "website": "http://www.thesportsden.net",
+      "phone": "(715) 384-8313",
+      "isIndependent": true
+    },
+    {
+      "id": 1887,
+      "name": "Mr. Surf's Surf Shop",
+      "address": "7220 Thomas Dr., Panama City, FL 32408",
+      "lat": 30.159461,
+      "lng": -85.775932,
+      "website": "http://www.mrsurfs.com",
+      "phone": "(850) 235-2702",
+      "isIndependent": true
+    },
+    {
+      "id": 1888,
+      "name": "Lone Star Ride Co.",
+      "address": "202 E Main St., Port Lavaca, TX 77979",
+      "lat": 28.615246,
+      "lng": -96.625172,
+      "website": "https://www.lonestarrideco.com/s/shop",
+      "phone": "(361) 934-1172",
+      "isIndependent": true
+    },
+    {
+      "id": 1889,
+      "name": "THE SPOT",
+      "address": "79 Main St. #3A, Bucksport, ME 04416",
+      "lat": 44.572118,
+      "lng": -68.794891,
+      "phone": "(207) 898-1010",
+      "isIndependent": true
+    },
+    {
+      "id": 1890,
+      "name": "Empire Boisbriand",
+      "address": "3330 Av. des Grandes Tourelles, Boisbriand, QC J7H 0A2, Canada",
+      "lat": 45.627858,
+      "lng": -73.84591,
+      "website": "https://thinkempire.com",
+      "phone": "(450) 419-4677",
+      "isIndependent": true
     }
   ],
   "lastUpdated": "2026-03-25",
   "version": "1.0",
   "stats": {
-    "total": 1877,
-    "independent": 1343,
+    "total": 1890,
+    "independent": 1356,
     "chain": 534,
     "withWebsite": 1642,
     "withPhone": 1798,
