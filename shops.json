@@ -8824,7 +8824,8 @@
       "lng": -78.814062,
       "isIndependent": true,
       "website": "http://www.phatmanboardshop.com",
-      "phone": "(716) 837-8743"
+      "phone": "(716) 837-8743",
+      "photo": "ChIJO-zZrWRy04kRcVwMoDFRhfE.jpg"
     },
     {
       "id": 1806,
@@ -20341,6 +20342,6 @@
     "chain": 534,
     "withWebsite": 1662,
     "withPhone": 1822,
-    "withPhoto": 1728
+    "withPhoto": 1729
   }
 }
